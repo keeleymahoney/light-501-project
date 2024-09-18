@@ -11,42 +11,34 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :id, style: "display: block" %>
-    <%= form.number_field :id %>
+<div class="form" >
+  <div class="header">
+    <div style="width:33%; margin-left: 5px;">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div style="width:33%">
+      <%= form.label :date, style: "display: block" %>
+      <%= form.datetime_select(:date, include_blank: true) %>
+    </div>
+
+    <div style="width:33%">
+      <%= form.label :location, style: "display: block" %>
+      <%= form.text_field :location%>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.text_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :datetime, style: "display: block" %>
-    <%= form.text_field :datetime %>
-  </div>
-
-  <div>
+  <div style="width: 100%; margin-left: 5px;">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description%>
   </div>
 
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_area :location %>
-  </div>
-
-  <div>
-    <%= form.label :attendees, style: "display: block" %>
-    <%= form.number_field :attendees %>
-  </div>
-
-  <div>
+  <br/>
+  <div style="margin-left: 5px;">
     <%= form.submit %>
   </div>
+  <br/>
 <% end %>
+</div>

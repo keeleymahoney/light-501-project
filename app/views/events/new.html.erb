@@ -1,9 +1,13 @@
-<h1>New event</h1>
+<%= render "header"%>
+<br/>
+<div>
+  <%= link_to "Back to events", events_path %>
+</div>
+
+<h1 class="title-page">Create New Event</h1>
 
 <%= render "form", event: @event %>
 
 <br>
 
-<div>
-  <%= link_to "Back to events", events_path %>
-</div>
+

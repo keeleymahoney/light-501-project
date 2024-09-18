@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+ .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.nav {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav h3
+{
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create
+{
+    text-align:right;
+}
+
+.create button
+{
+    margin-right: 15px;
+}
+
+.title-page
+{
+    text-align: center;
+}
+
+.form
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+table, th, td {
+    border: 1px solid black; /* Adds a border around the table, headers, and cells */
+    border-collapse: collapse; /* Ensures borders are shared between adjacent cells */
+}
+
+th, td {
+    padding: 10px; /* Optional: Adds padding inside the cells */
+    text-align: left; /* Optional: Aligns text to the left in the cells */
+}

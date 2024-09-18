@@ -1,14 +1,45 @@
+<%= render "header"%>
+
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Events</h1>
+<h1 class="title-page">All Events</h1>
 
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+
+<div id="events-table">
+  <table style="width: 80%; margin-left: auto; margin-right: auto;">
+
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Surveys</th>
+      <th>.CSV Data</th>
+      <th>Delete</th>
+    </tr>
+    <% @events.each do |event| %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.date %></td>
+      <td><%= event.description %></td>
+      <td><%= event.location %></td>
+      <td><%= link_to("View", event_path(event)) %></td>
+      <td><%= link_to("Edit", edit_event_path(event)) %></td>
+      <td>Surveys</td>
+      <td>CSV</td>
+      <td><%= link_to("Delete", delete_event_path(event)) %> </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
+<div class="create">
+  <button><%= link_to "Create new event", new_event_path %></button>
 </div>
 
-<%= link_to "New event", new_event_path %>
+
+

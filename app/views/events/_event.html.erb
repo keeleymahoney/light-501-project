@@ -1,37 +1,20 @@
 <div id="<%= dom_id event %>">
-  <p>
-    <strong>Id:</strong>
-    <%= event.id %>
-  </p>
+<div id="events-table">
+<table style="width: 80%; margin-left: auto; margin-right: auto;">
 
-  <p>
-    <strong>Name:</strong>
-    <%= event.name %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= event.date %>
-  </p>
-
-  <p>
-    <strong>Datetime:</strong>
-    <%= event.datetime %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= event.location %>
-  </p>
-
-  <p>
-    <strong>Attendees:</strong>
-    <%= event.attendees %>
-  </p>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Location</th>
+  </tr>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.date %></td>
+    <td><%= event.description %></td>
+    <td><%= event.location %></td>
+  </tr>
+</table>
+</div>
 
 </div>
