@@ -1,0 +1,15 @@
+<%= render "header"%>
+<br/>
+<div>
+  <%= link_to "Back to events", events_path %>
+</div>
+
+<h1 class="title-page">Editing event</h1>
+
+<%= render "form", event: @event %>
+
+<br>
+
+<div>
+  <%= link_to "Show this event", @event %>
+</div>
