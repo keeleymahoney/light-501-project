@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_12_224934) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_21_031509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_images", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.binary "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_images_on_event_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -25,4 +33,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_12_224934) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "event_images", "events"
 end
