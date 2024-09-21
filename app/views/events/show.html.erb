@@ -12,7 +12,7 @@
 
 <br/>
 <div class="row justify-content-end mr-4">
-  <%= button_to "Destroy this event", @event, method: :delete, class:"col btn btn-danger" %>
+  <%= link_to "Delete this event", delete_event_path(@event), class:"btn btn-danger" %>
 </div>
 
 
