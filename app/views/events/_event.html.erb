@@ -1,24 +1,55 @@
 <div id="<%= dom_id event %>">
-<div id="events-table">
-<table style="width: 80%; margin-left: auto; margin-right: auto;">
+  <div class="border rounded border-1 border-dark p-1" style="width: 90%; margin-left: auto; margin-right: auto;">
+    <div class="header row">
+      <div class="col">
+        <p><strong>Name:</strong></p>
+        <p class="border rounded border-1 border-dark p-1">
+          <%= event.name %>
+          </p>
+      </div>
 
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Location</th>
-    <th>RSVP Link</th>
-    <th>Feedback Link</th>
-  </tr>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
-    <td><%= event.description %></td>
-    <td><%= event.location %></td>
-    <td><%= event.rsvp_link %></td>
-    <td><%= event.feedback_link %></td>
-  </tr>
-</table>
+      <div class="col">
+        <p><strong>Date:</strong></p>
+        <p class="border rounded border-1 border-dark p-1">
+          <%= event.date.strftime("%m/%d/%y %I:%M %p")  %>
+        </p>
+      </div>
+
+      <div class="col">
+        <p><strong>Location:</strong></p>
+        <p class="border rounded border-1 border-dark p-1">
+          <%= event.location %>
+          </p>
+      </div>
+
+    </div>
+
+    <br/>
+    <div class="header row">
+      <div class="col">
+          <p><strong>RSVP Link:</strong></p>
+          <p class="border rounded border-1 border-dark p-1">
+            <%= event.rsvp_link %>
+            </p>
+      </div>
+
+      <div class="col">
+          <p><strong>Feedback Link:</strong></p>
+          <p class="border rounded border-1 border-dark p-1">
+            <%= event.feedback_link %>
+            </p>
+      </div>
+    </div>
+
+    <br/>
+    <div class="header row">
+      <div class="col">
+        <p><strong>Description:</strong></p>
+        <p class="border rounded border-1 border-dark p-1">
+          <%= event.description %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
-</div>

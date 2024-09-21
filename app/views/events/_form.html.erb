@@ -14,12 +14,12 @@
 <div class="form" >
   <div class="header row">
     <div class="col">
-      <%= form.label :name, style: "display: block" %>
+      <strong><%= form.label :name, style: "display: block" %></strong>
       <%= form.text_field :name, class: "full-width"%>
     </div>
 
     <div class="col">
-      <%= form.label :date, style: "display: block" %>
+      <strong><%= form.label :date, style: "display: block" %></strong>
       <div class="input-group">
         <%= form.datetime_select(:date, 
           default: Time.current.in_time_zone('Central Time (US & Canada)'), 
@@ -31,7 +31,7 @@
     </div>
 
     <div class="col">
-      <%= form.label :location, style: "display: block" %>
+      <strong><%= form.label :location, style: "display: block" %></strong>
       <%= form.text_field :location, class: "full-width"%>
     </div>
 
@@ -40,12 +40,12 @@
   <br/>
   <div class="header row">
     <div class="col">
-        <%= form.label :rsvp_link, style: "display: block" %>
+      <strong><%= form.label :rsvp_link, style: "display: block" %></strong>
         <%= form.text_field :rsvp_link, class: "full-width" %>
     </div>
 
     <div class="col">
-        <%= form.label :feedback_link, style: "display: block" %>
+      <strong><%= form.label :feedback_link, style: "display: block" %></strong>
         <%= form.text_field :feedback_link, class: "full-width" %>
     </div>
   </div>
@@ -53,7 +53,7 @@
   <br/>
   <div class="header row">
     <div class="col">
-      <%= form.label :description, style: "display: block"%>
+      <strong><%= form.label :description, style: "display: block"%></strong>
       <%= form.text_area :description, style:"width: 100%" %>
     </div>
   </div>
