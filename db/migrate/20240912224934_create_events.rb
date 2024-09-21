@@ -5,7 +5,8 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.datetime :date
       t.text :description
       t.text :location
-
+      t.text :rsvp_link
+      t.text :feedback_link
       t.timestamps
     end
   end

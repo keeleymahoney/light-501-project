@@ -47,6 +47,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def delete
+    @event = Event.find(params[:id])
+  end
+
   # DELETE /events/1 or /events/1.json
   def destroy
     @event.destroy
@@ -65,6 +69,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:id, :name, :date, :datetime, :description, :location, :attendees)
+      params.require(:event).permit(:id, :name, :date, :description, :location, :rsvp_link, :feedback_link)
     end
 end

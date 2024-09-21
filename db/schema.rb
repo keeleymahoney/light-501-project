@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_12_224934) do
     t.datetime "date"
     t.text "description"
     t.text "location"
+    t.text "rsvp_link"
+    t.text "feedback_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,34 +1,36 @@
 <%= render "header"%>
 
+<%= render "adminheader"%>
 
+<h2 class="title-page">All Events</h2>
+<br/>
 <p style="color: green"><%= notice %></p>
 
-<h1 class="title-page">All Events</h1>
-
-
 <div id="events-table">
-  <table style="width: 80%; margin-left: auto; margin-right: auto;">
+  <table style="width: 90%; margin-left: auto; margin-right: auto;">
 
     <tr>
       <th>Name</th>
       <th>Date</th>
       <th>Description</th>
       <th>Location</th>
+      <th>RSVP Link </th>
+      <th>Feedback Link </th>
       <th>View</th>
       <th>Edit</th>
-      <th>Surveys</th>
       <th>.CSV Data</th>
       <th>Delete</th>
     </tr>
     <% @events.each do |event| %>
     <tr>
       <td><%= event.name %></td>
-      <td><%= event.date %></td>
+      <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
       <td><%= event.description %></td>
       <td><%= event.location %></td>
+      <td><%= event.rsvp_link%></td>
+      <td><%= event.feedback_link %></td>
       <td><%= link_to("View", event_path(event)) %></td>
       <td><%= link_to("Edit", edit_event_path(event)) %></td>
-      <td>Surveys</td>
       <td>CSV</td>
       <td><%= link_to("Delete", delete_event_path(event)) %> </td>
     </tr>
