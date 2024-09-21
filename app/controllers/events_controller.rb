@@ -27,6 +27,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
+        handle_image_uploads
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
@@ -40,6 +41,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
+        handle_image_uploads()
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -67,6 +69,16 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def handle_image_uploads
+      if params[:event][:images].present?
+        params[:event][:images].each do |image|
+          next if image.blank?  
+          # Use ImagesController to create images
+          @event.event_images.create(picture: image.read)
+        end
+      end
     end
 
     # Only allow a list of trusted parameters through.

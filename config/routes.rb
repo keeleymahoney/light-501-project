@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :events do
+    resources :event_images, only: [:create, :destroy]
     member do
       get :delete
     end

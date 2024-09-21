@@ -50,6 +50,28 @@
         </p>
       </div>
     </div>
+
+    <br/>
+    <!-- Display images related to the event -->
+    <div class="header row">
+      <div class="col">
+        <p><strong>Event Images:</strong></p>
+        <% images = EventImage.where(event_id: event.id) %>
+        <% if images.any? %>
+          <div class="row">
+            <% images.each do |image| %>
+              <div class="col-4">
+                <div class="border rounded border-1 border-dark p-1 mb-2">
+                  <img src="data:image/jpeg;base64,<%= Base64.encode64(image.picture) %>" alt="Event Image" class="img-fluid rounded" />
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <p>No images available for this event.</p>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
