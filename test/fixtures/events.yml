@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: MyString
+  date: MyString
+  datetime: MyString
+  description: MyText
+  location: MyText
+  attendees: 1
+
+two:
+  id: 1
+  name: MyString
+  date: MyString
+  datetime: MyString
+  description: MyText
+  location: MyText
+  attendees: 1
