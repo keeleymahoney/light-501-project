@@ -2,6 +2,20 @@ class FormsController < ApplicationController
   require 'google/apis/forms_v1'
 
   def create
+    forms = Google::Apis::FormsV1::FormsService.new
+
+    scopes = ['https://www.googleapis.com/auth/forms.body']
+    forms.authorization = Google::Auth.get_application_default(scopes)
+    
+    @new_form = forms.create_form(
+      {
+        "info": {
+          "title": "Test Title",
+          "documentTitle": "Test Document Title",
+        }
+      }      
+    )
+    
   end
 
   def monitor
