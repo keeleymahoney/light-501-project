@@ -20,6 +20,13 @@ class FormsController < ApplicationController
   end
 
   def respond
+    forms = Google::Apis::FormsV1::FormsService.new
+
+    scopes = ['https://www.googleapis.com/auth/forms.body.readonly']
+    forms.authorization = Google::Auth.get_application_default(scopes)
+
+    @rsvp_form = forms.get_form(formId='1RJfBCqaPYto6HBo-Z_BzHSGF-q-cLoROwMM3MhsvXt8') # Remove once Event entity available
+    @feedback_form = forms.get_form(formId='1PlCUYNTYhGXwLDQGJLbgedW4abpZoq1wpjWVW_bemjI') # Remove once Event entity available
   end
 
   private
