@@ -1,4 +1,7 @@
-<h1>Forms#monitor</h1>
-<p>Find me in app/views/forms/monitor.html.erb</p>
+<h1>Monitor Forms</h1>
 
-<%= @curr_form.responses %>
+<%= render partial: "monitor_form", locals: {form_type: "RSVP", curr_form: @rsvp_form, num_responses: @rsvp_responses} %>
+<%= render partial: "monitor_form", locals: {form_type: "Feedback", curr_form: @feedback_form, num_responses: @feedback_responses} %>
+
+
+
