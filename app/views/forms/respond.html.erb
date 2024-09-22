@@ -2,10 +2,10 @@
 
 <div>
 	<h2>RSVP Form</h2>
-	<%= link_to "RSVP Form", @rsvp_form.responder_uri %>
+	<iframe src=<%= @rsvp_form.responder_uri + "?embedded=true" %> width="640" height="764" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>
 
 <div>
 	<h2>Feedback Form</h2>
-	<%= link_to "Feedback Form", @feedback_form.responder_uri %>
+	<iframe src=<%= @feedback_form.responder_uri + "?embedded=true" %> width="640" height="764" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>
