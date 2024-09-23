@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  devise_for :members, controllers: { omniauth_callbacks: 'members/omniauth_callbacks' }
+
   resources :events do
     resources :event_images, only: [:create, :destroy]
     member do

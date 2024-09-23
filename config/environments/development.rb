@@ -41,6 +41,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -69,4 +72,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   ENV['GOOGLE_APPLICATION_CREDENTIALS'] = 'service_key.json'
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '71811764934-m31rhfvob5p36gsdge1n2fsk02nvaq7j.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
+
 end

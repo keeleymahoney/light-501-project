@@ -50,6 +50,12 @@ gem "bootstrap", "~> 4.3.1"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "devise"                     # For authentication
+gem "omniauth"                    # For third-party authentication
+gem "omniauth-google-oauth2"      # For Google OAuth
+gem "omniauth-rails_csrf_protection"  # To ensure CSRF protection for OmniAuth
+
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
