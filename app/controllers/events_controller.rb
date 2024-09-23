@@ -87,6 +87,7 @@ class EventsController < ApplicationController
 
       @form_title = rsvp_form.info.title
       @form_submission_link = rsvp_form.responder_uri
+      @form_edit_link = 'https://docs.google.com/forms/d/' + rsvp_form_id + '/edit'
 
       @num_responses = 0
 
@@ -154,22 +155,7 @@ class EventsController < ApplicationController
 
     end # TODO: add once Event entity available
     
-  end  
-
-  def edit_form
-    @event = Event.find(params[:id])
-
-    rsvp_form_id = Event.find(params[:id]).rsvp_link
-
-    if !defined?(rsvp_form_id) || rsvp_form_id.blank? # TODO: add once Event entity available
-      # flash notice that a form does not exist and re-render show_rsvp page # TODO: add once Event entity available
-    else # TODO: add once Event entity available
-      # edit_url = 'https://docs.google.com/forms/d/1IS7NqkaJjabeqtH_zD5diJfKwP62Zcb_9F5bTiIoWtI/edit' # TODO: remove once Event entity available
-    edit_url = 'https://docs.google.com/forms/d/' + rsvp_form_id + '/edit' # TODO: add once Event entity available
-      redirect_to(edit_url, allow_other_host: true)
-    # end # TODO: add once Event entity available
-    end
-  end  
+  end
 
   def delete_form
     require 'google/apis/drive_v3'
