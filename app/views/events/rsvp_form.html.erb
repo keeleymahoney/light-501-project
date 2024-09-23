@@ -12,7 +12,7 @@
 	<section><%= @form_title %></section>
 	<section>
 		<%= link_to_if(@form_exists, "Submission Form", @form_submission_link) %><br/>
-		<%= link_to_if(@form_exists, "Edit In Google Forms", edit_form_event_path) %><br/>
-		<%= link_to_if(@form_exists, "Delete Form", @form_edit_link) %>		
+		<%= link_to_if(@form_exists, "Edit In Google Forms", @form_edit_link) %><br/>
+		<%= link_to_if(@form_exists, "Delete Form", delete_form_event_path(@event)) %>		
 	</section>
 <% end %>
