@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :events do
+    resources :event_images, only: [:create, :destroy]
+    member do
+      get :delete
+    end
+  end
   root 'forms#show_rsvp'
 
   get 'forms/create_form'
