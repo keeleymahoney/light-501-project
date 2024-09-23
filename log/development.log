@@ -19,148 +19,27 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 180ms (Views: 39.1ms | ActiveRecord: 0.0ms | Allocations: 7114)
 
 
-  [1m[35m (870.3ms)[0m  [1m[35mCREATE DATABASE "light_501_Project_development" ENCODING = 'unicode'[0m
-  [1m[35m (575.8ms)[0m  [1m[35mCREATE DATABASE "light_501_Project_test" ENCODING = 'unicode'[0m
-  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3403887942476375445)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateEvents (20240912224934)
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3403887942476375445)[0m
-Started GET "/" for 192.168.65.1 at 2024-09-18 02:16:17 +0000
-Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-  [1m[36mActiveRecord::SchemaMigration Pluck (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-You have 1 pending migration:
-
-20240912224934_create_events.rb
-
-
-):
-  
-activerecord (7.0.8.4) lib/active_record/migration.rb:662:in `check_pending!'
-activerecord (7.0.8.4) lib/active_record/migration.rb:627:in `block (2 levels) in call'
-activesupport (7.0.8.4) lib/active_support/file_update_checker.rb:83:in `execute'
-activerecord (7.0.8.4) lib/active_record/migration.rb:632:in `block in call'
-activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `synchronize'
-activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
-activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
-web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
-web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
-web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
-web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
-railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
-railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
-activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
-activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
-activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
-railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
-sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
-rack (2.2.9) lib/rack/method_override.rb:24:in `call'
-rack (2.2.9) lib/rack/runtime.rb:22:in `call'
-activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
-rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
-railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
-puma (5.6.8) lib/puma/configuration.rb:252:in `call'
-puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
-puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
-puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
-puma (5.6.8) lib/puma/server.rb:443:in `process_client'
-puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
-Started GET "/" for 192.168.65.1 at 2024-09-18 02:16:18 +0000
-Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-You have 1 pending migration:
-
-20240912224934_create_events.rb
-
-
-):
-  
-activerecord (7.0.8.4) lib/active_record/migration.rb:662:in `check_pending!'
-activerecord (7.0.8.4) lib/active_record/migration.rb:627:in `block (2 levels) in call'
-activesupport (7.0.8.4) lib/active_support/file_update_checker.rb:83:in `execute'
-activerecord (7.0.8.4) lib/active_record/migration.rb:632:in `block in call'
-activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `synchronize'
-activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
-activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
-web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
-web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
-web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
-web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
-railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
-railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
-activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
-activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
-activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
-railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
-sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
-rack (2.2.9) lib/rack/method_override.rb:24:in `call'
-rack (2.2.9) lib/rack/runtime.rb:22:in `call'
-activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
-rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
-actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
-railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
-puma (5.6.8) lib/puma/configuration.rb:252:in `call'
-puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
-puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
-puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
-puma (5.6.8) lib/puma/server.rb:443:in `process_client'
-puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3403887942476375445)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateEvents (20240912224934)
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3403887942476375445)[0m
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3403887942476375445)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3403887942476375445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Migrating to CreateEvents (20240912224934)
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "date" timestamp(6), "description" text, "location" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (8.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240912224934"]]
-  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (40.3ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "date" timestamp(6), "description" text, "location" text, "rsvp_link" text, "feedback_link" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240912224934"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEventImages (20240921031509)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "event_images" ("id" bigserial primary key, "event_id" bigint NOT NULL, "picture" bytea, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9dd6f2f888"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE INDEX "index_event_images_on_event_id" ON "event_images" ("event_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240921031509"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+<<<<<<< HEAD
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(3403887942476375445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+=======
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
   [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-18 02:17:21.789384"], ["updated_at", "2024-09-18 02:17:21.789384"]]
   [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
@@ -6353,3 +6232,4 @@ Completed 200 OK in 48ms (Views: 33.0ms | ActiveRecord: 1.0ms | Allocations: 718
 Completed 200 OK in 46ms (Views: 29.6ms | ActiveRecord: 0.2ms | Allocations: 11112)
 
 
+>>>>>>> b8e49e38e7df4acdc253d5f4878801287cbada50

@@ -1,0 +1,19 @@
+
+<%= render "header"%>
+
+<%= render "adminheader"%>
+
+<div style='margin-left: 5%'>
+
+<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+<p>Organization: <%= @contact.organization %></p>
+<p>Title: <%= @contact.title %></p>
+<p>Email: <%= @contact.email %></p>
+<p>Link: <%= @contact.link %></p>
+<p>Bio: <%= @contact.bio %></p>
+<br>
+<button><%= link_to 'Edit', edit_contact_path(@contact) %></button>
+<button><%= link_to("Delete", delete_contact_path(@contact)) %></button>
+<button><%= link_to 'Back', contacts_path %></button>
+
+</div>
