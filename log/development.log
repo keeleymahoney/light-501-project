@@ -6353,3 +6353,1566 @@ Completed 200 OK in 48ms (Views: 33.0ms | ActiveRecord: 1.0ms | Allocations: 718
 Completed 200 OK in 46ms (Views: 29.6ms | ActiveRecord: 0.2ms | Allocations: 11112)
 
 
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:18:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/events/3/rsvp_form" for 172.17.0.1 at 2024-09-23 14:18:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 8.7ms | Allocations: 492)
+  Rendered events/_header.html.erb (Duration: 626.5ms | Allocations: 59076)
+  Rendered events/_adminheader.html.erb (Duration: 5.8ms | Allocations: 387)
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 660.1ms | Allocations: 64962)
+  Rendered layout layouts/application.html.erb (Duration: 784.3ms | Allocations: 88552)
+  Rendered layout layouts/application.html.erb (Duration: 736.2ms | Allocations: 83944)
+Completed 200 OK in 903ms (Views: 803.9ms | ActiveRecord: 0.8ms | Allocations: 104515)
+
+
+Completed 200 OK in 899ms (Views: 741.3ms | ActiveRecord: 46.3ms | Allocations: 104267)
+
+
+Started GET "/events/3/rsvp_form" for 172.17.0.1 at 2024-09-23 14:18:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.2ms | Allocations: 78)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 5148)
+Completed 200 OK in 47ms (Views: 32.8ms | ActiveRecord: 0.3ms | Allocations: 6389)
+
+
+Started GET "/events/3/rsvp_form" for 172.17.0.1 at 2024-09-23 14:18:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 78)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 5145)
+Completed 200 OK in 40ms (Views: 27.5ms | ActiveRecord: 0.4ms | Allocations: 6368)
+
+
+Started GET "/events/3/create_form" for 172.17.0.1 at 2024-09-23 14:18:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create_form as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:114:in `create_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:116:in `create_form'
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.4ms | Allocations: 2618)
+
+
+  
+RuntimeError (Unable to read the credential file specified by GOOGLE_APPLICATION_CREDENTIALS: unexpected token at '{
+  "type": "service_account",
+  "project_id": Rails.application.credentials.service[:project_id],
+  "private_key_id": "bc3e7ee60a04c350864339a9232311f9305ecdef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCS88yvWNwxHOWK\n2MJ9zHSpZG7ZGDW/Bqz3CUZ1WKFExcycEneKm+pPiyeKAwEKRzKfLB0O1c5GDcR6\nD/0L52KG/jcI/ECEtzXSeWO/3l9Tw+ueLxs3Q4qx6cGArwdI4Sb1+vlZX4NtlEIS\nUHqAbdeAKdOv8Fp0jzzqXhBDXiNXGQX+iyCv/NbxyE2MUOX0tqw3AnTGxgz427u+\nrwlzBCCZwVXUH8O5AGYCtb5iSUidl4UQMHxqBiUz+virV47NM8+5J5c5M62AuKDh\nzsNkbyYOccbXSyL7NipOwyWQ8psxOsJSqhAGX+OpZfF0LVCe1pbAsyhs0p66RNd7\nrksCtdqRAgMBAAECgf81isVC0XDPWpf7K78X1sbEcU0LpgzvIDklFfWpPwG2hqf/\n6NQyMvZl+Dp2LpU41kTurRDPtvCeCNlT7Nj/qiH1mlCzFWjsi7rKIf1JWA+jlZIW\n47laCWHsMOwwCfwj5OUtLdefZXQD5cdGpP8wjAgllxfQb69SVZFiuaMM6KyeFUXG\nU2HcHtoI0445tE4VbXRJaXabegEKeTgzAwkviBrkdZ0SZpBlyH/eVwG0rzJ4FuF7\nDqFPxuH8EBHtNawjdr6XRExrCvMUOHMfEAd5DJbIDxTHqN2p+4nFoC5xtUO+R7B9\nI6vGW7k+PlWNtkV8eIl5qTvWMgCSqex5DWns6xkCgYEAx8cNC5fwJv6a0N6IXvTn\ne6bXqbVP6VDDA+Zn6ahp7FL/HYutPrSgTNEkNDphYB4xLy/6wtSr9ag7wH2THyWu\nAOJPji1xl2cpxu4SujtsBBGrQZZrkyIGg2uu6lIH3kTGoPwu3XfOJbpgj2SNk3f9\nMKtJuGnijKaz7MZkHb3DGbkCgYEAvE72nly5kE4VSyJmh/4kTfWabbMlAYHfDa/7\n05FUcux9ufJdsw/o/fLz7p5+/SQccCsreMKMxRfwMoNRB5JKOoz74ZDBsdz8NmXf\n/PycCqScoY2b/QR8bOU8kTvKHz6H8EuhQGDKsjJadVmINEVnXdxUfEyv4MLmfPZD\nsfYo05kCgYAvrPkYAzJ0m94manTw9FEp2S8ueO6RJ4ziqWGzCVX95/CqBGNby49V\nxbN2I1iJr6rdL/4P8OD4xyU7UryBemSEIX4K2B17nEsEBlzBxNyKPA06ocMaYcxc\nIJ6lnN3z1UXxtT0Z7TVtG4Vfswd2YfQyYS4+rEY8eqwFnXLXBipBQQKBgQCofb8N\nU8p15GgJIm67oBq75taW8YRbJOmARcb+Nzto2VJl3wcYAVRoZcr957OYrYcElpv/\nIZTzhcfWaslGDQ999EgsPGoTy7egtOcGZsD4hPHhW+QHMMxkY3keOnFQI5Ne300Z\nXYIAkC2Acuv8WV10DoFJ9xQn+Dxj87X+tlMxgQKBgFTdj37CvxcgeHDbnWemDlXn\nWTZD/+BQTj3xUSwVjDorevXJ7lgLyZDB4JDejXPA83P67oeAvvDexXnvg4okSAVc\nF/yTR2Ne1YJPCOSgRxcQiRS0oxDSb4dZDJoFYFLFnLBJbmzneEUNwSqJRNJcPO/s\n+sNteZpeRRKQeucHfxrJ\n-----END PRIVATE KEY-----\n",
+  "client_email": "formsaccount@forms-436219.iam.gserviceaccount.com",
+  "client_id": "116425556582385016542",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/formsaccount%40forms-436219.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
+'):
+  
+app/controllers/events_controller.rb:124:in `create_form'
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:30:56 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 51.6ms | Allocations: 1383)
+  Rendered events/_adminheader.html.erb (Duration: 4.7ms | Allocations: 194)
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 122.1ms | Allocations: 8741)
+  Rendered layout layouts/application.html.erb (Duration: 312.7ms | Allocations: 27442)
+Completed 200 OK in 369ms (Views: 307.9ms | ActiveRecord: 12.4ms | Allocations: 29913)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-23 14:31:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 37.4ms | Allocations: 1066)
+  [1m[36mEventImage Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "event_images" WHERE "event_images"."event_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/events/_form.html.erb:65
+  Rendered events/_form.html.erb (Duration: 187.4ms | Allocations: 15451)
+  Rendered events/new.html.erb within layouts/application (Duration: 236.6ms | Allocations: 16906)
+  Rendered layout layouts/application.html.erb (Duration: 271.7ms | Allocations: 21746)
+Completed 200 OK in 290ms (Views: 265.1ms | ActiveRecord: 8.3ms | Allocations: 22158)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-23 14:33:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Test Event 3", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"23", "date(4i)"=>"09", "date(5i)"=>"00", "location"=>"Test Location 3", "rsvp_link"=>"", "feedback_link"=>"", "description"=>"N/A", "images"=>[""]}, "commit"=>"Create Event"}
+[31mUnpermitted parameter: :images. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f6761b65060>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Test Event 3", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"23", "date(4i)"=>"09", "date(5i)"=>"00", "location"=>"Test Location 3", "rsvp_link"=>"", "feedback_link"=>"", "description"=>"N/A", "images"=>[""]}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:29:in `block in create'
+  [1m[36mEvent Create (6.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "description", "location", "rsvp_link", "feedback_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Test Event 3"], ["date", "2024-09-23 09:00:00"], ["description", "N/A"], ["location", "Test Location 3"], ["rsvp_link", ""], ["feedback_link", ""], ["created_at", "2024-09-23 14:33:36.644141"], ["updated_at", "2024-09-23 14:33:36.644141"]]
+  ↳ app/controllers/events_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 47ms (ActiveRecord: 10.6ms | Allocations: 4475)
+
+
+Started GET "/events/4" for 172.17.0.1 at 2024-09-23 14:33:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:211:in `set_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 37.8ms | Allocations: 1179)
+  [1m[36mEventImage Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "event_images" WHERE "event_images"."event_id" = $1 LIMIT $2[0m  [["event_id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/_event.html.erb:60
+  Rendered events/_event.html.erb (Duration: 8.9ms | Allocations: 1268)
+  Rendered events/show.html.erb within layouts/application (Duration: 65.8ms | Allocations: 3592)
+  Rendered layout layouts/application.html.erb (Duration: 98.3ms | Allocations: 8516)
+Completed 200 OK in 123ms (Views: 102.0ms | ActiveRecord: 1.8ms | Allocations: 10606)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:33:38 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 37.3ms | Allocations: 1083)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 44)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 45.9ms | Allocations: 2588)
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 7314)
+Completed 200 OK in 89ms (Views: 78.9ms | ActiveRecord: 0.4ms | Allocations: 7628)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:33:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 9.0ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 5383)
+Completed 200 OK in 65ms (Views: 44.6ms | ActiveRecord: 0.4ms | Allocations: 6666)
+
+
+Started GET "/events/4/create_form" for 172.17.0.1 at 2024-09-23 14:33:45 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:114:in `create_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:116:in `create_form'
+Sending HTTP post https://forms.googleapis.com/v1/forms?
+200
+#<HTTP::Message:0x00007f6750d59878 @http_body=#<HTTP::Message::Body:0x00007f6750d59698 @body="{\n" + "  \"formId\": \"19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScr1jdI0sIRBNSteeitG8IMC2ZizgEDm6etbcCKUkNEo_eBtA/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f6750d59850 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:33:46 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x9038 URI:https://forms.googleapis.com/v1/forms?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f6750d50610
+ @form_id="19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f6750922b10
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScr1jdI0sIRBNSteeitG8IMC2ZizgEDm6etbcCKUkNEo_eBtA/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f6750926f08>>
+
+Sending HTTP post https://www.googleapis.com/drive/v3/files/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM/permissions?
+200
+#<HTTP::Message:0x00007f675091a2d0 @http_body=#<HTTP::Message::Body:0x00007f675091a1b8 @body="{\n" + "  \"kind\": \"drive#permission\",\n" + "  \"id\": \"16459823115281961915\",\n" + "  \"type\": \"user\",\n" + "  \"role\": \"writer\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675091a2a8 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Vary", "Origin, X-Origin"], ["Pragma", "no-cache"], ["Date", "Mon, 23 Sep 2024 14:33:48 GMT"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Content-Type", "application/json; charset=UTF-8"], ["Content-Encoding", "gzip"], ["Server", "ESF"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x9060 URI:https://www.googleapis.com/drive/v3/files/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM/permissions?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::DriveV3::Permission:0x00007f67508e2880
+ @id="16459823115281961915",
+ @kind="drive#permission",
+ @role="writer",
+ @type="user">
+
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+  [1m[36mEvent Update (3.3ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", "19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM"], ["updated_at", "2024-09-23 14:33:48.821741"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 3726ms (ActiveRecord: 5.5ms | Allocations: 31705)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:33:48 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM/responses?
+200
+#<HTTP::Message:0x00007f675087dca0 @http_body=#<HTTP::Message::Body:0x00007f675087db88 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675087dc78 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:33:49 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x90ec URI:https://forms.googleapis.com/v1/forms/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007f6750871310>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM?
+200
+#<HTTP::Message:0x00007f675084a260 @http_body=#<HTTP::Message::Body:0x00007f675084a148 @body="{\n" + "  \"formId\": \"19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScr1jdI0sIRBNSteeitG8IMC2ZizgEDm6etbcCKUkNEo_eBtA/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675084a238 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:33:49 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x9100 URI:https://forms.googleapis.com/v1/forms/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f675083f1d0
+ @form_id="19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f675083e078
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScr1jdI0sIRBNSteeitG8IMC2ZizgEDm6etbcCKUkNEo_eBtA/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f67508432f8>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.6ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 5444)
+Completed 200 OK in 512ms (Views: 35.7ms | ActiveRecord: 0.3ms | Allocations: 18397)
+
+
+Started GET "/events/4/delete_form" for 172.17.0.1 at 2024-09-23 14:34:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:179:in `delete_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:181:in `delete_form'
+Sending HTTP delete https://www.googleapis.com/drive/v3/files/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM?
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:34:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM/edit
+Completed 302 Found in 27ms (ActiveRecord: 4.2ms | Allocations: 4117)
+
+
+204
+#<HTTP::Message:0x00007f67507aacb0 @http_body=#<HTTP::Message::Body:0x00007f67507aab98 @body="", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67507aac88 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Date", "Mon, 23 Sep 2024 14:34:00 GMT"], ["Vary", "Origin, X-Origin"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Content-Type", "text/html"], ["Server", "ESF"], ["Content-Length", "0"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"]], @http_version="1.1", @is_request=false, @reason_phrase="No Content", @request_absolute_uri=nil, @request_method="DELETE", @request_query=nil, @request_uri=#<Addressable::URI:0x9178 URI:https://www.googleapis.com/drive/v3/files/19Dvz9kzokBXZzDGy_XT_Va32Og4SMsVVV_7HNgOgYTM?>, @status_code=204>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - ""
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:194:in `delete_form'
+  [1m[36mEvent Update (0.9ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", ""], ["updated_at", "2024-09-23 14:34:00.997878"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:194:in `delete_form'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:194:in `delete_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 543ms (ActiveRecord: 3.0ms | Allocations: 15238)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:34:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.2ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 5328)
+Completed 200 OK in 46ms (Views: 32.3ms | ActiveRecord: 0.5ms | Allocations: 6618)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:34:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.2ms | Allocations: 1720)
+
+
+  
+ActionController::MissingExactTemplate (EventsController#edit_form is missing a template for request formats: text/html):
+  
+actionpack (7.0.8.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:34:05 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 0.3ms | Allocations: 1474)
+
+
+  
+ActionController::MissingExactTemplate (EventsController#edit_form is missing a template for request formats: text/html):
+  
+actionpack (7.0.8.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:34:06 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Completed 406 Not Acceptable in 15ms (ActiveRecord: 0.5ms | Allocations: 1474)
+
+
+  
+ActionController::MissingExactTemplate (EventsController#edit_form is missing a template for request formats: text/html):
+  
+actionpack (7.0.8.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/events/4/delete_form" for 172.17.0.1 at 2024-09-23 14:34:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:179:in `delete_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:181:in `delete_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.2ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 5243)
+Completed 200 OK in 41ms (Views: 27.7ms | ActiveRecord: 0.3ms | Allocations: 6435)
+
+
+Started GET "/events/4/create_form" for 172.17.0.1 at 2024-09-23 14:34:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:114:in `create_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:116:in `create_form'
+Sending HTTP post https://forms.googleapis.com/v1/forms?
+200
+#<HTTP::Message:0x00007f67505977e8 @http_body=#<HTTP::Message::Body:0x00007f67505976d0 @body="{\n" + "  \"formId\": \"1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67505977c0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:34:19 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x92e0 URI:https://forms.googleapis.com/v1/forms?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f6750588310
+ @form_id="1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f675058f110
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f675058c398>>
+
+Sending HTTP post https://www.googleapis.com/drive/v3/files/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/permissions?
+200
+#<HTTP::Message:0x00007f6750551770 @http_body=#<HTTP::Message::Body:0x00007f6750551658 @body="{\n" + "  \"kind\": \"drive#permission\",\n" + "  \"id\": \"16459823115281961915\",\n" + "  \"type\": \"user\",\n" + "  \"role\": \"writer\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f6750551748 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Date", "Mon, 23 Sep 2024 14:34:21 GMT"], ["Vary", "Origin, X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Content-Encoding", "gzip"], ["Server", "ESF"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x9308 URI:https://www.googleapis.com/drive/v3/files/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/permissions?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::DriveV3::Permission:0x00007f675054b488
+ @id="16459823115281961915",
+ @kind="drive#permission",
+ @role="writer",
+ @type="user">
+
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+  [1m[36mEvent Update (0.7ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", "1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c"], ["updated_at", "2024-09-23 14:34:21.675832"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 3695ms (ActiveRecord: 4.6ms | Allocations: 18802)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:34:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?
+200
+#<HTTP::Message:0x00007f67504e0480 @http_body=#<HTTP::Message::Body:0x00007f67504e0368 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67504e0458 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:34:21 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x9358 URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007f67504a01c8>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?
+200
+#<HTTP::Message:0x00007f67504a95e8 @http_body=#<HTTP::Message::Body:0x00007f67504a94d0 @body="{\n" + "  \"formId\": \"1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67504a95c0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:34:22 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x936c URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f6750467530
+ @form_id="1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f6750466130
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f675046af50>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 5491)
+Completed 200 OK in 486ms (Views: 36.8ms | ActiveRecord: 0.2ms | Allocations: 18635)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:34:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 48.3ms | Allocations: 1077)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 44)
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 58.1ms | Allocations: 2619)
+  Rendered layout layouts/application.html.erb (Duration: 93.7ms | Allocations: 7344)
+Completed 200 OK in 110ms (Views: 94.2ms | ActiveRecord: 1.1ms | Allocations: 7633)
+
+
+Started GET "/events/2/delete" for 172.17.0.1 at 2024-09-23 14:34:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:55:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 32.2ms | Allocations: 1066)
+  Rendered events/delete.html.erb within layouts/application (Duration: 38.4ms | Allocations: 2024)
+  Rendered layout layouts/application.html.erb (Duration: 66.1ms | Allocations: 6740)
+Completed 200 OK in 84ms (Views: 67.2ms | ActiveRecord: 0.3ms | Allocations: 7621)
+
+
+Started DELETE "/events/2" for 172.17.0.1 at 2024-09-23 14:34:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Delete Event", "id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:211:in `set_event'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+  [1m[36mEventImage Load (0.3ms)[0m  [1m[34mSELECT "event_images".* FROM "event_images" WHERE "event_images"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+  [1m[36mEvent Destroy (4.4ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+Redirected to http://localhost:3000/events
+Completed 302 Found in 141ms (ActiveRecord: 7.2ms | Allocations: 8240)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:34:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 31.2ms | Allocations: 1173)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 50)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 34.9ms | Allocations: 2572)
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | Allocations: 7322)
+Completed 200 OK in 71ms (Views: 58.5ms | ActiveRecord: 0.3ms | Allocations: 7648)
+
+
+Started GET "/events/3/delete" for 172.17.0.1 at 2024-09-23 14:34:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:55:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 29.7ms | Allocations: 1066)
+  Rendered events/delete.html.erb within layouts/application (Duration: 31.0ms | Allocations: 1756)
+  Rendered layout layouts/application.html.erb (Duration: 53.9ms | Allocations: 6472)
+Completed 200 OK in 66ms (Views: 55.0ms | ActiveRecord: 0.2ms | Allocations: 7259)
+
+
+Started DELETE "/events/3" for 172.17.0.1 at 2024-09-23 14:34:37 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Delete Event", "id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:211:in `set_event'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+  [1m[36mEventImage Load (0.3ms)[0m  [1m[34mSELECT "event_images".* FROM "event_images" WHERE "event_images"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+  [1m[36mEvent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:60:in `destroy'
+Redirected to http://localhost:3000/events
+Completed 302 Found in 20ms (ActiveRecord: 2.6ms | Allocations: 3355)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:34:37 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 34.2ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 44)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 37.4ms | Allocations: 2236)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 6960)
+Completed 200 OK in 71ms (Views: 60.1ms | ActiveRecord: 0.3ms | Allocations: 7242)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:34:51 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?
+200
+#<HTTP::Message:0x00007f675082e830 @http_body=#<HTTP::Message::Body:0x00007f675082e718 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675082e808 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:34:51 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x9484 URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007f67508211f8>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?
+200
+#<HTTP::Message:0x00007f675082a190 @http_body=#<HTTP::Message::Body:0x00007f675082a078 @body="{\n" + "  \"formId\": \"1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675082a168 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:34:51 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x9498 URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f67507f2a38
+ @form_id="1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f67507f1868
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f67507f5260>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.9ms | Allocations: 204)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 5454)
+Completed 200 OK in 520ms (Views: 38.7ms | ActiveRecord: 0.3ms | Allocations: 18305)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:34:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 31.9ms | Allocations: 1070)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 44)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 36.5ms | Allocations: 2288)
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 7013)
+Completed 200 OK in 69ms (Views: 58.3ms | ActiveRecord: 0.4ms | Allocations: 7302)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:34:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 34.2ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.4ms | Allocations: 44)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 40.4ms | Allocations: 2212)
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 6936)
+Completed 200 OK in 78ms (Views: 66.5ms | ActiveRecord: 0.3ms | Allocations: 7215)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:35:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/edit
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms | Allocations: 1043)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/edit
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms | Allocations: 1037)
+
+
+200
+#<HTTP::Message:0x00007f6750680a88 @http_body=#<HTTP::Message::Body:0x00007f67506808d0 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f6750680a38 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:10 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x954c URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007f67505e7c48>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?
+200
+#<HTTP::Message:0x00007f67505e8d00 @http_body=#<HTTP::Message::Body:0x00007f67505e8be8 @body="{\n" + "  \"formId\": \"1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67505e8cd8 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:11 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x9560 URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f67505b3128
+ @form_id="1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f67505b1fd0
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f67505b7250>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.6ms | Allocations: 204)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 5477)
+Completed 200 OK in 2327ms (Views: 36.3ms | ActiveRecord: 0.3ms | Allocations: 24377)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/edit
+Completed 302 Found in 16ms (ActiveRecord: 0.4ms | Allocations: 1112)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/edit
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1037)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:35:18 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 32.8ms | Allocations: 1070)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 44)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 37.3ms | Allocations: 2254)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 6978)
+Completed 200 OK in 74ms (Views: 62.6ms | ActiveRecord: 0.5ms | Allocations: 7259)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:35:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?
+200
+#<HTTP::Message:0x00007f6750479b68 @http_body=#<HTTP::Message::Body:0x00007f6750479a28 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f6750479b40 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:20 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x95d8 URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007f6750468548>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?
+200
+#<HTTP::Message:0x00007f675043c420 @http_body=#<HTTP::Message::Body:0x00007f675043c290 @body="{\n" + "  \"formId\": \"1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675043c3d0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:20 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x95ec URI:https://forms.googleapis.com/v1/forms/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f67628f3dd0
+ @form_id="1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f6762a6d620
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScCf7GdFUotdx-aHLkDh37fKeLUZgluFOGSkZ5F_WyOo3P0eQ/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f6761b499a0>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.4ms | Allocations: 204)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 5533)
+Completed 200 OK in 717ms (Views: 33.1ms | ActiveRecord: 0.2ms | Allocations: 18542)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/edit
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms | Allocations: 1112)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c/edit
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1037)
+
+
+Started GET "/events/4/delete_form" for 172.17.0.1 at 2024-09-23 14:35:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:179:in `delete_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:181:in `delete_form'
+Sending HTTP delete https://www.googleapis.com/drive/v3/files/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?
+204
+#<HTTP::Message:0x00007f67622fa460 @http_body=#<HTTP::Message::Body:0x00007f67622fa348 @body="", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67622fa438 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Date", "Mon, 23 Sep 2024 14:35:24 GMT"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Vary", "Origin, X-Origin"], ["Content-Type", "text/html"], ["Server", "ESF"], ["Content-Length", "0"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"]], @http_version="1.1", @is_request=false, @reason_phrase="No Content", @request_absolute_uri=nil, @request_method="DELETE", @request_query=nil, @request_uri=#<Addressable::URI:0x9650 URI:https://www.googleapis.com/drive/v3/files/1CuB8Pjyi2GAtedFCdwHCU7Wb6Crb_QFkpR8vOfg2X-c?>, @status_code=204>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - ""
+
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:194:in `delete_form'
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", ""], ["updated_at", "2024-09-23 14:35:24.882669"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:194:in `delete_form'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:194:in `delete_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 514ms (ActiveRecord: 2.9ms | Allocations: 8894)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:35:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.2ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 5332)
+Completed 200 OK in 45ms (Views: 32.3ms | ActiveRecord: 0.2ms | Allocations: 6622)
+
+
+Started GET "/events/4/create_form" for 172.17.0.1 at 2024-09-23 14:35:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:114:in `create_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:116:in `create_form'
+Sending HTTP post https://forms.googleapis.com/v1/forms?
+200
+#<HTTP::Message:0x00007f6752cc82b8 @http_body=#<HTTP::Message::Body:0x00007f6752cc81a0 @body="{\n" + "  \"formId\": \"1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f6752cc8290 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:28 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x96b4 URI:https://forms.googleapis.com/v1/forms?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f6752ca60c8
+ @form_id="1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f6752caadf8
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f675094ade0>>
+
+Sending HTTP post https://www.googleapis.com/drive/v3/files/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/permissions?
+200
+#<HTTP::Message:0x00007f6750943630 @http_body=#<HTTP::Message::Body:0x00007f6750943428 @body="{\n" + "  \"kind\": \"drive#permission\",\n" + "  \"id\": \"16459823115281961915\",\n" + "  \"type\": \"user\",\n" + "  \"role\": \"writer\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f67509435b8 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Pragma", "no-cache"], ["Vary", "Origin, X-Origin"], ["Date", "Mon, 23 Sep 2024 14:35:29 GMT"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Content-Type", "application/json; charset=UTF-8"], ["Content-Encoding", "gzip"], ["Server", "ESF"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x96dc URI:https://www.googleapis.com/drive/v3/files/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/permissions?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::DriveV3::Permission:0x00007f6750907a68
+ @id="16459823115281961915",
+ @kind="drive#permission",
+ @role="writer",
+ @type="user">
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", "1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE"], ["updated_at", "2024-09-23 14:35:29.928427"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:145:in `create_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 3633ms (ActiveRecord: 2.3ms | Allocations: 18677)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:35:29 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/responses?
+200
+#<HTTP::Message:0x00007f6750897a60 @http_body=#<HTTP::Message::Body:0x00007f6750897948 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f6750897a38 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:30 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x972c URI:https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007f6750884a78>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?
+200
+#<HTTP::Message:0x00007f675088e280 @http_body=#<HTTP::Message::Body:0x00007f675088e168 @body="{\n" + "  \"formId\": \"1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007f675088e258 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:35:30 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x9740 URI:https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007f6750850688
+ @form_id="1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007f67508572a8
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007f67508544b8>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.4ms | Allocations: 204)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 5433)
+Completed 200 OK in 489ms (Views: 32.5ms | ActiveRecord: 0.2ms | Allocations: 18121)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/edit
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 1112)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/edit
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 1037)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/edit
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1040)
+
+
+Started GET "/events/4/edit_form" for 172.17.0.1 at 2024-09-23 14:35:44 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#edit_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:160:in `edit_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:162:in `edit_form'
+Redirected to https://docs.google.com/forms/d/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/edit
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1037)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-23 14:51:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.3ms | Allocations: 529)
+Completed 200 OK in 75ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 4528)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:51:40 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1107.5ms | Allocations: 25330)
+  Rendered events/_adminheader.html.erb (Duration: 4.1ms | Allocations: 249)
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 1149.0ms | Allocations: 33659)
+  Rendered layout layouts/application.html.erb (Duration: 1364.5ms | Allocations: 52593)
+Completed 200 OK in 1421ms (Views: 1365.2ms | ActiveRecord: 6.8ms | Allocations: 55909)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:51:43 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/responses?
+200
+#<HTTP::Message:0x00007eff41550c70 @http_body=#<HTTP::Message::Body:0x00007eff41550590 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007eff41550c48 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:51:44 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x67d4 URI:https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007eff414e3be8>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?
+200
+#<HTTP::Message:0x00007eff414edc88 @http_body=#<HTTP::Message::Body:0x00007eff414ed990 @body="{\n" + "  \"formId\": \"1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000004\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007eff414edc60 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:51:44 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x67e8 URI:https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007eff400794a0
+ @form_id="1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007eff4007f0a8
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform",
+ @revision_id="00000004",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007eff40082370>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 36.1ms | Allocations: 5496)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 5594)
+Completed 500 Internal Server Error in 975ms (ActiveRecord: 0.6ms | Allocations: 33968)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `edit_form_event_path' for #<ActionView::Base:0x0000000000d020>
+
+		'.freeze;@output_buffer.append=( link_to_if(@form_exists, "Edit In Google Forms", edit_form_event_path) );@output_buffer.safe_append='<br/>
+		                                                                                  ^^^^^^^^^^^^^^^^^^^^
+Did you mean?  edit_event_path):
+    12: 	<section><%= @form_title %></section>
+    13: 	<section>
+    14: 		<%= link_to_if(@form_exists, "Submission Form", @form_submission_link) %><br/>
+    15: 		<%= link_to_if(@form_exists, "Edit In Google Forms", edit_form_event_path) %><br/>
+    16: 		<%= link_to_if(@form_exists, "Delete Form", @form_edit_link) %>		
+    17: 	</section>
+    18: <% end %>
+  
+app/views/events/rsvp_form.html.erb:15
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:52:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/responses?
+200
+#<HTTP::Message:0x00007efef326a4c8 @http_body=#<HTTP::Message::Body:0x00007efef326a3b0 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef326a4a0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:52:12 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x68ec URI:https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007efef325e808>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?
+200
+#<HTTP::Message:0x00007efef32601d0 @http_body=#<HTTP::Message::Body:0x00007efef32600b8 @body="{\n" + "  \"formId\": \"1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000004\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef32601a8 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:52:12 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x6900 URI:https://forms.googleapis.com/v1/forms/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007efef3224a90
+ @form_id="1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007efef322b890
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLScKAEIwgmDwjZBOuf8B3A84w7q0S1nlxldVTzKWFliYD2dx0g/viewform",
+ @revision_id="00000004",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007efef3228b18>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 31.6ms | Allocations: 466)
+  Rendered layout layouts/application.html.erb (Duration: 70.6ms | Allocations: 6051)
+Completed 200 OK in 579ms (Views: 78.0ms | ActiveRecord: 0.6ms | Allocations: 19562)
+
+
+Started GET "/events/4/delete_form" for 172.17.0.1 at 2024-09-23 14:52:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:165:in `delete_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:167:in `delete_form'
+Sending HTTP delete https://www.googleapis.com/drive/v3/files/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?
+204
+#<HTTP::Message:0x00007efef3197dc0 @http_body=#<HTTP::Message::Body:0x00007efef3197ca8 @body="", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef3197d98 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Date", "Mon, 23 Sep 2024 14:52:15 GMT"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Vary", "Origin, X-Origin"], ["Pragma", "no-cache"], ["Content-Type", "text/html"], ["Server", "ESF"], ["Content-Length", "0"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"]], @http_version="1.1", @is_request=false, @reason_phrase="No Content", @request_absolute_uri=nil, @request_method="DELETE", @request_query=nil, @request_uri=#<Addressable::URI:0x6978 URI:https://www.googleapis.com/drive/v3/files/1DoW1uwJ3uNRV4KINkoP6u0W5hE4Z8ebtyPaN1L-EZpE?>, @status_code=204>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - ""
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+  [1m[36mEvent Update (1.4ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", ""], ["updated_at", "2024-09-23 14:52:15.561944"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 740ms (ActiveRecord: 4.5ms | Allocations: 10405)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:52:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.2ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 5323)
+Completed 200 OK in 45ms (Views: 31.6ms | ActiveRecord: 0.4ms | Allocations: 6614)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 14:52:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 34.8ms | Allocations: 1238)
+  Rendered events/_adminheader.html.erb (Duration: 4.3ms | Allocations: 154)
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 54.7ms | Allocations: 3016)
+  Rendered layout layouts/application.html.erb (Duration: 78.9ms | Allocations: 7740)
+Completed 200 OK in 95ms (Views: 79.2ms | ActiveRecord: 0.9ms | Allocations: 8118)
+
+
+Started GET "/events/4/create_form" for 172.17.0.1 at 2024-09-23 14:52:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:115:in `create_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:117:in `create_form'
+Sending HTTP post https://forms.googleapis.com/v1/forms?
+200
+#<HTTP::Message:0x00007efef3066a50 @http_body=#<HTTP::Message::Body:0x00007efef3066938 @body="{\n" + "  \"formId\": \"1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLSdbZE4cUM4bPa0-jQhYRrWQA7KgMfScyj-X3LceCTm263Dffw/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef3066a28 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:52:22 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x6b6c URI:https://forms.googleapis.com/v1/forms?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007efef3029920
+ @form_id="1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007efef30287c8
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLSdbZE4cUM4bPa0-jQhYRrWQA7KgMfScyj-X3LceCTm263Dffw/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007efef302da20>>
+
+Sending HTTP post https://www.googleapis.com/drive/v3/files/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA/permissions?
+200
+#<HTTP::Message:0x00007efef3021388 @http_body=#<HTTP::Message::Body:0x00007efef3021270 @body="{\n" + "  \"kind\": \"drive#permission\",\n" + "  \"id\": \"16459823115281961915\",\n" + "  \"type\": \"user\",\n" + "  \"role\": \"writer\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef3021360 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Vary", "Origin, X-Origin"], ["Pragma", "no-cache"], ["Date", "Mon, 23 Sep 2024 14:52:24 GMT"], ["Content-Type", "application/json; charset=UTF-8"], ["Content-Encoding", "gzip"], ["Server", "ESF"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0x6b94 URI:https://www.googleapis.com/drive/v3/files/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA/permissions?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::DriveV3::Permission:0x00007efef2fe4618
+ @id="16459823115281961915",
+ @kind="drive#permission",
+ @role="writer",
+ @type="user">
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:146:in `create_form'
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", "1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA"], ["updated_at", "2024-09-23 14:52:24.404577"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:146:in `create_form'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:146:in `create_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 4303ms (ActiveRecord: 3.2ms | Allocations: 19271)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:52:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA/responses?
+200
+#<HTTP::Message:0x00007efef2fac588 @http_body=#<HTTP::Message::Body:0x00007efef2fac470 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef2fac560 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:52:24 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x6be4 URI:https://forms.googleapis.com/v1/forms/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007efef2f778b0>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA?
+200
+#<HTTP::Message:0x00007efef2f79228 @http_body=#<HTTP::Message::Body:0x00007efef2f79110 @body="{\n" + "  \"formId\": \"1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLSdbZE4cUM4bPa0-jQhYRrWQA7KgMfScyj-X3LceCTm263Dffw/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef2f79200 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:52:24 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0x6bf8 URI:https://forms.googleapis.com/v1/forms/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007eff44580508
+ @form_id="1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007eff44596948
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLSdbZE4cUM4bPa0-jQhYRrWQA7KgMfScyj-X3LceCTm263Dffw/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007eff445b51e0>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.8ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 5513)
+Completed 200 OK in 510ms (Views: 35.1ms | ActiveRecord: 0.4ms | Allocations: 18566)
+
+
+Started GET "/events/4/delete_form" for 172.17.0.1 at 2024-09-23 14:52:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:165:in `delete_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:167:in `delete_form'
+Sending HTTP delete https://www.googleapis.com/drive/v3/files/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA?
+204
+#<HTTP::Message:0x00007eff42b34bb8 @http_body=#<HTTP::Message::Body:0x00007eff42b34960 @body="", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007eff42b34b90 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Date", "Mon, 23 Sep 2024 14:52:34 GMT"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Pragma", "no-cache"], ["Vary", "Origin, X-Origin"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Content-Type", "text/html"], ["Server", "ESF"], ["Content-Length", "0"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"]], @http_version="1.1", @is_request=false, @reason_phrase="No Content", @request_absolute_uri=nil, @request_method="DELETE", @request_query=nil, @request_uri=#<Addressable::URI:0x6c34 URI:https://www.googleapis.com/drive/v3/files/1i-MzNa-dneI3cFa-oVYKS0qjk_F4VOZNbw_Ic36nRfA?>, @status_code=204>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - ""
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+  [1m[36mEvent Update (1.2ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", ""], ["updated_at", "2024-09-23 14:52:34.342217"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 505ms (ActiveRecord: 3.4ms | Allocations: 9097)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:52:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 5310)
+Completed 200 OK in 48ms (Views: 36.4ms | ActiveRecord: 0.2ms | Allocations: 6600)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:53:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.7ms | Allocations: 153)
+  Rendered layout layouts/application.html.erb (Duration: 171.0ms | Allocations: 19073)
+Completed 200 OK in 215ms (Views: 172.9ms | ActiveRecord: 3.1ms | Allocations: 25247)
+
+
+Started GET "/events/4/create_form" for 172.17.0.1 at 2024-09-23 14:53:02 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/events/4/create_form"):
+  
+Started GET "/events/4/create_form" for 172.17.0.1 at 2024-09-23 14:54:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#create_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:115:in `create_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:117:in `create_form'
+Sending HTTP post https://forms.googleapis.com/v1/forms?
+200
+#<HTTP::Message:0x00007efef2ff96f8 @http_body=#<HTTP::Message::Body:0x00007efef2ff95e0 @body="{\n" + "  \"formId\": \"1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLSeuhDoq9Jn1QTbD1tsOgudQbmKpq7Ele63wr8rOj_F_x4ue2g/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef2ff96d0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:54:34 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0xb3ec URI:https://forms.googleapis.com/v1/forms?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007efef2fcb898
+ @form_id="1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007efef2fca678
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLSeuhDoq9Jn1QTbD1tsOgudQbmKpq7Ele63wr8rOj_F_x4ue2g/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007efef2f9e8e8>>
+
+Sending HTTP post https://www.googleapis.com/drive/v3/files/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8/permissions?
+200
+#<HTTP::Message:0x00007efef2f97ae8 @http_body=#<HTTP::Message::Body:0x00007efef2f979d0 @body="{\n" + "  \"kind\": \"drive#permission\",\n" + "  \"id\": \"16459823115281961915\",\n" + "  \"type\": \"user\",\n" + "  \"role\": \"writer\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007efef2f97ac0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Vary", "Origin, X-Origin"], ["Date", "Mon, 23 Sep 2024 14:54:35 GMT"], ["Pragma", "no-cache"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Content-Type", "application/json; charset=UTF-8"], ["Content-Encoding", "gzip"], ["Server", "ESF"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="POST", @request_query=nil, @request_uri=#<Addressable::URI:0xb414 URI:https://www.googleapis.com/drive/v3/files/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8/permissions?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::DriveV3::Permission:0x00007efef2f699e0
+ @id="16459823115281961915",
+ @kind="drive#permission",
+ @role="writer",
+ @type="user">
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:146:in `create_form'
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", "1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8"], ["updated_at", "2024-09-23 14:54:35.932714"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:146:in `create_form'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:146:in `create_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 4153ms (ActiveRecord: 6.3ms | Allocations: 24047)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:54:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+Sending HTTP get https://forms.googleapis.com/v1/forms/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8/responses?
+200
+#<HTTP::Message:0x00007eff42ca5970 @http_body=#<HTTP::Message::Body:0x00007eff42ca55b0 @body="{}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007eff42ca5830 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:54:36 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0xb464 URI:https://forms.googleapis.com/v1/forms/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8/responses?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::ListFormResponsesResponse:0x00007eff42b64818>
+
+Sending HTTP get https://forms.googleapis.com/v1/forms/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8?
+200
+#<HTTP::Message:0x00007eff42b80e78 @http_body=#<HTTP::Message::Body:0x00007eff42b80b80 @body="{\n" + "  \"formId\": \"1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8\",\n" + "  \"info\": {\n" + "    \"title\": \"New Form\",\n" + "    \"documentTitle\": \"Untitled form\"\n" + "  },\n" + "  \"settings\": {},\n" + "  \"revisionId\": \"00000002\",\n" + "  \"responderUri\": \"https://docs.google.com/forms/d/e/1FAIpQLSeuhDoq9Jn1QTbD1tsOgudQbmKpq7Ele63wr8rOj_F_x4ue2g/viewform\"\n" + "}\n", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007eff42b80e50 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Content-Type", "application/json; charset=UTF-8"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Vary", "Referer"], ["Content-Encoding", "gzip"], ["Date", "Mon, 23 Sep 2024 14:54:36 GMT"], ["Server", "ESF"], ["Cache-Control", "private"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"], ["Transfer-Encoding", "chunked"]], @http_version="1.1", @is_request=false, @reason_phrase="OK", @request_absolute_uri=nil, @request_method="GET", @request_query=nil, @request_uri=#<Addressable::URI:0xb478 URI:https://forms.googleapis.com/v1/forms/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8?>, @status_code=200>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - #<Google::Apis::FormsV1::Form:0x00007eff44c31438
+ @form_id="1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8",
+ @info=
+  #<Google::Apis::FormsV1::Info:0x00007eff44c37608
+   @document_title="Untitled form",
+   @title="New Form">,
+ @responder_uri=
+  "https://docs.google.com/forms/d/e/1FAIpQLSeuhDoq9Jn1QTbD1tsOgudQbmKpq7Ele63wr8rOj_F_x4ue2g/viewform",
+ @revision_id="00000002",
+ @settings=#<Google::Apis::FormsV1::FormSettings:0x00007eff44c3a560>>
+
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 206)
+  Rendered layout layouts/application.html.erb (Duration: 138.0ms | Allocations: 19245)
+Completed 200 OK in 572ms (Views: 139.7ms | ActiveRecord: 0.4ms | Allocations: 32348)
+
+
+Started GET "/events/4/delete_form" for 172.17.0.1 at 2024-09-23 14:54:37 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#delete_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:165:in `delete_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:167:in `delete_form'
+Sending HTTP delete https://www.googleapis.com/drive/v3/files/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8?
+204
+#<HTTP::Message:0x00007eff414f32c8 @http_body=#<HTTP::Message::Body:0x00007eff414f3138 @body="", @chunk_size=nil, @positions=nil, @size=0>, @http_header=#<HTTP::Message::Headers:0x00007eff414f32a0 @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @body_size=0, @body_type=nil, @chunked=false, @dumped=false, @header_item=[["Vary", "Origin, X-Origin"], ["Pragma", "no-cache"], ["Date", "Mon, 23 Sep 2024 14:54:38 GMT"], ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"], ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"], ["Content-Type", "text/html"], ["Server", "ESF"], ["Content-Length", "0"], ["X-XSS-Protection", "0"], ["X-Frame-Options", "SAMEORIGIN"], ["X-Content-Type-Options", "nosniff"], ["Alt-Svc", "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"]], @http_version="1.1", @is_request=false, @reason_phrase="No Content", @request_absolute_uri=nil, @request_method="DELETE", @request_query=nil, @request_uri=#<Addressable::URI:0xb4c8 URI:https://www.googleapis.com/drive/v3/files/1AjcMn_qbtpCuRejnQFYE_DKN_7Ymf-H7VhmL0w24AE8?>, @status_code=204>, @peer_cert=#<OpenSSL::X509::Certificate subject=#<OpenSSL::X509::Name CN=upload.video.google.com>, issuer=#<OpenSSL::X509::Name CN=WR2,O=Google Trust Services,C=US>, serial=#<OpenSSL::BN 101410429478080331861296263243239416508>, not_before=2024-08-26 07:12:45 UTC, not_after=2024-11-18 07:12:44 UTC>, @previous=nil>
+Success - ""
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "rsvp_link" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["rsvp_link", ""], ["updated_at", "2024-09-23 14:54:38.391105"], ["id", 4]]
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:180:in `delete_form'
+Redirected to http://localhost:3000/events/4/rsvp_form
+Completed 302 Found in 628ms (ActiveRecord: 3.5ms | Allocations: 9076)
+
+
+Started GET "/events/4/rsvp_form" for 172.17.0.1 at 2024-09-23 14:54:38 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#rsvp_form as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:72:in `rsvp_form'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:74:in `rsvp_form'
+  Rendering layout layouts/application.html.erb
+  Rendering events/rsvp_form.html.erb within layouts/application
+  Rendered events/rsvp_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 5313)
+Completed 200 OK in 53ms (Views: 38.1ms | ActiveRecord: 0.3ms | Allocations: 6603)
+
+
