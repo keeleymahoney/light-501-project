@@ -22,9 +22,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_084927) do
     t.string "title"
     t.string "link"
     t.text "bio"
-ActiveRecord::Schema[7.0].define(version: 2024_09_21_182419) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "event_images", force: :cascade do |t|
     t.bigint "event_id", null: false

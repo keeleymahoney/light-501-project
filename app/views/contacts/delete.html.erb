@@ -1,5 +1,10 @@
 
-<div>
+
+<%= render "header"%>
+
+<%= render "adminheader"%>
+
+<div style='margin-left: 5%'>
     <h2>Delete Contact From Network</h2>
     <%= link_to("Back to Home", contacts_path)%>
     <%= form_for(@contact, method: 'delete') do |f| %>

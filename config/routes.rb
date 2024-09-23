@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root "contacts#index"
+  root "events#index"
 end
