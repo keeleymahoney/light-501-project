@@ -65,6 +65,121 @@ class EventsController < ApplicationController
     end
   end
 
+  def rsvp_form
+    require 'google/apis/forms_v1'
+
+    @event = Event.find(params[:id])
+
+    rsvp_form_id = Event.find(params[:id]).rsvp_link
+
+    # Check that there is an rsvp form to show
+    if defined?(rsvp_form_id) && !rsvp_form_id.blank?
+      @form_exists = true
+
+      forms = Google::Apis::FormsV1::FormsService.new
+
+      scopes = ['https://www.googleapis.com/auth/forms.responses.readonly', 'https://www.googleapis.com/auth/forms.body.readonly']
+      forms.authorization = Google::Auth.get_application_default(scopes)
+
+      rsvp_form_responses = forms.list_form_responses(formId=rsvp_form_id)
+      rsvp_form = forms.get_form(formId=rsvp_form_id)
+
+      @form_title = rsvp_form.info.title
+      @form_submission_link = rsvp_form.responder_uri
+      @form_edit_link = 'https://docs.google.com/forms/d/' + rsvp_form_id + '/edit'
+
+      @num_responses = 0
+
+      if !rsvp_form_responses.responses.blank?
+        for r in rsvp_form_responses.responses do
+          @num_responses = @num_responses + 1
+        end
+      end
+
+    else
+      @form_exists = false
+      @num_responses = 0
+    end
+
+  end  
+
+  def create_form
+    require 'google/apis/forms_v1'
+    require 'google/apis/drive_v3'
+
+    @event = Event.find(params[:id])
+
+    rsvp_form_id = Event.find(params[:id]).rsvp_link
+
+    # Check that no form exists already
+    if !defined?(rsvp_form_id) || rsvp_form_id.blank?
+      forms = Google::Apis::FormsV1::FormsService.new
+      drive = Google::Apis::DriveV3::DriveService.new
+
+      form_scopes = ['https://www.googleapis.com/auth/forms.body']
+      forms.authorization = Google::Auth.get_application_default(form_scopes)
+
+      drive_scopes = ['https://www.googleapis.com/auth/drive.file']
+      drive.authorization = Google::Auth.get_application_default(drive_scopes)   
+      
+      @new_form = forms.create_form(
+        {
+          "info": {
+            "title": "New Form"
+          }
+        }      
+      )    
+
+      @form_permissions = drive.create_permission(fileId=@new_form.form_id,{
+        'email_address': 'test4light2day@gmail.com',
+        'type': 'user',
+        'role': 'writer'
+      }) # TODO: replace hard-coded email
+
+      if @event.update(rsvp_link: @new_form.form_id)
+        # flash[:notice] = 'Form successfully created!'
+        redirect_to rsvp_form_event_path(@event)
+      else
+        render('rsvp_form')
+      end
+    else 
+      # flash notice that a form already exists and re-render show_rsvp page # TODO: add later
+      render('rsvp_form')
+
+    end
+    
+  end
+
+  def delete_form
+    require 'google/apis/drive_v3'
+
+    @event = Event.find(params[:id])
+
+    rsvp_form_id = Event.find(params[:id]).rsvp_link
+
+    # Check that a form exists already
+    if defined?(rsvp_form_id) && !rsvp_form_id.blank? # TODO: add later
+      drive = Google::Apis::DriveV3::DriveService.new
+
+      drive_scopes = ['https://www.googleapis.com/auth/drive.file']
+      drive.authorization = Google::Auth.get_application_default(drive_scopes)   
+      
+      drive.delete_file(fileId=rsvp_form_id)
+
+      if @event.update(rsvp_link: '')
+        # flash[:notice] = 'Form successfully created!'
+        redirect_to rsvp_form_event_path(@event)
+      else
+        render('rsvp_form')
+      end
+    else 
+      # flash notice that a form already exists and re-render show_rsvp page # TODO: add later
+      render('rsvp_form')
+
+    end
+    
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -85,4 +200,8 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:id, :name, :date, :description, :location, :rsvp_link, :feedback_link)
     end
+
+    # def rsvp_form_id
+    #   Event.find(params[:id]).rsvp_link
+    # end    
 end

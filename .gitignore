@@ -2,3 +2,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+service_key.json
+
+/config/master.key
