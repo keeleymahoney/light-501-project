@@ -1,0 +1,48 @@
+<%= render "header"%>
+
+<%= render "adminheader"%>
+
+<br/>
+<h2 class="text-center">All Events</h2>
+<p class="ml-2" style="color: green"><%= notice %></p>
+<br/>
+
+<div id="events-table">
+  <table style="width: 90%; margin-left: auto; margin-right: auto;">
+
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>RSVP Link </th>
+      <th>Feedback Link </th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>.CSV Data</th>
+      <th>Delete</th>
+    </tr>
+    <% @events.each do |event| %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
+      <td><%= event.description %></td>
+      <td><%= event.location %></td>
+      <td><%= event.rsvp_link%></td>
+      <td><%= event.feedback_link %></td>
+      <td><%= link_to("View", event_path(event)) %></td>
+      <td><%= link_to("Edit", edit_event_path(event)) %></td>
+      <td>CSV</td>
+      <td><%= link_to("Delete", delete_event_path(event)) %> </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
+<div class="create">
+  <button><%= link_to "Create new event", new_event_path %></button>
+</div>
+
+
+
