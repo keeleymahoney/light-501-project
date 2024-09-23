@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  root "events#index"
+
+  # Devise routes for the Member model with Google OAuth callbacks
+  devise_for :members, controllers: {
+    omniauth_callbacks: 'members/omniauth_callbacks'
+  }
+
+  devise_scope :member do
+    get 'members/sign_in', to: 'devise/sessions#new', as: :new_member_session
+    get 'members/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
+  end
+
   resources :events do
     resources :event_images, only: [:create, :destroy]
     member do
@@ -9,14 +21,10 @@ Rails.application.routes.draw do
     end
   end
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   resources :contacts do
-     member do
+    member do
       get :delete
     end
   end
-
-  root "events#index"
 end
+
