@@ -9,20 +9,7 @@ Rails.application.routes.draw do
       get :delete_form
     end
   end
-
-  # put 'events/create_form'
-  # get 'events/edit_form'
-  # get 'events/respond_rsvp'
-  # get 'forms/show_rsvp'
-
-  # resources :forms do
-  #   member do
-  #     get 'show_rsvp'
-  #     put 'create_form'
-  #     get 'edit_form'
-
-  #   end
-  # end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
