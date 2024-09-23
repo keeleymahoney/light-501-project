@@ -3,13 +3,17 @@ Rails.application.routes.draw do
     resources :event_images, only: [:create, :destroy]
     member do
       get :delete
+      get :rsvp_form
+      get :create_form
+      get :edit_form
+      get :delete_form
     end
   end
 
-  get 'forms/create_form'
-  get 'forms/edit_form'
-  get 'forms/respond_rsvp'
-  get 'forms/show_rsvp'
+  # put 'events/create_form'
+  # get 'events/edit_form'
+  # get 'events/respond_rsvp'
+  # get 'forms/show_rsvp'
 
   # resources :forms do
   #   member do
