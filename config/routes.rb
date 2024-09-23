@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :events do
-    resources :event_images, only: [:create, :destroy]
+    resources :event_images, only: %i[create destroy]
     member do
       get :delete
       get :rsvp_form
@@ -13,10 +15,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :contacts do
-     member do
+    member do
       get :delete
     end
   end
 
-  root "events#index"
+  root 'events#index'
 end

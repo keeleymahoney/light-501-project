@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Creating a new event', type: :feature do
   scenario 'valid inputs' do
     visit new_event_path
-    fill_in "event[name]", with: 'spec event'
-    fill_in "event[location]", with: 'spec location'
-    fill_in "event[description]", with: 'spec description'
+    fill_in 'event[name]', with: 'spec event'
+    fill_in 'event[location]', with: 'spec location'
+    fill_in 'event[description]', with: 'spec description'
 
     # Select a date and time
     select '2024', from: 'event_date_1i'
