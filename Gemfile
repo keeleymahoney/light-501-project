@@ -81,5 +81,6 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'brakeman'
 gem 'google-apis-drive_v3', '~> 0.5.0'
 gem 'google-apis-forms_v1', '~> 0.3.0'

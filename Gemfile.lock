@@ -79,6 +79,8 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    brakeman (6.2.1)
+      racc
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -336,6 +338,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 4.3.1)
+  brakeman
   capybara
   debug
   google-apis-drive_v3 (~> 0.5.0)
