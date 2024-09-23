@@ -1,9 +1,9 @@
-<h1><%= @contact.last_name %>, <%= @contact.first_name %></h1>
+<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
 <p>Organization: <%= @contact.organization %></p>
 <p>Title: <%= @contact.title %></p>
 <p>Email: <%= @contact.email %></p>
 <p>Link: <%= @contact.link %></p>
 <p>Bio: <%= @contact.bio %></p>
 <%= link_to 'Edit', edit_contact_path(@contact) %>
-<%= link_to 'Delete', @contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to("Delete", delete_contact_path(@contact)) %>
 <%= link_to 'Back', contacts_path %>

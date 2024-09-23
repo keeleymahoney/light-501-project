@@ -36,11 +36,13 @@ class ContactsController < ApplicationController
 
   def destroy
     @contact = Contact.find(params[:id])
-    if @contact.destroy
-      redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
-    else
+    @contact.destroy
+    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    
+  end
 
-    end
+  def delete
+    @contact = Contact.find(params[:id])
   end
 
   private
