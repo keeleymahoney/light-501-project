@@ -95,6 +95,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     declarative (0.0.20)
+    dotenv (3.1.4)
     erubi (1.13.0)
     execjs (2.9.1)
     faraday (2.12.0)
@@ -292,6 +293,7 @@ DEPENDENCIES
   bootstrap (~> 4.3.1)
   capybara
   debug
+  dotenv
   google-apis-drive_v3 (~> 0.5.0)
   google-apis-forms_v1 (~> 0.3.0)
   importmap-rails

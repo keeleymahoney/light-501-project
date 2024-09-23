@@ -74,4 +74,5 @@ group :test do
 end
 
 gem 'google-apis-forms_v1', '~> 0.3.0'
-gem 'google-apis-drive_v3', '~> 0.5.0' 
+gem 'google-apis-drive_v3', '~> 0.5.0'
+gem 'dotenv', groups: [:development, :test]
