@@ -5,7 +5,6 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-  root 'forms#show_rsvp'
 
   get 'forms/create_form'
   get 'forms/edit_form'

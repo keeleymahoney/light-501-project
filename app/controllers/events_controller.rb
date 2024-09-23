@@ -65,6 +65,34 @@ class EventsController < ApplicationController
     end
   end
 
+  def show_rsvp
+    # if rsvp_form_id is not null # TODO: add once Event entity available
+      @form_exists = true
+
+      forms = Google::Apis::FormsV1::FormsService.new
+
+      scopes = ['https://www.googleapis.com/auth/forms.responses.readonly', 'https://www.googleapis.com/auth/forms.body.readonly']
+      forms.authorization = Google::Auth.get_application_default(scopes)
+
+      rsvp_form_responses = forms.list_form_responses(formId=rsvp_form_id)
+      rsvp_form = forms.get_form(formId=rsvp_form_id)
+
+      @form_title = rsvp_form.info.title
+      @form_submission_link = rsvp_form.responder_uri
+
+      @num_responses = 0
+
+      for r in rsvp_form_responses.responses do
+        @num_responses = @num_responses + 1
+      end
+
+    # else # TODO: add once Event entity available
+      # @form_exists = false
+      # @num_responses = 0 # TODO: add once Event entity available
+    # end # TODO: add once Event entity available
+
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -85,4 +113,8 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:id, :name, :date, :description, :location, :rsvp_link, :feedback_link)
     end
+
+    def rsvp_form_id
+      Event.find(params[:id]).rsvp_link
+    end    
 end
