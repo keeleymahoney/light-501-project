@@ -1,402 +1,62 @@
 {
   "RSpec": {
     "coverage": {
-      "/csce431/light-501-Project/spec/feature/integration_spec.rb": {
+      "/light-501-project/app/models/member.rb": {
         "lines": [
           1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
           1,
           null,
           1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          2,
           null,
           null
         ]
       },
-      "/csce431/light-501-Project/spec/rails_helper.rb": {
+      "/light-501-project/app/models/application_record.rb": {
         "lines": [
           null,
-          1,
-          1,
-          1,
           null,
           1,
-          null,
-          null,
-          null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
           null
         ]
       },
-      "/csce431/light-501-Project/config/environment.rb": {
+      "/light-501-project/app/helpers/application_helper.rb": {
         "lines": [
-          null,
-          1,
-          null,
-          null,
-          1
-        ]
-      },
-      "/csce431/light-501-Project/config/application.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/boot.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1
-        ]
-      },
-      "/csce431/light-501-Project/config/environments/test.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/initializers/assets.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/initializers/content_security_policy.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/initializers/inflections.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/initializers/permissions_policy.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/config/routes.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
           null,
           null,
           1,
           null
         ]
       },
-      "/csce431/light-501-Project/app/helpers/application_helper.rb": {
+      "/light-501-project/app/helpers/contacts_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/csce431/light-501-Project/app/helpers/contacts_helper.rb": {
+      "/light-501-project/app/helpers/events_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/csce431/light-501-Project/app/helpers/events_helper.rb": {
+      "/light-501-project/app/helpers/images_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/csce431/light-501-Project/app/helpers/images_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/spec/unit/unit_spec.rb": {
+      "/light-501-project/app/models/event.rb": {
         "lines": [
           null,
-          1,
           null,
-          1,
-          1,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/app/models/event.rb": {
-        "lines": [
           1,
           1,
           1,
@@ -406,21 +66,16 @@
           null
         ]
       },
-      "/csce431/light-501-Project/app/models/application_record.rb": {
+      "/light-501-project/app/controllers/events_controller.rb": {
         "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/light-501-Project/app/controllers/events_controller.rb": {
-        "lines": [
+          null,
+          null,
           1,
           1,
           null,
           null,
           1,
-          1,
+          3,
           null,
           null,
           null,
@@ -519,7 +174,6 @@
           null,
           null,
           null,
-          null,
           1,
           0,
           0,
@@ -566,7 +220,6 @@
           null,
           null,
           null,
-          null,
           1,
           0,
           null,
@@ -596,48 +249,270 @@
           null,
           null,
           null,
-          null,
-          1,
-          null,
-          1,
           1,
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/light-501-project/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/light-501-project/app/models/event_image.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/light-501-project/app/controllers/members/omniauth_callbacks_controller.rb": {
+        "lines": [
           1,
           1,
           2,
           null,
+          2,
+          2,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
           1,
           null,
           null,
           null,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
           1,
           1,
           null,
           null,
+          1,
           null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          8,
           null,
           null,
           null
         ]
       },
-      "/csce431/light-501-Project/app/controllers/application_controller.rb": {
+      "/light-501-project/app/channels/application_cable/channel.rb": {
         "lines": [
-          1,
-          null
-        ]
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
-      "/csce431/light-501-Project/app/models/event_image.rb": {
+      "/light-501-project/app/channels/application_cable/connection.rb": {
         "lines": [
-          1,
-          1,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/light-501-project/app/controllers/contacts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/light-501-project/app/controllers/event_images_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/light-501-project/app/controllers/members/sessions_controller.rb": {
+        "lines": [
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
           null
-        ]
+        ],
+        "branches": {
+        }
+      },
+      "/light-501-project/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/light-501-project/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/light-501-project/app/models/contact.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1727121718
+    "timestamp": 1727151430
   }
 }
