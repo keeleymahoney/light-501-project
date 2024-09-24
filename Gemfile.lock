@@ -83,8 +83,6 @@ GEM
       sassc-rails (>= 2.0.0)
     brakeman (6.2.1)
       racc
-    brakeman (6.2.1)
-      racc
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -391,7 +389,6 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 4.3.1)
   brakeman
-  brakeman
   capybara
   debug
   devise
@@ -406,12 +403,10 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
-  rspec-rails
   rexml
   rspec-rails
   rubocop
   selenium-webdriver
-  simplecov
   simplecov
   sprockets-rails
   stimulus-rails

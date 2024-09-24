@@ -25,7 +25,6 @@ Rails.application.routes.draw do
 
   resources :contacts do
     member do
-    member do
       get :delete
     end
   end
