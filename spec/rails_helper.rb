@@ -43,8 +43,7 @@ RSpec.configure do |config|
     uid: '123545',
     info: {
       email: 'testuser@tamu.edu',
-      full_name: 'Test User',
-      avatar_url: 'http://example.com/avatar.jpg'
+      name: 'Test User'
     },
     credentials: {
       token: 'mock_token',
@@ -52,6 +51,7 @@ RSpec.configure do |config|
       expires_at: Time.now + 1.week
     }
   })
+
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = Rails.root.join('spec/fixtures')
