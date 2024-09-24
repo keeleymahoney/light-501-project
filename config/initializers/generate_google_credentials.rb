@@ -10,7 +10,7 @@ private_key = ENV['GOOGLE_PRIVATE_KEY'].gsub('\\n', "\n")
 credentials = {
   type: 'service_account',
   project_id: ENV['GOOGLE_PROJECT_ID'],
-  private_key_id: ENV['GOOGLE_PRIVATE_KEY_ID'],
+  private_key_id: ENV['GOOGLE_PRIVATE_KEY_ID'].gsub('\\n', "\n"),
   private_key: private_key,
   client_email: ENV['GOOGLE_CLIENT_EMAIL'],
   client_id: ENV['GOOGLE_CLIENT_ID'],
