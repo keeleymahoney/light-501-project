@@ -37,6 +37,10 @@ jobs:
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install
+      - name: Set up environment variables
+        run: echo "GOOGLE_OAUTH_CLIENT_ID=${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}" >> $GITHUB_ENV
+      - name: Set up environment variables
+        run: echo "GOOGLE_OAUTH_CLIENT_SECRET=${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}" >> $GITHUB_ENV
       - name: Run tests
         run: bundler exec rspec .
       - name: Run brakeman
@@ -61,4 +65,3 @@ jobs:
         with:
           name: brakeman-report.txt
           path: brakeman.txt
-
