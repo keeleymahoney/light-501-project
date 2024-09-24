@@ -27,6 +27,10 @@ jobs:
           POSTGRES_USER: ${{ env.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
     steps:
+      - name: Fix GOOGLE_PRIVATE_KEY format
+        run: |
+          echo "$GOOGLE_PRIVATE_KEY" | sed 's/\\n/\n/g' > fixed_google_private_key.pem
+          export GOOGLE_PRIVATE_KEY=$(cat fixed_google_private_key.pem)    
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
