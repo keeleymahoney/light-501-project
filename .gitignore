@@ -3,6 +3,6 @@
 !/log/.keep
 !/tmp/.keep
 
-service_key.json
-
+.env
+google_credentials.json
 /config/master.key
