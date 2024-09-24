@@ -44,9 +44,13 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
+
+gem "rexml"
+
 gem 'bootsnap', require: false
 
 gem 'bootstrap', '~> 4.3.1'
+
 
 gem 'rexml'
 
@@ -98,6 +102,12 @@ group :test do
   gem 'webdrivers'
 end
 
+
+group :development, :test do 
+  gem 'rspec-rails'
+end
 gem 'brakeman'
-gem 'google-apis-drive_v3', '~> 0.5.0'
 gem 'google-apis-forms_v1', '~> 0.3.0'
+gem 'google-apis-drive_v3', '~> 0.5.0'
+gem 'dotenv', groups: [:development, :test]
+

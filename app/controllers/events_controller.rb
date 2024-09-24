@@ -112,7 +112,7 @@ class EventsController < ApplicationController
 
     rsvp_form_id = Event.find(params[:id]).rsvp_link
 
-    # Check that no form exists already
+    # Create a form if no form exists already. Else, re-render current page
     if !defined?(rsvp_form_id) || rsvp_form_id.blank?
       forms = Google::Apis::FormsV1::FormsService.new
       drive = Google::Apis::DriveV3::DriveService.new
@@ -137,14 +137,18 @@ class EventsController < ApplicationController
                                                     role: 'writer'
                                                   }) # TODO: replace hard-coded email
 
+
+      # Check that event entity is updated successfully
       if @event.update(rsvp_link: @new_form.form_id)
-        # flash[:notice] = 'Form successfully created!'
+        # flash[:notice] = 'Form successfully created!' # TODO: add later
         redirect_to rsvp_form_event_path(@event)
       else
         render('rsvp_form')
       end
+
     else
       # flash notice that a form already exists and re-render show_rsvp page # TODO: add later
+
       render('rsvp_form')
 
     end
@@ -157,8 +161,8 @@ class EventsController < ApplicationController
 
     rsvp_form_id = Event.find(params[:id]).rsvp_link
 
-    # Check that a form exists already
-    if defined?(rsvp_form_id) && !rsvp_form_id.blank? # TODO: add later
+    # Delete a form if a form exists already. Else, re-render current page
+    if defined?(rsvp_form_id) && !rsvp_form_id.blank?
       drive = Google::Apis::DriveV3::DriveService.new
 
       drive_scopes = ['https://www.googleapis.com/auth/drive.file']
@@ -166,14 +170,17 @@ class EventsController < ApplicationController
 
       drive.delete_file(rsvp_form_id)
 
+      # Check that event entity is updated successfully
       if @event.update(rsvp_link: '')
-        # flash[:notice] = 'Form successfully created!'
+        # flash[:notice] = 'Form successfully created!' # TODO: add later
         redirect_to rsvp_form_event_path(@event)
       else
         render('rsvp_form')
       end
-    else
-      # flash notice that a form already exists and re-render show_rsvp page # TODO: add later
+
+    else 
+      # show a flash notice that a form already exists and re-render show_rsvp page # TODO: add later
+
       render('rsvp_form')
 
     end
