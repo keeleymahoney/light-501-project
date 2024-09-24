@@ -6,3 +6,4 @@
 service_key.json
 
 /config/master.key
+.env
