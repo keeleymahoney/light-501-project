@@ -131,11 +131,11 @@ class EventsController < ApplicationController
         }
       )
 
-      @form_permissions = drive.create_permission(@new_form.form_id, {
-                                                    email_address: 'test4light2day@gmail.com',
-                                                    type: 'user',
-                                                    role: 'writer'
-                                                  }) # TODO: replace hard-coded email
+      # @form_permissions = drive.create_permission(@new_form.form_id, {
+      #                                               email_address: 'test4light2day@gmail.com',
+      #                                               type: 'user',
+      #                                               role: 'writer'
+      #                                             }) # TODO: replace hard-coded email
 
 
       # Check that event entity is updated successfully
