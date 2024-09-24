@@ -8366,3 +8366,193 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 133ms (Views: 115.4ms | ActiveRecord: 0.2ms | Allocations: 8385)
 
 
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:34:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1640.1ms | Allocations: 25140)
+  Rendered events/_adminheader.html.erb (Duration: 6.4ms | Allocations: 292)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 1679.0ms | Allocations: 28084)
+  Rendered layout layouts/application.html.erb (Duration: 1765.9ms | Allocations: 34388)
+Completed 200 OK in 1938ms (Views: 1792.5ms | ActiveRecord: 0.5ms | Allocations: 40771)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 01:34:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=4fc2bf07b1b2d3215db63d78bbe79d714ece1c5272d21ccc&code=4%2F0AQlEd8y74K1Ndbj9fJs_yVGb4e7OJFFl5egH9e7_sDVwLrSentYkYD6K8gSkq-imp3K-LA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 01:34:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"4fc2bf07b1b2d3215db63d78bbe79d714ece1c5272d21ccc", "code"=>"4/0AQlEd8y74K1Ndbj9fJs_yVGb4e7OJFFl5egH9e7_sDVwLrSentYkYD6K8gSkq-imp3K-LA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 3.7ms | Allocations: 7932)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:34:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 59.7ms | Allocations: 1183)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 76)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:9
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 66.8ms | Allocations: 3352)
+  Rendered layout layouts/application.html.erb (Duration: 127.1ms | Allocations: 9321)
+Completed 200 OK in 144ms (Views: 127.5ms | ActiveRecord: 0.6ms | Allocations: 9656)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 01:34:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 25ms (ActiveRecord: 0.4ms | Allocations: 2303)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:34:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 56.2ms | Allocations: 1175)
+  Rendered events/_adminheader.html.erb (Duration: 0.3ms | Allocations: 76)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 60.3ms | Allocations: 2432)
+  Rendered layout layouts/application.html.erb (Duration: 116.7ms | Allocations: 8283)
+Completed 200 OK in 133ms (Views: 117.8ms | ActiveRecord: 0.3ms | Allocations: 8604)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 01:34:13 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=6f0595c66b75c8a314607d2237efa7bb49a26edb5e14694e&code=4%2F0AQlEd8yL9elYqObiV6pvQxvhRQ-6h1b2T5qegUWQ3J41MjKTypK8e8pwpakXc8V_fkWZrQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=2&prompt=consent" for 172.17.0.1 at 2024-09-24 01:34:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"6f0595c66b75c8a314607d2237efa7bb49a26edb5e14694e", "code"=>"4/0AQlEd8yL9elYqObiV6pvQxvhRQ-6h1b2T5qegUWQ3J41MjKTypK8e8pwpakXc8V_fkWZrQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"2", "prompt"=>"consent"}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhigolfer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Create (9.6ms)[0m  [1m[32mINSERT INTO "members" ("email", "full_name", "uid", "avatar_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "abhigolfer@gmail.com"], ["full_name", "Abhi D"], ["uid", "111072328934511431802"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocIrEHBl6u391plsbhruUqtHrvvXZu-VzIP0VGU5suXHjJ7mSL4"], ["created_at", "2024-09-24 01:34:18.106541"], ["updated_at", "2024-09-24 01:34:18.106541"]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 14.5ms | Allocations: 4136)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:34:18 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 56.6ms | Allocations: 1068)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 60.9ms | Allocations: 2288)
+  Rendered layout layouts/application.html.erb (Duration: 123.9ms | Allocations: 8215)
+Completed 200 OK in 150ms (Views: 124.9ms | ActiveRecord: 0.3ms | Allocations: 8495)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-24 02:19:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1824.9ms | Allocations: 25206)
+  Rendered events/_adminheader.html.erb (Duration: 7.9ms | Allocations: 292)
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 1864.5ms | Allocations: 28164)
+  Rendered layout layouts/application.html.erb (Duration: 1971.5ms | Allocations: 34468)
+Completed 200 OK in 2168ms (Views: 1998.6ms | ActiveRecord: 1.3ms | Allocations: 40798)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 02:19:23 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=91279e396c835ed77ea1c9fa0af62f8b2a97a0a176f5a3da&code=4%2F0AQlEd8wFXnl1i8kawouqT6O_jIeqDA1yrVeveLRlV6ei3hOhdg0LItTw5oHraokFUz28BQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 02:19:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"91279e396c835ed77ea1c9fa0af62f8b2a97a0a176f5a3da", "code"=>"4/0AQlEd8wFXnl1i8kawouqT6O_jIeqDA1yrVeveLRlV6ei3hOhdg0LItTw5oHraokFUz28BQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms (ActiveRecord: 6.2ms | Allocations: 7938)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 02:19:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 59.9ms | Allocations: 1183)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 76)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:9
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 67.6ms | Allocations: 3355)
+  Rendered layout layouts/application.html.erb (Duration: 132.3ms | Allocations: 9321)
+Completed 200 OK in 155ms (Views: 133.4ms | ActiveRecord: 0.8ms | Allocations: 9656)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 02:19:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 22ms (ActiveRecord: 0.3ms | Allocations: 2253)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 02:19:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 56.8ms | Allocations: 1179)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 76)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 60.8ms | Allocations: 2442)
+  Rendered layout layouts/application.html.erb (Duration: 120.8ms | Allocations: 8376)
+Completed 200 OK in 141ms (Views: 122.3ms | ActiveRecord: 0.2ms | Allocations: 8696)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 02:19:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=2aacf8c752aee329a4a5d3f6f87c3963e018c822493344a3&code=4%2F0AQlEd8yNekfd9j6n0BE57ZLeyiuuOTxq6vQ7QocTA4q5V0cBVhwtG6LkpKaFtPgsC4LP5g&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=2&prompt=consent" for 172.17.0.1 at 2024-09-24 02:19:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"2aacf8c752aee329a4a5d3f6f87c3963e018c822493344a3", "code"=>"4/0AQlEd8yNekfd9j6n0BE57ZLeyiuuOTxq6vQ7QocTA4q5V0cBVhwtG6LkpKaFtPgsC4LP5g", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"2", "prompt"=>"consent"}
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhigolfer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms | Allocations: 859)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 02:19:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 68.0ms | Allocations: 1068)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 72.7ms | Allocations: 2306)
+  Rendered layout layouts/application.html.erb (Duration: 135.2ms | Allocations: 8146)
+Completed 200 OK in 158ms (Views: 136.5ms | ActiveRecord: 0.4ms | Allocations: 8427)
+
+
