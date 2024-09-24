@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    ast (2.4.2)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -80,6 +81,8 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    brakeman (6.2.1)
+      racc
     brakeman (6.2.1)
       racc
     builder (3.3.0)
@@ -161,6 +164,7 @@ GEM
     json (2.7.2)
     jwt (2.9.0)
       base64
+    language_server-protocol (3.17.0.3)
     logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -218,6 +222,10 @@ GEM
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
     os (1.1.4)
+    parallel (1.26.3)
+    parser (3.3.5.0)
+      ast (~> 2.4.1)
+      racc
     pg (1.5.8)
     popper_js (1.16.1)
     psych (5.1.2)
@@ -260,6 +268,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
+    rainbow (3.1.1)
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
@@ -292,6 +301,19 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
+    rubocop (1.66.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.4, < 3.0)
+      rubocop-ast (>= 1.32.2, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.32.3)
+      parser (>= 3.3.1.0)
+    ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -340,6 +362,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
+    unicode-display_width (2.6.0)
     uri (0.13.1)
     version_gem (1.1.4)
     warden (1.2.9)
@@ -368,6 +391,7 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 4.3.1)
   brakeman
+  brakeman
   capybara
   debug
   devise
@@ -383,7 +407,11 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3)
   rspec-rails
+  rexml
+  rspec-rails
+  rubocop
   selenium-webdriver
+  simplecov
   simplecov
   sprockets-rails
   stimulus-rails

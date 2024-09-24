@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root "events#index"
 
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :events do
-    resources :event_images, only: [:create, :destroy]
+    resources :event_images, only: %i[create destroy]
     member do
       get :delete
       get :rsvp_form
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :contacts do
+    member do
     member do
       get :delete
     end
