@@ -6498,3 +6498,1871 @@ Processing by Members::OmniauthCallbacksController#passthru as HTML
 Completed 404 Not Found in 17ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 197)
 
 
+Started GET "/" for 172.17.0.1 at 2024-09-23 23:23:48 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 3717.1ms | Allocations: 25129)
+  Rendered events/_adminheader.html.erb (Duration: 17.5ms | Allocations: 292)
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:35
+  Rendered events/index.html.erb within layouts/application (Duration: 3857.5ms | Allocations: 27767)
+  Rendered layout layouts/application.html.erb (Duration: 4510.4ms | Allocations: 46680)
+Completed 200 OK in 5102ms (Views: 4585.0ms | ActiveRecord: 0.8ms | Allocations: 53065)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-23 23:23:56 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 61.4ms | Allocations: 1072)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:35
+  Rendered events/index.html.erb within layouts/application (Duration: 65.7ms | Allocations: 2116)
+  Rendered layout layouts/application.html.erb (Duration: 107.3ms | Allocations: 6884)
+Completed 200 OK in 131ms (Views: 108.9ms | ActiveRecord: 0.4ms | Allocations: 7212)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:23:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 404 Not Found in 38ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 754)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:23:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 404 Not Found in 20ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 404 Not Found in 22ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 200)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 33ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 23ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 200)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:05 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 22ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 21ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 23ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:13 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 33ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:24:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 22ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/members/auth/google_oauth2/callback" for 172.17.0.1 at 2024-09-23 23:33:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#failure as HTML
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms | Allocations: 4178)
+
+
+Processing by Members::OmniauthCallbacksController#failure as HTML
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms | Allocations: 3888)
+
+
+  
+NoMethodError (undefined method `new_session_path' for #<Members::OmniauthCallbacksController:0x0000000000e768>
+
+    new_session_path(scope)
+    ^^^^^^^^^^^^^^^^
+Did you mean?  new_member_session_path):
+  
+devise (4.9.4) app/controllers/devise/omniauth_callbacks_controller.rb:30:in `after_omniauth_failure_path_for'
+devise (4.9.4) app/controllers/devise/omniauth_callbacks_controller.rb:12:in `failure'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:235:in `block in action'
+devise (4.9.4) lib/devise/omniauth.rb:19:in `block in <main>'
+omniauth (2.1.2) lib/omniauth/strategy.rb:545:in `fail!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:199:in `rescue in call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:191:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:35:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 24ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:36:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 26ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:36:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 23ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:36:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 26ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-23 23:44:22 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 2530.5ms | Allocations: 25188)
+  Rendered events/_adminheader.html.erb (Duration: 7.1ms | Allocations: 292)
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:35
+  Rendered events/index.html.erb within layouts/application (Duration: 2594.9ms | Allocations: 27829)
+  Rendered layout layouts/application.html.erb (Duration: 3046.5ms | Allocations: 46742)
+Completed 200 OK in 3332ms (Views: 3100.4ms | ActiveRecord: 1.4ms | Allocations: 53126)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:44:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 10)
+Completed 404 Not Found in 42ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 754)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:44:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 22ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 224)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:44:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 404 Not Found in 22ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 200)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:44:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 404 Not Found in 33ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 201)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:45:22 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 4)
+Completed 404 Not Found in 27ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:45:23 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 27ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-23 23:55:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 2123.8ms | Allocations: 25128)
+  Rendered events/_adminheader.html.erb (Duration: 7.7ms | Allocations: 292)
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 2238.9ms | Allocations: 27929)
+  Rendered layout layouts/application.html.erb (Duration: 2701.7ms | Allocations: 46832)
+Completed 200 OK in 2961ms (Views: 2736.9ms | ActiveRecord: 0.6ms | Allocations: 53215)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:05 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:11 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:13 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:23 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 172.17.0.1 at 2024-09-23 23:55:37 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 79.6ms | Allocations: 1187)
+  Rendered events/_adminheader.html.erb (Duration: 0.2ms | Allocations: 79)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 84.9ms | Allocations: 2489)
+  Rendered layout layouts/application.html.erb (Duration: 136.2ms | Allocations: 7285)
+Completed 200 OK in 159ms (Views: 137.3ms | ActiveRecord: 0.5ms | Allocations: 7633)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 9)
+Completed 404 Not Found in 29ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 751)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 22ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 224)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-23 23:55:42 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 172.17.0.1 at 2024-09-23 23:56:52 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 85.7ms | Allocations: 1964)
+  Rendered layout layouts/application.html.erb (Duration: 87.2ms | Allocations: 2076)
+Completed 500 Internal Server Error in 293ms (ActiveRecord: 0.0ms | Allocations: 8411)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= render "header"%>
+
+<%= render "adminheader"%>
+
+<br/>
+<h2 class="text-center">All Events</h2>
+<p class="ml-2" style="color: green"><%= notice %></p>
+<br/>
+
+<nav>
+  <ul>
+  <li>
+    <%= button_to member_google_oauth2_omniauth_authorize_path, class: "btn btn-danger", method: :post, data: {turbo: "false"} do %>
+  </li>
+
+  </ul>
+</nav>
+
+<div id="events-table">
+  <table style="width: 90%; margin-left: auto; margin-right: auto;">
+
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>RSVP Link </th>
+      <th>Feedback Link </th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>.CSV Data</th>
+      <th>Delete</th>
+    </tr>
+    <% @events.each do |event| %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
+      <td><%= event.description %></td>
+      <td><%= event.location %></td>
+      <td><%= link_to("RSVP Form", rsvp_form_event_path(event)) %></td>
+      <td><%= event.feedback_link %></td>
+      <td><%= link_to("View", event_path(event)) %></td>
+      <td><%= link_to("Edit", edit_event_path(event)) %></td>
+      <td>CSV</td>
+      <td><%= link_to("Delete", delete_event_path(event)) %> </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
+<div class="create">
+  <button><%= link_to "Create new event", new_event_path %></button>
+</div>
+
+
+
+
+):
+1:    <%= render "header"%>
+2:    
+3:    <%= render "adminheader"%>
+4:    
+5:    <br/>
+6:    <h2 class="text-center">All Events</h2>
+7:    <p class="ml-2" style="color: green"><%= notice %></p>
+8:    <br/>
+9:    
+10:    <nav>
+11:      <ul>
+12:      <li>
+13:        <%= button_to member_google_oauth2_omniauth_authorize_path, class: "btn btn-danger", method: :post, data: {turbo: "false"} do %>
+14:      </li>
+15:    
+16:      </ul>
+17:    </nav>
+18:    
+19:    <div id="events-table">
+20:      <table style="width: 90%; margin-left: auto; margin-right: auto;">
+21:    
+22:        <tr>
+23:          <th>Name</th>
+24:          <th>Date</th>
+25:          <th>Description</th>
+26:          <th>Location</th>
+27:          <th>RSVP Link </th>
+28:          <th>Feedback Link </th>
+29:          <th>View</th>
+30:          <th>Edit</th>
+31:          <th>.CSV Data</th>
+32:          <th>Delete</th>
+33:        </tr>
+34:        <% @events.each do |event| %>
+35:        <tr>
+36:          <td><%= event.name %></td>
+37:          <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
+38:          <td><%= event.description %></td>
+39:          <td><%= event.location %></td>
+40:          <td><%= link_to("RSVP Form", rsvp_form_event_path(event)) %></td>
+41:          <td><%= event.feedback_link %></td>
+42:          <td><%= link_to("View", event_path(event)) %></td>
+43:          <td><%= link_to("Edit", edit_event_path(event)) %></td>
+44:          <td>CSV</td>
+45:          <td><%= link_to("Delete", delete_event_path(event)) %> </td>
+46:        </tr>
+47:        <% end %>
+48:      </table>
+49:    </div>
+50:    <br/>
+51:    <br/>
+52:    <div class="create">
+53:      <button><%= link_to "Create new event", new_event_path %></button>
+54:    </div>
+55:    
+56:    
+57:    
+  
+app/views/events/index.html.erb:60: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:60: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:60: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:60: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 172.17.0.1 at 2024-09-23 23:59:25 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 2245.3ms | Allocations: 25137)
+  Rendered events/_adminheader.html.erb (Duration: 7.5ms | Allocations: 292)
+  Rendered events/index.html.erb within layouts/application (Duration: 2389.8ms | Allocations: 32138)
+  Rendered layout layouts/application.html.erb (Duration: 2391.4ms | Allocations: 32247)
+Completed 500 Internal Server Error in 2711ms (ActiveRecord: 0.0ms | Allocations: 38581)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_google_oauth2_omniauth_authorize_path' for #<ActionView::Base:0x0000000000e3a8>
+
+  '.freeze;@output_buffer.append=  button_to admin_google_oauth2_omniauth_authorize_path, class: "btn btn-danger", method: :post, data: {turbo: "false"} do @output_buffer.safe_append='
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^):
+    10: <nav>
+    11:   <ul>
+    12:   <li>
+    13:   <%= button_to admin_google_oauth2_omniauth_authorize_path, class: "btn btn-danger", method: :post, data: {turbo: "false"} do %>
+    14:     <i class="fab fa-google mobile-text"></i><span class = "mobile-font">&nbsp;Google</span>
+    15:   <% end %>  
+    16:   </li>
+  
+app/views/events/index.html.erb:13
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:00:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 2462.4ms | Allocations: 25110)
+  Rendered events/_adminheader.html.erb (Duration: 7.1ms | Allocations: 292)
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 2585.0ms | Allocations: 27994)
+  Rendered layout layouts/application.html.erb (Duration: 2983.4ms | Allocations: 46899)
+Completed 200 OK in 3269ms (Views: 3025.0ms | ActiveRecord: 0.8ms | Allocations: 53282)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:40 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 404 Not Found in 27ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 754)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:43 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 404 Not Found in 31ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 227)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:44 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 404 Not Found in 28ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 200)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:45 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.2ms | Allocations: 4)
+Completed 404 Not Found in 25ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:49 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 28ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:00:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=325018b788086c16b85bcc8624fc4a4f849d020a29dc746a&code=4%2F0AQlEd8y7CEXTG5vB_lzOv7XZsbZQHAUMILCJzpgvdewiAR2hBCrLV5XHDNmGDHGNU3JuLA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 00:01:23 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"325018b788086c16b85bcc8624fc4a4f849d020a29dc746a", "code"=>"4/0AQlEd8y7CEXTG5vB_lzOv7XZsbZQHAUMILCJzpgvdewiAR2hBCrLV5XHDNmGDHGNU3JuLA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 557)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0; required keywords: email, full_name, uid, avatar_url)):
+  
+app/models/member.rb:4:in `from_google'
+app/controllers/members/omniauth_callbacks_controller.rb:4:in `google_oauth2'
+Started GET "/members/auth/google_oauth2/callback?state=325018b788086c16b85bcc8624fc4a4f849d020a29dc746a&code=4%2F0AQlEd8zcYF56spIgA1BFbt0h-8zVBwhWIoi0to3lJLgfn8oOym6zp8eUrc35JbOAXHJ-GQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 00:05:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"325018b788086c16b85bcc8624fc4a4f849d020a29dc746a", "code"=>"4/0AQlEd8zcYF56spIgA1BFbt0h-8zVBwhWIoi0to3lJLgfn8oOym6zp8eUrc35JbOAXHJ-GQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 541)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0; required keywords: email, full_name, uid, avatar_url)):
+  
+app/models/member.rb:4:in `from_google'
+app/controllers/members/omniauth_callbacks_controller.rb:4:in `google_oauth2'
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:09:05 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1682.3ms | Allocations: 25152)
+  Rendered events/_adminheader.html.erb (Duration: 6.4ms | Allocations: 292)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 1717.4ms | Allocations: 28012)
+  Rendered layout layouts/application.html.erb (Duration: 2012.4ms | Allocations: 46907)
+Completed 200 OK in 2185ms (Views: 2040.1ms | ActiveRecord: 0.5ms | Allocations: 53290)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:09:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=5355f74969b8fe79a0813fa548be9628d4c799165b87ff47&code=4%2F0AQlEd8wkQOhF_PxE6VnWu97pEsWTVb87dG-FaxVHFi3ts0RD7_Ef5bIe9tL0XP-XteoB6A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:09:09 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"5355f74969b8fe79a0813fa548be9628d4c799165b87ff47", "code"=>"4/0AQlEd8wkQOhF_PxE6VnWu97pEsWTVb87dG-FaxVHFi3ts0RD7_Ef5bIe9tL0XP-XteoB6A", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 656)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0; required keywords: email, full_name, uid, avatar_url)):
+  
+app/models/member.rb:4:in `from_google'
+app/controllers/members/omniauth_callbacks_controller.rb:3:in `google_oauth2'
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:09:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=1a6d961b6cb1d4dca05fe17bcdfbdbc908eeda3fd16f7b29&code=4%2F0AQlEd8xX5_I0ImodzvvR-JtFvr3KM052XNFmcJFoQGbMdzUboUEUkFOpvhZigpD7LcjtGw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:09:16 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"1a6d961b6cb1d4dca05fe17bcdfbdbc908eeda3fd16f7b29", "code"=>"4/0AQlEd8xX5_I0ImodzvvR-JtFvr3KM052XNFmcJFoQGbMdzUboUEUkFOpvhZigpD7LcjtGw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 563)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0; required keywords: email, full_name, uid, avatar_url)):
+  
+app/models/member.rb:4:in `from_google'
+app/controllers/members/omniauth_callbacks_controller.rb:3:in `google_oauth2'
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:16:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1642.0ms | Allocations: 25147)
+  Rendered events/_adminheader.html.erb (Duration: 5.9ms | Allocations: 292)
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 1679.9ms | Allocations: 27980)
+  Rendered layout layouts/application.html.erb (Duration: 2004.9ms | Allocations: 46885)
+Completed 200 OK in 2177ms (Views: 2029.8ms | ActiveRecord: 0.8ms | Allocations: 53268)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:16:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=7f840131d52c38a11ca5d17cd1952d78bbb59ca9359831af&code=4%2F0AQlEd8xOxg8es7V6kDZgD7CI6se7UKOq4AUyU5hez9xGK3BQ1i2Yw1TcH0-NqfYoJm7C9g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:16:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"7f840131d52c38a11ca5d17cd1952d78bbb59ca9359831af", "code"=>"4/0AQlEd8xOxg8es7V6kDZgD7CI6se7UKOq4AUyU5hez9xGK3BQ1i2Yw1TcH0-NqfYoJm7C9g", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (3.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Create (5.4ms)[0m  [1m[32mINSERT INTO "members" ("email", "full_name", "uid", "avatar_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "abhidev979@tamu.edu"], ["full_name", "Abhinav Devireddy"], ["uid", "109485921978923444154"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocLxrLBcJdlkcNG0Z4XE4rw0HraEcL0CY0dGISlOMKay3FhAAw"], ["created_at", "2024-09-24 00:16:20.623119"], ["updated_at", "2024-09-24 00:16:20.623119"]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 23.9ms | Allocations: 11199)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:16:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 61.2ms | Allocations: 1177)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 76)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 65.1ms | Allocations: 2498)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 8279)
+Completed 200 OK in 122ms (Views: 103.9ms | ActiveRecord: 0.6ms | Allocations: 8610)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:16:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=7c89a4ced07ec936e8557d7c05de8f5a09c8edd646b5c948&code=4%2F0AQlEd8wZHH1XZ0ODAHO1XncJ7lvEL6OU6cF-MGhv5Roc6_PfRaHFKvnehFk_iALqoRjxLw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:16:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"7c89a4ced07ec936e8557d7c05de8f5a09c8edd646b5c948", "code"=>"4/0AQlEd8wZHH1XZ0ODAHO1XncJ7lvEL6OU6cF-MGhv5Roc6_PfRaHFKvnehFk_iALqoRjxLw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members/omniauth_callbacks_controller.rb:6:in `google_oauth2'
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 0.9ms | Allocations: 1641)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:16:25 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 51.8ms | Allocations: 1068)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 56.6ms | Allocations: 2274)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 100.3ms | Allocations: 7817)
+Completed 200 OK in 120ms (Views: 101.3ms | ActiveRecord: 0.7ms | Allocations: 8098)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:16:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=61d0186b59a9834c80dd5b698532ab1116bc2eaff8a711b3&code=4%2F0AQlEd8zl_kaRb_ZMbRIuF2A5FXO9OycUAeRMdQuaT9tANyA0aDD-2KAwfKVU6GA9Dz7OUQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:16:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"61d0186b59a9834c80dd5b698532ab1116bc2eaff8a711b3", "code"=>"4/0AQlEd8zl_kaRb_ZMbRIuF2A5FXO9OycUAeRMdQuaT9tANyA0aDD-2KAwfKVU6GA9Dz7OUQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members/omniauth_callbacks_controller.rb:6:in `google_oauth2'
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 1.1ms | Allocations: 1631)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:16:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 57.6ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 61.8ms | Allocations: 2281)
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:16
+  Rendered layout layouts/application.html.erb (Duration: 105.0ms | Allocations: 7821)
+Completed 200 OK in 126ms (Views: 105.5ms | ActiveRecord: 1.2ms | Allocations: 8102)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 00:19:42 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 19ms (ActiveRecord: 0.4ms | Allocations: 2295)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:19:43 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 49.8ms | Allocations: 1377)
+  Rendered events/_adminheader.html.erb (Duration: 5.3ms | Allocations: 231)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 138.6ms | Allocations: 3181)
+  Rendered layout layouts/application.html.erb (Duration: 177.7ms | Allocations: 8336)
+Completed 200 OK in 214ms (Views: 188.4ms | ActiveRecord: 0.3ms | Allocations: 9350)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:19:44 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 9)
+Completed 404 Not Found in 21ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 623)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:19:45 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 18ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 224)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:19:50 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 18ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:19:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 18ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:19:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 20ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:19:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 60.5ms | Allocations: 1179)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 85)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 64.6ms | Allocations: 2308)
+  Rendered layout layouts/application.html.erb (Duration: 104.4ms | Allocations: 7106)
+Completed 200 OK in 122ms (Views: 105.4ms | ActiveRecord: 0.4ms | Allocations: 7405)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:20:29 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 62.6ms | Allocations: 1377)
+  Rendered events/_adminheader.html.erb (Duration: 6.3ms | Allocations: 231)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 93.3ms | Allocations: 3178)
+  Rendered layout layouts/application.html.erb (Duration: 179.8ms | Allocations: 8469)
+Completed 200 OK in 217ms (Views: 189.9ms | ActiveRecord: 0.2ms | Allocations: 9456)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:20:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=314698e746cd6d46ebacf1e38f675469f8f41318db6fd8da&code=4%2F0AQlEd8x4NHg9gULsjXo2KNcjoQ0U1Po0rRdDHB0Onn1AeVL_e5coi-88WCxskHn7V1B8Pw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:20:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"314698e746cd6d46ebacf1e38f675469f8f41318db6fd8da", "code"=>"4/0AQlEd8x4NHg9gULsjXo2KNcjoQ0U1Po0rRdDHB0Onn1AeVL_e5coi-88WCxskHn7V1B8Pw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile openid https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.4ms | Allocations: 1008)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:20:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 54.2ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 58.2ms | Allocations: 2067)
+  Rendered layout layouts/application.html.erb (Duration: 95.4ms | Allocations: 6993)
+Completed 200 OK in 115ms (Views: 96.7ms | ActiveRecord: 0.2ms | Allocations: 7288)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:20:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=ce76055a6b6794354066622273f49d4dd19752e3b3aef72a&code=4%2F0AQlEd8wRtFakFSOmYCWAsDTH32i_lUbgwC_ZZu1_zHews1dzg8lz_VwJibtclbd38dwm0Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:20:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"ce76055a6b6794354066622273f49d4dd19752e3b3aef72a", "code"=>"4/0AQlEd8wRtFakFSOmYCWAsDTH32i_lUbgwC_ZZu1_zHews1dzg8lz_VwJibtclbd38dwm0Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile openid https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members/omniauth_callbacks_controller.rb:6:in `google_oauth2'
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 0.6ms | Allocations: 1633)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:20:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 57.4ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 61.4ms | Allocations: 2069)
+  Rendered layout layouts/application.html.erb (Duration: 103.3ms | Allocations: 6993)
+Completed 200 OK in 123ms (Views: 104.3ms | ActiveRecord: 0.4ms | Allocations: 7273)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:20:56 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1616.4ms | Allocations: 25140)
+  Rendered events/_adminheader.html.erb (Duration: 5.5ms | Allocations: 292)
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 1651.6ms | Allocations: 27606)
+  Rendered layout layouts/application.html.erb (Duration: 1971.1ms | Allocations: 46652)
+Completed 200 OK in 2125ms (Views: 1992.3ms | ActiveRecord: 1.0ms | Allocations: 53035)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:20:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=e9803221a54701e1759f7cb73f2d8ddbab7e43ce2d70611c&code=4%2F0AQlEd8wzxik5T-w7NESyycOI23Mk6g_5103m_wkOVkxXsug53YsTgRmcxgfrbp4TVax7rg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:21:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"e9803221a54701e1759f7cb73f2d8ddbab7e43ce2d70611c", "code"=>"4/0AQlEd8wzxik5T-w7NESyycOI23Mk6g_5103m_wkOVkxXsug53YsTgRmcxgfrbp4TVax7rg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members/omniauth_callbacks_controller.rb:6:in `google_oauth2'
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 4.0ms | Allocations: 8946)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:21:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 57.6ms | Allocations: 1179)
+  Rendered events/_adminheader.html.erb (Duration: 0.4ms | Allocations: 76)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 62.6ms | Allocations: 2226)
+  Rendered layout layouts/application.html.erb (Duration: 106.7ms | Allocations: 7284)
+Completed 200 OK in 127ms (Views: 107.6ms | ActiveRecord: 0.5ms | Allocations: 7615)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 00:21:11 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=d83505f9314d1d3d329de2fdd7238a66923be34661447c75&code=4%2F0AQlEd8zIn0o0IxxiLztFrfXpmgSl09Zbd2BzDKbyAhmLu9h42xdk8MrMIm964BHQkQD9JA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=tamu.edu&prompt=none" for 172.17.0.1 at 2024-09-24 00:21:11 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"d83505f9314d1d3d329de2fdd7238a66923be34661447c75", "code"=>"4/0AQlEd8zIn0o0IxxiLztFrfXpmgSl09Zbd2BzDKbyAhmLu9h42xdk8MrMIm964BHQkQD9JA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"none"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/members/omniauth_callbacks_controller.rb:6:in `google_oauth2'
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 0.6ms | Allocations: 1625)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:21:11 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 63.9ms | Allocations: 1068)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 67.2ms | Allocations: 2083)
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 7059)
+Completed 200 OK in 123ms (Views: 104.8ms | ActiveRecord: 0.2ms | Allocations: 7339)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:21:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 48.0ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 52.3ms | Allocations: 1937)
+  Rendered layout layouts/application.html.erb (Duration: 86.8ms | Allocations: 6868)
+Completed 200 OK in 104ms (Views: 87.5ms | ActiveRecord: 0.3ms | Allocations: 7276)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:23:03 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 59.3ms | Allocations: 1377)
+  Rendered events/_adminheader.html.erb (Duration: 6.5ms | Allocations: 231)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 92.2ms | Allocations: 3200)
+  Rendered layout layouts/application.html.erb (Duration: 138.5ms | Allocations: 8483)
+Completed 200 OK in 177ms (Views: 150.0ms | ActiveRecord: 0.4ms | Allocations: 9470)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-24 00:23:18 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 64.6ms | Allocations: 1377)
+  Rendered events/_adminheader.html.erb (Duration: 6.9ms | Allocations: 231)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:25
+  Rendered events/index.html.erb within layouts/application (Duration: 96.4ms | Allocations: 3180)
+  Rendered layout layouts/application.html.erb (Duration: 136.1ms | Allocations: 8463)
+Completed 200 OK in 180ms (Views: 150.2ms | ActiveRecord: 0.2ms | Allocations: 9458)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:31:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1682.3ms | Allocations: 25145)
+  Rendered events/_adminheader.html.erb (Duration: 6.1ms | Allocations: 292)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:9
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:34
+  Rendered events/index.html.erb within layouts/application (Duration: 1798.2ms | Allocations: 35607)
+  Rendered layout layouts/application.html.erb (Duration: 1923.0ms | Allocations: 42077)
+Completed 200 OK in 2100ms (Views: 1951.9ms | ActiveRecord: 4.2ms | Allocations: 48462)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 00:31:38 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 28ms (ActiveRecord: 0.4ms | Allocations: 2396)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:31:38 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 55.1ms | Allocations: 1179)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 76)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:34
+  Rendered events/index.html.erb within layouts/application (Duration: 58.7ms | Allocations: 2248)
+  Rendered layout layouts/application.html.erb (Duration: 117.4ms | Allocations: 8214)
+Completed 200 OK in 138ms (Views: 118.6ms | ActiveRecord: 0.2ms | Allocations: 8536)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:31:47 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 71.4ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:34
+  Rendered events/index.html.erb within layouts/application (Duration: 77.2ms | Allocations: 2059)
+  Rendered layout layouts/application.html.erb (Duration: 138.7ms | Allocations: 7885)
+Completed 200 OK in 162ms (Views: 139.3ms | ActiveRecord: 0.8ms | Allocations: 8172)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:36:46 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1754.9ms | Allocations: 25128)
+  Rendered events/_adminheader.html.erb (Duration: 7.1ms | Allocations: 292)
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:34
+  Rendered events/index.html.erb within layouts/application (Duration: 1790.5ms | Allocations: 27714)
+  Rendered layout layouts/application.html.erb (Duration: 1883.3ms | Allocations: 34065)
+Completed 200 OK in 2029ms (Views: 1902.4ms | ActiveRecord: 0.9ms | Allocations: 40449)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:45:45 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms | Allocations: 7737)
+
+
+  
+NoMethodError (undefined method `authenticate_admin!' for #<EventsController:0x0000000000df98>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  authenticate_member!):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:47:47 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 64ms (ActiveRecord: 0.0ms | Allocations: 2725)
+
+
+Started GET "/members/sign_in" for 172.17.0.1 at 2024-09-24 00:47:48 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 19.1ms | Allocations: 5521)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 5619)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 2.6ms | Allocations: 14633)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for #<ActionView::Base:0x0000000000e060>
+
+'.freeze;@output_buffer.append=  form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| @output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^^
+Did you mean?  session):
+    1: <h2>Log in</h2>
+    2: 
+    3: <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="field">
+    5:     <%= f.label :email %><br />
+    6:     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  
+devise (4.9.4) app/views/devise/sessions/new.html.erb:3
+actionview (7.0.8.4) lib/action_view/base.rb:244:in `public_send'
+actionview (7.0.8.4) lib/action_view/base.rb:244:in `_run'
+actionview (7.0.8.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.0.8.4) lib/action_view/template.rb:361:in `instrument_render_template'
+actionview (7.0.8.4) lib/action_view/template.rb:155:in `render'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.0.8.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (7.0.8.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (7.0.8.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (7.0.8.4) lib/action_view/base.rb:270:in `in_rendering_context'
+actionview (7.0.8.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (7.0.8.4) lib/action_controller/metal/streaming.rb:216:in `_render_template'
+actionview (7.0.8.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.0.8.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.0.8.4) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:22:in `block (2 levels) in render'
+/usr/local/lib/ruby/3.1.0/benchmark.rb:311:in `realtime'
+activesupport (7.0.8.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:22:in `block in render'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:91:in `cleanup_view_runtime'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:21:in `render'
+responders (3.1.1) lib/action_controller/responder.rb:245:in `default_render'
+responders (3.1.1) lib/action_controller/responder.rb:175:in `to_html'
+responders (3.1.1) lib/action_controller/responder.rb:168:in `respond'
+responders (3.1.1) lib/action_controller/responder.rb:161:in `call'
+responders (3.1.1) lib/action_controller/respond_with.rb:216:in `respond_with'
+devise (4.9.4) app/controllers/devise/sessions_controller.rb:14:in `new'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2024-09-24 00:56:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 44ms (ActiveRecord: 0.0ms | Allocations: 2750)
+
+
+Started GET "/members/sign_in" for 172.17.0.1 at 2024-09-24 00:56:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5521)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 5619)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 3.3ms | Allocations: 14378)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for #<ActionView::Base:0x0000000000e060>
+
+'.freeze;@output_buffer.append=  form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| @output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^^
+Did you mean?  session):
+    1: <h2>Log in</h2>
+    2: 
+    3: <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="field">
+    5:     <%= f.label :email %><br />
+    6:     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  
+devise (4.9.4) app/views/devise/sessions/new.html.erb:3
+actionview (7.0.8.4) lib/action_view/base.rb:244:in `public_send'
+actionview (7.0.8.4) lib/action_view/base.rb:244:in `_run'
+actionview (7.0.8.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.0.8.4) lib/action_view/template.rb:361:in `instrument_render_template'
+actionview (7.0.8.4) lib/action_view/template.rb:155:in `render'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.0.8.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (7.0.8.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (7.0.8.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (7.0.8.4) lib/action_view/base.rb:270:in `in_rendering_context'
+actionview (7.0.8.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (7.0.8.4) lib/action_controller/metal/streaming.rb:216:in `_render_template'
+actionview (7.0.8.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.0.8.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.0.8.4) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:22:in `block (2 levels) in render'
+/usr/local/lib/ruby/3.1.0/benchmark.rb:311:in `realtime'
+activesupport (7.0.8.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:22:in `block in render'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:91:in `cleanup_view_runtime'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:21:in `render'
+responders (3.1.1) lib/action_controller/responder.rb:245:in `default_render'
+responders (3.1.1) lib/action_controller/responder.rb:175:in `to_html'
+responders (3.1.1) lib/action_controller/responder.rb:168:in `respond'
+responders (3.1.1) lib/action_controller/responder.rb:161:in `call'
+responders (3.1.1) lib/action_controller/respond_with.rb:216:in `respond_with'
+devise (4.9.4) app/controllers/devise/sessions_controller.rb:14:in `new'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:00:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 49ms (ActiveRecord: 0.0ms | Allocations: 2739)
+
+
+Started GET "/members/sign_in" for 172.17.0.1 at 2024-09-24 01:00:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 5521)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 5619)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 2.2ms | Allocations: 14398)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for #<ActionView::Base:0x0000000000e060>
+
+'.freeze;@output_buffer.append=  form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| @output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^^
+Did you mean?  session):
+    1: <h2>Log in</h2>
+    2: 
+    3: <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="field">
+    5:     <%= f.label :email %><br />
+    6:     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  
+devise (4.9.4) app/views/devise/sessions/new.html.erb:3
+actionview (7.0.8.4) lib/action_view/base.rb:244:in `public_send'
+actionview (7.0.8.4) lib/action_view/base.rb:244:in `_run'
+actionview (7.0.8.4) lib/action_view/template.rb:157:in `block in render'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.0.8.4) lib/action_view/template.rb:361:in `instrument_render_template'
+actionview (7.0.8.4) lib/action_view/template.rb:155:in `render'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:65:in `block (2 levels) in render_template'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:75:in `block in render_with_layout'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:74:in `render_with_layout'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.0.8.4) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.0.8.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (7.0.8.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (7.0.8.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (7.0.8.4) lib/action_view/base.rb:270:in `in_rendering_context'
+actionview (7.0.8.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (7.0.8.4) lib/action_controller/metal/streaming.rb:216:in `_render_template'
+actionview (7.0.8.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.0.8.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.0.8.4) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:22:in `block (2 levels) in render'
+/usr/local/lib/ruby/3.1.0/benchmark.rb:311:in `realtime'
+activesupport (7.0.8.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:22:in `block in render'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:91:in `cleanup_view_runtime'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:21:in `render'
+responders (3.1.1) lib/action_controller/responder.rb:245:in `default_render'
+responders (3.1.1) lib/action_controller/responder.rb:175:in `to_html'
+responders (3.1.1) lib/action_controller/responder.rb:168:in `respond'
+responders (3.1.1) lib/action_controller/responder.rb:161:in `call'
+responders (3.1.1) lib/action_controller/respond_with.rb:216:in `respond_with'
+devise (4.9.4) app/controllers/devise/sessions_controller.rb:14:in `new'
+actionpack (7.0.8.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.7) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.7) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:12:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1522.9ms | Allocations: 25131)
+  Rendered events/_adminheader.html.erb (Duration: 6.6ms | Allocations: 292)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:34
+  Rendered events/index.html.erb within layouts/application (Duration: 1553.2ms | Allocations: 27729)
+  Rendered layout layouts/application.html.erb (Duration: 1627.5ms | Allocations: 34088)
+Completed 200 OK in 1773ms (Views: 1651.7ms | ActiveRecord: 0.5ms | Allocations: 40472)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:17:50 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1546.8ms | Allocations: 25178)
+  Rendered events/_adminheader.html.erb (Duration: 5.4ms | Allocations: 295)
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:36
+  Rendered events/index.html.erb within layouts/application (Duration: 1649.0ms | Allocations: 27836)
+  Rendered layout layouts/application.html.erb (Duration: 1748.6ms | Allocations: 34187)
+Completed 200 OK in 1908ms (Views: 1767.8ms | ActiveRecord: 0.6ms | Allocations: 40571)
+
+
+Started GET "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 01:17:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 404 Not Found in 26ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 754)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:21:47 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 1619.4ms | Allocations: 25204)
+  Rendered events/_adminheader.html.erb (Duration: 5.3ms | Allocations: 292)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 1711.6ms | Allocations: 28171)
+  Rendered layout layouts/application.html.erb (Duration: 1787.9ms | Allocations: 34475)
+Completed 200 OK in 1922ms (Views: 1809.0ms | ActiveRecord: 0.5ms | Allocations: 40858)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 01:21:50 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=4badc921200e6c173a97f1717d0608da22c00e4aaca643f3&code=4%2F0AQlEd8xiMTq2QXrIBlO4TjF41k1lO6IfiK91vgj8abZhJjKBnuD7lkB70PR27F9z0yl5Ag&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 01:21:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"4badc921200e6c173a97f1717d0608da22c00e4aaca643f3", "code"=>"4/0AQlEd8xiMTq2QXrIBlO4TjF41k1lO6IfiK91vgj8abZhJjKBnuD7lkB70PR27F9z0yl5Ag", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms (ActiveRecord: 5.0ms | Allocations: 7920)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:21:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 59.1ms | Allocations: 1183)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 76)
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:9
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 65.9ms | Allocations: 3343)
+  Rendered layout layouts/application.html.erb (Duration: 125.0ms | Allocations: 9312)
+Completed 200 OK in 148ms (Views: 125.5ms | ActiveRecord: 0.9ms | Allocations: 9647)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 01:21:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 20ms (ActiveRecord: 0.3ms | Allocations: 2294)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:21:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 83.2ms | Allocations: 1175)
+  Rendered events/_adminheader.html.erb (Duration: 0.3ms | Allocations: 76)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 89.7ms | Allocations: 2414)
+  Rendered layout layouts/application.html.erb (Duration: 173.6ms | Allocations: 8351)
+Completed 200 OK in 197ms (Views: 174.7ms | ActiveRecord: 0.5ms | Allocations: 8672)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 01:22:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=64a6a86a75cc05ee7c82cf7e5c3dfef3f33aea992dbba276&code=4%2F0AQlEd8x_ncaBDCYXpNxWSxP--dqHS0e95950TsiVsoykdXgY0pMGJcflpaL10vZ1KqwiSw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 01:22:04 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"64a6a86a75cc05ee7c82cf7e5c3dfef3f33aea992dbba276", "code"=>"4/0AQlEd8x_ncaBDCYXpNxWSxP--dqHS0e95950TsiVsoykdXgY0pMGJcflpaL10vZ1KqwiSw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 0.3ms | Allocations: 923)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:22:05 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 55.8ms | Allocations: 1068)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:9
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 64.6ms | Allocations: 2903)
+  Rendered layout layouts/application.html.erb (Duration: 130.6ms | Allocations: 8748)
+Completed 200 OK in 151ms (Views: 130.9ms | ActiveRecord: 1.0ms | Allocations: 9028)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 01:22:07 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 22ms (ActiveRecord: 0.4ms | Allocations: 1628)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:22:07 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 52.1ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 56.2ms | Allocations: 2280)
+  Rendered layout layouts/application.html.erb (Duration: 116.7ms | Allocations: 8110)
+Completed 200 OK in 136ms (Views: 117.6ms | ActiveRecord: 0.3ms | Allocations: 8391)
+
+
+Started POST "/members/auth/google_oauth2" for 172.17.0.1 at 2024-09-24 01:22:11 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/members/auth/google_oauth2/callback?state=2746787dc1fe978073cad0fe834916ad99996e33c048c7a3&code=4%2F0AQlEd8zpZdD9xbN97mLgzo9pebiiz_a1oyVZyRhyHSLyDHgX3sm01PLL6kRf6FDwDx0lCw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-24 01:22:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Members::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"2746787dc1fe978073cad0fe834916ad99996e33c048c7a3", "code"=>"4/0AQlEd8zpZdD9xbN97mLgzo9pebiiz_a1oyVZyRhyHSLyDHgX3sm01PLL6kRf6FDwDx0lCw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "abhidev979@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/member.rb:5:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms | Allocations: 907)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:22:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 60.8ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.1ms | Allocations: 71)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:9
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 67.0ms | Allocations: 2893)
+  Rendered layout layouts/application.html.erb (Duration: 124.1ms | Allocations: 8726)
+Completed 200 OK in 146ms (Views: 124.5ms | ActiveRecord: 0.8ms | Allocations: 9006)
+
+
+Started GET "/members/sign_out" for 172.17.0.1 at 2024-09-24 01:22:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 ORDER BY "members"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 24ms (ActiveRecord: 0.4ms | Allocations: 1625)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-24 01:22:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_header.html.erb (Duration: 51.8ms | Allocations: 1066)
+  Rendered events/_adminheader.html.erb (Duration: 0.3ms | Allocations: 71)
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 56.8ms | Allocations: 2274)
+  Rendered layout layouts/application.html.erb (Duration: 114.0ms | Allocations: 8104)
+Completed 200 OK in 133ms (Views: 115.4ms | ActiveRecord: 0.2ms | Allocations: 8385)
+
+
