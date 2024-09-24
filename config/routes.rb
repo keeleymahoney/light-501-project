@@ -12,5 +12,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  resources :contacts do
+     member do
+      get :delete
+    end
+  end
+
+  root "events#index"
 end

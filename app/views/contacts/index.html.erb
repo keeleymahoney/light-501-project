@@ -1,0 +1,47 @@
+
+<%= render "header"%>
+
+<%= render "adminheader"%>
+
+<h2 class="text-center">The BOLD Network</h2>
+
+  <table style="width: 90%; margin-left: auto; margin-right: auto;">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Organization</th>
+        <th>Title</th>
+        <th>Email</th>
+        <th> 
+  <button><%= link_to 'New Contact', new_contact_path %></button>
+</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @contacts.each do |contact| %>
+
+        <tr>
+
+          <td>
+                <%= link_to contact.first_name + ' ' + contact.last_name, contact %>
+          </td>
+          
+          <td><%= contact.organization %></td>
+          <td><%= contact.title %></td>
+          <td><%= contact.email %></td>
+
+
+          
+          <td><%= link_to("Delete", delete_contact_path(contact)) %></td>
+          
+        </tr>
+        
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+
