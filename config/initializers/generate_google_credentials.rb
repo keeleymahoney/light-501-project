@@ -1,4 +1,7 @@
 # config/initializers/google_credentials.rb
+
+# Initializer to create google api credentials file at runtime to protect credentials
+
 require 'dotenv/load'
 require 'json'
 

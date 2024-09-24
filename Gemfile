@@ -41,6 +41,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+gem "rexml"
 
 gem "bootstrap", "~> 4.3.1"
 
@@ -71,6 +72,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+end
+
+group :development, :test do 
+  gem 'rspec-rails'
 end
 
 gem 'google-apis-forms_v1', '~> 0.3.0'
