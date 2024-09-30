@@ -81,7 +81,7 @@ class EventsController < ApplicationController
       forms = Google::Apis::FormsV1::FormsService.new
 
       scopes = ['https://www.googleapis.com/auth/forms.responses.readonly', 'https://www.googleapis.com/auth/forms.body.readonly']
-      forms.authorization = Google::Auth.get_application_default(scopes)
+      forms.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: scopes)
 
       rsvp_form_responses = forms.list_form_responses(rsvp_form_id)
       rsvp_form = forms.get_form(rsvp_form_id)
@@ -118,10 +118,10 @@ class EventsController < ApplicationController
       drive = Google::Apis::DriveV3::DriveService.new
 
       form_scopes = ['https://www.googleapis.com/auth/forms.body']
-      forms.authorization = Google::Auth.get_application_default(form_scopes)
+      forms.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: form_scopes)
 
       drive_scopes = ['https://www.googleapis.com/auth/drive.file']
-      drive.authorization = Google::Auth.get_application_default(drive_scopes)
+      drive.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: drive_scopes)
 
       @new_form = forms.create_form(
         {
@@ -166,7 +166,7 @@ class EventsController < ApplicationController
       drive = Google::Apis::DriveV3::DriveService.new
 
       drive_scopes = ['https://www.googleapis.com/auth/drive.file']
-      drive.authorization = Google::Auth.get_application_default(drive_scopes)
+      drive.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: drive_scopes)
 
       drive.delete_file(rsvp_form_id)
 
