@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ @import "bootstrap";
+
+ // Logo Styling
+ .logo {
+   width: 100px;
+   height: 100px;
+ }
+ 
+ // User Icon Styling
+ .user {
+   width: 60px;
+   height: 60px;
+ }
+ 
+ // Header styling
+ .header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-left: 5px;
+   margin-right: 5px;
+ }
+ 
+ .header h1 {
+   margin: 0;
+ }
+ 
+ // Navigation bar styling
+ .nav {
+   border: 2px solid black;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .nav h3 {
+   align-self: center;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ 
+ // Button container in the create section
+ .create {
+   text-align: right;
+ }
+ 
+ .create button {
+   margin-right: 15px;
+ }
+ 
+ // Title page styling
+ .title-page {
+   text-align: center;
+   border: 1px solid black;
+ }
+ 
+ // Full width class for elements
+ .full-width {
+   width: 100%;
+ }
+ 
+ // Form container styling
+ .form {
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   border: 1px solid black;
+ }
+ 
+ // Table styling
+ table,
+ th,
+ td {
+   border: 1px solid black; // Adds a border around the table, headers, and cells
+   border-collapse: collapse; // Ensures borders are shared between adjacent cells
+ }
+ 
+ th,
+ td {
+   padding: 10px; // Optional: Adds padding inside the cells
+   text-align: left; // Optional: Aligns text to the left in the cells
+ }
+ 
