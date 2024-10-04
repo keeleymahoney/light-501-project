@@ -1,18 +1,11 @@
-<div>
+<%= render "header"%>
+
+<h1 class="title-page">Manage RSVP Form</h1>
+<div class="ml-2">
   <%= link_to "Back to events", events_path %>
+  <br/>
 </div>
 
-<h1>RSVP Form</h1>
-
-<h2>Responses: <%= @num_responses %></h2>
-
-<section><%= link_to_unless(@form_exists, "Create Form", create_form_event_path(@event)) %></section><br/>
-
-<% if @form_exists %>
-	<section><%= @form_title %></section>
-	<section>
-		<%= link_to_if(@form_exists, "Submission Form", @form_submission_link) %><br/>
-		<%= link_to_if(@form_exists, "Edit In Google Forms", @form_edit_link) %><br/>
-		<%= link_to_if(@form_exists, "Delete Form", delete_form_event_path(@event)) %>		
-	</section>
-<% end %>
+<%= render "survey_form", :event => @event, :form_title => @form_title, :form_submission_link => @form_submission_link,
+	:form_edit_link => @form_edit_link, :form_exists => @form_exists, :num_responses => @num_responses %>
+	
