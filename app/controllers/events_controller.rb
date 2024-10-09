@@ -101,18 +101,13 @@ class EventsController < ApplicationController
           end
         end
       rescue
-        redirect_to root_path
-        # flash error api not available
+        redirect_to root_path, notice: 'Something went wrong. Please try again later.'
       end
 
     else
       @form_exists = false
       @num_responses = 0
     end
-  end
-
-  def delete_rsvp_form
-    @event = Event.find(params[:id])
   end
 
   def create_form
@@ -149,22 +144,21 @@ class EventsController < ApplicationController
 
         # Check that event entity is updated successfully
         if @event.update(rsvp_link: @new_form.form_id)
-          # flash[:notice] = 'Form successfully created!' # TODO: add later
-          redirect_to rsvp_form_event_path(@event)
+          redirect_to rsvp_form_event_path(@event), notice: 'RSVP form successfully created.'
         else
           render('rsvp_form')
         end
       rescue
-        redirect_to root_path
-        # flash error api not available
+        redirect_to root_path, notice: 'Could not create RSVP form. Please try again later.'
       end        
     else
-      # flash notice that a form already exists and re-render show_rsvp page # TODO: add later
-
-      render('rsvp_form')
-
+      redirect_to rsvp_form_event_path(@event), notice: 'A form already exists.'
     end
   end
+
+  def delete_rsvp_form
+    @event = Event.find(params[:id])
+  end  
 
   def destroy_form
     require 'google/apis/drive_v3'
@@ -188,21 +182,16 @@ class EventsController < ApplicationController
 
         # Check that event entity is updated successfully
         if @event.update(rsvp_link: '')
-          # flash[:notice] = 'Form successfully created!' # TODO: add later
-          redirect_to rsvp_form_event_path(@event)
+          redirect_to rsvp_form_event_path(@event), notice: 'RSVP form was successfully destroyed.'
         else
           render('rsvp_form')
         end
       rescue
-        redirect_to root_path
-        # flash error api not availables
+        redirect_to root_path, notice: 'Could not destroy RSVP form. Please try again later.'
       end
 
     else 
-      # show a flash notice that a form already exists and re-render show_rsvp page # TODO: add later
-
-      render('rsvp_form')
-
+        redirect_to rsvp_form_event_path(@event), notice: 'This form has already been deleted.'
     end
   end
 
