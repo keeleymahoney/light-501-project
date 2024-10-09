@@ -76,26 +76,34 @@ class EventsController < ApplicationController
 
     # Check that there is an rsvp form to show
     if defined?(rsvp_form_id) && !rsvp_form_id.blank?
-      @form_exists = true
+      if current_member.token_exp_date <= Time.now.to_i
+        redirect_to member_google_oauth2_omniauth_authorize_path
+      end
 
-      forms = Google::Apis::FormsV1::FormsService.new
+      begin
+        @form_exists = true
 
-      scopes = ['https://www.googleapis.com/auth/forms.responses.readonly', 'https://www.googleapis.com/auth/forms.body.readonly']
-      forms.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: scopes)
+        forms = Google::Apis::FormsV1::FormsService.new
 
-      rsvp_form_responses = forms.list_form_responses(rsvp_form_id)
-      rsvp_form = forms.get_form(rsvp_form_id)
+        forms.authorization = current_member.google_token
 
-      @form_title = rsvp_form.info.title
-      @form_submission_link = rsvp_form.responder_uri
-      @form_edit_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit"
+        rsvp_form_responses = forms.list_form_responses(rsvp_form_id)
+        rsvp_form = forms.get_form(rsvp_form_id)
 
-      @num_responses = 0
+        @form_title = rsvp_form.info.title
+        @form_submission_link = rsvp_form.responder_uri
+        @form_edit_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit"
 
-      unless rsvp_form_responses.responses.blank?
-        rsvp_form_responses.responses.each do |_r|
-          @num_responses += 1
+        @num_responses = 0
+
+        unless rsvp_form_responses.responses.blank?
+          rsvp_form_responses.responses.each do |_r|
+            @num_responses += 1
+          end
         end
+      rescue
+        redirect_to root_path
+        # flash error api not available
       end
 
     else
@@ -114,38 +122,39 @@ class EventsController < ApplicationController
 
     # Create a form if no form exists already. Else, re-render current page
     if !defined?(rsvp_form_id) || rsvp_form_id.blank?
-      forms = Google::Apis::FormsV1::FormsService.new
-      drive = Google::Apis::DriveV3::DriveService.new
-
-      form_scopes = ['https://www.googleapis.com/auth/forms.body']
-      forms.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: form_scopes)
-
-      drive_scopes = ['https://www.googleapis.com/auth/drive.file']
-      drive.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: drive_scopes)
-
-      @new_form = forms.create_form(
-        {
-          info: {
-            title: 'New Form'
-          }
-        }
-      )
-
-      # @form_permissions = drive.create_permission(@new_form.form_id, {
-      #                                               email_address: 'test4light2day@gmail.com',
-      #                                               type: 'user',
-      #                                               role: 'writer'
-      #                                             }) # TODO: replace hard-coded email
-
-
-      # Check that event entity is updated successfully
-      if @event.update(rsvp_link: @new_form.form_id)
-        # flash[:notice] = 'Form successfully created!' # TODO: add later
-        redirect_to rsvp_form_event_path(@event)
-      else
-        render('rsvp_form')
+      if current_member.token_exp_date <= Time.now.to_i
+        redirect_to member_google_oauth2_omniauth_authorize_path
       end
 
+      begin
+        forms = Google::Apis::FormsV1::FormsService.new
+        drive = Google::Apis::DriveV3::DriveService.new
+
+        forms.authorization = current_member.google_token
+
+        @new_form = forms.create_form(
+          {
+            info: {
+              title: 'New Form'
+            }
+          }
+        )
+
+        forms_request = Google::Apis::FormsV1::BatchUpdateFormRequest.new(requests: rsvp_form_default_params)
+
+        forms.batch_update_form(@new_form.form_id, forms_request)
+
+        # Check that event entity is updated successfully
+        if @event.update(rsvp_link: @new_form.form_id)
+          # flash[:notice] = 'Form successfully created!' # TODO: add later
+          redirect_to rsvp_form_event_path(@event)
+        else
+          render('rsvp_form')
+        end
+      rescue
+        redirect_to root_path
+        # flash error api not available
+      end        
     else
       # flash notice that a form already exists and re-render show_rsvp page # TODO: add later
 
@@ -163,19 +172,27 @@ class EventsController < ApplicationController
 
     # Delete a form if a form exists already. Else, re-render current page
     if defined?(rsvp_form_id) && !rsvp_form_id.blank?
-      drive = Google::Apis::DriveV3::DriveService.new
+      if current_member.token_exp_date <= Time.now.to_i
+        redirect_to member_google_oauth2_omniauth_authorize_path
+      end
+      
+      begin
+        drive = Google::Apis::DriveV3::DriveService.new
 
-      drive_scopes = ['https://www.googleapis.com/auth/drive.file']
-      drive.authorization = Google::Auth::ServiceAccountCredentials.make_creds(scope: drive_scopes)
+        drive.authorization = current_member.google_token
 
-      drive.delete_file(rsvp_form_id)
+        drive.delete_file(rsvp_form_id)
 
-      # Check that event entity is updated successfully
-      if @event.update(rsvp_link: '')
-        # flash[:notice] = 'Form successfully created!' # TODO: add later
-        redirect_to rsvp_form_event_path(@event)
-      else
-        render('rsvp_form')
+        # Check that event entity is updated successfully
+        if @event.update(rsvp_link: '')
+          # flash[:notice] = 'Form successfully created!' # TODO: add later
+          redirect_to rsvp_form_event_path(@event)
+        else
+          render('rsvp_form')
+        end
+      rescue
+        redirect_to root_path
+        # flash error api not availables
       end
 
     else 
@@ -209,7 +226,111 @@ class EventsController < ApplicationController
     params.require(:event).permit(:id, :name, :date, :description, :location, :rsvp_link, :feedback_link)
   end
 
-  # def rsvp_form_id
-  #   Event.find(params[:id]).rsvp_link
-  # end
+  def rsvp_form_default_params
+    [      
+      {
+        update_form_info: {
+          info: {
+            title: "RSVP Form For " + @event.name
+          },
+          update_mask: "title"
+        }
+      },                 
+      {
+        create_item: {
+          item: {
+            title: "Will you be attending?",
+            question_item: {
+              question: {
+                required: true,
+                choice_question: {
+                  type: "RADIO",
+                  options: [
+                    { value: "Yes" },
+                    { value: "No" }
+                  ],
+                  shuffle: false
+                }
+              }
+            }
+          },
+          location: {
+            index: 0
+          }
+        }
+      }, 
+      {
+        create_item: {
+          item: {
+            title: "Name",
+            question_item: {
+              question: {
+                required: true,
+                text_question: {
+                  "paragraph": false
+                }
+              }
+            }
+          },
+          location: {
+            index: 1
+          }
+        }
+      },
+      {
+        create_item: {
+          item: {
+            title: "Email",
+            question_item: {
+              question: {
+                required: true,
+                text_question: {
+                  "paragraph": false
+                }
+              }
+            }
+          },
+          location: {
+            index: 2
+          }
+        }
+      },
+      {
+        create_item: {
+          item: {
+            title: "How did you hear about us?",
+            question_item: {
+              question: {
+                required: false,
+                text_question: {
+                  "paragraph": true
+                }
+              }
+            }
+          },
+          location: {
+            index: 3
+          }
+        }
+      },
+      {
+        create_item: {
+          item: {
+            title: "Do you have any comments or questions?",
+            question_item: {
+              question: {
+                required: false,
+                text_question: {
+                  "paragraph": true
+                }
+              }
+            }
+          },
+          location: {
+            index: 4
+          }
+        }
+      }                                 
+    ]  
+  end
 end

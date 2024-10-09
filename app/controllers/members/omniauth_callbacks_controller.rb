@@ -1,7 +1,7 @@
 class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
       member = Member.from_google(**from_google_params)
-  
+
       email_domain = member.email.split('@').last
       if email_domain == 'tamu.edu'
         # Allow login if the email domain is tamu.edu
@@ -37,7 +37,9 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
             uid: auth.uid,
             email: auth.info.email,
             full_name: auth.info.name,
-            avatar_url: auth.info.image
+            avatar_url: auth.info.image,
+            google_token: auth.credentials.token,
+            token_exp_date: auth.credentials.expires_at
         }
     end
 
