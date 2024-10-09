@@ -16,6 +16,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      associate_industries(@contact, params[:contact][:industries])
       redirect_to @contact, notice: 'Contact was successfully created.'
     else
       render :new
@@ -29,6 +30,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(contact_params)
+      associate_industries(@contact, params[:contact][:industries])
       redirect_to @contact, notice: 'Contact was successfully updated.'
     else
       render :edit
@@ -50,4 +52,14 @@ class ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email)
   end
+
+  def associate_industries(contact, industries)
+    return unless industries
+
+    industries.split(',').each do |industry_name|
+      industry = Industry.find_or_create_by(industry_type: industry_name.strip.downcase)
+      contact.industries << industry unless contact.industries.include?(industry)
+    end
+  end
+
 end

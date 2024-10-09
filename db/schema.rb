@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_23_211906) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_02_215624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,9 +22,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_211906) do
     t.string "title"
     t.string "link"
     t.text "bio"
-    t.binary "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts_industries", force: :cascade do |t|
+    t.bigint "contact_id", null: false
+    t.bigint "industry_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_contacts_industries_on_contact_id"
+    t.index ["industry_id"], name: "index_contacts_industries_on_industry_id"
   end
 
   create_table "event_images", force: :cascade do |t|
@@ -46,6 +54,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_211906) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "industries", force: :cascade do |t|
+    t.string "industry_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "email", null: false
     t.string "full_name"
@@ -56,5 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_211906) do
     t.index ["email"], name: "index_members_on_email", unique: true
   end
 
+  add_foreign_key "contacts_industries", "contacts"
+  add_foreign_key "contacts_industries", "industries"
   add_foreign_key "event_images", "events"
 end

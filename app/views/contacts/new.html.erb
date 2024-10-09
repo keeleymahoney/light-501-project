@@ -51,6 +51,11 @@
     <%= form.text_field :bio %>
   </div>
 
+  <div class="field">
+    <%= form.label :industries %>
+    <%= form.text_field :industries, placeholder: 'Enter tags, separated by commas' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
