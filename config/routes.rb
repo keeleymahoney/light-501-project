@@ -19,7 +19,8 @@ Rails.application.routes.draw do
       get :delete
       get :rsvp_form
       get :create_form
-      get :delete_form
+      get :delete_rsvp_form
+      get :destroy_form
     end
   end
 

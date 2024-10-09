@@ -90,7 +90,6 @@ class EventsController < ApplicationController
         rsvp_form_responses = forms.list_form_responses(rsvp_form_id)
         rsvp_form = forms.get_form(rsvp_form_id)
 
-        @form_title = rsvp_form.info.title
         @form_submission_link = rsvp_form.responder_uri
         @form_edit_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit"
 
@@ -110,6 +109,10 @@ class EventsController < ApplicationController
       @form_exists = false
       @num_responses = 0
     end
+  end
+
+  def delete_rsvp_form
+    @event = Event.find(params[:id])
   end
 
   def create_form
@@ -163,7 +166,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def delete_form
+  def destroy_form
     require 'google/apis/drive_v3'
 
     @event = Event.find(params[:id])

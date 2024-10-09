@@ -4,11 +4,11 @@
   <div class="border rounded border-1 border-dark p-1" style="width: 80%; margin-left: auto; margin-right: auto;">
     <div class="header row">
       <div class="col">
-        <h2 style="text-align: center; word-wrap: break-word; overflow: hidden;"><%= form_title %></h2>
+        <h2 style="text-align: center; word-wrap: break-word; overflow: hidden;">RSVP Form for <%= @event.name %></h2>
         <p><strong>Responses: <%= num_responses %></strong></p>
         <p><%= link_to("Submission Form", form_submission_link) %></p>
         <p><%= link_to("Edit In Google Forms", form_edit_link) %></p>
-        <p><%= link_to("Delete Form", delete_form_event_path(event)) %></p>    
+        <p><%= link_to("Delete Form", delete_rsvp_form_event_path(event)) %></p>    
       </div>
     </div>
   </div>
