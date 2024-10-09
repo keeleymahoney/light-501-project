@@ -12,8 +12,11 @@
 
 <p style="text-align: center;">image will go here</p>
 
+<div class="form">
 <div class="header row">
     <div class= "col">
+        <strong><%= form.label :location, style: "display: block" %></strong>
+      <%= form.text_field :location, class: "full-width"%>
         <p><strong>First Name</strong></p>
         <p class="border rounded border-1 border-dark p-1"><%= @contact.first_name %> </p>
     </div>
@@ -51,3 +54,4 @@
         <p class="border rounded border-1 border-dark p-1"><%= @contact.bio %> </p>
     </div>
 <div>
+<div

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MemberContactsController < ApplicationController
+  before_action :authenticate_member!
     def index
       @contacts = Contact.all
     end

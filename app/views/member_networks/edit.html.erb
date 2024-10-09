@@ -1,0 +1,58 @@
+<%= render "header"%>
+<%= render "member_header"%>
+
+<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3" %>
+<br/>
+
+<br/>
+
+<h1 class="title-page"><%= @contact.first_name + ' ' + @contact.last_name %> </h1>
+
+<br/>
+
+<p style="text-align: center;">image will go here</p>
+
+<%= form_for @contact do |form| %>
+    <div class="header row">
+        <div class= "col">
+            <strong><%= form.label :first_name, style: "display: block" %></strong>
+            <%= form.text_field :first_name, class: "full-width"%>
+        </div>
+        <div class= "col">
+            <strong><%= form.label :last_name, style: "display: block" %></strong>
+            <%= form.text_field :last_name, class: "full-width"%>
+        </div>
+        <div class= "col">
+            <strong><%= form.label :title, style: "display: block" %></strong>
+            <%= form.text_field :title, class: "full-width"%>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="header row">
+        <div class= "col">
+            <strong><%= form.label :organization, style: "display: block" %></strong>
+            <%= form.text_field :organization, class: "full-width"%>
+        </div>
+        <div class= "col">
+            <strong><%= form.label :link, style: "display: block" %></strong>
+            <%= form.text_field :link, class: "full-width"%>
+        </div>
+        <div class= "col">
+            <strong><%= form.label :email, style: "display: block" %></strong>
+            <%= form.text_field :email, class: "full-width"%>
+        </div>
+    </div>
+
+    <br/>
+    <div class="header row">
+        <div class = "col">
+            <strong><%= form.label :bio, style: "display: block"%></strong>
+            <%= form.text_area :bio, style:"width: 100%" %>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mr-2">
+      <%= form.submit "Submit Network Updates to Admin" class: "btn btn-primary"%>
+    </div>
+<% end %>
