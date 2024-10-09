@@ -1,11 +1,16 @@
 <%= render "header"%>
 <%= render "member_header"%>
 
-<h1><%= @contact.first_name + ' ' + @contact.last_name %> </h1>
+<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3" %>
+<br/>
 
 <br/>
 
-<p>image will go here</p>
+<h1 class="title-page"><%= @contact.first_name + ' ' + @contact.last_name %> </h1>
+
+<br/>
+
+<p style="text-align: center;">image will go here</p>
 
 <div class="header row">
     <div class= "col">
