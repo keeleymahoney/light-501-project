@@ -1,6 +1,6 @@
 <%= render "header"%>
 <%= render "member_header"%>
-<h1>My Network Information </h1>
+<h1 class="title-page">My Network Information </h1>
 
 <br/>
 
@@ -44,6 +44,7 @@
         <p><strong>Bio</strong></p>
         <p class="border rounded border-1 border-dark p-1"><%= @contact.bio %> </p>
     </div>
-<div>
+</div>
 
-<p>Edit Network Information</p>
+<br/>
+<%= link_to "Edit Network Information", edit_member_network_path(@contact) %>
