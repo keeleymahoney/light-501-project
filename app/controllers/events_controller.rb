@@ -67,6 +67,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def sign_in_form
+    @event = Event.find(params[:id])
+  end
+
   def rsvp_form
     require 'google/apis/forms_v1'
 
@@ -76,10 +80,6 @@ class EventsController < ApplicationController
 
     # Check that there is an rsvp form to show
     if defined?(rsvp_form_id) && !rsvp_form_id.blank?
-      if current_member.token_exp_date <= Time.now.to_i
-        redirect_to member_google_oauth2_omniauth_authorize_path
-      end
-
       begin
         @form_exists = true
 
@@ -101,9 +101,12 @@ class EventsController < ApplicationController
           end
         end
       rescue
-        redirect_to root_path, notice: 'Something went wrong. Please try again later.'
+        if !defined?(current_member.token_exp_date) || current_member.token_exp_date.nil? || current_member.token_exp_date <= Time.now.to_i
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to root_path, notice: 'Something went wrong. Please try again later.'
+        end
       end
-
     else
       @form_exists = false
       @num_responses = 0
@@ -120,10 +123,6 @@ class EventsController < ApplicationController
 
     # Create a form if no form exists already. Else, re-render current page
     if !defined?(rsvp_form_id) || rsvp_form_id.blank?
-      if current_member.token_exp_date <= Time.now.to_i
-        redirect_to member_google_oauth2_omniauth_authorize_path
-      end
-
       begin
         forms = Google::Apis::FormsV1::FormsService.new
         drive = Google::Apis::DriveV3::DriveService.new
@@ -149,7 +148,11 @@ class EventsController < ApplicationController
           render('rsvp_form')
         end
       rescue
-        redirect_to root_path, notice: 'Could not create RSVP form. Please try again later.'
+        if !defined?(current_member.token_exp_date) || current_member.token_exp_date.nil? || current_member.token_exp_date <= Time.now.to_i
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to root_path, notice: 'Could not create RSVP form. Please try again later.'
+        end
       end        
     else
       redirect_to rsvp_form_event_path(@event), notice: 'A form already exists.'
@@ -169,10 +172,6 @@ class EventsController < ApplicationController
 
     # Delete a form if a form exists already. Else, re-render current page
     if defined?(rsvp_form_id) && !rsvp_form_id.blank?
-      if current_member.token_exp_date <= Time.now.to_i
-        redirect_to member_google_oauth2_omniauth_authorize_path
-      end
-      
       begin
         drive = Google::Apis::DriveV3::DriveService.new
 
@@ -187,9 +186,12 @@ class EventsController < ApplicationController
           render('rsvp_form')
         end
       rescue
-        redirect_to root_path, notice: 'Could not destroy RSVP form. Please try again later.'
+        if !defined?(current_member.token_exp_date) || current_member.token_exp_date.nil? || current_member.token_exp_date <= Time.now.to_i
+          redirect_to sign_in_form_event_path(@event)
+        else        
+          redirect_to root_path, notice: 'Could not destroy RSVP form. Please try again later.'
+        end
       end
-
     else 
         redirect_to rsvp_form_event_path(@event), notice: 'This form has already been deleted.'
     end

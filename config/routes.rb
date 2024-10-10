@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :event_images, only: %i[create destroy]
     member do
       get :delete
+      get :sign_in_form
       get :rsvp_form
       get :create_form
       get :delete_rsvp_form
