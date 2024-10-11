@@ -15,11 +15,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.pfp = @contact.pfp.build(picture: pfp)
+
     if @contact.save
       associate_industries(@contact, params[:contact][:industries])
       redirect_to @contact, notice: 'Contact was successfully created.'
     else
-      render :new
+      render :new, status: unprocessable_entity
     end
   end
 
