@@ -85,7 +85,7 @@ class EventsController < ApplicationController
 
         forms = Google::Apis::FormsV1::FormsService.new
 
-        forms.authorization = current_member.google_token
+        forms.authorization = current_member.token.access_token
 
         rsvp_form_responses = forms.list_form_responses(rsvp_form_id)
         rsvp_form = forms.get_form(rsvp_form_id)
@@ -101,7 +101,7 @@ class EventsController < ApplicationController
           end
         end
       rescue
-        if !defined?(current_member.token_exp_date) || current_member.token_exp_date.nil? || current_member.token_exp_date <= Time.now.to_i
+        if current_member.token.nil? || current_member.token.token_exp <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
         else
           redirect_to root_path, notice: 'Something went wrong. Please try again later.'
@@ -127,7 +127,7 @@ class EventsController < ApplicationController
         forms = Google::Apis::FormsV1::FormsService.new
         drive = Google::Apis::DriveV3::DriveService.new
 
-        forms.authorization = current_member.google_token
+        forms.authorization = current_member.token.access_token
 
         @new_form = forms.create_form(
           {
@@ -148,7 +148,7 @@ class EventsController < ApplicationController
           render('rsvp_form')
         end
       rescue
-        if !defined?(current_member.token_exp_date) || current_member.token_exp_date.nil? || current_member.token_exp_date <= Time.now.to_i
+        if current_member.token.nil? || current_member.token.token_exp <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
         else
           redirect_to root_path, notice: 'Could not create RSVP form. Please try again later.'
@@ -175,7 +175,7 @@ class EventsController < ApplicationController
       begin
         drive = Google::Apis::DriveV3::DriveService.new
 
-        drive.authorization = current_member.google_token
+        drive.authorization = current_member.token.access_token
 
         drive.delete_file(rsvp_form_id)
 
@@ -186,7 +186,7 @@ class EventsController < ApplicationController
           render('rsvp_form')
         end
       rescue
-        if !defined?(current_member.token_exp_date) || current_member.token_exp_date.nil? || current_member.token_exp_date <= Time.now.to_i
+        if current_member.token.nil? || current_member.token.token_exp <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
         else        
           redirect_to root_path, notice: 'Could not destroy RSVP form. Please try again later.'
