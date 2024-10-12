@@ -63,5 +63,4 @@ class ContactsController < ApplicationController
       contact.industries << industry unless contact.industries.include?(industry)
     end
   end
-
 end

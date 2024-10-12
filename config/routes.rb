@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root "events#index"
+  root 'events#index'
 
   # Devise routes for the Member model with Google OAuth callbacks
   devise_for :members, controllers: {
@@ -34,5 +34,10 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-end
 
+  resources :requests do
+    member do
+      get :delete
+    end
+  end
+end

@@ -12,69 +12,68 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/contacts_industries", type: :request do
-  
+RSpec.describe '/contacts_industries', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # ContactsIndustry. As you add validations to ContactsIndustry, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       ContactsIndustry.create! valid_attributes
       get contacts_industries_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       contacts_industry = ContactsIndustry.create! valid_attributes
       get contacts_industry_url(contacts_industry)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_contacts_industry_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       contacts_industry = ContactsIndustry.create! valid_attributes
       get edit_contacts_industry_url(contacts_industry)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new ContactsIndustry" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new ContactsIndustry' do
+        expect do
           post contacts_industries_url, params: { contacts_industry: valid_attributes }
-        }.to change(ContactsIndustry, :count).by(1)
+        end.to change(ContactsIndustry, :count).by(1)
       end
 
-      it "redirects to the created contacts_industry" do
+      it 'redirects to the created contacts_industry' do
         post contacts_industries_url, params: { contacts_industry: valid_attributes }
         expect(response).to redirect_to(contacts_industry_url(ContactsIndustry.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new ContactsIndustry" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new ContactsIndustry' do
+        expect do
           post contacts_industries_url, params: { contacts_industry: invalid_attributes }
-        }.to change(ContactsIndustry, :count).by(0)
+        end.to change(ContactsIndustry, :count).by(0)
       end
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
@@ -84,20 +83,20 @@ RSpec.describe "/contacts_industries", type: :request do
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested contacts_industry" do
+      it 'updates the requested contacts_industry' do
         contacts_industry = ContactsIndustry.create! valid_attributes
         patch contacts_industry_url(contacts_industry), params: { contacts_industry: new_attributes }
         contacts_industry.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the contacts_industry" do
+      it 'redirects to the contacts_industry' do
         contacts_industry = ContactsIndustry.create! valid_attributes
         patch contacts_industry_url(contacts_industry), params: { contacts_industry: new_attributes }
         contacts_industry.reload
@@ -105,7 +104,7 @@ RSpec.describe "/contacts_industries", type: :request do
       end
     end
 
-    context "with invalid parameters" do
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         contacts_industry = ContactsIndustry.create! valid_attributes
         patch contacts_industry_url(contacts_industry), params: { contacts_industry: invalid_attributes }
@@ -114,15 +113,15 @@ RSpec.describe "/contacts_industries", type: :request do
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested contacts_industry" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested contacts_industry' do
       contacts_industry = ContactsIndustry.create! valid_attributes
-      expect {
+      expect do
         delete contacts_industry_url(contacts_industry)
-      }.to change(ContactsIndustry, :count).by(-1)
+      end.to change(ContactsIndustry, :count).by(-1)
     end
 
-    it "redirects to the contacts_industries list" do
+    it 'redirects to the contacts_industries list' do
       contacts_industry = ContactsIndustry.create! valid_attributes
       delete contacts_industry_url(contacts_industry)
       expect(response).to redirect_to(contacts_industries_url)

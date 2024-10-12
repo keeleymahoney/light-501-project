@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "requests/show", type: :view do
+RSpec.describe 'requests/show', type: :view do
   before(:each) do
     assign(:request, Request.create!(
-      status: false
-    ))
+                       status: false
+                     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/false/)
   end

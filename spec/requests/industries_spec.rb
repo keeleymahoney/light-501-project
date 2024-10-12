@@ -12,69 +12,68 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/industries", type: :request do
-  
+RSpec.describe '/industries', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Industry. As you add validations to Industry, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       Industry.create! valid_attributes
       get industries_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       industry = Industry.create! valid_attributes
       get industry_url(industry)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_industry_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       industry = Industry.create! valid_attributes
       get edit_industry_url(industry)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Industry" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new Industry' do
+        expect do
           post industries_url, params: { industry: valid_attributes }
-        }.to change(Industry, :count).by(1)
+        end.to change(Industry, :count).by(1)
       end
 
-      it "redirects to the created industry" do
+      it 'redirects to the created industry' do
         post industries_url, params: { industry: valid_attributes }
         expect(response).to redirect_to(industry_url(Industry.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new Industry" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new Industry' do
+        expect do
           post industries_url, params: { industry: invalid_attributes }
-        }.to change(Industry, :count).by(0)
+        end.to change(Industry, :count).by(0)
       end
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
@@ -84,20 +83,20 @@ RSpec.describe "/industries", type: :request do
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested industry" do
+      it 'updates the requested industry' do
         industry = Industry.create! valid_attributes
         patch industry_url(industry), params: { industry: new_attributes }
         industry.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the industry" do
+      it 'redirects to the industry' do
         industry = Industry.create! valid_attributes
         patch industry_url(industry), params: { industry: new_attributes }
         industry.reload
@@ -105,7 +104,7 @@ RSpec.describe "/industries", type: :request do
       end
     end
 
-    context "with invalid parameters" do
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         industry = Industry.create! valid_attributes
         patch industry_url(industry), params: { industry: invalid_attributes }
@@ -114,15 +113,15 @@ RSpec.describe "/industries", type: :request do
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested industry" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested industry' do
       industry = Industry.create! valid_attributes
-      expect {
+      expect do
         delete industry_url(industry)
-      }.to change(Industry, :count).by(-1)
+      end.to change(Industry, :count).by(-1)
     end
 
-    it "redirects to the industries list" do
+    it 'redirects to the industries list' do
       industry = Industry.create! valid_attributes
       delete industry_url(industry)
       expect(response).to redirect_to(industries_url)

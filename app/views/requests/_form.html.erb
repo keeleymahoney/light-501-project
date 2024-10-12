@@ -12,8 +12,18 @@
   <% end %>
 
   <div>
+    <%= form.label :request_type, style: "display: block" %>
+    <%= form.select :request_type, Request.request_types.keys.map {|request_type| [request_type.humanize, request_type]} %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.check_box :status %>
+    <%= form.select :status, Request.statuses.keys.map {|status| [status.humanize, status]} %>
   </div>
 
   <div>

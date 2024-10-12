@@ -137,7 +137,6 @@ class EventsController < ApplicationController
       #                                               role: 'writer'
       #                                             }) # TODO: replace hard-coded email
 
-
       # Check that event entity is updated successfully
       if @event.update(rsvp_link: @new_form.form_id)
         # flash[:notice] = 'Form successfully created!' # TODO: add later
@@ -178,7 +177,7 @@ class EventsController < ApplicationController
         render('rsvp_form')
       end
 
-    else 
+    else
       # show a flash notice that a form already exists and re-render show_rsvp page # TODO: add later
 
       render('rsvp_form')

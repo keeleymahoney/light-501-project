@@ -1,5 +1,5 @@
 class IndustriesController < ApplicationController
-  before_action :set_industry, only: %i[ show edit update destroy ]
+  before_action :set_industry, only: %i[show edit update destroy]
 
   # GET /industries or /industries.json
   def index
@@ -7,8 +7,7 @@ class IndustriesController < ApplicationController
   end
 
   # GET /industries/1 or /industries/1.json
-  def show
-  end
+  def show; end
 
   # GET /industries/new
   def new
@@ -16,8 +15,7 @@ class IndustriesController < ApplicationController
   end
 
   # GET /industries/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /industries or /industries.json
   def create
@@ -25,7 +23,7 @@ class IndustriesController < ApplicationController
 
     respond_to do |format|
       if @industry.save
-        format.html { redirect_to industry_url(@industry), notice: "Industry was successfully created." }
+        format.html { redirect_to industry_url(@industry), notice: 'Industry was successfully created.' }
         format.json { render :show, status: :created, location: @industry }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class IndustriesController < ApplicationController
   def update
     respond_to do |format|
       if @industry.update(industry_params)
-        format.html { redirect_to industry_url(@industry), notice: "Industry was successfully updated." }
+        format.html { redirect_to industry_url(@industry), notice: 'Industry was successfully updated.' }
         format.json { render :show, status: :ok, location: @industry }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class IndustriesController < ApplicationController
     @industry.destroy
 
     respond_to do |format|
-      format.html { redirect_to industries_url, notice: "Industry was successfully destroyed." }
+      format.html { redirect_to industries_url, notice: 'Industry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_industry
-      @industry = Industry.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def industry_params
-      params.require(:industry).permit(:industry_type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_industry
+    @industry = Industry.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def industry_params
+    params.require(:industry).permit(:industry_type)
+  end
 end

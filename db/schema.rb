@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_09_192021) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_09_222103) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,7 +71,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_09_192021) do
     t.index ["email"], name: "index_members_on_email", unique: true
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.integer "status", default: 0
+    t.bigint "member_id", null: false
+    t.integer "request_type", default: 0
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_requests_on_member_id"
+  end
+
   add_foreign_key "contacts_industries", "contacts"
   add_foreign_key "contacts_industries", "industries"
   add_foreign_key "event_images", "events"
+  add_foreign_key "requests", "members"
 end
