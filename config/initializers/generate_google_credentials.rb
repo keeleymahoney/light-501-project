@@ -3,6 +3,7 @@
 # Initializer to create google api credentials file at runtime to protect credentials
 
 # require 'dotenv/load'
+=begin
 require 'json'
 
 private_key = Rails.application.credentials.service_credentials[:google_private_key].gsub('\\n', "\n")
@@ -21,3 +22,4 @@ credentials = {
 }
 
 File.write(Rails.root.join('config', 'google_credentials.json'), credentials.to_json)
+=end
