@@ -18,10 +18,14 @@ Rails.application.routes.draw do
     member do
       get :delete
       get :sign_in_form
-      get :rsvp_form
-      get :create_form
+      get :show_rsvp_form
+      get :create_rsvp_form
       get :delete_rsvp_form
-      get :destroy_form
+      get :destroy_rsvp_form
+      get :show_feedback_form
+      get :create_feedback_form
+      get :delete_feedback_form
+      get :destroy_feedback_form      
     end
   end
 

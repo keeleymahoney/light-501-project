@@ -71,7 +71,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def rsvp_form
+  def show_rsvp_form
     require 'google/apis/forms_v1'
 
     @event = Event.find(params[:id])
@@ -123,7 +123,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def create_form
+  def create_rsvp_form
     require 'google/apis/forms_v1'
     require 'google/apis/drive_v3'
 
@@ -156,9 +156,9 @@ class EventsController < ApplicationController
 
         # Check that event entity is updated successfully
         if @event.update(rsvp_link: @new_form.form_id)
-          redirect_to rsvp_form_event_path(@event), notice: 'RSVP form successfully created.'
+          redirect_to show_rsvp_form_event_path(@event), notice: 'RSVP form successfully created.'
         else
-          render('rsvp_form')
+          render('show_rsvp_form')
         end
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
@@ -168,7 +168,7 @@ class EventsController < ApplicationController
         end
       end        
     else
-      redirect_to rsvp_form_event_path(@event), notice: 'A form already exists.'
+      redirect_to show_rsvp_form_event_path(@event), notice: 'A form already exists.'
     end
   end
 
@@ -176,7 +176,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end  
 
-  def destroy_form
+  def destroy_rsvp_form
     require 'google/apis/drive_v3'
 
     @event = Event.find(params[:id])
@@ -194,9 +194,9 @@ class EventsController < ApplicationController
 
         # Check that event entity is updated successfully
         if @event.update(rsvp_link: '')
-          redirect_to rsvp_form_event_path(@event), notice: 'RSVP form was successfully destroyed.'
+          redirect_to show_rsvp_form_event_path(@event), notice: 'RSVP form was successfully destroyed.'
         else
-          render('rsvp_form')
+          render('show_rsvp_form')
         end
       rescue Google::Apis::ClientError => e
         if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
@@ -216,7 +216,156 @@ class EventsController < ApplicationController
         end
       end
     else 
-        redirect_to rsvp_form_event_path(@event), notice: 'This form has already been deleted.'
+        redirect_to show_rsvp_form_event_path(@event), notice: 'This form has already been deleted.'
+    end
+  end
+
+  def show_feedback_form
+    require 'google/apis/forms_v1'
+
+    @event = Event.find(params[:id])
+
+    feedback_form_id = Event.find(params[:id]).feedback_link
+
+    # Check that there is a feedback form to show
+    if defined?(feedback_form_id) && !feedback_form_id.blank?
+      begin
+        @form_exists = true
+
+        forms = Google::Apis::FormsV1::FormsService.new
+
+        forms.authorization = current_member.token.access_token
+
+        feedback_form_responses = forms.list_form_responses(feedback_form_id)
+        feedback_form = forms.get_form(feedback_form_id)
+
+        @form_submission_link = feedback_form.responder_uri
+        @form_edit_link = "https://docs.google.com/forms/d/#{feedback_form_id}/edit"
+
+        @num_responses = 0
+
+        unless feedback_form_responses.responses.blank?
+          feedback_form_responses.responses.each do |_r|
+            @num_responses += 1
+          end
+        end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
+          if @event.update(feedback_link: '')
+            redirect_to events_path, notice: 'Your previous form was inaccessible or deleted. It has been unlinked from your event.'
+          else
+            redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
+          end          
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end
+      rescue
+        if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end
+      end
+    else
+      @form_exists = false
+      @num_responses = 0
+    end
+  end
+
+  def create_feedback_form
+    require 'google/apis/forms_v1'
+    require 'google/apis/drive_v3'
+
+    @event = Event.find(params[:id])
+
+    feedback_form_id = Event.find(params[:id]).feedback_link
+
+    # Create a form if no form exists already. Else, re-render current page
+    if !defined?(feedback_form_id) || feedback_form_id.blank?
+      begin
+        forms = Google::Apis::FormsV1::FormsService.new
+        drive = Google::Apis::DriveV3::DriveService.new
+
+        forms.authorization = current_member.token.access_token
+        drive.authorization = current_member.token.access_token
+
+        @new_form = forms.create_form(
+          {
+            info: {
+              title: 'New Form'
+            }
+          }
+        )
+
+        forms_request = Google::Apis::FormsV1::BatchUpdateFormRequest.new(requests: feedback_form_default_params)
+
+        forms.batch_update_form(@new_form.form_id, forms_request)
+
+        drive.update_file(@new_form.form_id, {name: "Feedback Form For " + @event.name})
+
+        # Check that event entity is updated successfully
+        if @event.update(feedback_link: @new_form.form_id)
+          redirect_to show_feedback_form_event_path(@event), notice: 'Feedback form successfully created.'
+        else
+          render('show_feedback_form')
+        end
+      rescue
+        if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to events_path, notice: 'Could not create feedback form. Please try again later.'
+        end
+      end        
+    else
+      redirect_to show_feedback_form_event_path(@event), notice: 'A form already exists.'
+    end
+  end
+
+  def delete_feedback_form
+    @event = Event.find(params[:id])
+  end  
+
+  def destroy_feedback_form
+    require 'google/apis/drive_v3'
+
+    @event = Event.find(params[:id])
+
+    feedback_form_id = Event.find(params[:id]).feedback_link
+
+    # Delete a form if a form exists already. Else, re-render current page
+    if defined?(feedback_form_id) && !feedback_form_id.blank?
+      begin
+        drive = Google::Apis::DriveV3::DriveService.new
+
+        drive.authorization = current_member.token.access_token
+
+        drive.delete_file(feedback_form_id)
+
+        # Check that event entity is updated successfully
+        if @event.update(feedback_link: '')
+          redirect_to show_feedback_form_event_path(@event), notice: 'Feedback form was successfully destroyed.'
+        else
+          render('show_feedback_form')
+        end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
+          if @event.update(feedback_link: '')
+            redirect_to events_path, notice: 'Your previous form was inaccessible. It has been unlinked from your event.'
+          else
+            redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
+          end          
+        else
+          redirect_to events_path, notice: 'Could not destroy feedback form. Please try again later.'
+        end        
+      rescue
+        if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
+          redirect_to sign_in_form_event_path(@event)
+        else        
+          redirect_to events_path, notice: 'Could not destroy feedback form. Please try again later.'
+        end
+      end
+    else 
+        redirect_to show_feedback_form_event_path(@event), notice: 'This form has already been deleted.'
     end
   end
 
@@ -248,9 +397,19 @@ class EventsController < ApplicationController
       {
         update_form_info: {
           info: {
-            title: "RSVP Form For " + @event.name
+            title: "RSVP Form For " + @event.name,
+            description: 
+            "-----------------------------------------------------------
+
+CONTACT US:
+
+E-mail:           info.boldrso@gmail.com
+
+Linkedin:       linkedin.com/company/boldrso
+
+Instagram:    instagram.com/boldrso"
           },
-          update_mask: "title"
+          update_mask: "title,description"
         }
       },                 
       {
@@ -333,7 +492,7 @@ class EventsController < ApplicationController
       {
         create_item: {
           item: {
-            title: "Do you have any comments or questions?",
+            title: "Do you have any questions or comments?",
             question_item: {
               question: {
                 required: false,
@@ -350,4 +509,84 @@ class EventsController < ApplicationController
       }                                 
     ]  
   end
+
+  def feedback_form_default_params
+    [      
+      {
+        update_form_info: {
+          info: {
+            title: "Feedback Form For " + @event.name,
+            description: 
+            "-----------------------------------------------------------
+
+CONTACT US:
+
+E-mail:           info.boldrso@gmail.com
+
+Linkedin:       linkedin.com/company/boldrso
+
+Instagram:    instagram.com/boldrso"
+          },
+          update_mask: "title,description"            
+        }
+      },                 
+      {
+        create_item: {
+          item: {
+            title: "Rate the value you gained from this event:",
+            question_item: {
+              question: {
+                required: true,
+                scale_question: {
+                  low: 1,
+                  high: 5,
+                  low_label: "Not useful at all",
+                  high_label: "Extremely useful"
+                }
+              }
+            }
+          },
+          location: {
+            index: 0
+          }
+        }
+      },
+      {
+        create_item: {
+          item: {
+            title: "Email",
+            question_item: {
+              question: {
+                required: true,
+                text_question: {
+                  "paragraph": false
+                }
+              }
+            }
+          },
+          location: {
+            index: 1
+          }
+        }
+      },
+      {
+        create_item: {
+          item: {
+            title: "Do you have any questions or comments?",
+            question_item: {
+              question: {
+                required: false,
+                text_question: {
+                  "paragraph": true
+                }
+              }
+            }
+          },
+          location: {
+            index: 2
+          }
+        }
+      }                                 
+    ]  
+  end  
 end

@@ -1,7 +1,7 @@
 <%= render "header"%>
 <div>
     <h2 class="title-page">Delete RSVP Form</h2>
-    <%= link_to("Back to RSVP Form", rsvp_form_event_path(@event), :class => 'back-link ml-2')%>
+    <%= link_to("Back to RSVP Form", show_rsvp_form_event_path(@event), :class => 'back-link ml-2')%>
 	<div>
     
         <br/>
@@ -9,7 +9,7 @@
         <strong><p class="ml-2">RSVP Form's Event Name: </strong><%= @event.name %></p>
     
         <div class="form-buttons ml-2">
-            <%= button_to destroy_form_event_path, class: "btn btn-danger", method: :get do %>
+            <%= button_to destroy_rsvp_form_event_path, class: "btn btn-danger", method: :get do %>
 				<span>Delete RSVP Form</span>
 			<% end %>
         </div>    

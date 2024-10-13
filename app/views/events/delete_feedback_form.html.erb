@@ -1,0 +1,18 @@
+<%= render "header"%>
+<div>
+    <h2 class="title-page">Delete Feedback Form</h2>
+    <%= link_to("Back to Feedback Form", show_feedback_form_event_path(@event), :class => 'back-link ml-2')%>
+	<div>
+    
+        <br/>
+        <h3 class="text-danger ml-2">Are you sure you want to permanently delete this feedback form?</h3>
+        <strong><p class="ml-2">Feedback Form's Event Name: </strong><%= @event.name %></p>
+    
+        <div class="form-buttons ml-2">
+            <%= button_to destroy_feedback_form_event_path, class: "btn btn-danger", method: :get do %>
+				<span>Delete Feedback Form</span>
+			<% end %>
+        </div>    
+      </div>
+</div>
+
