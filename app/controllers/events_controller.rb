@@ -100,11 +100,21 @@ class EventsController < ApplicationController
             @num_responses += 1
           end
         end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
+          if @event.update(rsvp_link: '')
+            redirect_to events_path, notice: 'Your previous form was inaccessible or deleted. It has been unlinked from your event.'
+          else
+            redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
+          end          
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
         else
-          redirect_to root_path, notice: 'Something went wrong. Please try again later.'
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
         end
       end
     else
@@ -151,7 +161,7 @@ class EventsController < ApplicationController
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
         else
-          redirect_to root_path, notice: 'Could not create RSVP form. Please try again later.'
+          redirect_to events_path, notice: 'Could not create RSVP form. Please try again later.'
         end
       end        
     else
@@ -185,11 +195,21 @@ class EventsController < ApplicationController
         else
           render('rsvp_form')
         end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
+          if @event.update(rsvp_link: '')
+            redirect_to events_path, notice: 'Your previous form was inaccessible. It has been unlinked from your event.'
+          else
+            redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
+          end          
+        else
+          redirect_to events_path, notice: 'Could not destroy RSVP form. Please try again later.'
+        end        
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
         else        
-          redirect_to root_path, notice: 'Could not destroy RSVP form. Please try again later.'
+          redirect_to events_path, notice: 'Could not destroy RSVP form. Please try again later.'
         end
       end
     else 
