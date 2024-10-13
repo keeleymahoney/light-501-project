@@ -138,6 +138,7 @@ class EventsController < ApplicationController
         drive = Google::Apis::DriveV3::DriveService.new
 
         forms.authorization = current_member.token.access_token
+        drive.authorization = current_member.token.access_token
 
         @new_form = forms.create_form(
           {
@@ -150,6 +151,8 @@ class EventsController < ApplicationController
         forms_request = Google::Apis::FormsV1::BatchUpdateFormRequest.new(requests: rsvp_form_default_params)
 
         forms.batch_update_form(@new_form.form_id, forms_request)
+
+        drive.update_file(@new_form.form_id, {name: "RSVP Form For " + @event.name})
 
         # Check that event entity is updated successfully
         if @event.update(rsvp_link: @new_form.form_id)
