@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'OAuth Login', type: :request do
-
   # # Sunny Day Scenario 1: Successful Google OAuth Redirection
   # it 'redirects to Google for authentication' do
   #   get '/members/auth/google_oauth2'
