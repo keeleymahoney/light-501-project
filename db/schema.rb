@@ -72,15 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_161958) do
     t.index ["email"], name: "index_members_on_email", unique: true
   end
 
-  create_table "tokens", force: :cascade do |t|
-    t.text "access_token"
-    t.text "token_exp"
-    t.bigint "member_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_tokens_on_member_id"
-  end
-
   create_table "requests", force: :cascade do |t|
     t.integer "status", default: 0
     t.bigint "member_id", null: false
@@ -91,9 +82,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_161958) do
     t.index ["member_id"], name: "index_requests_on_member_id"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.text "access_token"
+    t.text "token_exp"
+    t.bigint "member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_tokens_on_member_id"
+  end
+
   add_foreign_key "contacts_industries", "contacts"
   add_foreign_key "contacts_industries", "industries"
   add_foreign_key "event_images", "events"
-  add_foreign_key "tokens", "members"
   add_foreign_key "requests", "members"
+  add_foreign_key "tokens", "members"
 end
