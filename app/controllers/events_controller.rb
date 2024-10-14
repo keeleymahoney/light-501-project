@@ -2,6 +2,7 @@
 
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  before_action :check_if_signed_in
 
   # GET /events or /events.json
   def index
@@ -390,6 +391,15 @@ class EventsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:id, :name, :date, :description, :location, :rsvp_link, :feedback_link)
+  end
+
+  # def rsvp_form_id
+  #   Event.find(params[:id]).rsvp_link
+  # end
+  def check_if_signed_in
+    unless member_signed_in?
+      redirect_to root_path, notice: 'You do not have access to this page. Please log in.'
+    end
   end
 
   def rsvp_form_default_params
