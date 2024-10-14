@@ -7,4 +7,7 @@ class HomeController < ApplicationController
   def featured
     # Code for featured page
   end
+  def about
+    # Code for about page
+  end
 end

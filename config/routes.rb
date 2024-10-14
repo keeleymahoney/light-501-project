@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'media', to: 'home#media'
   # Featured page route
   get 'featured', to: 'home#featured'
+  # About us page route
+  get 'about', to: 'home#about'
 
   resources :events do
     resources :event_images, only: %i[create destroy]
