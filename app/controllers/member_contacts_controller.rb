@@ -23,7 +23,14 @@ class MemberContactsController < ApplicationController
       @contacts = @contacts.where(organization: params[:organization])
     end
 
+    if params[:industry].present?
+      @contacts = Contact.joins(:contacts_industries)
+                       .joins("INNER JOIN industries ON industries.id = contacts_industries.industry_id")
+                       .where(industries: { industry_type: params[:industry] })
+    end
+
     @organizations = Contact.select(:organization).distinct.pluck(:organization)
+    @industries = Industry.select(:industry_type).distinct.pluck(:industry_type)
   end
 
   def show
