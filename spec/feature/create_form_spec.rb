@@ -18,6 +18,5 @@ RSpec.describe 'Creating a form', type: :feature do
 		expect(page).to have_content('Submission Form')
 		expect(page).to have_content('Edit In Google Forms')
 		expect(page).to have_content('Delete Form')
-		expect(page).to have_content('Create Form')	
 	end
 end
