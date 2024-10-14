@@ -1,0 +1,20 @@
+<!-- app/views/home/about.html.erb -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h1>About Us</h1>
+    <p class="lead mt-4">This page will contain information about the BOLD organization.</p>
+    
+    <h5 class="mt-5">Get in touch</h5>
+    <p>
+      Email: <a href="mailto:info.boldrso@gmail.com">info.boldrso@gmail.com</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/company/boldrso">BOLD on LinkedIn</a>
+    </p>
+
+    <h5 class="mt-5">Message this organization</h5>
+    <p>
+      <%= link_to 'Login to send this organization a message', new_member_session_path %>
+    </p>
+
+    <div class="text-muted mt-5">&copy; 2024 Texas A&M University</div>
+  </div>
+</section>

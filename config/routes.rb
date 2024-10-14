@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root "events#index"
+  # Set the root URL to the home#index action
+  root 'home#index'
 
   # Devise routes for the Member model with Google OAuth callbacks
   devise_for :members, controllers: {
@@ -13,6 +14,20 @@ Rails.application.routes.draw do
     get 'members/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
   end
 
+  # Home page route
+  get 'home', to: 'home#index'
+  
+  # Media page route
+  get 'media', to: 'home#media'
+
+  # Featured page route
+  get 'featured', to: 'home#featured'
+
+  # About us page route
+  get 'about', to: 'home#about'
+
+  # Member dashboard route
+  get 'dashboard', to: 'members/dashboard#show', as: :member_dashboard
 
   resources :events do
     resources :event_images, only: %i[create destroy]
@@ -40,12 +55,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :contacts do
-    member do
-      get :delete
-    end
-  end
-
-  resources :industries do
     member do
       get :delete
     end
