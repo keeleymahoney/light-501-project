@@ -41,19 +41,19 @@ end
 RSpec.configure do |config|
   OmniAuth.config.test_mode = true
 
-  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-                                                                       provider: 'google_oauth2',
-                                                                       uid: '123545',
-                                                                       info: {
-                                                                         email: 'testuser@tamu.edu',
-                                                                         name: 'Test User'
-                                                                       },
-                                                                       credentials: {
-                                                                         token: 'mock_token',
-                                                                         refresh_token: 'mock_refresh_token',
-                                                                         expires_at: Time.now + 1.week
-                                                                       }
-                                                                     })
+OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+                    provider: 'google_oauth2',
+                    uid: '123545',
+                    info: {
+                      email: 'testuser@tamu.edu',
+                      name: 'Test User'
+                    },
+                    credentials: {
+                      token: '123456789abc',
+                      expires_at: 999999999999999
+                    }
+                  })
+
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = Rails.root.join('spec/fixtures')
