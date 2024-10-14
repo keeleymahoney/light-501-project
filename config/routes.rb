@@ -35,8 +35,7 @@ Rails.application.routes.draw do
   resources :member_contacts do
   end
 
-  resources :member_networks do
-  end
+  resources :member_networks, only: [:index, :show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
