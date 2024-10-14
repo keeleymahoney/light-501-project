@@ -10,7 +10,6 @@ class CreateContacts < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :link
       t.text :bio
-      t.binary :picture, limit: 4.megabytes
 
       t.timestamps
     end
