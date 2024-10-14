@@ -47,9 +47,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Create Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'
 
@@ -78,9 +80,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'
 
@@ -111,9 +115,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Destroy Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'
 
@@ -147,9 +153,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'
 
@@ -217,9 +225,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Create Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'
 
@@ -241,9 +251,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'
 
@@ -280,9 +292,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit create_rsvp_form_event_path(@event)
 
@@ -302,9 +316,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit create_feedback_form_event_path(@event)
 
@@ -364,9 +380,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Show Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'		
 
@@ -390,9 +408,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'		
 
@@ -420,9 +440,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'RSVP Form' do
 				@event.update(rsvp_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit destroy_rsvp_form_event_path(@event)
 
@@ -445,9 +467,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'Feedback Form' do
 				@event.update(feedback_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit destroy_feedback_form_event_path(@event)
 
@@ -504,9 +528,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'RSVP Form' do
 				@event.update(rsvp_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'		
 
@@ -552,9 +578,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'Feedback Form' do
 				@event.update(feedback_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'		
 
@@ -600,9 +628,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Create Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'
 
@@ -672,9 +702,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'
 
@@ -748,9 +780,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'RSVP Form' do
 				@event.update(rsvp_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit destroy_rsvp_form_event_path(@event)	
 
@@ -821,9 +855,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'Feedback Form' do
 				@event.update(feedback_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit destroy_feedback_form_event_path(@event)			
 
@@ -939,9 +975,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Create Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'	
 
@@ -955,9 +993,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'	
 
@@ -975,9 +1015,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'RSVP Form' do
 				@event.update(rsvp_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'
 
@@ -995,9 +1037,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'Feedback Form' do
 				@event.update(feedback_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'
 
@@ -1053,9 +1097,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Show Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'		
 
@@ -1067,9 +1113,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'		
 
@@ -1085,9 +1133,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'RSVP Form' do
 				@event.update(rsvp_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit destroy_rsvp_form_event_path(@event)
 
@@ -1099,9 +1149,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			scenario 'Feedback Form' do
 				@event.update(feedback_link: 'TEST_ID')
 
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				visit destroy_feedback_form_event_path(@event)
 
@@ -1165,9 +1217,11 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Show Forms' do
 			scenario 'RSVP Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'RSVP Form'		
 
@@ -1185,9 +1239,11 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				visit events_path
+				visit root_path
 				
-				click_button 'Google'
+				click_button 'Login with Google'
+
+				visit events_path
 
 				click_on 'Feedback Form'		
 
