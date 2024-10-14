@@ -4,19 +4,6 @@
 
 <br/>
 
-<nav>
-  <ul>
-    <% if member_signed_in? %>
-      <li><%= link_to 'Sign Out', destroy_member_session_path, method: :delete %></li>
-    <% else %>
-      <li>
-        <%= button_to member_google_oauth2_omniauth_authorize_path, class: "btn btn-danger", method: :post, data: { turbo: "false" } do %>
-          <i class="fab fa-google mobile-text"></i><span class="mobile-font">&nbsp;Google</span>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</nav>
 
 <h2 class="text-center">All Events</h2>
 <p class="ml-2" style="color: green"><%= notice %></p>

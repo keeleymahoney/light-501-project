@@ -2,6 +2,7 @@
 
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  before_action :check_if_signed_in
 
   # GET /events or /events.json
   def index
@@ -212,4 +213,11 @@ class EventsController < ApplicationController
   # def rsvp_form_id
   #   Event.find(params[:id]).rsvp_link
   # end
+  private
+
+  def check_if_signed_in
+    unless member_signed_in?
+      redirect_to root_path, notice: 'You do not have access to this page. Please log in.'
+    end
+  end
 end
