@@ -7,7 +7,7 @@
           1,
           null,
           1,
-          0,
+          6,
           null,
           null
         ]
@@ -62,7 +62,7 @@
           null,
           null,
           1,
-          5,
+          18,
           null,
           null,
           null,
@@ -302,6 +302,104 @@
           null
         ]
       },
+      "/csce431/light-501-Project/app/controllers/members/omniauth_callbacks_controller.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          6,
+          6,
+          null,
+          6,
+          6,
+          6,
+          6,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          null,
+          1,
+          6,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          24,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/light-501-Project/app/controllers/member_contacts_controller.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          11,
+          1,
+          null,
+          null,
+          null,
+          1,
+          9,
+          null,
+          9,
+          3,
+          null,
+          null,
+          9,
+          1,
+          null,
+          null,
+          9,
+          1,
+          null,
+          null,
+          9,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/light-501-Project/app/models/contact.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/csce431/light-501-Project/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
@@ -385,33 +483,6 @@
         "branches": {
         }
       },
-      "/csce431/light-501-Project/app/controllers/member_contacts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null
-        ],
-        "branches": {
-        }
-      },
       "/csce431/light-501-Project/app/controllers/member_networks_controller.rb": {
         "lines": [
           0,
@@ -444,60 +515,6 @@
           0,
           null,
           0
-        ],
-        "branches": {
-        }
-      },
-      "/csce431/light-501-Project/app/controllers/members/omniauth_callbacks_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null
         ],
         "branches": {
         }
@@ -547,18 +564,8 @@
         ],
         "branches": {
         }
-      },
-      "/csce431/light-501-Project/app/models/contact.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1728874235
+    "timestamp": 1728877233
   }
 }
