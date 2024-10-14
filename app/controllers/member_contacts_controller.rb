@@ -24,7 +24,7 @@ class MemberContactsController < ApplicationController
     end
 
     if params[:industry].present?
-      @contacts = Contact.joins(:contacts_industries)
+      @contacts = @contacts.joins(:contacts_industries)
                        .joins("INNER JOIN industries ON industries.id = contacts_industries.industry_id")
                        .where(industries: { industry_type: params[:industry] })
     end
