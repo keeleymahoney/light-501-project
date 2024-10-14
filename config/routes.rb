@@ -16,12 +16,18 @@ Rails.application.routes.draw do
 
   # Home page route
   get 'home', to: 'home#index'
+  
   # Media page route
   get 'media', to: 'home#media'
+
   # Featured page route
   get 'featured', to: 'home#featured'
+
   # About us page route
   get 'about', to: 'home#about'
+
+  # Member dashboard route
+  get 'dashboard', to: 'members/dashboard#show', as: :member_dashboard
 
   resources :events do
     resources :event_images, only: %i[create destroy]
