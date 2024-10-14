@@ -1,0 +1,87 @@
+<div style='margin-left: 5%'>
+<h1><%= contact.new_record? ? 'New Contact' : 'Edit Contact' %></h1>
+<%= form_with(model: contact, local: true) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <ul>
+        <% contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+
+  <div>
+
+    <div class="field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :organization %>
+      <%= form.text_field :organization %>
+    </div>
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+
+    <div class="field">
+      <%= form.label :link %>
+      <%= form.text_field :link %>
+    </div>
+
+    <div class="field">
+      <%= form.label :bio %>
+      <%= form.text_area :bio %>
+    </div>
+
+    <div class="field">
+      <%= form.label :industries %>
+      <% industry_list = '' %>
+      <% @contact.industries.each do |industry|%>
+      <% industry_list << industry.industry_type << ', ' %>
+      <% end %>
+      <% industry_list.strip! %>
+      <% industry_list.slice!(industry_list.length - 1) %>
+    <%= form.text_field :industries, :value => industry_list, placeholder: 'Enter tags, separated by commas' %>
+    </div>
+
+  </div>
+    <!--
+  <div>
+    <div class="border rounded border-1 border-dark p-1 mb-2">
+      <% unless contact.pfp == nil %>
+        <img src="data:image/jpg;base64,<%= Base64.encode64(contact.pfp) %>" alt="Profile Picture" class="img-fluid rounded" />
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= form.label :pfp %>
+      <%= form.file_field :pfp, class: 'form-control' %>
+    </div>
+  </div>
+    -->
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>

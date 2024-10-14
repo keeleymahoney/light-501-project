@@ -1,6 +1,6 @@
 class Request < ApplicationRecord
-  has_one :member
+  belongs_to :member
 
-  enum :request_type, %i[network_access constritution_access network_addition]
+  enum :request_type, %i[network_access constitution_access network_addition]
   enum :status, %i[unsettled accepted rejected]
 end

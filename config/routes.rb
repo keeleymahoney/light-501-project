@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   resources :requests do
     member do
       get :delete
+      post :approve
+      post :deny 
     end
   end
 end

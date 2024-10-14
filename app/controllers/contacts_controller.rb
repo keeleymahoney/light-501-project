@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.pfp = @contact.pfp.build(picture: pfp)
+    # @contact.pfp = @contact.pfp.build(pfp: @contact.pfp)
 
     if @contact.save
       associate_industries(@contact, params[:contact][:industries])
