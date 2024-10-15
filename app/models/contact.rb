@@ -9,4 +9,13 @@ class Contact < ApplicationRecord
     contact = Contact.find_by(id:)
     contact.industries.clear
   end
+
+  def pfp_file=(file)
+    self.pfp = file.read
+  end
+
+  def pfp_file
+    StringIO.new(pfp) if pfp
+  end
+  
 end

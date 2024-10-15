@@ -63,20 +63,20 @@
     </div>
 
   </div>
-    <!--
+    
   <div>
     <div class="border rounded border-1 border-dark p-1 mb-2">
-      <% unless contact.pfp == nil %>
-        <img src="data:image/jpg;base64,<%= Base64.encode64(contact.pfp) %>" alt="Profile Picture" class="img-fluid rounded" />
+      <% if @contact.pfp.present? %>
+        <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(@contact.pfp)}" %>
       <% end %>
     </div>
 
     <div class="field">
-      <%= form.label :pfp %>
-      <%= form.file_field :pfp, class: 'form-control' %>
+      <%= form.label :pfp_file %>
+      <%= form.file_field :pfp_file, class: 'form-control' %>
     </div>
   </div>
-    -->
+    
 </div>
 
   <div class="actions">
