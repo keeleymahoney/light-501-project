@@ -5,23 +5,18 @@
  * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
  @import "bootstrap";
- @import "home";
- 
- // Logo and User styling
+
+ // Logo styling
  .logo {
      width: 100px;
      height: 100px;
  }
  
+ // User icon styling
  .user {
      width: 60px;
      height: 60px;
@@ -29,45 +24,41 @@
  
  // Header and Footer styling
  header, footer {
-     background-color: #500000; // Maroon background for both header and footer
+     background-color: #500000; // Maroon color for both
      color: white; // White text for contrast
      padding: 10px;
  }
  
- .nav-item {
-     margin-right: 15px; // Spacing between navigation items
- }
- 
+ // Navigation link styling
  .nav-link {
      display: inline-block;
      padding: 10px 15px;
      background-color: #500000; // Maroon background for buttons
      color: white; // White text color
-     border: none;
      border-radius: 5px;
      text-decoration: none;
-     transition: background-color 0.3s ease; // Smooth hover transition
+     transition: background-color 0.3s ease;
  }
  
  // Hover effect for nav links
  .nav-link:hover {
-     background-color: #D3D3D3; // Light gray hover effect
-     color: black; // Black text on hover
+     background-color: #D3D3D3; // Light gray background on hover
+     color: black; // Black text color on hover
  }
  
  // Active state for buttons
  .nav-link:active {
-     background-color: #800000; // Darker maroon when active
+     background-color: #800000; // Darker maroon for active state
  }
  
- // Footer-specific styling
+ // Footer-specific text alignment
  footer p {
      text-align: center;
      font-size: 14px;
      margin: 0;
  }
  
- // Content-specific styles
+ // Header layout
  .header {
      display: flex;
      justify-content: space-between;
@@ -80,6 +71,21 @@
      margin: 0;
  }
  
+ // Navigation bar styling
+ .nav {
+     border: 2px solid black;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .nav h3 {
+     align-self: center;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ // Button container in create section
  .create {
      text-align: right;
  }
@@ -88,15 +94,18 @@
      margin-right: 15px;
  }
  
+ // Page title styling
  .title-page {
      text-align: center;
      border: 1px solid black;
  }
  
+ // Full-width container class
  .full-width {
      width: 100%;
  }
  
+ // Form container styling
  .form {
      width: 90%;
      margin-left: auto;
@@ -104,13 +113,14 @@
      border: 1px solid black;
  }
  
+ // Table styling
  table, th, td {
-     border: 1px solid black; /* Adds a border around the table, headers, and cells */
-     border-collapse: collapse; /* Ensures borders are shared between adjacent cells */
+     border: 1px solid black; // Adds a border around the table, headers, and cells
+     border-collapse: collapse; // Ensures borders are shared between adjacent cells
  }
  
  th, td {
-     padding: 10px; /* Optional: Adds padding inside the cells */
-     text-align: left; /* Optional: Aligns text to the left in the cells */
+     padding: 10px; // Adds padding inside the cells
+     text-align: left; // Aligns text to the left in the cells
  }
  

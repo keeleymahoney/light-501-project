@@ -1,0 +1,55 @@
+<%= render "header"%>
+<%= render "member_header"%>
+
+<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3" %>
+<br/>
+
+<br/>
+
+<h1 class="title-page"><%= @contact.first_name + ' ' + @contact.last_name %> </h1>
+
+<br/>
+
+<p style="text-align: center;">image will go here</p>
+
+<div class="form">
+<div class="header row">
+    <div class= "col">
+        <p><strong>First Name</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.first_name %> </p>
+    </div>
+    <div class= "col">
+        <p><strong>Last Name</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.last_name %> </p>
+    </div>
+    <div class= "col">
+        <p><strong>Title</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.last_name %> </p>
+    </div>
+</div>
+
+<br/>
+
+<div class="header row">
+    <div class= "col">
+        <p><strong>Organization</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.organization %> </p>
+    </div>
+    <div class= "col">
+        <p><strong>Link</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.link %> </p>
+    </div>
+    <div class= "col">
+        <p><strong>Email</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.email %> </p>
+    </div>
+</div>
+
+<br/>
+<div class="header row">
+    <div class = "col">
+        <p><strong>Bio</strong></p>
+        <p class="border rounded border-1 border-dark p-1"><%= @contact.bio %> </p>
+    </div>
+<div>
+<div

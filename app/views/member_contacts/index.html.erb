@@ -1,0 +1,56 @@
+<%= render "header"%>
+<%= render "member_header"%>
+
+<br/>
+<h2 class="text-center">Network Contacts</h2>
+
+<div class="search-form text-center">
+  <%= form_with url: member_contacts_path, method: :get, local: true do %>
+    <div class = "header row">
+      <div class ="col">
+        <%= label_tag :first_name, "First Name:" %>
+        <%= text_field_tag :first_name, params[:first_name] %>
+      </div>
+      <div class="col">
+        <%= label_tag :last_name, "Last Name:" %>
+        <%= text_field_tag :last_name, params[:last_name] %>
+      </div>
+      <div class="col">
+        <%= label_tag :organization, "Organization:" %>
+        <%= select_tag :organization, options_for_select(@organizations, params[:organization]), include_blank: true %>
+      </div>
+    </div>
+    <div class="float-right mr-4">
+      <%= submit_tag "Search" %>
+    </div>
+  <% end %>
+</div>
+
+<br/>
+<br/>
+<div id="member-networks-table">
+  <table style="width: 90%; margin-left: auto; margin-right: auto;">
+
+    <tr>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Organization</th>
+      <th>Industry</th>
+      <th>View </th>
+    </tr>
+    <% @contacts.each do |contact| %>
+    <tr>
+      <td>pic</td>
+      <td><%=contact.first_name + ' ' + contact.last_name%></td>
+      <td><%= contact.title %></td>
+      <td><%= contact.organization %></td>
+      <td>industry</td>
+      <td><%= link_to("View", member_contact_path(contact)) %></td>
+
+    </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
