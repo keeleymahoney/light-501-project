@@ -1,0 +1,19 @@
+<%= render "events/header"%>
+
+<%= render "events/adminheader"%>
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @request %>
+
+<div>
+
+  <%= link_to "Back to requests", requests_path %>
+
+  <% if @request.status == "unsettled" %>
+    <%= button_to 'Approve', approve_request_path(@request), method: :post, data: { confirm: 'Are you sure you want to approve this request?' } %>
+    <%= button_to 'Deny', deny_request_path(@request), method: :post, data: { confirm: 'Are you sure you want to deny this request?' } %>
+  <% end %>
+
+  <%= button_to "Destroy this request", @request, method: :delete %>
+</div>

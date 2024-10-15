@@ -61,4 +61,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :requests do
+    member do
+      get :delete
+      post :approve
+      post :deny 
+    end
+  end
 end

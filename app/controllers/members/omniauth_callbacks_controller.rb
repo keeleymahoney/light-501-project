@@ -28,6 +28,25 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   protected
+    email_domain = member.email.split('@').last
+    if email_domain == 'tamu.edu'
+      # Allow login if the email domain is tamu.edu
+      if member.present?
+        sign_out_all_scopes
+        flash[:success] = 'Signed in successfully via Google.'
+        sign_in_and_redirect member, event: :authentication
+      else
+        flash[:alert] = 'You are not authorized to sign in.'
+        redirect_to new_member_session_path
+      end
+    else
+      # Reject the login if the email domain is not tamu.edu
+      flash[:alert] = 'You must log in with a tamu.edu email address.'
+      redirect_to root_path
+    end
+  end
+
+  protected
 
   def after_omniauth_failure_path_for(_scope)
     new_member_session_path
