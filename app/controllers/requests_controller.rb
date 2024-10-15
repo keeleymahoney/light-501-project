@@ -75,11 +75,11 @@ class RequestsController < ApplicationController
     datetime = DateTime.current()  # get current date
 
     if request_type == "network_access"
-      datetime.advance(month: access_period)  # set access x months out
+      datetime.advance(month: 3)  # set access x months out
       # member = Member.find(@request.member_id)
       # member.update(network_exp: datetime)
     elsif request_type == "constitution_access"
-      datetime.advance(month: access_period)  # set access x months out
+      datetime.advance(day: 1)  # set access x months out
       # member = Member.find(@request.member_id)
       # member.update(constitution_exp: datetime)
     elsif request_type == "network_addition"
