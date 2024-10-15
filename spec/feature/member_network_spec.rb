@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Managing network information', type: :feature do
     before do
-        visit events_path
-        click_on 'Google'
+        visit home_path
+        click_on 'Login with Google'
     end
 
     scenario "viewing member path" do
