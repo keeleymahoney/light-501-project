@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Managing events', type: :feature do
+  before do
+    visit home_path
+    click_on 'Login with Google'
+  end
   scenario 'creating a new event with valid inputs' do
     visit new_event_path
     fill_in 'event[name]', with: 'spec event'
