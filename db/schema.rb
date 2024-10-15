@@ -22,13 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_161958) do
     t.string "title"
     t.string "link"
     t.text "bio"
+    t.binary "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.binary "pfp"
     t.boolean "in_network", default: false
   end
 
-  create_table "contacts_industries", force: :cascade do |t|
+  create_table "contacts_industries", id: false, force: :cascade do |t|
     t.bigint "contact_id", null: false
     t.bigint "industry_id", null: false
     t.datetime "created_at", null: false

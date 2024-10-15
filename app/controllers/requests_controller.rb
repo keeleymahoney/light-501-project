@@ -13,7 +13,6 @@ class RequestsController < ApplicationController
     if params[:status].present?
       @requests = @requests.where(status: params[:status])
     end
-    
   end
 
   # GET /requests/1 or /requests/1.json
@@ -27,12 +26,23 @@ class RequestsController < ApplicationController
     @request = Request.new
   end
 
+  # GET /requests/new_network_access
+  def new_network_access
+    @request = Request.new(request_type: 'network_access')
+  end
+
+  # GET /requests/new_constitution_access
+  def new_constitution_access
+    @request = Request.new(request_type: 'constitution_access')
+  end
+
   # GET /requests/1/edit
   def edit; end
 
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
+    @request.member = current_member
 
     respond_to do |format|
       if @request.save
@@ -68,6 +78,7 @@ class RequestsController < ApplicationController
     end
   end
 
+  # Approve the request
   def approve
     @request = Request.find(params[:id])
     request_type = @request.request_type
@@ -75,24 +86,24 @@ class RequestsController < ApplicationController
     datetime = DateTime.current()  # get current date
 
     if request_type == "network_access"
-      datetime.advance(month: access_period)  # set access x months out
-      # member = Member.find(@request.member_id)
-      # member.update(network_exp: datetime)
+      datetime = datetime.advance(months: access_period)  # set access x months out
+      member = Member.find(@request.member_id)
+      member.update(network_exp: datetime)
     elsif request_type == "constitution_access"
-      datetime.advance(month: access_period)  # set access x months out
-      # member = Member.find(@request.member_id)
-      # member.update(constitution_exp: datetime)
+      datetime = datetime.advance(months: access_period)  # set access x months out
+      member = Member.find(@request.member_id)
+      member.update(constitution_exp: datetime)
     elsif request_type == "network_addition"
-      datetime.advance(month: access_period)  # set access x months out
-      # member = Member.find(@request.member_id)
-      # contact = Contact.find(member.contact_id)
-      # contact.update(in_network: true)
+      member = Member.find(@request.member_id)
+      contact = Contact.find(member.contact_id)
+      contact.update(in_network: true)
     end
 
     @request.update(status: :accepted)
     redirect_to @request, notice: 'Request was successfully approved.'
   end
 
+  # Deny the request
   def deny
     @request = Request.find(params[:id])
     @request.update(status: :rejected)
@@ -108,9 +119,6 @@ class RequestsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def request_params
-    params.require(:request).permit(:status)
+    params.require(:request).permit(:request_type, :description, :status)
   end
-
-  
-
 end

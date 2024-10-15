@@ -30,6 +30,13 @@ Rails.application.routes.draw do
   # routes.rb
   get 'member/dashboard', to: 'members/dashboard#show', as: 'member_dashboard'
 
+  # Routes for network, constitution, and network addition requests
+
+  get 'requests/new_network_access', to: 'requests#new_network_access', as: :new_network_access_request
+  get 'requests/new_constitution_access', to: 'requests#new_constitution_access', as: :new_constitution_access_request
+
+
+
   resources :events do
     resources :event_images, only: %i[create destroy]
     member do
