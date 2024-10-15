@@ -1,5 +1,21 @@
 <h1>Member Dashboard</h1>
-<p>Welcome to your dashboard! Here you can view and manage your settings.</p>
+
+<p>Welcome to your dashboard, <%= current_member.contact.first_name %>!</p>
+
+<div class="member-info">
+  <h3>Your Account Information</h3>
+</div>
+
+<div class="member-expirations">
+  <p><strong>Network Expiration Date:</strong> <%= current_member.network_exp.strftime("%B %d, %Y") %></p>
+  <p><strong>Constitution Expiration Date:</strong> <%= current_member.constitution_exp.strftime("%B %d, %Y") %></p>
+</div>
+
+<div class="member-actions">
+  <!-- Add links for requesting network and constitution access -->
+  <%= link_to 'Request Access to Network', new_request_path(type: 'network'), class: 'btn btn-primary' %>
+  <%= link_to 'Request Access to Constitution', new_request_path(type: 'constitution'), class: 'btn btn-primary' %>
+</div>
 
 <ul>
   <li><%= link_to 'View Events', events_path %></li>

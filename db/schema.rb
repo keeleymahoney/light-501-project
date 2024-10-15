@@ -47,12 +47,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_10_183057) do
   end
 
   create_table "members", force: :cascade do |t|
+    t.integer "contact_id", null: false
     t.string "email", null: false
     t.string "full_name"
-    t.string "uid"
-    t.string "avatar_url"
+    t.boolean "admin", default: false
+    t.datetime "network_exp"
+    t.datetime "constitution_exp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_members_on_contact_id"
     t.index ["email"], name: "index_members_on_email", unique: true
   end
 
@@ -66,5 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_10_183057) do
   end
 
   add_foreign_key "event_images", "events"
+  add_foreign_key "members", "contacts"
   add_foreign_key "tokens", "members"
 end

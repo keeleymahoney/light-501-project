@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
 
   # Member dashboard route
-  get 'dashboard', to: 'members/dashboard#show', as: :member_dashboard
+  get 'member/dashboard', to: 'members#dashboard', as: 'member_dashboard'
 
   resources :events do
     resources :event_images, only: %i[create destroy]
