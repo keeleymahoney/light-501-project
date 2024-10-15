@@ -62,6 +62,11 @@
     <%= form.text_field :industries, :value => industry_list, placeholder: 'Enter tags, separated by commas' %>
     </div>
 
+    <div style="display: none;">
+      <%= form.label :in_network %>
+      <%= form.check_box :in_network, { checked: true }, 'yes', 'no' %>
+    </div>
+
   </div>
     
   <div>

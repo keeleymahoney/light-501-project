@@ -68,6 +68,11 @@ class RequestsController < ApplicationController
     end
   end
 
+  def delete
+    @request = Request.find(params[:id])
+    @member = Member.find(@request.member_id)
+  end
+
   def approve
     @request = Request.find(params[:id])
     request_type = @request.request_type
