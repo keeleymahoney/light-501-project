@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   # Set the root URL to the home#index action
-  root 'home#index'
+  root 'contacts#index'
 
   # Devise routes for the Member model with Google OAuth callbacks
   devise_for :members, controllers: {
