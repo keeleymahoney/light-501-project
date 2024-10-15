@@ -52,7 +52,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email)
+    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file)
   end
 
   def associate_industries(contact, industries)
