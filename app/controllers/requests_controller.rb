@@ -36,6 +36,12 @@ class RequestsController < ApplicationController
     @request = Request.new(request_type: 'constitution_access')
   end
 
+  # GET /requests/new_network_addition
+  def new_network_addition
+    @contact = Contact.find_by(id: current_member.contact_id)
+    @request = Request.new(request_type: 'network_addition')
+  end  
+
   # GET /requests/1/edit
   def edit; end
 
@@ -54,6 +60,22 @@ class RequestsController < ApplicationController
       end
     end
   end
+
+# POST /requests/create_network_addition
+def create_network_addition
+  @request = Request.new(request_params)
+  @request.request_type = 'network_addition'
+  @request.member = current_member
+  
+  # Find the related contact for the member
+  @contact = Contact.find_by(id: current_member.contact_id) 
+
+  if @request.save
+    redirect_to @request, notice: 'Network addition request was successfully created.'
+  else
+    render :new_network_addition
+  end
+end
 
   # PATCH/PUT /requests/1 or /requests/1.json
   def update
