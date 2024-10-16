@@ -1,0 +1,22 @@
+
+
+<%= render "events/header"%>
+
+<%= render "events/adminheader"%>
+
+<div style='margin-left: 5%'>
+    <h2>Delete Contact From Network</h2>
+    <%= link_to("Back to Home", requests_path)%>
+    <%= form_for(@request, method: 'delete') do |f| %>
+    
+        <br/>
+        <h3 >Are you sure you want to permanently delete this request?</h3>
+        <% member = @members.find(@request.member_id) %>
+        <strong><p >Request Name: </strong><%= member.full_name %></p>
+    
+        <div >
+            <%= f.submit "Delete Contact" %>
+        </div>
+    
+      <% end %>
+</div>

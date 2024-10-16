@@ -2,7 +2,7 @@
 
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @contacts = Contact.where(in_network: true)
   end
 
   def show
@@ -52,7 +52,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file)
+    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file, :in_network)
   end
 
   def associate_industries(contact, industries)
