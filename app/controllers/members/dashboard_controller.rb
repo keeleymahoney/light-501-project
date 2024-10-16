@@ -3,6 +3,7 @@ class Members::DashboardController < ApplicationController
 
     def show
       # Dashboard logic goes here
+      @member = current_member
     end
   
     private

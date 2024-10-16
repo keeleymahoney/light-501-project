@@ -1,0 +1,13 @@
+<%= render "events/header"%>
+
+<%= render "events/adminheader"%>
+
+<h1>New request</h1>
+
+<%= render "form", request: @request %>
+
+<br>
+
+<div>
+  <%= link_to "Back to requests", requests_path %>
+</div>

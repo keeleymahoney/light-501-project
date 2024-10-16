@@ -1,7 +1,30 @@
 <h1>Member Dashboard</h1>
-<p>Welcome to your dashboard! Here you can view and manage your settings.</p>
+
+<p>Welcome to your dashboard, <%= current_member.full_name %>!</p>
+
+<div class="member-info">
+  <h3>Your Account Information</h3>
+</div>
+
+<div class="member-expirations">
+  <p><strong>Network Expiration Date:</strong> <%= current_member.network_exp.strftime("%B %d, %Y") %></p>
+  <p><strong>Constitution Expiration Date:</strong> <%= current_member.constitution_exp.strftime("%B %d, %Y") %></p>
+</div>
+
+<h3>Request Access</h3>
+<div>
+  <%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %>
+</div>
+<br>
+<div>
+  <%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %>
+</div>
+<br>
+<div class="actions">
+  <%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %>
+</div>
 
 <ul>
-  <li><%= link_to 'View Events', events_path %></li>
+  <li><%= link_to 'View Contacts', member_contacts_path %></li>
   <li><%= link_to 'Logout', destroy_member_session_path, method: :delete %></li>
 </ul>
