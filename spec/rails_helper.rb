@@ -1,5 +1,3 @@
-
-
 # frozen_string_literal: true
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
@@ -9,7 +7,6 @@ SimpleCov.start 'rails'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
-
 
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
@@ -42,7 +39,6 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
-
   OmniAuth.config.test_mode = true
 
 OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({

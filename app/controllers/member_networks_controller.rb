@@ -11,6 +11,19 @@ class MemberNetworksController < ApplicationController
         if current_member.present?
             email = current_member.email
             @contact = Contact.find_by(email: email)
+
+            if @contact.nil?
+                flash[:alert] = "You do not currently have any network information available."
+                    @contact = Contact.new(
+                        id: -1,
+                        first_name: "",
+                        last_name: "",
+                        email: "",
+                        organization: "",
+                        title: "",
+                        link: "",
+                        bio: "")
+            end
         else
             flash[:alert] = "You need to sign in before accessing this page."
             redirect_to new_member_session_path
@@ -21,6 +34,17 @@ class MemberNetworksController < ApplicationController
         if current_member.present?
             email = current_member.email
             @contact = Contact.find_by(email: email)
+            if @contact.nil?
+                    @contact = Contact.new(
+                        first_name: "",
+                        last_name: "",
+                        email: "",
+                        organization: "",
+                        title: "",
+                        link: "",
+                        bio: ""
+                      )
+                end
         else
             flash[:alert] = "You need to sign in before accessing this page."
             redirect_to new_member_session_path
