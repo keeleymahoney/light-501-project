@@ -114,3 +114,22 @@
      text-align: left; /* Optional: Aligns text to the left in the cells */
  }
  
+ .member-info {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .member-expirations {
+    margin-top: 10px;
+  }
+  
+  .member-actions {
+    margin-top: 20px;
+  }
+  
+  .member-actions .btn {
+    margin-right: 10px;
+  } 

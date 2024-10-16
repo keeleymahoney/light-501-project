@@ -27,7 +27,16 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
 
   # Member dashboard route
-  get 'dashboard', to: 'members/dashboard#show', as: :member_dashboard
+  # routes.rb
+  get 'member/dashboard', to: 'members/dashboard#show', as: 'member_dashboard'
+
+  # Routes for network, constitution, and network addition requests
+
+  get 'requests/new_network_access', to: 'requests#new_network_access', as: :new_network_access_request
+  get 'requests/new_constitution_access', to: 'requests#new_constitution_access', as: :new_constitution_access_request
+  get 'requests/new_network_addition', to: 'requests#new_network_addition', as: :new_network_addition_request
+  post 'requests/create_network_addition', to: 'requests#create_network_addition', as: :create_network_addition_request
+
 
   resources :events do
     resources :event_images, only: %i[create destroy]

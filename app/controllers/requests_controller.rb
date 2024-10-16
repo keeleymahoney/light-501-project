@@ -13,7 +13,6 @@ class RequestsController < ApplicationController
     if params[:status].present?
       @requests = @requests.where(status: params[:status])
     end
-    
   end
 
   # GET /requests/1 or /requests/1.json
@@ -27,12 +26,29 @@ class RequestsController < ApplicationController
     @request = Request.new
   end
 
+  # GET /requests/new_network_access
+  def new_network_access
+    @request = Request.new(request_type: 'network_access')
+  end
+
+  # GET /requests/new_constitution_access
+  def new_constitution_access
+    @request = Request.new(request_type: 'constitution_access')
+  end
+
+  # GET /requests/new_network_addition
+  def new_network_addition
+    @contact = Contact.find_by(id: current_member.contact_id)
+    @request = Request.new(request_type: 'network_addition')
+  end  
+
   # GET /requests/1/edit
   def edit; end
 
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
+    @request.member = current_member
 
     respond_to do |format|
       if @request.save
@@ -44,6 +60,22 @@ class RequestsController < ApplicationController
       end
     end
   end
+
+# POST /requests/create_network_addition
+def create_network_addition
+  @request = Request.new(request_params)
+  @request.request_type = 'network_addition'
+  @request.member = current_member
+  
+  # Find the related contact for the member
+  @contact = Contact.find_by(id: current_member.contact_id) 
+
+  if @request.save
+    redirect_to @request, notice: 'Network addition request was successfully created.'
+  else
+    render :new_network_addition
+  end
+end
 
   # PATCH/PUT /requests/1 or /requests/1.json
   def update
@@ -88,16 +120,16 @@ class RequestsController < ApplicationController
       # member = Member.find(@request.member_id)
       # member.update(constitution_exp: datetime)
     elsif request_type == "network_addition"
-      datetime.advance(month: access_period)  # set access x months out
-      # member = Member.find(@request.member_id)
-      # contact = Contact.find(member.contact_id)
-      # contact.update(in_network: true)
+      member = Member.find(@request.member_id)
+      contact = Contact.find(member.contact_id)
+      contact.update(in_network: true)
     end
 
     @request.update(status: :accepted)
     redirect_to @request, notice: 'Request was successfully approved.'
   end
 
+  # Deny the request
   def deny
     @request = Request.find(params[:id])
     @request.update(status: :rejected)
@@ -113,9 +145,6 @@ class RequestsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def request_params
-    params.require(:request).permit(:status)
+    params.require(:request).permit(:request_type, :description, :status)
   end
-
-  
-
 end

@@ -1,12 +1,12 @@
 class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
-    member = Member.from_google(**from_google_params)
-
-    # if-statement only applies to admins. Update token if expired, create token if it doesn't exist
-    if !member.token.nil? && member.token.token_exp.to_i <= Time.now.to_i   
+    member = Member.from_google(email: auth.info.email, full_name: auth.info.name, admin: false)
+    
+    # Update token if expired, create token if it doesn't exist
+    if !member.token.nil? && member.token.token_exp.to_i <= Time.now.to_i
       member.token.update(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
     elsif member.token.nil?
-      member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at) 
+      member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
     end
 
     email_domain = member.email.split('@').last
@@ -30,25 +30,23 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   protected
 
   def after_omniauth_failure_path_for(_scope)
-      new_member_session_path
+    new_member_session_path
   end
 
   def after_sign_in_path_for(resource_or_scope)
-      stored_location_for(resource_or_scope) || root_path
+    stored_location_for(resource_or_scope) || root_path
   end
 
   private
 
   def from_google_params
-      @from_google_params ||= {
-          uid: auth.uid,
-          email: auth.info.email,
-          full_name: auth.info.name,
-          avatar_url: auth.info.image
-      }
+    @from_google_params ||= {
+      email: auth.info.email,
+      full_name: auth.info.name
+    }
   end
 
   def auth
-      @auth ||= Rails.application.env_config['omniauth.auth'] || request.env['omniauth.auth']
-    end
+    @auth ||= Rails.application.env_config['omniauth.auth'] || request.env['omniauth.auth']
+  end
 end
