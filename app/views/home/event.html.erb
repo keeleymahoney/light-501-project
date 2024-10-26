@@ -1,8 +1,56 @@
 <div class="container text-center">
     <h2 class="display-4">Current & Upcoming Events</h2>
-    <div>
+    <div class="event-grid">
+        <% @currentEvents.each do |event| %>
+            <div class="card">
+                <h3><%= event.name %></h3>
+                <p><%= event.description %></p>
+                <div class="row">
+                    <div class= "col">
+                        <p><strong>Location:</strong> <%= event.location %></p>
+                    </div>
+                    <div class= "col">
+                        <p><strong>Date:</strong> <%= event.date.strftime("%m/%d/%y %I:%M %p")  %></p>  
+                    </div>
+                    <div class= "col">
+                        <p><strong>Virtual:</strong> <%= event.virtual ? "Yes" : "No" %></p>  
+                    </div>
+                </div>
+                <div>
+                    <p>Images
+                </div>
+                <div class = "row">
+                    <p class="ml-2">RSVP Link</p>
+                    <p class="ml-auto mr-2">Feedback Link </p>
+                </div>
+            </div>
+        <% end %>
     </div>
     <h2 class="display-4">Previous Events</h2>
-    <div>
+    <div class="event-grid">
+        <% @prevEvents.each do |event| %>
+            <div class="card">
+                <h3><%= event.name %></h3>
+                <p><%= event.description %></p>
+                <div class="row">
+                    <div class= "col">
+                        <p><strong>Location:</strong> <%= event.location %></p>
+                    </div>
+                    <div class= "col">
+                        <p><strong>Date:</strong> <%= event.date.strftime("%m/%d/%y %I:%M %p")  %></p>  
+                    </div>
+                    <div class= "col">
+                        <p><strong>Virtual:</strong> <%= event.virtual ? "Yes" : "No" %></p>  
+                    </div>
+                </div>
+                <div>
+                    <p>Images
+                </div>
+                <div class = "row">
+                    <p class="ml-2">RSVP Link</p>
+                    <p class="ml-auto mr-2">Feedback Link </p>
+                </div>
+            </div>
+        <% end %>
     </div>
 </div>

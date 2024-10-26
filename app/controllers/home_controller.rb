@@ -10,4 +10,9 @@ class HomeController < ApplicationController
   def about
     # Code for about page
   end
+
+  def event
+    @prevEvents = Event.where("date < ?", Date.today)
+    @currentEvents = Event.where("date >= ?", Date.today)
+  end
 end
