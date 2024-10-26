@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def event
-    @prevEvents = Event.where("date < ?", Date.today)
-    @currentEvents = Event.where("date >= ?", Date.today)
+    @prevEvents = Event.where("date < ?", Date.today).order(date: :desc)
+    @currentEvents = Event.where("date >= ?", Date.today).order(date: :asc)
   end
 end
