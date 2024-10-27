@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_13_161958) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_27_144527) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_161958) do
     t.string "title"
     t.string "link"
     t.text "bio"
-    t.binary "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.binary "pfp"
@@ -55,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_161958) do
     t.text "feedback_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "rsvp_id"
+    t.text "feedback_id"
   end
 
   create_table "industries", force: :cascade do |t|
