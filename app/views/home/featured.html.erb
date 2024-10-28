@@ -6,14 +6,10 @@
 
     <!-- Photo Gallery Section -->
     <div id="gallery" class="row">
-      <% 6.times do |i| %>
         <div class="col-lg-4 col-md-6 mb-4">
-          <img src="/path/to/placeholder.jpg" class="img-fluid" alt="Featured Image <%= i + 1 %>">
+          <%= image_tag "tareq.png", alt: "Featured Image", class:"img-fluid" %>  
         </div>
-      <% end %>
     </div>
-
-    <p class="mt-4 text-muted">No featured content available right now.</p>
   </div>
 </section>
 

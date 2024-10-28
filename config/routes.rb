@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   # Media page route
   get 'media', to: 'home#media'
 
+  get 'home_event', to: 'home#event'
+
   # Featured page route
   get 'featured', to: 'home#featured'
 
