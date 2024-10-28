@@ -16,7 +16,14 @@
         <p><strong>Responses: <%= @num_responses %></strong></p>
         <p><%= link_to("Submission Form", @form_submission_link, target: :_blank, rel: 'noopener') %></p>
         <p><%= link_to("Edit In Google Forms", @form_edit_link, target: :_blank, rel: 'noopener') %></p>
-        <p><%= link_to("Delete Form", delete_rsvp_form_event_path(@event)) %></p>    
+        <p><%= link_to("View Responses In Google Forms", @form_responses_link, target: :_blank, rel: 'noopener') %></p>
+        <% if @sheet_exists %>
+          <p><%= link_to("View Responses In Google Sheets", @form_sheet_link, target: :_blank, rel: 'noopener') %></p>
+        <% else %>
+          <p style="color: red; font-style: italic;">No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form's "Responses" tab.<p>
+        <% end %>
+        <br/>
+        <p><%= link_to("Delete Form", delete_rsvp_form_event_path(@event)) %></p>
       </div>
     </div>
   </div>
