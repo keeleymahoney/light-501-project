@@ -17,6 +17,7 @@
       <th>Date</th>
       <th>Description</th>
       <th>Location</th>
+      <th>Virtual</th>
       <th>RSVP Link </th>
       <th>Feedback Link </th>
       <th>View</th>
@@ -30,6 +31,7 @@
       <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
       <td><%= event.description %></td>
       <td><%= event.location %></td>
+      <td><%= event.virtual ? "Yes" : "No" %></td>
       <td><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></td>
       <td><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></td>
       <td><%= link_to("View", event_path(event)) %></td>
