@@ -34,8 +34,8 @@ Rails.application.routes.draw do
 
   get 'requests/new_network_access', to: 'requests#new_network_access', as: :new_network_access_request
   get 'requests/new_constitution_access', to: 'requests#new_constitution_access', as: :new_constitution_access_request
-  get 'requests/new_network_addition', to: 'requests#new_network_addition', as: :new_network_addition_request
-  post 'requests/create_network_addition', to: 'requests#create_network_addition', as: :create_network_addition_request
+  get 'contacts/new_network_addition', to: 'contacts#new_network_addition', as: :new_network_addition_contact
+  post 'contacts/create_network_addition', to: 'contacts#create_network_addition', as: :create_network_addition_contact
 
 
   resources :events do

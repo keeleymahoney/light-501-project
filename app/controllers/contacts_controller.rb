@@ -49,6 +49,35 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
   end
 
+  # stuff
+  def new_network_addition
+    prev_contact = Contact.find_by(id: current_member.contact_id) 
+    @contact = prev_contact.dup
+    @contact.in_network = false
+  end  
+
+  # POST /requests/create_network_addition
+def create_network_addition  
+  # Find the related contact for the member
+    # prev_contact = Contact.find_by(id: current_member.contact_id) 
+    # @contact = prev_contact.dup
+  @contact = Contact.new(contact_params)
+  @contact.in_network = false
+
+  unless @contact.save
+    render :new_network_addition
+  end
+
+  @request = Request.new(request_type: 'network_addition', contacts_id: @contact.id)
+  @request.member = current_member
+
+  if @request.save
+    redirect_to @request, notice: 'Network addition request was successfully created.'
+  else
+    render :new_network_addition
+  end
+end
+
   private
 
   def contact_params

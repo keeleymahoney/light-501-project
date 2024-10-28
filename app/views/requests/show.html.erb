@@ -7,6 +7,15 @@
 <%= render @request %>
 
 <div>
+  <h1> Current Contact Card: </h1>
+  <%= render @contact %>
+  <% if @updated_contact != nil %>
+  <h1> Updated Contact Card: </h1>
+  <%= render @updated_contact %>
+  <% end %>
+</div>
+
+<div>
 
   <%= link_to "Back to requests", requests_path %>
 
@@ -15,5 +24,5 @@
     <%= button_to 'Deny', deny_request_path(@request), method: :post, data: { confirm: 'Are you sure you want to deny this request?' } %>
   <% end %>
 
-  <%= button_to "Destroy this request", @request, method: :delete %>
+  <%= button_to "Destroy this request", delete_request_path(@request), method: :post, data: { confirm: 'Are you sure you want to delete this request?'} %>
 </div>

@@ -4,6 +4,7 @@ class Contact < ApplicationRecord
     
   belongs_to :member, optional: true
   has_and_belongs_to_many :industries
+  has_one :request, dependent: :destroy
 
   before_update do
     contact = Contact.find_by(id:)

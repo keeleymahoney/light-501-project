@@ -19,6 +19,10 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @member = Member.find(@request.member_id)
+    @contact = Contact.find(@member.contact_id)
+    if @request.contacts_id != nil
+      @updated_contact = Contact.find(@request.contacts_id)
+    end
   end
 
   # GET /requests/new
@@ -38,8 +42,10 @@ class RequestsController < ApplicationController
 
   # GET /requests/new_network_addition
   def new_network_addition
-    @contact = Contact.find_by(id: current_member.contact_id)
-    @request = Request.new(request_type: 'network_addition')
+    prev_contact = Contact.find_by(id: current_member.contact_id) 
+    @contact = prev_contact.dup
+    @contact.in_network = false
+    @request = Request.new(request_type: 'network_addition', contacts_id: @contact.id)
   end  
 
   # GET /requests/1/edit
@@ -68,7 +74,15 @@ def create_network_addition
   @request.member = current_member
   
   # Find the related contact for the member
-  @contact = Contact.find_by(id: current_member.contact_id) 
+  prev_contact = Contact.find_by(id: current_member.contact_id) 
+  @contact = prev_contact.dup
+  @contact.in_network = false
+
+  unless @contact.save
+    render :new_network_addition
+  end
+
+  @request.contacts_id = @contact.id
 
   if @request.save
     redirect_to @request, notice: 'Network addition request was successfully created.'
@@ -92,6 +106,7 @@ end
 
   # DELETE /requests/1 or /requests/1.json
   def destroy
+    
     @request.destroy
 
     respond_to do |format|
@@ -103,22 +118,25 @@ end
   def delete
     @request = Request.find(params[:id])
     @member = Member.find(@request.member_id)
+    unless @request.contacts_id == nil
+      @contact = Contact.find(@request.contacts_id)
+    end
   end
 
   def approve
     @request = Request.find(params[:id])
     request_type = @request.request_type
     access_period = 6  # the number of months of access a user gets
-    datetime = DateTime.current()  # get current date
+    datetime = DateTime.current().end_of_day()  # get current date
 
     if request_type == "network_access"
-      datetime.advance(month: 3)  # set access x months out
-      # member = Member.find(@request.member_id)
-      # member.update(network_exp: datetime)
+      datetime += 3.months  # set access x months out
+      member = Member.find(@request.member_id)
+      member.update(network_exp: datetime)
     elsif request_type == "constitution_access"
-      datetime.advance(day: 1)  # set access x months out
-      # member = Member.find(@request.member_id)
-      # member.update(constitution_exp: datetime)
+      datetime += 1.day  # set access x months out
+      member = Member.find(@request.member_id)
+      member.update(constitution_exp: datetime)
     elsif request_type == "network_addition"
       member = Member.find(@request.member_id)
       contact = Contact.find(member.contact_id)
@@ -145,6 +163,8 @@ end
 
   # Only allow a list of trusted parameters through.
   def request_params
-    params.require(:request).permit(:request_type, :description, :status)
+    params.require(:request).permit(:request_type, :description, :status, contact_attributes: [:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file, :in_network])
   end
+
+  #
 end
