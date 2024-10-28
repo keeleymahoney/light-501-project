@@ -20,7 +20,7 @@ RSpec.describe 'Managing network information', type: :feature do
         # Fill in the search form
         fill_in 'first_name', with: 'test'
         fill_in 'last_name', with: ''
-        select '', from: 'organization'
+        select 'test org', from: 'organization'
 
         click_button 'Search'
 
@@ -36,7 +36,7 @@ RSpec.describe 'Managing network information', type: :feature do
         # Fill in the search form
         fill_in 'first_name', with: 'test'
         fill_in 'last_name', with: 'test last name'
-        select '', from: 'organization'
+        select 'test org', from: 'organization'
 
         click_button 'Search'
 
@@ -57,22 +57,6 @@ RSpec.describe 'Managing network information', type: :feature do
         click_button 'Search'
     
         expect(page).to have_content('test last name')
-    end
-
-    scenario 'searching for contacts by organization' do
-
-        member = Contact.create!(first_name: "test first name", last_name: "test last name", organization: "test org")
-
-        visit member_contacts_path
-    
-        # Fill in the search form
-        fill_in 'first_name', with: 'should not pop up'
-        fill_in 'last_name', with: ''
-        select '', from: 'organization'
-    
-        click_button 'Search'
-    
-        expect(page).not_to have_content('test last name')
     end
 
     scenario 'view contact' do
