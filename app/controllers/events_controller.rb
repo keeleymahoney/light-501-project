@@ -94,8 +94,16 @@ class EventsController < ApplicationController
 
         @form_submission_link = rsvp_form_link
         @form_edit_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit"
+        @form_responses_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit#responses"
 
         @num_responses = 0
+
+        if !rsvp_form.linked_sheet_id.blank?
+          @sheet_exists = true
+          @form_sheet_link = "https://docs.google.com/spreadsheets/d/#{rsvp_form.linked_sheet_id}/edit"
+        else
+          @sheet_exists = false
+        end
 
         unless rsvp_form_responses.responses.blank?
           rsvp_form_responses.responses.each do |_r|
@@ -244,8 +252,16 @@ class EventsController < ApplicationController
 
         @form_submission_link = feedback_form_link
         @form_edit_link = "https://docs.google.com/forms/d/#{feedback_form_id}/edit"
+        @form_responses_link = "https://docs.google.com/forms/d/#{feedback_form_id}/edit#responses"
 
         @num_responses = 0
+
+        if !feedback_form.linked_sheet_id.blank?
+          @sheet_exists = true
+          @form_sheet_link = "https://docs.google.com/spreadsheets/d/#{feedback_form.linked_sheet_id}/edit"
+        else
+          @sheet_exists = false
+        end
 
         unless feedback_form_responses.responses.blank?
           feedback_form_responses.responses.each do |_r|

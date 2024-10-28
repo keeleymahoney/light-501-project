@@ -57,25 +57,13 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))			
+				sunny_expect_no_rsvp(page, @event)		
 
 				click_on 'Create Form'
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('RSVP Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))
+				sunny_expect_rsvp(page, @event)
 				expect(page).to have_content('RSVP form successfully created.')
 			end
 
@@ -90,25 +78,13 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))			
+				sunny_expect_no_feedback(page, @event)			
 
 				click_on 'Create Form'
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('Feedback Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))
+				sunny_expect_feedback(page, @event)
 				expect(page).to have_content('Feedback form successfully created.')
 			end
 		end  
@@ -133,22 +109,13 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(delete_rsvp_form_event_path(@event))
 
-				expect(page).to have_link('Back to RSVP Form', href: show_rsvp_form_event_path(@event))
-				expect(page).to have_content('Are you sure you want to permanently delete this RSVP form?')
-				expect(page).to have_content("RSVP Form's Event Name:\nParty")
-				expect(page).to have_button('Delete RSVP Form')
+				sunny_delete_confirm_rsvp(page, @event)
 
 				click_button 'Delete RSVP Form'
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))
+				sunny_expect_no_rsvp(page, @event)
 				expect(page).to have_content('RSVP form was successfully destroyed.')
 			end
 
@@ -171,22 +138,13 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(delete_feedback_form_event_path(@event))
 
-				expect(page).to have_link('Back to Feedback Form', href: show_feedback_form_event_path(@event))
-				expect(page).to have_content('Are you sure you want to permanently delete this feedback form?')
-				expect(page).to have_content("Feedback Form's Event Name:\nParty")
-				expect(page).to have_button('Delete Feedback Form')
+				sunny_delete_confirm_feedback(page, @event)
 
 				click_button 'Delete Feedback Form'
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))
+				sunny_expect_no_feedback(page, @event)
 				expect(page).to have_content('Feedback form was successfully destroyed.')
 			end
 		end  
@@ -235,13 +193,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))			
+				sunny_expect_no_rsvp(page, @event)		
 
 				click_on 'Create Form'
 
@@ -261,13 +213,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))			
+				sunny_expect_no_feedback(page, @event)			
 
 				click_on 'Create Form'
 
@@ -398,13 +344,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))	
+				sunny_expect_no_rsvp(page, @event)
 			end
 
 			scenario 'Feedback Form' do
@@ -426,13 +366,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))	
+				sunny_expect_no_feedback(page, @event)	
 			end
 		end  
 
@@ -455,13 +389,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))	
+				sunny_expect_no_rsvp(page, @event)
 			end
 
 			scenario 'Feedback Form' do
@@ -482,13 +410,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))	
+				sunny_expect_no_feedback(page, @event)	
 			end
 		end  
 	end	
@@ -538,10 +460,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(sign_in_form_event_path(@event))
 
-				expect(page).to have_link('Back to Events', href: events_path)
-				expect(page).to have_content('Sign In Again')
-				expect(page).to have_content('Please sign in again to complete the request')
-				expect(page).to have_button('Google')
+				sunny_request_sign_in(page)
 
 				click_button 'Google'
 
@@ -566,13 +485,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('RSVP Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))	
+				sunny_expect_rsvp(page, @event)	
 			end
 
 			scenario 'Feedback Form' do
@@ -588,10 +501,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(sign_in_form_event_path(@event))
 
-				expect(page).to have_link('Back to Events', href: events_path)
-				expect(page).to have_content('Sign In Again')
-				expect(page).to have_content('Please sign in again to complete the request')
-				expect(page).to have_button('Google')
+				sunny_request_sign_in(page)
 
 				click_button 'Google'
 
@@ -616,13 +526,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('Feedback Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))		
+				sunny_expect_feedback(page, @event)		
 			end
 		end  
 
@@ -640,10 +544,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(sign_in_form_event_path(@event))
 
-				expect(page).to have_link('Back to Events', href: events_path)
-				expect(page).to have_content('Sign In Again')
-				expect(page).to have_content('Please sign in again to complete the request')
-				expect(page).to have_button('Google')
+				sunny_request_sign_in(page)
 
 				click_button 'Google'
 
@@ -679,25 +580,13 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))						
+				sunny_expect_no_rsvp(page, @event)					
 
 				click_on 'Create Form'
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('RSVP Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))	
+				sunny_expect_rsvp(page, @event)	
 				expect(page).to have_content('RSVP form successfully created.')
 			end
 
@@ -714,10 +603,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(sign_in_form_event_path(@event))
 
-				expect(page).to have_link('Back to Events', href: events_path)
-				expect(page).to have_content('Sign In Again')
-				expect(page).to have_content('Please sign in again to complete the request')
-				expect(page).to have_button('Google')
+				sunny_request_sign_in(page)
 
 				click_button 'Google'
 
@@ -753,25 +639,13 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))						
+				sunny_expect_no_feedback(page, @event)						
 
 				click_on 'Create Form'
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('Feedback Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))	
+				sunny_expect_feedback(page, @event)	
 				expect(page).to have_content('Feedback form successfully created.')
 			end
 		end  		
@@ -790,10 +664,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(sign_in_form_event_path(@event))
 
-				expect(page).to have_link('Back to Events', href: events_path)
-				expect(page).to have_content('Sign In Again')
-				expect(page).to have_content('Please sign in again to complete the request')
-				expect(page).to have_button('Google')
+				sunny_request_sign_in(page)
 
 				click_button 'Google'
 
@@ -821,34 +692,19 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('RSVP Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))					
+				sunny_expect_rsvp(page, @event)					
 
 				click_on 'Delete Form'
 
 				expect(current_path).to eq(delete_rsvp_form_event_path(@event))
 
-				expect(page).to have_link('Back to RSVP Form', href: show_rsvp_form_event_path(@event))
-				expect(page).to have_content('Are you sure you want to permanently delete this RSVP form?')
-				expect(page).to have_content("RSVP Form's Event Name:\nParty")
-				expect(page).to have_button('Delete RSVP Form')
+				sunny_delete_confirm_rsvp(page, @event)
 
 				click_button 'Delete RSVP Form'
 
 				expect(current_path).to eq(show_rsvp_form_event_path(@event))
 
-				expect(page).not_to have_content('RSVP Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(@event))
+				sunny_expect_no_rsvp(page, @event)
 				expect(page).to have_content('RSVP form was successfully destroyed.')				
 			end
 
@@ -865,10 +721,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(sign_in_form_event_path(@event))
 
-				expect(page).to have_link('Back to Events', href: events_path)
-				expect(page).to have_content('Sign In Again')
-				expect(page).to have_content('Please sign in again to complete the request')
-				expect(page).to have_button('Google')
+				sunny_request_sign_in(page)
 
 				click_button 'Google'
 
@@ -896,34 +749,19 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Form Does Not Exist')
-				expect(page).not_to have_link('Create Form')
-				expect(page).to have_content('Feedback Form for Party')
-				expect(page).to have_content('Responses: 0')
-				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
-				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))					
+				sunny_expect_feedback(page, @event)					
 
 				click_on 'Delete Form'
 
 				expect(current_path).to eq(delete_feedback_form_event_path(@event))
 
-				expect(page).to have_link('Back to Feedback Form', href: show_feedback_form_event_path(@event))
-				expect(page).to have_content('Are you sure you want to permanently delete this feedback form?')
-				expect(page).to have_content("Feedback Form's Event Name:\nParty")
-				expect(page).to have_button('Delete Feedback Form')
+				sunny_delete_confirm_feedback(page, @event)
 
 				click_button 'Delete Feedback Form'
 
 				expect(current_path).to eq(show_feedback_form_event_path(@event))
 
-				expect(page).not_to have_content('Feedback Form for Party')
-				expect(page).not_to have_content('Responses')
-				expect(page).not_to have_link('Submission Form') 
-				expect(page).not_to have_link('Edit In Google Forms')
-				expect(page).not_to have_link('Delete Form')
-				expect(page).to have_content('Form Does Not Exist')	
-				expect(page).to have_link('Create Form', href: create_feedback_form_event_path(@event))
+				sunny_expect_no_feedback(page, @event)
 				expect(page).to have_content('Feedback form was successfully destroyed.')
 			end
 		end  
@@ -1231,11 +1069,14 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(page).not_to have_content('Form Does Not Exist')
 				expect(page).not_to have_link('Create Form')
+				expect(page).not_to have_link('View Responses In Google Sheets')
 				expect(page).to have_content('RSVP Form for Party')
 				expect(page).to have_content('Responses: 2')
 				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
 				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))
+				expect(page).to have_link('View Responses In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit#responses')
+				expect(page).to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))				
 			end
 
 			scenario 'Feedback Form' do
@@ -1253,13 +1094,187 @@ RSpec.describe "Forms Feature", type: :feature do
 
 				expect(page).not_to have_content('Form Does Not Exist')
 				expect(page).not_to have_link('Create Form')
+				expect(page).not_to have_link('View Responses In Google Sheets')
 				expect(page).to have_content('Feedback Form for Party')
 				expect(page).to have_content('Responses: 2')
 				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
 				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
-				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))
+				expect(page).to have_link('View Responses In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit#responses')
+				expect(page).to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))				
 			end
 		end  
 	end
 
+	describe 'Sunny Day (Linked Google Sheet Exists)' do
+		before do
+			# Responses expected when successfully creating a form
+			stub_request(:post, 'https://forms.googleapis.com/v1/forms').to_return(status: 200, body:
+			{
+				"formId": "TEST_ID",
+				"responderUri": "https://docs.google.com/forms/d/e/VIEW_ID/viewform",
+				"linkedSheetId": "SHEET_ID"
+			}.to_json,
+			headers: { 'Content-Type' => 'application/json' }
+			)
+			stub_request(:post, 'https://forms.googleapis.com/v1/forms/TEST_ID:batchUpdate').to_return(status: 200, body: "TEST_BODY")
+			stub_request(:patch, 'https://www.googleapis.com/drive/v3/files/TEST_ID').to_return(status: 200)
+
+			# Responses expected when successfully showing an existing form
+			stub_request(:get, 'https://forms.googleapis.com/v1/forms/TEST_ID/responses').to_return(status: 200, body: {
+				"responses": []
+			}.to_json,
+			headers: { 'Content-Type' => 'application/json' }
+			)
+			stub_request(:get, 'https://forms.googleapis.com/v1/forms/TEST_ID').to_return(status: 200, body: {
+				"responderUri": "https://docs.google.com/forms/d/e/VIEW_ID/viewform",
+				"linkedSheetId": "SHEET_ID"
+			}.to_json,
+			headers: { 'Content-Type' => 'application/json' })
+
+			# Responses expected when successfully destroying a form
+			stub_request(:delete, 'https://www.googleapis.com/drive/v3/files/TEST_ID').to_return(status: 200)
+
+			# Successfully logged in member with token that hasn't expired
+			OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+				provider: 'google_oauth2',
+				uid: '123545',
+				info: {
+				  email: 'testuser@tamu.edu',
+				  name: 'Test User'
+				},
+				credentials: {
+				  token: '123456789abc',
+				  expires_at: 999999999999999
+				}
+			  })				
+
+			@event = Event.create(name: 'Party', date: DateTime.now, description: "The good party", location: "My house")   
+		end
+
+		context 'Show Forms' do
+			scenario 'RSVP Form' do
+				visit root_path
+				
+				click_button 'Login with Google'
+
+				visit events_path
+
+				click_on 'RSVP Form'		
+
+				click_on 'Create Form'
+
+				expect(current_path).to eq(show_rsvp_form_event_path(@event))
+
+				expect(page).not_to have_content('Form Does Not Exist')
+				expect(page).not_to have_link('Create Form')
+				expect(page).not_to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+				expect(page).to have_content('RSVP Form for Party')
+				expect(page).to have_content('Responses: 0')
+				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
+				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
+				expect(page).to have_link('View Responses In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit#responses')
+				expect(page).to have_link('View Responses In Google Sheets', href: 'https://docs.google.com/spreadsheets/d/SHEET_ID/edit')
+				expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(@event))				
+			end
+
+			scenario 'Feedback Form' do
+				visit root_path
+				
+				click_button 'Login with Google'
+
+				visit events_path
+
+				click_on 'Feedback Form'		
+
+				click_on 'Create Form'
+
+				expect(current_path).to eq(show_feedback_form_event_path(@event))
+
+				expect(page).not_to have_content('Form Does Not Exist')
+				expect(page).not_to have_link('Create Form')
+				expect(page).not_to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+				expect(page).to have_content('Feedback Form for Party')
+				expect(page).to have_content('Responses: 0')
+				expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
+				expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
+				expect(page).to have_link('View Responses In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit#responses')
+				expect(page).to have_link('View Responses In Google Sheets', href: 'https://docs.google.com/spreadsheets/d/SHEET_ID/edit')
+				expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(@event))				
+			end
+		end  
+	end	
+end
+
+def sunny_expect_no_rsvp(page, event)
+	expect(page).not_to have_content('RSVP Form for Party')
+	expect(page).not_to have_content('Responses')
+	expect(page).not_to have_link('Submission Form') 
+	expect(page).not_to have_link('Edit In Google Forms')
+	expect(page).not_to have_link('View Responses In Google Forms')
+	expect(page).not_to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+	expect(page).not_to have_link('View Responses In Google Sheets')
+	expect(page).not_to have_link('Delete Form')
+	expect(page).to have_content('Form Does Not Exist')
+	expect(page).to have_link('Create Form', href: create_rsvp_form_event_path(event))	
+end
+
+def sunny_expect_no_feedback(page, event)
+	expect(page).not_to have_content('Feedback Form for Party')
+	expect(page).not_to have_content('Responses')
+	expect(page).not_to have_link('Submission Form') 
+	expect(page).not_to have_link('Edit In Google Forms')
+	expect(page).not_to have_link('View Responses In Google Forms')
+	expect(page).not_to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+	expect(page).not_to have_link('View Responses In Google Sheets')	
+	expect(page).not_to have_link('Delete Form')
+	expect(page).to have_content('Form Does Not Exist')	
+	expect(page).to have_link('Create Form', href: create_feedback_form_event_path(event))
+end
+
+def sunny_expect_rsvp(page, event)
+	expect(page).not_to have_content('Form Does Not Exist')
+	expect(page).not_to have_link('Create Form')
+	expect(page).not_to have_link('View Responses In Google Sheets')
+	expect(page).to have_content('RSVP Form for Party')
+	expect(page).to have_content('Responses: 0')
+	expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
+	expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
+	expect(page).to have_link('View Responses In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit#responses')
+	expect(page).to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+	expect(page).to have_link('Delete Form', href: delete_rsvp_form_event_path(event))
+end
+
+def sunny_expect_feedback(page, event)
+	expect(page).not_to have_content('Form Does Not Exist')
+	expect(page).not_to have_link('Create Form')
+	expect(page).not_to have_link('View Responses In Google Sheets')
+	expect(page).to have_content('Feedback Form for Party')
+	expect(page).to have_content('Responses: 0')
+	expect(page).to have_link('Submission Form', href: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
+	expect(page).to have_link('Edit In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit')
+	expect(page).to have_link('View Responses In Google Forms', href: 'https://docs.google.com/forms/d/TEST_ID/edit#responses')
+	expect(page).to have_content('No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form\'s "Responses" tab.')
+	expect(page).to have_link('Delete Form', href: delete_feedback_form_event_path(event))
+end
+
+def sunny_request_sign_in(page)
+	expect(page).to have_link('Back to Events', href: events_path)
+	expect(page).to have_content('Sign In Again')
+	expect(page).to have_content('Please sign in again to complete the request')
+	expect(page).to have_button('Google')
+end
+
+def sunny_delete_confirm_rsvp(page, event)
+	expect(page).to have_link('Back to RSVP Form', href: show_rsvp_form_event_path(event))
+	expect(page).to have_content('Are you sure you want to permanently delete this RSVP form?')
+	expect(page).to have_content("RSVP Form's Event Name:\nParty")
+	expect(page).to have_button('Delete RSVP Form')
+end
+
+def sunny_delete_confirm_feedback(page, event)
+	expect(page).to have_link('Back to Feedback Form', href: show_feedback_form_event_path(event))
+	expect(page).to have_content('Are you sure you want to permanently delete this feedback form?')
+	expect(page).to have_content("Feedback Form's Event Name:\nParty")
+	expect(page).to have_button('Delete Feedback Form')
 end
