@@ -1,6 +1,10 @@
 <%= render "header"%>
+<%= render "adminheader"%>
+<br/>
 <div>
-    <h2 class="title-page">Delete Event</h2>
+    <div class="text-center">
+        <h2>Delete Event</h2>
+    </div>
     <%= link_to("Back to Home", events_path, :class => 'back-link ml-2')%>
     <%= form_for(@event, method: 'delete') do |f| %>
     

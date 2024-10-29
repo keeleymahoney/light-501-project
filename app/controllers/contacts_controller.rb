@@ -2,7 +2,7 @@
 
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.where(in_network: true)
+    @contacts = Contact.all
   end
 
   def show

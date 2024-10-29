@@ -38,21 +38,22 @@
     <tr>
       <th>Photo</th>
       <th>Name</th>
-      <th>Title</th>
       <th>Organization</th>
+      <th>Title</th>
       <th>Industries</th>
+      <th>Email</th>
       <th>View </th>
     </tr>
     <% @contacts.each do |contact| %>
     <tr>
       <td>
-        < <% if contact.pfp.present? %>
+        <% if contact.pfp.present? %>
           <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(contact.pfp)}" %>
         <% end %>
       </td>
       <td><%=contact.first_name + ' ' + contact.last_name%></td>
-      <td><%= contact.title %></td>
       <td><%= contact.organization %></td>
+      <td><%= contact.title %></td>
       <td>
         <ul>
           <% contact.industries.each do |industry| %>
@@ -60,6 +61,7 @@
           <% end %>
         </ul>
       </td>
+      <td><%= contact.email %></td>
       <td><%= link_to("View", member_contact_path(contact)) %></td>
 
     </tr>
