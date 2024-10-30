@@ -1,7 +1,9 @@
 <div>
+  <br/>
   <div class="text-center">
     <h2><%= contact.new_record? ? 'New Contact' : 'Edit Contact' %></h2>
   </div>
+  <br/>
   <%= form_with(model: contact, local: true) do |form| %>
     <% if contact.errors.any? %>
       <div style="color: red" id="error_explanation">
@@ -76,7 +78,7 @@
       <div style="header row">
         <div class="col">
           <strong><%= form.label :in_network, style: "display: block" %></strong>
-          <%= form.check_box :in_network, { checked: true }, 'yes', 'no' %>
+          <%= form.check_box :in_network %>
         </div>
       </div>
         

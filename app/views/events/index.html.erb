@@ -18,11 +18,11 @@
       <th>Description</th>
       <th>Location</th>
       <th>Virtual</th>
-      <th>RSVP Link </th>
-      <th>Feedback Link </th>
+      <th>Published</th>
+      <th>RSVP</th>
+      <th>Feedback</th>
       <th>View</th>
       <th>Edit</th>
-      <th>.CSV Data</th>
       <th>Delete</th>
     </tr>
     <% @events.each do |event| %>
@@ -32,11 +32,11 @@
       <td><%= event.description %></td>
       <td><%= event.location %></td>
       <td><%= event.virtual ? "Yes" : "No" %></td>
+      <td><%= event.published ? "Yes" : "No" %></td>
       <td><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></td>
       <td><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></td>
       <td><%= link_to("View", event_path(event)) %></td>
       <td><%= link_to("Edit", edit_event_path(event)) %></td>
-      <td>CSV</td>
       <td><%= link_to("Delete", delete_event_path(event)) %> </td>
     </tr>
     <% end %>

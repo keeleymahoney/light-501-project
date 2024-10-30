@@ -22,13 +22,6 @@
           </p>
       </div>
 
-      <div class="col">
-        <p><strong>Virtual:</strong></p>    
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.virtual ? "Yes" : "No" %>
-        </p>
-      </div>
-
      
       
 
@@ -37,17 +30,16 @@
     <br/>
     <div class="header row">
       <div class="col">
-          <p><strong>RSVP Link:</strong></p>
-          <p class="border rounded border-1 border-dark p-1">
-            <%= event.rsvp_link %>
-            </p>
+        <p><strong>Virtual:</strong></p>    
+        <p class="border rounded border-1 border-dark p-1">
+          <%= event.virtual ? "Yes" : "No" %>
+        </p>
       </div>
-
       <div class="col">
-          <p><strong>Feedback Link:</strong></p>
-          <p class="border rounded border-1 border-dark p-1">
-            <%= event.feedback_link %>
-            </p>
+        <p><strong>Published:</strong></p>    
+        <p class="border rounded border-1 border-dark p-1">
+          <%= event.published ? "Yes" : "No" %>
+        </p>
       </div>
     </div>
 
