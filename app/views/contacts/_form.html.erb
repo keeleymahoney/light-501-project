@@ -3,6 +3,9 @@
   <div class="text-center">
     <h2><%= contact.new_record? ? 'New Contact' : 'Edit Contact' %></h2>
   </div>
+  <div>
+       <%= link_to 'Back to Network', contacts_path, class:"btn btn-secondary"%>
+  </div>
   <br/>
   <%= form_with(model: contact, local: true) do |form| %>
     <% if contact.errors.any? %>
@@ -17,21 +20,21 @@
     <% end %>
 
     <div class="form">
-    <br/>
+      <br/>
       <div class="header row">
         <div class="col">
           <strong><%= form.label :first_name, style: "display: block" %></strong>
-          <%= form.text_field :first_name %>
+          <%= form.text_field :first_name, style:"width: 100%" %>
         </div>
 
         <div class="col">
           <strong><%= form.label :last_name, style: "display: block" %></strong>
-          <%= form.text_field :last_name %>
+          <%= form.text_field :last_name, style:"width: 100%" %>
         </div>
 
         <div class="col">
           <strong><%= form.label :organization, style: "display: block" %></strong>
-          <%= form.text_field :organization %>
+          <%= form.text_field :organization, style:"width: 100%" %>
         </div>
       </div>
 
@@ -40,19 +43,21 @@
       <div class="header row">
         <div class="col">
           <strong><%= form.label :title, style: "display: block" %></strong>
-          <%= form.text_field :title %>
+          <%= form.text_field :title, style:"width: 100%" %>
         </div>
 
         <div class="col">
           <strong><%= form.label :email, style: "display: block" %></strong>
-          <%= form.email_field :email %>
+          <%= form.email_field :email, style:"width: 100%" %>
         </div>
 
         <div class="col">
           <strong><%= form.label :link, style: "display: block" %></strong>
-          <%= form.text_field :link %>
+          <%= form.text_field :link, style:"width: 100%" %>
         </div>
       </div>
+
+      <br/>
 
       <div class="header row">
         <div class="col">
@@ -61,6 +66,7 @@
         </div>
       </div>
 
+      <br/>
       <div class="header row">
         <div class="col">
           <strong><%= form.label :industries, style: "display: block" %></strong>
@@ -75,12 +81,6 @@
       </div>
 
       <br/>
-      <div style="header row">
-        <div class="col">
-          <strong><%= form.label :in_network, style: "display: block" %></strong>
-          <%= form.check_box :in_network %>
-        </div>
-      </div>
         
       <div class="header row">
         <div class="col">
@@ -100,11 +100,20 @@
       </div>
       
       <br/>
-      <br/>
-      <br/>
-      <div class="actions float-right">
-        <%= form.submit %>
-      </div>
-  <% end %>
 
-  </div>
+      <div style="header row">
+        <div class="col">
+          <strong><%= form.label :in_network, style: "display: block" %></strong>
+          <%= form.check_box :in_network %>
+        </div>
+      </div>
+      
+      <br/>
+      <div class="d-flex justify-content-end mr-2">
+        <%= form.submit class: "btn btn-primary"%>
+      </div>
+      <br/>
+    </div>
+    <% end %>
+    <br/>
+</div>

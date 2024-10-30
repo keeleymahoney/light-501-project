@@ -6,9 +6,8 @@
   <h2>Editing Event</h2>
 </div>
 
-<div class="ml-2">
-  <%= link_to "Back to events", events_path %>
-  <%= link_to "Show this event", @event, class:"ml-2" %>
+<div>
+    <%= link_to 'Back to Events', events_path, class:"btn btn-secondary"%>
 </div>
 <br/>
 <%= render "form", event: @event %>

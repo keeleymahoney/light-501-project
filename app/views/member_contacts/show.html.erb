@@ -1,18 +1,22 @@
 <%= render "header"%>
 <%= render "member_header"%>
 
-<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3" %>
-<br/>
 
 <br/>
 
+<br/>
 
 
+<div class="text-center">
+        <h2><%= @contact.first_name + ' ' + @contact.last_name %> </h2>
+</div>
+
+<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3 btn btn-secondary" %>
+<br/>
+<br/>
 <div class="form">
     <br/>
-    <div class="text-center">
-        <h2><%= @contact.first_name + ' ' + @contact.last_name %> </h2>
-    </div>
+    
     <br/>
     <div class="header row">
         <div class="col">
