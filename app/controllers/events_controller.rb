@@ -203,7 +203,7 @@ class EventsController < ApplicationController
         drive.delete_file(rsvp_form_id)
 
         # Check that event entity is updated successfully
-        if @event.update(rsvp_id: '')
+        if @event.update(rsvp_id: '', rsvp_link: '')
           redirect_to show_rsvp_form_event_path(@event), notice: 'RSVP form was successfully destroyed.'
         else
           render('show_rsvp_form')
@@ -361,7 +361,7 @@ class EventsController < ApplicationController
         drive.delete_file(feedback_form_id)
 
         # Check that event entity is updated successfully
-        if @event.update(feedback_id: '')
+        if @event.update(feedback_id: '', feedback_id: '')
           redirect_to show_feedback_form_event_path(@event), notice: 'Feedback form was successfully destroyed.'
         else
           render('show_feedback_form')
