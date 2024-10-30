@@ -4,6 +4,9 @@
 <%= render "events/adminheader"%>
 <br/>
 <h2 class="text-center">The BOLD Network</h2>
+<div class="d-flex justify-content-end mr-2">
+  <%= link_to 'New Contact', new_contact_path, class:" btn btn-primary" %>
+</div>
 
 <br/>
   <table style="width: 90%; margin-left: auto; margin-right: auto;">
@@ -48,7 +51,7 @@
     </tbody>
   </table>
   <br/>
-  <button class="float-right"><%= link_to 'New Contact', new_contact_path %></button>
+  
   <br/>
   <br/>
 

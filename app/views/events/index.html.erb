@@ -7,8 +7,10 @@
 
 <h2 class="text-center">All Events</h2>
 <p class="ml-2" style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-end mr-2">
+  <%= link_to 'New Event', new_event_path, class:" btn btn-primary" %>
+</div>
 <br/>
-
 <div id="events-table">
   <table style="width: 90%; margin-left: auto; margin-right: auto;">
 
@@ -43,10 +45,7 @@
   </table>
 </div>
 <br/>
-<br/>
-<div class="create">
-  <button><%= link_to "Create new event", new_event_path %></button>
-</div>
+
 
 
 
