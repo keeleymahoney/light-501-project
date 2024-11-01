@@ -71,14 +71,14 @@
     
   <div>
     <div class="border rounded border-1 border-dark p-1 mb-2">
-      <% if @contact.pfp.present? %>
-        <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(@contact.pfp)}" %>
+      <% if @contact.pfp.attached? %>
+        <%= image_tag @contact.pfp.variant(resize_to_limit: [150, 150]) %>
       <% end %>
     </div>
 
     <div class="field">
-      <%= form.label :pfp_file %>
-      <%= form.file_field :pfp_file, class: 'form-control' %>
+      <%= form.label :pfp %>
+      <%= form.file_field :pfp, class: 'form-control' %>
     </div>
   </div>
     

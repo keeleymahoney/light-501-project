@@ -15,7 +15,6 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    # @contact.pfp = @contact.pfp.build(pfp: @contact.pfp)
 
     if @contact.save
       associate_industries(@contact, params[:contact][:industries])
@@ -81,7 +80,7 @@ end
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file, :in_network)
+    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp, :in_network)
   end
 
   def associate_industries(contact, industries)

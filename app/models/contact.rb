@@ -6,17 +6,26 @@ class Contact < ApplicationRecord
   has_and_belongs_to_many :industries
   has_one :request, dependent: :destroy
 
+  has_one_attached :pfp
+
   before_update do
     contact = Contact.find_by(id:)
     contact.industries.clear
   end
 
-  def pfp_file=(file)
-    self.pfp = file.read
-  end
+  validate :acceptable_image
 
-  def pfp_file
-    StringIO.new(pfp) if pfp
+  def acceptable_image
+    return unless pfp.attached?
+
+    unless pfp.blob.byte_size <= 2.megabyte
+      errors.add(:pfp, "is too big")
+    end
+
+    acceptable_types = ["image/jpeg", "image/png"]
+    unless acceptable_types.include?(pfp.content_type)
+      errors.add(:pfp, "must be a JPEG or PNG")
+    end
   end
   
 end
