@@ -372,7 +372,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Destroy Forms' do
 			scenario 'RSVP Form' do
-				@event.update(rsvp_link: 'TEST_ID')
+				@event.update(rsvp_id: 'TEST_ID')
 
 				visit root_path
 				
@@ -393,7 +393,7 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				@event.update(feedback_link: 'TEST_ID')
+				@event.update(feedback_id: 'TEST_ID')
 
 				visit root_path
 				
@@ -448,7 +448,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Show Forms' do
 			scenario 'RSVP Form' do
-				@event.update(rsvp_link: 'TEST_ID')
+				@event.update(rsvp_id: 'TEST_ID', rsvp_link: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
 
 				visit root_path
 				
@@ -489,7 +489,7 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				@event.update(feedback_link: 'TEST_ID')
+				@event.update(feedback_id: 'TEST_ID', feedback_link: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
 
 				visit root_path
 				
@@ -652,7 +652,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Destroy Forms' do
 			scenario 'RSVP Form' do
-				@event.update(rsvp_link: 'TEST_ID')
+				@event.update(rsvp_id: 'TEST_ID', rsvp_link: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
 
 				visit root_path
 				
@@ -709,7 +709,7 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				@event.update(feedback_link: 'TEST_ID')
+				@event.update(feedback_id: 'TEST_ID', feedback_link: 'https://docs.google.com/forms/d/e/VIEW_ID/viewform')
 
 				visit root_path
 				
@@ -851,7 +851,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Destroy Forms' do
 			scenario 'RSVP Form' do
-				@event.update(rsvp_link: 'TEST_ID')
+				@event.update(rsvp_id: 'TEST_ID')
 
 				visit root_path
 				
@@ -873,7 +873,7 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				@event.update(feedback_link: 'TEST_ID')
+				@event.update(feedback_id: 'TEST_ID')
 
 				visit root_path
 				
@@ -969,7 +969,7 @@ RSpec.describe "Forms Feature", type: :feature do
 
 		context 'Destroy Forms' do
 			scenario 'RSVP Form' do
-				@event.update(rsvp_link: 'TEST_ID')
+				@event.update(rsvp_id: 'TEST_ID')
 
 				visit root_path
 				
@@ -985,7 +985,7 @@ RSpec.describe "Forms Feature", type: :feature do
 			end
 
 			scenario 'Feedback Form' do
-				@event.update(feedback_link: 'TEST_ID')
+				@event.update(feedback_id: 'TEST_ID')
 
 				visit root_path
 				
