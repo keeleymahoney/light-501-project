@@ -9,7 +9,7 @@ class MemberContactsController < ApplicationController
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.where(in_network: true)
 
     if params[:first_name].present?
       @contacts = @contacts.where('first_name ILIKE ?', "%#{params[:first_name]}%")

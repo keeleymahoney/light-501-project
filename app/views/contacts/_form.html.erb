@@ -1,92 +1,119 @@
-<div style='margin-left: 5%'>
-<h1><%= contact.new_record? ? 'New Contact' : 'Edit Contact' %></h1>
-<%= form_with(model: contact, local: true) do |form| %>
-  <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-      <ul>
-        <% contact.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<div class="row">
-
+<div>
+  <br/>
+  <div class="text-center">
+    <h2><%= contact.new_record? ? 'New Contact' : 'Edit Contact' %></h2>
+  </div>
   <div>
-
-    <div class="field">
-      <%= form.label :first_name %>
-      <%= form.text_field :first_name %>
-    </div>
-
-    <div class="field">
-      <%= form.label :last_name %>
-      <%= form.text_field :last_name %>
-    </div>
-
-    <div class="field">
-      <%= form.label :organization %>
-      <%= form.text_field :organization %>
-    </div>
-
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.email_field :email %>
-    </div>
-
-    <div class="field">
-      <%= form.label :link %>
-      <%= form.text_field :link %>
-    </div>
-
-    <div class="field">
-      <%= form.label :bio %>
-      <%= form.text_area :bio %>
-    </div>
-
-    <div class="field">
-      <%= form.label :industries %>
-      <% industry_list = '' %>
-      <% @contact.industries.each do |industry|%>
-      <% industry_list << industry.industry_type << ', ' %>
-      <% end %>
-      <% industry_list.strip! %>
-      <% industry_list.slice!(industry_list.length - 1) %>
-    <%= form.text_field :industries, :value => industry_list, placeholder: 'Enter tags, separated by commas' %>
-    </div>
-
-    <div style="display: none;">
-      <%= form.label :in_network %>
-      <%= form.check_box :in_network, { checked: true }, 'yes', 'no' %>
-    </div>
-
+       <%= link_to 'Back to Network', contacts_path, class:"btn btn-secondary"%>
   </div>
-    
-  <div>
-    <div class="border rounded border-1 border-dark p-1 mb-2">
-      <% if @contact.pfp.present? %>
-        <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(@contact.pfp)}" %>
-      <% end %>
+  <br/>
+  <%= form_with(model: contact, local: true) do |form| %>
+    <% if contact.errors.any? %>
+      <div style="color: red" id="error_explanation">
+        <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+        <ul>
+          <% contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form">
+      <br/>
+      <div class="header row">
+        <div class="col">
+          <strong><%= form.label :first_name, style: "display: block" %></strong>
+          <%= form.text_field :first_name, style:"width: 100%" %>
+        </div>
+
+        <div class="col">
+          <strong><%= form.label :last_name, style: "display: block" %></strong>
+          <%= form.text_field :last_name, style:"width: 100%" %>
+        </div>
+
+        <div class="col">
+          <strong><%= form.label :organization, style: "display: block" %></strong>
+          <%= form.text_field :organization, style:"width: 100%" %>
+        </div>
+      </div>
+
+      <br/>
+
+      <div class="header row">
+        <div class="col">
+          <strong><%= form.label :title, style: "display: block" %></strong>
+          <%= form.text_field :title, style:"width: 100%" %>
+        </div>
+
+        <div class="col">
+          <strong><%= form.label :email, style: "display: block" %></strong>
+          <%= form.email_field :email, style:"width: 100%" %>
+        </div>
+
+        <div class="col">
+          <strong><%= form.label :link, style: "display: block" %></strong>
+          <%= form.text_field :link, style:"width: 100%" %>
+        </div>
+      </div>
+
+      <br/>
+
+      <div class="header row">
+        <div class="col">
+          <strong><%= form.label :bio, style: "display: block" %></strong>
+          <%= form.text_area :bio, style:"width: 100%" %>
+        </div>
+      </div>
+
+      <br/>
+      <div class="header row">
+        <div class="col">
+          <strong><%= form.label :industries, style: "display: block" %></strong>
+          <% industry_list = '' %>
+          <% @contact.industries.each do |industry|%>
+          <% industry_list << industry.industry_type << ', ' %>
+          <% end %>
+          <% industry_list.strip! %>
+          <% industry_list.slice!(industry_list.length - 1) %>
+        <%= form.text_field :industries, :value => industry_list, placeholder: 'Enter tags, separated by commas', style:"width: 100%" %>
+        </div>
+      </div>
+
+      <br/>
+        
+      <div class="header row">
+        <div class="col">
+          <% if @contact.pfp.present? %>
+            <div class="border rounded border-1 border-dark p-1 mb-2">
+                <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(@contact.pfp)}" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="header row">
+        <div class="col">
+          <strong><%= form.label :pfp_file, style: "display: block" %></strong>
+          <%= form.file_field :pfp_file, class: 'form-control' %>
+        </div>
+      </div>
+      
+      <br/>
+
+      <div style="header row">
+        <div class="col">
+          <strong><%= form.label :in_network, style: "display: block" %></strong>
+          <%= form.check_box :in_network %>
+        </div>
+      </div>
+      
+      <br/>
+      <div class="d-flex justify-content-end mr-2">
+        <%= form.submit class: "btn btn-primary"%>
+      </div>
+      <br/>
     </div>
-
-    <div class="field">
-      <%= form.label :pfp_file %>
-      <%= form.file_field :pfp_file, class: 'form-control' %>
-    </div>
-  </div>
-    
-</div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
+    <% end %>
+    <br/>
 </div>

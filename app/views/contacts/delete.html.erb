@@ -4,18 +4,24 @@
 
 <%= render "events/adminheader"%>
 
-<div style='margin-left: 5%'>
-    <h2>Delete Contact From Network</h2>
-    <%= link_to("Back to Home", contacts_path)%>
+<br/>
+<div>
+    <div class="text-center">
+        <h2>Delete Contact From Network</h2>
+    </div>
+    <div>
+      <%= link_to 'Back to Network', contacts_path, class:"btn btn-secondary" %>
+    </div>
     <%= form_for(@contact, method: 'delete') do |f| %>
     
         <br/>
-        <h3 >Are you sure you want to permanently delete this contact?</h3>
+        <h3 class="text-danger ml-2">Are you sure you want to permanently delete this contact?</h3>
         <strong><p >Contact Name: </strong><%= @contact.first_name + ' ' + @contact.last_name%></p>
     
-        <div >
-            <%= f.submit "Delete Contact" %>
+        <div class="d-flex justify-content-end mr-2">
+            <%= f.submit "Delete Contact" , class: "btn btn-danger" %>
         </div>
     
       <% end %>
 </div>
+<br/>
