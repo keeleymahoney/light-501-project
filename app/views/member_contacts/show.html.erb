@@ -1,57 +1,99 @@
 <%= render "header"%>
 <%= render "member_header"%>
 
-<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3" %>
-<br/>
 
 <br/>
 
-<h1 class="title-page"><%= @contact.first_name + ' ' + @contact.last_name %> </h1>
-
 <br/>
 
-<% if @contact.pfp.present? %>
-<%= image_tag "data:image/jpeg;base64,#{Base64.encode64(@contact.pfp)}" %>
-<% end %>
 
+<div class="text-center">
+        <h2><%= @contact.first_name + ' ' + @contact.last_name %> </h2>
+</div>
+
+<%= link_to "Back to Network Contacts", member_contacts_path, class:"ml-3 btn btn-secondary" %>
+<br/>
+<br/>
 <div class="form">
-<div class="header row">
-    <div class= "col">
-        <p><strong>First Name</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.first_name %> </p>
+    <br/>
+    
+    <br/>
+    <div class="header row">
+        <div class="col">
+            <strong><p>First Name</p></strong>
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.first_name %>
+            </p>
+        </div>
+
+        <div class="col">
+            <strong><p>Last Name</p></strong>
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.last_name %>
+            </p>
+        </div>
+
+        <div class="col">
+            <strong><p>Organization</p></strong>
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.organization %>
+            </p>
+        </div>
     </div>
-    <div class= "col">
-        <p><strong>Last Name</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.last_name %> </p>
+
+    <br/>
+
+    <div class="header row">
+        <div class="col">
+            <strong><p>Title</p></strong>
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.title %>
+            </p>
+        </div>
+
+        <div class="col">
+            <strong><p>Email</p></strong>
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.email %>
+            </p>
+        </div>
+
+        <div class="col">
+            <strong><p>Link</p></strong>
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.link %>
+            </p>
+        </div>
     </div>
-    <div class= "col">
-        <p><strong>Title</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.last_name %> </p>
+
+    <div class="header row">
+        <div class="col">
+            <p><strong>Bio:</strong></p>
+            <p class="border rounded border-1 border-dark p-1">
+            <%= @contact.bio %>
+            </p>
+        </div>
     </div>
+
+    <div class="header row">
+        <div class="col">
+            <p><strong>Industries</strong></p>
+            <% @contact.industries.each do |industry| %>
+                <li><%= industry.industry_type %></li>
+            <% end %>
+        </div>
+    </div>
+
+    <br/>
+    <div style="header row">
+        <div class="col">
+            <p><strong>In Network:</strong></p>    
+            <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.in_network ? "Yes" : "No" %>
+            </p>
+        </div>
+    </div>
+
+    <p>IMAGES</p>
 </div>
-
 <br/>
-
-<div class="header row">
-    <div class= "col">
-        <p><strong>Organization</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.organization %> </p>
-    </div>
-    <div class= "col">
-        <p><strong>Link</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.link %> </p>
-    </div>
-    <div class= "col">
-        <p><strong>Email</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.email %> </p>
-    </div>
-</div>
-
-<br/>
-<div class="header row">
-    <div class = "col">
-        <p><strong>Bio</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.bio %> </p>
-    </div>
-<div>
-<div
