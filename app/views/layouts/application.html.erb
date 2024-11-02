@@ -18,49 +18,56 @@
 
 <body>
 <!-- Header with Navigation -->
-<header class="bg-maroon text-white p-3">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-          <%= image_tag "BOLD_Logo.jpg", alt: "Logo", class:"logo" %>  
-      </div>
-      <nav>
+<header class="bg-maroon text-white">
+  <div class="header-container">
+    <!-- First Row: Dashboard Links -->
+    <div class="d-flex justify-content-end px-3">
+      <% if member_signed_in? %>
+        <ul class="nav-top">
+          <li class="nav-item">
+            <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link-special' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Admin Dashboard', events_path, class: 'nav-link-special' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_member_session_path, method: :delete, class: 'nav-link-special' %>
+          </li>
+        </ul>
+      <% else %>
         <ul class="nav">
           <li class="nav-item">
-            <%= link_to 'Home', root_path, class: 'nav-link' %>
+            <%= button_to member_google_oauth2_omniauth_authorize_path, class: "nav-link-special", method: :post, data: { turbo: "false" } do %>
+              <i class="fab fa-google"></i><span>&nbsp;Login with Google</span>
+            <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to 'Media', media_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Events', home_event_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Featured', featured_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'About Us', about_path, class: 'nav-link' %>
-          </li>
-
-          <% if member_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Admin Dashboard', events_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign Out', destroy_member_session_path, method: :delete, class: 'btn btn-danger' %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= button_to member_google_oauth2_omniauth_authorize_path, class: "nav-link", method: :post, data: { turbo: "false" } do %>
-                <i class="fab fa-google"></i><span>&nbsp;Login with Google</span>
-              <% end %>
-            </li>
-          <% end %>
         </ul>
-      </nav>
+      <% end %>
+    </div>
+
+    <!-- Second Row: Logo and Main Navigation Links -->
+    <div class="d-flex align-items-center px-3">
+      <!-- Left-aligned Logo spanning both rows -->
+      <%= image_tag "BOLD_Logo.jpg", alt: "Logo", class: "logo mr-4" %>
+
+      <!-- Navigation Links that Stretch Across the Remaining Space -->
+      <ul class="nav flex-grow-1 justify-content-between">
+        <li class="nav-item">
+          <%= link_to 'Home', root_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Media', media_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Events', home_event_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Featured', featured_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'About Us', about_path, class: 'nav-link text-white' %>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
@@ -82,19 +89,19 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-5">
+  <footer class="text-white py-5" style="background-color: #500000;">
     <div class="container text-center">
       <div class="row">
-        <div class="col-md-6">
-          <h5>Get in touch</h5>
-          <p>
-            Email: <a href="mailto:info.boldrso@gmail.com" class="text-white">info.boldrso@gmail.com</a><br>
-            LinkedIn: <a href="https://www.linkedin.com/company/boldrso" class="text-white">BOLD on LinkedIn</a>
-          </p>
+        <div class="col">
+          <h3>Get in Touch!</h3>
         </div>
-        <div class="col-md-6">
-          <h5>Message this organization</h5>
-          <p><a href="/login" class="text-white">Login to send this organization a message</a></p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a href="mailto:info.boldrso@gmail.com" class="btn btn-primary">Email: info.boldrso@gmail.com</a>
+        </div>
+        <div class="col">
+          <a href="https://www.linkedin.com/company/boldrso" class="btn btn-primary">LinkedIn: BOLD on LinkedIn</a>
         </div>
       </div>
       <div class="text-muted mt-4">2024 Texas A&M University</div>

@@ -20,7 +20,7 @@
         <% if @sheet_exists %>
           <p><%= link_to("View Responses In Google Sheets", @form_sheet_link, target: :_blank, rel: 'noopener') %></p>
         <% else %>
-          <p style="color: red; font-style: italic;">No Responses Sheeet linked. To link sheet, click "Link to Sheets" in the Google Form's "Responses" tab.<p>
+          <p style="color: red; font-style: italic;">No Responses Sheet linked. To link sheet, click "Link to Sheets" in the Google Form's "Responses" tab.<p>
         <% end %>
         <br/>        
         <p><%= link_to("Delete Form", delete_feedback_form_event_path(@event)) %></p>    

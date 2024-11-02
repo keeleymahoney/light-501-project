@@ -18,8 +18,8 @@
  
  // Logo and User styling
  .logo {
-     width: 100px;
-     height: 100px;
+     width: 120px;
+     height: 120px;
  }
  
  .user {
@@ -174,4 +174,10 @@
   {
     border-radius: 10px;
     border: 1px solid black;
+  }
+
+  .btn-primary
+  {
+    background-color: #b38080;
+    color: white;
   }
