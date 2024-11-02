@@ -19,9 +19,21 @@
                 <div>
                     <p>Images
                 </div>
-                <div class = "row">
-                    <p class="col">RSVP Link</p>
-                    <p class="col">Feedback Link </p>
+                <div class="row">
+                    <div class="col">
+                        <% if event.rsvp_link.present? %>
+                            <a href="<%= event.rsvp_link %>" target="_blank" rel="noopener noreferrer">RSVP Link</a>
+                        <% else %>
+                            <p>No RSVP Link Available</p>
+                        <% end %>
+                    </div>
+                    <div class="col">
+                        <% if event.feedback_link.present? %>
+                            <a href="<%= event.feedback_link %>" target="_blank" rel="noopener noreferrer">Feedback Link</a>
+                        <% else %>
+                            <p>No Feedback Link Available</p>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         <% end %>
@@ -46,9 +58,14 @@
                 <div>
                     <p>Images
                 </div>
-                <div class = "row">
-                    <p class="col">RSVP Link</p>
-                    <p class="col">Feedback Link </p>
+                <div class="row">
+                    <div class="col">
+                        <% if event.feedback_link.present? %>
+                            <a href="<%= event.feedback_link %>" target="_blank" rel="noopener noreferrer">Feedback Link</a>
+                        <% else %>
+                            <p>No Feedback Link Available</p>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         <% end %>
