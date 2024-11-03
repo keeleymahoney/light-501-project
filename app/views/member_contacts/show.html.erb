@@ -31,11 +31,11 @@
             <span><%= @contact.title %></span><br/>
 
             <strong>Industries: </strong>
-            <span>
+            <div style="padding-left: 20px;">
                 <% @contact.industries.each do |industry| %>
                     <li><%= industry.industry_type %></li>
                 <% end %>
-            </span><br/>
+            </div><br/>
 
             <strong>Email: </strong>
             <span><%= @contact.email %></span><br/>

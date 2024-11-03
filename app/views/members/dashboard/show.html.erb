@@ -5,25 +5,25 @@
 
 <div class="form-member">
     <div class="form-member-header">
-      <h3 style="padding-left: 10px;">Your Account Information</h3>
+      <h4 style="padding-left: 10px;">Your Account Information</h4>
     </div>
 
     <div class="form-member-col-container">
         <div class="form-member-col-content-main">
-          <h4>Expiration Dates</h4>
           <strong>Network Expiration Date: </strong>
           <span><%= current_member.network_exp.strftime("%B %d, %Y") %></span><br/>
 
           <strong>Constitution Expiration Date: </strong>
           <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
 
-          <h4>Request Access</h4>
-          <div style="margin-bottom: 20px; margin-top: 20px;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></div>
-          <div style="margin-bottom: 20px;"><%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %></div>
-          <div><%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %></div>
+          <span style="margin-top: 20px; margin-left: 10px; float: right;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></span>
+          <span style="margin-top: 20px; margin-left: 10px; float: right;"><%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %></span>
+          <span style="margin-top: 20px; float: right;"><%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %></span>
         </div>
 
 
     </div>
 </div>
 <br/>
+
+
