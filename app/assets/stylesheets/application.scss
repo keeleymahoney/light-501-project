@@ -274,7 +274,6 @@
  
   .table-member td
   {
-    background-color: #fafbfc;
     overflow: hidden;
     word-wrap: break-word;
   } 
@@ -299,3 +298,54 @@
   .table-member tr:nth-child(even) td{
     background-color: white;
   }
+
+  .form-member {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}  
+
+.form-member-header {
+    background-color: rgb(193, 154, 154);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}  
+
+.form-member-col-container {
+    display: flex;
+    align-items: stretch;
+}
+
+.form-member-col-content {
+    border: 1px black solid;
+    width: 60%;
+    padding: 10px;
+    line-height: 2;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.form-member-col-content li {
+    line-height: normal;
+    padding-left: 10px;
+}
+
+.form-member-col-image {
+    border: 1px black solid;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.in-network {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 10px;
+}
