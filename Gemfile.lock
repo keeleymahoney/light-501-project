@@ -110,6 +110,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
+    digest-crc (0.6.5)
+      rake (>= 12.0.0, < 14.0.0)
     docile (1.4.1)
     dotenv (3.1.4)
     dotenv-rails (3.1.4)
@@ -138,8 +140,25 @@ GEM
       google-apis-core (~> 0.1)
     google-apis-forms_v1 (0.3.0)
       google-apis-core (>= 0.4, < 2.a)
+    google-apis-iamcredentials_v1 (0.22.0)
+      google-apis-core (>= 0.15.0, < 2.a)
+    google-apis-storage_v1 (0.47.0)
+      google-apis-core (>= 0.15.0, < 2.a)
+    google-cloud-core (1.7.1)
+      google-cloud-env (>= 1.0, < 3.a)
+      google-cloud-errors (~> 1.0)
     google-cloud-env (2.2.1)
       faraday (>= 1.0, < 3.a)
+    google-cloud-errors (1.4.0)
+    google-cloud-storage (1.52.0)
+      addressable (~> 2.8)
+      digest-crc (~> 0.4)
+      google-apis-core (~> 0.13)
+      google-apis-iamcredentials_v1 (~> 0.18)
+      google-apis-storage_v1 (~> 0.38)
+      google-cloud-core (~> 1.6)
+      googleauth (~> 1.9)
+      mini_mime (~> 1.0)
     googleauth (1.11.1)
       faraday (>= 1.0, < 3.a)
       google-cloud-env (~> 2.1)
@@ -410,6 +429,7 @@ DEPENDENCIES
   dotenv-rails
   google-apis-drive_v3 (~> 0.5.0)
   google-apis-forms_v1 (~> 0.3.0)
+  google-cloud-storage (~> 1.8)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
@@ -422,6 +442,7 @@ DEPENDENCIES
   rexml
   rspec-rails
   rubocop
+  ruby-vips (~> 2.1, >= 2.1.4)
   selenium-webdriver
   simplecov
   sprockets-rails
