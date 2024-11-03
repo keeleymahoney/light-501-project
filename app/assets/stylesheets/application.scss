@@ -324,7 +324,6 @@
 }
 
 .form-member-col-content {
-    border: 1px black solid;
     width: 60%;
     padding: 10px;
     line-height: 2;
@@ -338,7 +337,7 @@
 }
 
 .form-member-col-image {
-    border: 1px black solid;
+    border-right: 1px grey solid;
     width: 40%;
     padding: 10px;
     text-align: center;
@@ -348,4 +347,12 @@
     margin-top: auto;
     margin-bottom: auto;
     padding-right: 10px;
+}
+
+.form-member-col-content-main {
+    width: 100%;
+    padding: 10px;
+    line-height: 2;
+    overflow: hidden;
+    word-wrap: break-word;
 }

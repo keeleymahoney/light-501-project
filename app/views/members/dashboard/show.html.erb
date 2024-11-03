@@ -1,34 +1,29 @@
 <%= render "member_contacts/header"%>
-<%= render "member_contacts/member_header"%>
 
-
+<h2>Welcome to your dashboard, <%= current_member.full_name %>!</h2>
 <br/>
 
-<p>Welcome to your dashboard, <%= current_member.full_name %>!</p>
+<div class="form-member">
+    <div class="form-member-header">
+      <h3 style="padding-left: 10px;">Your Account Information</h3>
+    </div>
 
-<div class="member-info">
-  <h3>Your Account Information</h3>
-</div>
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+          <h4>Expiration Dates</h4>
+          <strong>Network Expiration Date: </strong>
+          <span><%= current_member.network_exp.strftime("%B %d, %Y") %></span><br/>
 
-<div class="member-expirations">
-  <p><strong>Network Expiration Date:</strong> <%= current_member.network_exp.strftime("%B %d, %Y") %></p>
-  <p><strong>Constitution Expiration Date:</strong> <%= current_member.constitution_exp.strftime("%B %d, %Y") %></p>
-</div>
+          <strong>Constitution Expiration Date: </strong>
+          <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
 
-<h3>Request Access</h3>
-<div>
-  <%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %>
-</div>
-<br>
-<div>
-  <%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %>
-</div>
-<br>
-<div class="actions">
-  <%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %>
-</div>
+          <h4>Request Access</h4>
+          <div style="margin-bottom: 20px; margin-top: 20px;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></div>
+          <div style="margin-bottom: 20px;"><%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %></div>
+          <div><%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %></div>
+        </div>
 
-<ul>
-  <li><%= link_to 'View Contacts', member_contacts_path %></li>
-  <li><%= link_to 'Logout', destroy_member_session_path, method: :delete %></li>
-</ul>
+
+    </div>
+</div>
+<br/>
