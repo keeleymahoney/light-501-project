@@ -43,8 +43,14 @@
           </li>
 
           <% if member_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link' %>
+            <li class="nav-item-dropdown">
+              <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link-dropdown' %> 
+              <div class="nav-item-dropdown-links">
+                <div><%= link_to "Network", member_contacts_path %></div>
+                <div><span style="color: grey;">Constitution</span></div>
+                <div><%= link_to "Account Info", member_dashboard_path %></div>
+                <div><%= link_to "My Network Info", member_networks_path %></div>
+              </div>
             </li>
             <li class="nav-item">
               <%= link_to 'Admin Dashboard', events_path, class: 'nav-link' %>
