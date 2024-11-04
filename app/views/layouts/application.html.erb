@@ -36,7 +36,7 @@
         </ul>
       <% else %>
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item mr-0">
             <%= button_to member_google_oauth2_omniauth_authorize_path, class: "nav-link-special", method: :post, data: { turbo: "false" } do %>
               <i class="fab fa-google"></i><span>&nbsp;Login with Google</span>
             <% end %>

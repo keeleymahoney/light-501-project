@@ -172,4 +172,29 @@
     color: white;
     border: 1px solid white;
   }
+
+  .outlined-text {
+    color: white; /* Adjust the main text color as needed */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,  
+        -1px  1px 0 #000,  
+         1px  1px 0 #000;
+}
+
+.background-img {
+    background-image: image-url('DSCF1380.png');
+    background-size: cover;
+    background-position: center 575px;
+    color: white;
+    padding: 30px;
+    height: 300px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Improves text readability over background */
+  }
+
+  .background-info h2, .background-info p {
+    margin: 0;
+  }
+
  
