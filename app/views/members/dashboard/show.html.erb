@@ -1,11 +1,11 @@
 <%= render "member_contacts/header"%>
 
-<h2>Welcome to your dashboard, <%= current_member.full_name %>!</h2>
+<h2>Your Account Information</h2>
 <br/>
 
 <div class="form-member">
     <div class="form-member-header">
-      <h4 style="padding-left: 10px;">Your Account Information</h4>
+      <h4 style="padding-left: 10px;">Welcome to your dashboard, <%= current_member.full_name %>!</h4>
     </div>
 
     <div class="form-member-col-container">
@@ -19,9 +19,9 @@
     </div>
 
     <div class="form-member-footer">
-      <span style="margin-left: 10px; float: right;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></span>
+      <span style="margin-left: 10px; float: right;"><%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %></span>    
       <span style="margin-left: 10px; float: right;"><%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %></span>
-      <span style="float: right;"><%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %></span>    
+      <span style="float: right;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></span>
     </div>
 </div>
 <br/>
