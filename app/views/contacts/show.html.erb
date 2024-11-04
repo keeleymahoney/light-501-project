@@ -16,7 +16,7 @@
             <!--<strong><p>Profile Picture</p></strong>-->
             <% if @contact.pfp.present? %>
                 <p class="border rounded border-1 border-dark p-1">
-                    <%= image_tag @contact.pfp.variant(resize_to_limit: [150, 150]) %>
+                    <%= image_tag @contact.pfp.variant(resize_to_fill: [150, 150]) %>
                 </p>
             <% end %>
         </div>

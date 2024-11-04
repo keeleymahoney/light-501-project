@@ -23,7 +23,18 @@ local:
 google_dev:
   service: GCS
   project: CSCE431-Test
-  credentials: <%= Rails.root.join("config/secrets/csce431-test-36c236162b1d.json") %>
+  credentials: 
+    type: "service_account"
+    project_id: "csce431-test"
+    private_key_id: <%= Rails.application.credentials.dig(:gcs, :private_key_id) %>
+    private_key: <%= Rails.application.credentials.dig(:gcs, :private_key).dump %>
+    client_email: <%= Rails.application.credentials.dig(:gcs, :client_email) %>
+    client_id: <%= Rails.application.credentials.dig(:gcs, :client_id) %>
+    auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    token_uri: "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url: <%= Rails.application.credentials.dig(:gcs, :client_x509_cert_url) %>
+    universe_domain: "googleapis.com"
   bucket: light-501-test-bucket
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)

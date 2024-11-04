@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_30_163430) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_04_115756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,14 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_30_163430) do
     t.index ["industry_id"], name: "index_contacts_industries_on_industry_id"
   end
 
-  create_table "event_images", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.binary "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_event_images_on_event_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "date"
@@ -83,6 +75,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_30_163430) do
     t.datetime "updated_at", null: false
     t.boolean "virtual"
     t.boolean "published"
+    t.text "rsvp_id"
+    t.text "feedback_id"
   end
 
   create_table "industries", force: :cascade do |t|
@@ -129,7 +123,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_30_163430) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contacts_industries", "contacts"
   add_foreign_key "contacts_industries", "industries"
-  add_foreign_key "event_images", "events"
   add_foreign_key "members", "contacts"
   add_foreign_key "requests", "members"
   add_foreign_key "tokens", "members"

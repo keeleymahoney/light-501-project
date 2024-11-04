@@ -17,16 +17,20 @@ class Contact < ApplicationRecord
 
   validate :acceptable_image
 
+  private
+
   def acceptable_image
-    return unless pfp.attached?
+    
+    if pfp.attached?
+      # puts "#########&&&&&&&############&&&&&&###########&&&&&&&&########### Image content type: #{pfp.content_type}" 
+      unless pfp.blob.byte_size <= 2.megabyte
+        errors.add(:pfp, "is too big")
+      end
 
-    unless pfp.blob.byte_size <= 2.megabyte
-      errors.add(:pfp, "is too big")
-    end
-
-    acceptable_types = ["image/jpeg", "image/png"]
-    unless acceptable_types.include?(pfp.content_type)
-      errors.add(:pfp, "must be a JPEG or PNG")
+      acceptable_types = ["image/jpeg", "image/png"]
+      unless acceptable_types.include?(pfp.content_type)
+        errors.add(:pfp, "must be a JPEG or PNG")
+      end
     end
   end
   

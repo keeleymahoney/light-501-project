@@ -175,3 +175,20 @@
     border-radius: 10px;
     border: 1px solid black;
   }
+
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between; /* Adjusts spacing between items */
+  }
+  
+  .image-container {
+    flex: 1 1 200px; /* Allows the item to grow, shrink, and set a base width */
+    margin: 10px; /* Space around images */
+  }
+  
+  .event-image {
+    max-width: 100%; /* Ensures the image scales down */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional styling */
+  }

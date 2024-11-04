@@ -87,7 +87,7 @@ end
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :in_network)
+    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :in_network, :pfp)
   end
 
   def associate_industries(contact, industries)

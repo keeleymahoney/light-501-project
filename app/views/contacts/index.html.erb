@@ -28,7 +28,11 @@
     <tbody>
       <% @contacts.each do |contact| %>
         <tr>
-          <td>photo</td>
+          <td>
+              <% if contact.pfp.present? %>                
+                <%= image_tag contact.pfp.variant(resize_to_fill: [100, 100]) %>
+              <% end %>
+          </td>
           <td>
                 <%= contact.first_name %>  <%=contact.last_name%>
           </td>
