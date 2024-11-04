@@ -6,11 +6,6 @@
 <div class="form-member">
     <div class="form-member-header">
         <%= link_to "< Back To Network Contacts", member_contacts_path, class:"ml-3 btn btn-secondary" %>
-        <% if @contact.in_network %>
-            <strong class="in-network">In Network</strong>
-        <% else %>
-            <strong class="in-network">Not In Network</strong>
-        <% end %>
     </div>
 
     <div class="form-member-col-container">
