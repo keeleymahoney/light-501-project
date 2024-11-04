@@ -51,7 +51,7 @@
     <tr>
       <td>
         <% if contact.pfp.present? %>
-          <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(contact.pfp)}" %>
+          <%= image_tag contact.pfp.variant(resize_to_limit: [100, 100]) %>
         <% end %>
       </td>
       <td><%=contact.first_name + ' ' + contact.last_name%></td>

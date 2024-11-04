@@ -17,9 +17,14 @@ local:
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
-#   project: csce431-test
-#   credentials: <%= Rails.root.join("config/secrets/csce431-test-36c236162b1d.json") %>
-#   bucket: light-501-test-bucket-<%= Rails.env %>
+#   project: CSCE431-Test
+#   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+#   bucket: light-501-test-bucket
+google_dev:
+  service: GCS
+  project: CSCE431-Test
+  credentials: <%= Rails.root.join("config/secrets/csce431-test-36c236162b1d.json") %>
+  bucket: light-501-test-bucket
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:

@@ -81,6 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_30_163430) do
     t.text "feedback_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "virtual"
+    t.boolean "published"
   end
 
   create_table "industries", force: :cascade do |t|

@@ -12,6 +12,14 @@
     </div>
     <br/>
     <div class="form">
+        <div class="header row">
+            <!--<strong><p>Profile Picture</p></strong>-->
+            <% if @contact.pfp.present? %>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= image_tag @contact.pfp.variant(resize_to_limit: [150, 150]) %>
+                </p>
+            <% end %>
+        </div>
         <br/>
         <div class="header row">
             <div class="col">
@@ -89,7 +97,6 @@
             </div>
         </div>
         <br/>
-        <p>IMAGES</p>
         <div class="d-flex justify-content-end mr-2">
             <%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-primary"  %>
             <%= link_to("Delete", delete_contact_path(@contact), class:"btn btn-danger ml-2") %>
