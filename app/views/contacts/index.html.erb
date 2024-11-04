@@ -2,46 +2,58 @@
 <%= render "events/header"%>
 
 <%= render "events/adminheader"%>
-
+<br/>
 <h2 class="text-center">The BOLD Network</h2>
+<div class="d-flex justify-content-end mr-2">
+  <%= link_to 'New Contact', new_contact_path, class:" btn btn-primary" %>
+</div>
 
+<br/>
   <table style="width: 90%; margin-left: auto; margin-right: auto;">
     <thead class="thead-dark">
       <tr>
+        <th>Photo</th>
         <th>Name</th>
         <th>Organization</th>
         <th>Title</th>
+        <th>Industries</th>
         <th>Email</th>
-        <th> 
-  <button><%= link_to 'New Contact', new_contact_path %></button>
-</th>
+        <th>In Network</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
 
     <tbody>
       <% @contacts.each do |contact| %>
-
         <tr>
-
+          <td>photo</td>
           <td>
-                <%= link_to contact.first_name + ' ' + contact.last_name, contact %>
+                <%= contact.first_name %>  <%=contact.last_name%>
           </td>
-          
           <td><%= contact.organization %></td>
           <td><%= contact.title %></td>
+          <td>
+            <ul>
+              <% contact.industries.each do |industry| %>
+                <li><%= industry.industry_type %></li>
+              <% end %>
+            </ul>
+          </td>
           <td><%= contact.email %></td>
-
-
-          
+          <td><%= contact.in_network ? "Yes" : "No" %>
+          <td><%= link_to("View", contact_path(contact)) %></td>
+          <td><%= link_to("Edit", edit_contact_path(contact)) %></td>
           <td><%= link_to("Delete", delete_contact_path(contact)) %></td>
-          
         </tr>
-        
       <% end %>
     </tbody>
   </table>
-
-  <br>
+  <br/>
+  
+  <br/>
+  <br/>
 
 
 

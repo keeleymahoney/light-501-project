@@ -4,55 +4,59 @@
 <br/>
 <h2 class="text-center">Network Contacts</h2>
 
-<div class="search-form text-center">
+<div class="search-form">
   <%= form_with url: member_contacts_path, method: :get, local: true do %>
+    <br/>
     <div class = "header row">
       <div class ="col">
-        <%= label_tag :first_name, "First Name:" %>
+        <strong><%= label_tag :first_name, "First Name:" %></strong>
         <%= text_field_tag :first_name, params[:first_name] %>
       </div>
       <div class="col">
-        <%= label_tag :last_name, "Last Name:" %>
+        <strong><%= label_tag :last_name, "Last Name:" %></strong>
         <%= text_field_tag :last_name, params[:last_name] %>
       </div>
       <div class="col">
-        <%= label_tag :organization, "Organization:" %>
+        <strong><%= label_tag :organization, "Organization:" %></strong>
         <%= select_tag :organization, options_for_select(@organizations, params[:organization]), include_blank: true %>
       </div>
       <div class="col">
-        <%= label_tag :industry, "Industry:" %>
+        <strong><%= label_tag :industry, "Industry:" %></strong>
         <%= select_tag :industry, options_for_select(@industries, params[:industry]), include_blank: true %>
       </div>
     </div>
-    <div class="float-right mr-4">
-      <%= submit_tag "Search" %>
+    <br/>
+      <div class="d-flex justify-content-end mr-2">
+        <%= submit_tag "Search", class:"btn btn-primary"%>
     </div>
+    <br/>
   <% end %>
 </div>
 
 <br/>
 <br/>
 <div id="member-networks-table">
-  <table style="width: 90%; margin-left: auto; margin-right: auto;">
+  <table style="width: 100%; margin-left: auto; margin-right: auto;">
 
     <tr>
       <th>Photo</th>
       <th>Name</th>
-      <th>Title</th>
       <th>Organization</th>
+      <th>Title</th>
       <th>Industries</th>
+      <th>Email</th>
       <th>View </th>
     </tr>
     <% @contacts.each do |contact| %>
     <tr>
       <td>
-        < <% if contact.pfp.present? %>
+        <% if contact.pfp.present? %>
           <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(contact.pfp)}" %>
         <% end %>
       </td>
       <td><%=contact.first_name + ' ' + contact.last_name%></td>
-      <td><%= contact.title %></td>
       <td><%= contact.organization %></td>
+      <td><%= contact.title %></td>
       <td>
         <ul>
           <% contact.industries.each do |industry| %>
@@ -60,6 +64,7 @@
           <% end %>
         </ul>
       </td>
+      <td><%= contact.email %></td>
       <td><%= link_to("View", member_contact_path(contact)) %></td>
 
     </tr>

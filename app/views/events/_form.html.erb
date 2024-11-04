@@ -12,6 +12,7 @@
   <% end %>
 
 <div class="form" >
+  <br/>
   <div class="header row">
     <div class="col">
       <strong><%= form.label :name, style: "display: block" %></strong>
@@ -33,6 +34,21 @@
     <div class="col">
       <strong><%= form.label :location, style: "display: block" %></strong>
       <%= form.text_field :location, class: "full-width"%>
+    </div>
+
+    
+  </div>
+
+  <br/>
+  <div class="header row">
+    <div class="col field">
+      <strong><%= form.label :virtual, style:"display: block"%></strong>
+      <%= form.check_box :virtual %>
+    </div>
+
+    <div class="col field">
+      <strong><%= form.label :published, style:"display: block"%></strong>
+      <%= form.check_box :published %>
     </div>
   </div>
 

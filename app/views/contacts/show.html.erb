@@ -2,43 +2,102 @@
 
 <%= render "events/adminheader"%>
 
-<div style='margin-left: 5%'>
-
-<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
-
-<div class="row">
-
-    <div>
-        <p>Organization: <%= @contact.organization %></p>
-        <p>Title: <%= @contact.title %></p>
-        <p>Email: <%= @contact.email %></p>
-        <p>Link: <%= @contact.link %></p>
-        <p>Bio: <%= @contact.bio %></p>
-        <p>Industries: </p>
-        <ul>
-        <% @contact.industries.each do |industry| %>
-            <li><%= industry.industry_type %></li>
-        <% end %>
-        </ul>
-        
+<br/>
+<div>
+    <div class="text-center">
+        <h2><%= @contact.first_name%> <%= @contact.last_name%> </h2>
     </div>
-
     <div>
-    
-        <p>Profile Picture: </p>
-        <div class="border rounded border-1 border-dark p-1 mb-2">
-            <% if @contact.pfp.attached? %>
-                <%= image_tag @contact.pfp.variant(resize_to_limit: [150, 150]) %>
-            <% end %>
+       <%= link_to 'Back to Network', contacts_path, class:"btn btn-secondary"%>
+    </div>
+    <br/>
+    <div class="form">
+        <br/>
+        <div class="header row">
+            <div class="col">
+                <strong><p>First Name</p></strong>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.first_name %>
+                </p>
+            </div>
+
+            <div class="col">
+                <strong><p>Last Name</p></strong>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.last_name %>
+                </p>
+            </div>
+
+            <div class="col">
+                <strong><p>Organization</p></strong>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.organization %>
+                </p>
+            </div>
         </div>
-    
-    </div>
 
+        <br/>
+
+        <div class="header row">
+            <div class="col">
+                <strong><p>Title</p></strong>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.title %>
+                </p>
+            </div>
+
+            <div class="col">
+                <strong><p>Email</p></strong>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.email %>
+                </p>
+            </div>
+
+            <div class="col">
+                <strong><p>Link</p></strong>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.link %>
+                </p>
+            </div>
+        </div>
+        <br/>
+        <div class="header row">
+            <div class="col">
+                <p><strong>Bio:</strong></p>
+                <p class="border rounded border-1 border-dark p-1">
+                <%= @contact.bio %>
+                </p>
+            </div>
+        </div>
+        <br/>
+        <div class="header row">
+            <div class="col">
+                <p><strong>Industries</strong></p>
+                <% @contact.industries.each do |industry| %>
+                    <li><%= industry.industry_type %></li>
+                <% end %>
+            </div>
+        </div>
+
+        <br/>
+        <div style="header row">
+            <div class="col">
+                <p><strong>In Network:</strong></p>    
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.in_network ? "Yes" : "No" %>
+                </p>
+            </div>
+        </div>
+        <br/>
+        <p>IMAGES</p>
+        <div class="d-flex justify-content-end mr-2">
+            <%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-primary"  %>
+            <%= link_to("Delete", delete_contact_path(@contact), class:"btn btn-danger ml-2") %>
+        </div>
+        <br/>
+    </div>
+    
 </div>
 
 <br>
-<button><%= link_to 'Edit', edit_contact_path(@contact) %></button>
-<button><%= link_to("Delete", delete_contact_path(@contact)) %></button>
-<button><%= link_to 'Back', contacts_path %></button>
 
-</div>

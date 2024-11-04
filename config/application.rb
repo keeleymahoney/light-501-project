@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -12,6 +13,8 @@ module Light501Project
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.time_zone = 'Central Time (US & Canada)'
+    config.active_record.default_timezone = :local
 
     config.active_storage.variant_processor = :vips
 

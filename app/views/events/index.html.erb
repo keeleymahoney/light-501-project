@@ -7,8 +7,10 @@
 
 <h2 class="text-center">All Events</h2>
 <p class="ml-2" style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-end mr-2">
+  <%= link_to 'New Event', new_event_path, class:" btn btn-primary" %>
+</div>
 <br/>
-
 <div id="events-table">
   <table style="width: 90%; margin-left: auto; margin-right: auto;">
 
@@ -17,11 +19,12 @@
       <th>Date</th>
       <th>Description</th>
       <th>Location</th>
-      <th>RSVP Link </th>
-      <th>Feedback Link </th>
+      <th>Virtual</th>
+      <th>Published</th>
+      <th>RSVP</th>
+      <th>Feedback</th>
       <th>View</th>
       <th>Edit</th>
-      <th>.CSV Data</th>
       <th>Delete</th>
     </tr>
     <% @events.each do |event| %>
@@ -30,21 +33,19 @@
       <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
       <td><%= event.description %></td>
       <td><%= event.location %></td>
+      <td><%= event.virtual ? "Yes" : "No" %></td>
+      <td><%= event.published ? "Yes" : "No" %></td>
       <td><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></td>
       <td><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></td>
       <td><%= link_to("View", event_path(event)) %></td>
       <td><%= link_to("Edit", edit_event_path(event)) %></td>
-      <td>CSV</td>
       <td><%= link_to("Delete", delete_event_path(event)) %> </td>
     </tr>
     <% end %>
   </table>
 </div>
 <br/>
-<br/>
-<div class="create">
-  <button><%= link_to "Create new event", new_event_path %></button>
-</div>
+
 
 
 
