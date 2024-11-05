@@ -58,7 +58,9 @@ gem 'rexml'
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
+gem 'ruby-vips', '~> 2.1', '>= 2.1.4'
+gem "google-cloud-storage", "~> 1.8", require: false
 
 # For google oauth
 gem 'devise'

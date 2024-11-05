@@ -1,25 +1,39 @@
-<h1>Request Constitution Access</h1>
+<%= render "member_contacts/header"%>
 
-<%= form_with(model: @request, url: requests_path, local: true) do |form| %>
-  <% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
-      <ul>
-        <% @request.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<h2>Request Constitution Access</h2>
+<br/>
+
+<div class="form-member">
+    <div class="form-member-header">
+        <%= link_to "< Back To My Account Info", member_dashboard_path, class:"ml-3 btn btn-secondary" %>
     </div>
-  <% end %>
 
-  <%= form.hidden_field :request_type, value: "constitution_access" %>
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+          <%= form_with(model: @request, url: requests_path, local: true) do |form| %>
+            <% if @request.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+                <ul>
+                  <% @request.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-  <div class="field">
-    <%= form.label :description, "Reason for Constitution Access" %>
-    <%= form.text_area :description %>
-  </div>
+            <%= form.hidden_field :request_type, value: "constitution_access" %>
 
-  <div class="actions">
-    <%= form.submit "Submit Constitution Access Request" %>
-  </div>
-<% end %>
+            <strong><%= form.label :description, "Reason for Constitution Access", style: "display: block" %></strong>
+            <span><%= form.text_area :description, style:"width: 100%" %></span><br/><br/><br/>
+
+            <div class="form-member-footer" style="margin: -10px;">
+              <div class="d-flex justify-content-end mr-2">
+                <%= form.submit "Submit Constitution Access Request", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>                  
+        </div>
+    </div>
+</div>
+<br/>

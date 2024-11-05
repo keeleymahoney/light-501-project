@@ -1,0 +1,14 @@
+<div id="<%= dom_id contact %>" style="outline-style:solid;">
+  <p><strong><%= contact.first_name %> <%= contact.last_name %></strong></p>
+  <p><strong>Organization:</strong> <%= contact.organization %></p>
+  <p><strong>Title:</strong> <%= contact.title %></p>
+  <p><strong>Email:</strong> <%= contact.email %></p>
+  <p><strong>Link:</strong> <%= contact.link %></p>
+  <p><strong>Bio:</strong> <%= contact.bio %></p>
+  <p><strong>Industries:</strong></p>
+  <ul>
+    <% contact.industries.each do |industry| %>
+      <li><%= industry.industry_type %></li>
+    <% end %>
+  </ul>
+</div>

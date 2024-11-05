@@ -1,50 +1,53 @@
 <%= render "header"%>
-<%= render "member_header"%>
-<h1 class="title-page">My Network Information </h1>
 
+<h2>My Network Information </h1>
 <br/>
 
-<p style="text-align: center">image will go here</p>
+<div class="form-member">
+    <div class="form-member-header">
+        <span></span>
+        <% if @contact.in_network %>
+            <strong class="in-network">In Network</strong>
+        <% else %>
+            <strong class="in-network">Not In Network</strong>
+        <% end %>
+    </div>
 
-<div class="header row">
-    <div class= "col">
-        <p><strong>First Name</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.first_name %> </p>
+    <div class="form-member-col-container">
+        <div class="form-member-col-image">
+            <p>IMAGE HERE</p>
+        </div>
+
+        <div class="form-member-col-content">
+            <strong>First Name: </strong>
+            <span><%= @contact.first_name %></span><br/>
+
+            <strong>Last Name: </strong>
+            <span><%= @contact.last_name %></span><br/><br/>           
+
+            <strong>Bio: </strong><br/>
+            <p><%= @contact.bio %></p>
+
+            <strong>Organization: </strong>
+            <span><%= @contact.organization %></span><br/>
+            
+            <strong>Title: </strong>
+            <span><%= @contact.title %></span><br/>
+
+            <strong>Industries: </strong>
+            <div style="padding-left: 20px;">
+                <% @contact.industries.each do |industry| %>
+                    <li><%= industry.industry_type %></li>
+                <% end %>
+            </div><br/>
+
+            <strong>Email: </strong>
+            <span><%= @contact.email %></span><br/>
+
+            <strong>Link: </strong>
+            <span><%= @contact.link %></span><br/><br/>
+        </div>    
     </div>
-    <div class= "col">
-        <p><strong>Last Name</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.last_name %> </p>
-    </div>
-    <div class= "col">
-        <p><strong>Title</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.last_name %> </p>
-    </div>
+    <div class="form-member-footer"><span style="float: right;"><%= link_to "Edit Network Information", edit_member_network_path(@contact), class: "btn btn-primary" %></span></div>
 </div>
-
 <br/>
-
-<div class="header row">
-    <div class= "col">
-        <p><strong>Organization</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.organization %> </p>
-    </div>
-    <div class= "col">
-        <p><strong>Link</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.link %> </p>
-    </div>
-    <div class= "col">
-        <p><strong>Email</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.email %> </p>
-    </div>
-</div>
-
-<br/>
-<div class="header row">
-    <div class = "col">
-        <p><strong>Bio</strong></p>
-        <p class="border rounded border-1 border-dark p-1"><%= @contact.bio %> </p>
-    </div>
-</div>
-
-<br/>
-<%= link_to "Edit Network Information", edit_member_network_path(@contact) %>

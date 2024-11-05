@@ -1,85 +1,54 @@
-<div id="<%= dom_id event %>">
-  <div class="border rounded border-1 border-dark p-1" style="width: 95%; margin-left: auto; margin-right: auto;">
-  <br/>
-    <div class="header row">
-      <div class="col">
-        <p><strong>Name:</strong></p>
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.name %>
-          </p>
-      </div>
-
-      <div class="col">
-        <p><strong>Date:</strong></p>
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.date.strftime("%m/%d/%y %I:%M %p")  %>
-        </p>
-      </div>
-
-      <div class="col">
-        <p><strong>Location:</strong></p>
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.location %>
-          </p>
-      </div>
-
-     
-      
-
-    </div>
-
-    <br/>
-    <div class="header row">
-      <div class="col">
-        <p><strong>Virtual:</strong></p>    
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.virtual ? "Yes" : "No" %>
-        </p>
-      </div>
-      <div class="col">
-        <p><strong>Published:</strong></p>    
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.published ? "Yes" : "No" %>
-        </p>
-      </div>
-    </div>
-
-    <br/>
-    <div class="header row">
-      <div class="col">
-        <p><strong>Description:</strong></p>
-        <p class="border rounded border-1 border-dark p-1">
-          <%= event.description %>
-        </p>
-      </div>
-    </div>
-
-    <br/>
-    <!-- Display images related to the event -->
-    <div class="header row">
-      <div class="col">
-        <p><strong>Event Images:</strong></p>
-        <% images = EventImage.where(event_id: event.id) %>
-        <% if images.any? %>
-          <div class="row">
-            <% images.each do |image| %>
-              <div class="col-4">
-                <div class="border rounded border-1 border-dark p-1 mb-2">
-                  <img src="data:image/jpeg;base64,<%= Base64.encode64(image.picture) %>" alt="Event Image" class="img-fluid rounded" />
-                </div>
+<div class="form-member-col-container">
+    <div class="form-member-col-image">
+      <div class="header row">
+        <div class="col">
+          <p><strong>Event Images:</strong></p>
+          <% if event.images.any? %>
+            <div class="row">
+              <div class="image-gallery">
+                <% event.images.each do |image| %>
+                  <div class="image-container">
+                    <%=  image_tag image.variant(resize_to_fit: [nil, 300]), alt: "Image", class: "event-image" %>
+                  </div>
+                <% end %>
               </div>
-            <% end %>
-          </div>
-        <% else %>
-          <p>No images available for this event.</p>
-        <% end %>
+            </div>
+          <% else %>
+            <p>No images available for this event.</p>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="row justify-content-end mr-4">
-      <%= link_to "Edit", edit_event_path(@event), class:"btn btn-primary mr-2" %>
-      <%= link_to "Delete", delete_event_path(@event), class:"btn btn-danger" %>
-    </div>
-    <br/>
-  </div>
-</div>
 
+    <div class="form-member-col-content">
+        <strong>Name: </strong>
+        <span><%= event.name %></span><br/>
+
+        <strong>Date: </strong>
+        <span><%= event.date.strftime("%m/%d/%y %I:%M %p")  %></span><br/>
+
+        <strong>Location: </strong>
+        <span><%= event.location %></span><br/>
+
+        <strong>Description: </strong><br/>
+        <p><%= event.description %></p>          
+        
+        <strong>Virtual: </strong>
+        <span><%= event.virtual ? "Yes" : "No" %></span><br/>
+
+        <strong>Published: </strong>
+        <span><%= event.published ? "Yes" : "No" %></span><br/><br/>
+
+        <% if defined?(event.rsvp_id) && !event.rsvp_id.blank? %>
+          <span style="background-color: lightgreen; padding: 5px;"><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></span><br/>
+        <% else %>
+          <span style="background-color: #ffc6c4; padding: 5px;"><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></span><br/>
+        <% end %>
+
+        <% if defined?(event.feedback_id) && !event.feedback_id.blank? %>
+          <span style="background-color: lightgreen; padding: 5px;"><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></span><br/>
+        <% else %>
+          <span style="background-color: #ffc6c4; padding: 5px;"><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></span><br/>
+        <% end %>
+    </div>    
+</div>
