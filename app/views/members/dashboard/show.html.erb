@@ -11,6 +11,28 @@
   <p><strong>Constitution Expiration Date:</strong> <%= current_member.constitution_exp.strftime("%B %d, %Y") %></p>
 </div>
 
+<h3>Your Requests</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Request Type</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th>Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.request_type %></td>
+        <td><%= request.status %></td>
+        <td><%= request.description %></td>
+        <td><%= request.created_at.strftime("%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <h3>Request Access</h3>
 <div>
   <%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %>
