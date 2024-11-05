@@ -1,15 +1,48 @@
-<h1>Member Dashboard</h1>
+<%= render "member_contacts/header"%>
 
-<p>Welcome to your dashboard, <%= current_member.full_name %>!</p>
+<h2>Your Account Information</h2>
+<br/>
 
-<div class="member-info">
-  <h3>Your Account Information</h3>
-</div>
+<div class="form-member">
+    <div class="form-member-header">
+      <h4 style="padding-left: 10px;">Welcome to your dashboard, <%= current_member.full_name %>!</h4>
+    </div>
 
-<div class="member-expirations">
-  <p><strong>Network Expiration Date:</strong> <%= current_member.network_exp.strftime("%B %d, %Y") %></p>
-  <p><strong>Constitution Expiration Date:</strong> <%= current_member.constitution_exp.strftime("%B %d, %Y") %></p>
-</div>
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+          <strong>Network Expiration Date: </strong>
+          <span><%= current_member.network_exp.strftime("%B %d, %Y") %></span><br/>
+
+<h3>Your Requests</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Request Type</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th>Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.request_type %></td>
+        <td><%= request.status %></td>
+        <td><%= request.description %></td>
+        <td><%= request.created_at.strftime("%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if current_member.constitution_exp && current_member.constitution_exp > Time.current %>
+  <div class="constitution-access">
+    <h3>Access to Constitution</h3>
+    <%= link_to "View Constitution", "/documents/Constitution.pdf", target: "_blank", class: "btn btn-primary" %>
+  </div>
+<% else %>
+  <p>Your access to the Constitution has expired. Please contact the administrator for renewal.</p>
+<% end %>
 
 <h3>Request Access</h3>
 <div>
@@ -18,10 +51,22 @@
 <br>
 <div>
   <%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %>
+
+          <strong>Constitution Expiration Date: </strong>
+          <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
+        </div>
+    </div>
+
+    <div class="form-member-footer">
+      <span style="margin-left: 10px; float: right;"><%= link_to 'Request Network Addition', new_network_addition_contact_path, class: 'btn btn-primary' %></span>    
+      <span style="margin-left: 10px; float: right;"><%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %></span>
+      <span style="float: right;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></span>
+    </div>
+
 </div>
 <br>
 <div class="actions">
-  <%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %>
+  <%= link_to 'Request Network Addition', new_network_addition_contact_path, class: 'btn btn-primary' %>
 </div>
 
 <ul>

@@ -1,14 +1,14 @@
 <%= render "header"%>
+
+<h2>Create New Event</h2>
 <br/>
 
-<h2 class="title-page">Create New Event</h2>
-<div>
-  <%= link_to "Back to events", events_path, class:"ml-3" %>
+<div class="form-member">
+  <div class="form-member-header">
+      <%= link_to "< Back To Events", events_path, class:"ml-3 btn btn-secondary" %>
+  </div>
+
+  <%= render "form", event: @event %>
 </div>
 <br/>
-
-<%= render "form", event: @event %>
-
-<br>
-
 

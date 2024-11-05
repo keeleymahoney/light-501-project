@@ -1,58 +1,59 @@
 <%= render "header"%>
-<%= render "member_header"%>
 
+<h2 class="text-left">Network Contacts</h2>
 <br/>
-<h2 class="text-center">Network Contacts</h2>
 
-<div class="search-form text-center">
+<div class="search-form">
   <%= form_with url: member_contacts_path, method: :get, local: true do %>
+    <br/>
     <div class = "header row">
       <div class ="col">
-        <%= label_tag :first_name, "First Name:" %>
+        <strong><%= label_tag :first_name, "First Name:" %></strong><br/>
         <%= text_field_tag :first_name, params[:first_name] %>
       </div>
       <div class="col">
-        <%= label_tag :last_name, "Last Name:" %>
+        <strong><%= label_tag :last_name, "Last Name:" %></strong><br/>
         <%= text_field_tag :last_name, params[:last_name] %>
       </div>
       <div class="col">
-        <%= label_tag :organization, "Organization:" %>
-        <%= select_tag :organization, options_for_select(@organizations, params[:organization]), include_blank: true %>
+        <strong><%= label_tag :organization, "Organization:" %></strong><br/>
+        <%= select_tag :organization, options_for_select(@organizations, params[:organization]), include_blank: true, class: "select-member" %>
       </div>
       <div class="col">
-        <%= label_tag :industry, "Industry:" %>
-        <%= select_tag :industry, options_for_select(@industries, params[:industry]), include_blank: true %>
+        <strong><%= label_tag :industry, "Industry:" %></strong><br/>
+        <%= select_tag :industry, options_for_select(@industries, params[:industry]), include_blank: true, class: "select-member" %>
+      </div>
+      <div class="d-flex justify-content-end mr-2">
+        <%= submit_tag "Search", class:"btn btn-primary"%>
       </div>
     </div>
-    <div class="float-right mr-4">
-      <%= submit_tag "Search" %>
-    </div>
+    <br/>
   <% end %>
 </div>
 
 <br/>
-<br/>
 <div id="member-networks-table">
-  <table style="width: 90%; margin-left: auto; margin-right: auto;">
+  <table class="table-member">
 
     <tr>
-      <th>Photo</th>
-      <th>Name</th>
-      <th>Title</th>
-      <th>Organization</th>
-      <th>Industries</th>
-      <th>View </th>
+      <th style="width: 8%">Photo</th>
+      <th style="width: 15%">Name</th>
+      <th style="width: 19%">Organization</th>
+      <th style="width: 15%">Title</th>
+      <th style="width: 19%">Industries</th>
+      <th style="width: 17%">Email</th>
+      <th style="width: 7%">View </th>
     </tr>
     <% @contacts.each do |contact| %>
     <tr>
       <td>
-        < <% if contact.pfp.present? %>
-          <%= image_tag "data:image/jpeg;base64,#{Base64.encode64(contact.pfp)}" %>
+        <% if contact.pfp.present? %>
+          <%= image_tag contact.pfp.variant(resize_to_fill: [100, 100]) %>
         <% end %>
       </td>
       <td><%=contact.first_name + ' ' + contact.last_name%></td>
-      <td><%= contact.title %></td>
       <td><%= contact.organization %></td>
+      <td><%= contact.title %></td>
       <td>
         <ul>
           <% contact.industries.each do |industry| %>
@@ -60,11 +61,11 @@
           <% end %>
         </ul>
       </td>
+      <td><%= contact.email %></td>
       <td><%= link_to("View", member_contact_path(contact)) %></td>
 
     </tr>
     <% end %>
   </table>
 </div>
-<br/>
 <br/>

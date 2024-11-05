@@ -10,4 +10,10 @@ class HomeController < ApplicationController
   def about
     # Code for about page
   end
+
+  def event
+    @prevEvents = Event.where("date < ?", Date.current).where(published: true).order(date: :desc)
+    @currentEvents = Event.where("date >= ?", Date.current).where(published: true).order(date: :asc)
+
+  end
 end

@@ -30,7 +30,6 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        handle_image_uploads
         format.html { redirect_to event_url(@event), notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -44,7 +43,6 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        handle_image_uploads
         format.html { redirect_to event_url(@event), notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -77,7 +75,8 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
 
-    rsvp_form_id = Event.find(params[:id]).rsvp_link
+    rsvp_form_id = Event.find(params[:id]).rsvp_id
+    rsvp_form_link = Event.find(params[:id]).rsvp_link
 
     # Check that there is an rsvp form to show
     if defined?(rsvp_form_id) && !rsvp_form_id.blank?
@@ -91,10 +90,18 @@ class EventsController < ApplicationController
         rsvp_form_responses = forms.list_form_responses(rsvp_form_id)
         rsvp_form = forms.get_form(rsvp_form_id)
 
-        @form_submission_link = rsvp_form.responder_uri
+        @form_submission_link = rsvp_form_link
         @form_edit_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit"
+        @form_responses_link = "https://docs.google.com/forms/d/#{rsvp_form_id}/edit#responses"
 
         @num_responses = 0
+
+        if !rsvp_form.linked_sheet_id.blank?
+          @sheet_exists = true
+          @form_sheet_link = "https://docs.google.com/spreadsheets/d/#{rsvp_form.linked_sheet_id}/edit"
+        else
+          @sheet_exists = false
+        end
 
         unless rsvp_form_responses.responses.blank?
           rsvp_form_responses.responses.each do |_r|
@@ -103,7 +110,7 @@ class EventsController < ApplicationController
         end
       rescue Google::Apis::ClientError => e
         if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
-          if @event.update(rsvp_link: '')
+          if @event.update(rsvp_id: '')
             redirect_to events_path, notice: 'Your previous form was inaccessible or deleted. It has been unlinked from your event.'
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
@@ -130,7 +137,7 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
 
-    rsvp_form_id = Event.find(params[:id]).rsvp_link
+    rsvp_form_id = Event.find(params[:id]).rsvp_id
 
     # Create a form if no form exists already. Else, re-render current page
     if !defined?(rsvp_form_id) || rsvp_form_id.blank?
@@ -156,7 +163,7 @@ class EventsController < ApplicationController
         drive.update_file(@new_form.form_id, {name: "RSVP Form For " + @event.name})
 
         # Check that event entity is updated successfully
-        if @event.update(rsvp_link: @new_form.form_id)
+        if @event.update(rsvp_id: @new_form.form_id, rsvp_link: @new_form.responder_uri)
           redirect_to show_rsvp_form_event_path(@event), notice: 'RSVP form successfully created.'
         else
           render('show_rsvp_form')
@@ -182,7 +189,7 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
 
-    rsvp_form_id = Event.find(params[:id]).rsvp_link
+    rsvp_form_id = Event.find(params[:id]).rsvp_id
 
     # Delete a form if a form exists already. Else, re-render current page
     if defined?(rsvp_form_id) && !rsvp_form_id.blank?
@@ -194,14 +201,14 @@ class EventsController < ApplicationController
         drive.delete_file(rsvp_form_id)
 
         # Check that event entity is updated successfully
-        if @event.update(rsvp_link: '')
+        if @event.update(rsvp_id: '', rsvp_link: '')
           redirect_to show_rsvp_form_event_path(@event), notice: 'RSVP form was successfully destroyed.'
         else
           render('show_rsvp_form')
         end
       rescue Google::Apis::ClientError => e
         if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
-          if @event.update(rsvp_link: '')
+          if @event.update(rsvp_id: '')
             redirect_to events_path, notice: 'Your previous form was inaccessible. It has been unlinked from your event.'
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
@@ -226,7 +233,8 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
 
-    feedback_form_id = Event.find(params[:id]).feedback_link
+    feedback_form_id = Event.find(params[:id]).feedback_id
+    feedback_form_link = Event.find(params[:id]).feedback_link
 
     # Check that there is a feedback form to show
     if defined?(feedback_form_id) && !feedback_form_id.blank?
@@ -240,10 +248,18 @@ class EventsController < ApplicationController
         feedback_form_responses = forms.list_form_responses(feedback_form_id)
         feedback_form = forms.get_form(feedback_form_id)
 
-        @form_submission_link = feedback_form.responder_uri
+        @form_submission_link = feedback_form_link
         @form_edit_link = "https://docs.google.com/forms/d/#{feedback_form_id}/edit"
+        @form_responses_link = "https://docs.google.com/forms/d/#{feedback_form_id}/edit#responses"
 
         @num_responses = 0
+
+        if !feedback_form.linked_sheet_id.blank?
+          @sheet_exists = true
+          @form_sheet_link = "https://docs.google.com/spreadsheets/d/#{feedback_form.linked_sheet_id}/edit"
+        else
+          @sheet_exists = false
+        end
 
         unless feedback_form_responses.responses.blank?
           feedback_form_responses.responses.each do |_r|
@@ -252,7 +268,7 @@ class EventsController < ApplicationController
         end
       rescue Google::Apis::ClientError => e
         if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
-          if @event.update(feedback_link: '')
+          if @event.update(feedback_id: '')
             redirect_to events_path, notice: 'Your previous form was inaccessible or deleted. It has been unlinked from your event.'
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
@@ -279,7 +295,7 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
 
-    feedback_form_id = Event.find(params[:id]).feedback_link
+    feedback_form_id = Event.find(params[:id]).feedback_id
 
     # Create a form if no form exists already. Else, re-render current page
     if !defined?(feedback_form_id) || feedback_form_id.blank?
@@ -305,7 +321,7 @@ class EventsController < ApplicationController
         drive.update_file(@new_form.form_id, {name: "Feedback Form For " + @event.name})
 
         # Check that event entity is updated successfully
-        if @event.update(feedback_link: @new_form.form_id)
+        if @event.update(feedback_id: @new_form.form_id) && @event.update(feedback_link: @new_form.responder_uri)
           redirect_to show_feedback_form_event_path(@event), notice: 'Feedback form successfully created.'
         else
           render('show_feedback_form')
@@ -331,7 +347,7 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
 
-    feedback_form_id = Event.find(params[:id]).feedback_link
+    feedback_form_id = Event.find(params[:id]).feedback_id
 
     # Delete a form if a form exists already. Else, re-render current page
     if defined?(feedback_form_id) && !feedback_form_id.blank?
@@ -343,14 +359,14 @@ class EventsController < ApplicationController
         drive.delete_file(feedback_form_id)
 
         # Check that event entity is updated successfully
-        if @event.update(feedback_link: '')
+        if @event.update(feedback_id: '', feedback_id: '')
           redirect_to show_feedback_form_event_path(@event), notice: 'Feedback form was successfully destroyed.'
         else
           render('show_feedback_form')
         end
       rescue Google::Apis::ClientError => e
         if e.status_code == 404 # form cannot be found because you don't have access or it's been deleted
-          if @event.update(feedback_link: '')
+          if @event.update(feedback_id: '')
             redirect_to events_path, notice: 'Your previous form was inaccessible. It has been unlinked from your event.'
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
@@ -377,24 +393,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def handle_image_uploads
-    return unless params[:event][:images].present?
-
-    params[:event][:images].each do |image|
-      next if image.blank?
-
-      # Use ImagesController to create images
-      @event.event_images.create(picture: image.read)
-    end
-  end
-
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:id, :name, :date, :description, :location, :rsvp_link, :feedback_link)
+    params.require(:event).permit(:id, :name, :date, :description, :location, :virtual, :published, :rsvp_id, :feedback_id, images: [])
   end
 
   # def rsvp_form_id
-  #   Event.find(params[:id]).rsvp_link
+  #   Event.find(params[:id]).rsvp_id
   # end
   def check_if_signed_in
     unless member_signed_in?

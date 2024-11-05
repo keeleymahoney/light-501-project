@@ -1,0 +1,74 @@
+<div class="container text-center">
+    <br/>
+    <h2 class="display-4">Current & Upcoming Events</h2>
+    <div class="event-grid">
+        <% @currentEvents.each do |event| %>
+            <div class="card">
+                <h3><%= event.name %></h3>
+                <p><%= event.description %></p>
+                <div class="row">
+                    <div class= "col">
+                        <p><strong>Location:</strong> <%= event.location %></p>
+                    </div>
+                    <div class= "col">
+                        <p><strong>Date:</strong> <%= event.date.strftime("%m/%d/%y %I:%M %p")  %></p>  
+                    </div>
+                    <div class= "col">
+                        <p><strong>Virtual:</strong> <%= event.virtual ? "Yes" : "No" %></p>  
+                    </div>
+                </div>
+                <div>
+                    <p>Images
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <% if event.rsvp_link.present? %>
+                            <a href="<%= event.rsvp_link %>" target="_blank" rel="noopener noreferrer">RSVP Link</a>
+                        <% else %>
+                            <p>No RSVP Link Available</p>
+                        <% end %>
+                    </div>
+                    <div class="col">
+                        <% if event.feedback_link.present? %>
+                            <a href="<%= event.feedback_link %>" target="_blank" rel="noopener noreferrer">Feedback Link</a>
+                        <% else %>
+                            <p>No Feedback Link Available</p>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <h2 class="display-4">Previous Events</h2>
+    <div class="event-grid">
+        <% @prevEvents.each do |event| %>
+            <div class="card">
+                <h3><%= event.name %></h3>
+                <p><%= event.description %></p>
+                <div class="row">
+                    <div class= "col">
+                        <p><strong>Location:</strong> <%= event.location %></p>
+                    </div>
+                    <div class= "col">
+                        <p><strong>Date:</strong> <%= event.date.strftime("%m/%d/%y %I:%M %p")  %></p>  
+                    </div>
+                    <div class= "col">
+                        <p><strong>Virtual:</strong> <%= event.virtual ? "Yes" : "No" %></p>  
+                    </div>
+                </div>
+                <div>
+                    <p>Images
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <% if event.feedback_link.present? %>
+                            <a href="<%= event.feedback_link %>" target="_blank" rel="noopener noreferrer">Feedback Link</a>
+                        <% else %>
+                            <p>No Feedback Link Available</p>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
