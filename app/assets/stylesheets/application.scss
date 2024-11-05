@@ -37,6 +37,49 @@
  .nav-item {
      margin-right: 15px; // Spacing between navigation items
  }
+
+ .nav-item-dropdown {
+    margin-right: 15px; // Spacing between navigation items
+    border-radius: 0px;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item-dropdown-links {
+    position: absolute;
+    z-index: 1;
+    background-color: #D3D3D3;
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0.5s;
+    border-top: 1px black solid;
+    width: 100%;
+}
+
+.nav-item-dropdown:hover .nav-item-dropdown-links{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.nav-item-dropdown-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item-dropdown-links a:hover {
+    color: black;
+}
+
+.nav-item-dropdown-links div {
+    border-collapse: collapse;
+    padding: 8px;
+    border: 1px black solid;
+}
+
+.nav-item-dropdown-links div:hover {
+    background-color: white;
+}
  
  .nav-link {
      display: inline-block;
@@ -60,6 +103,27 @@
      background-color: #800000; // Darker maroon when active
  }
 
+ .nav-link-dropdown {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #500000; // Maroon background for buttons
+    color: white; // White text color
+    border: none;
+    border-radius: 5px 5px 0px 0px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; // Smooth hover transition
+}
+
+// Hover effect for nav links
+.nav-link-dropdown:hover {
+    background-color: #D3D3D3; // Light gray hover effect
+    color: black; // Black text on hover
+}
+
+// Active state for buttons
+.nav-link-dropdown:active {
+    background-color: #800000; // Darker maroon when active
+}
  
  // Footer-specific styling
  footer p {
@@ -105,9 +169,13 @@
 
  th
  {
-     color: white;
      background-color: rgb(193, 154, 154);
  }
+
+ td
+ {
+    background-color: #fafbfc;
+ } 
  
  .form {
      width: 95%;
@@ -116,20 +184,20 @@
      border: 1px solid black;
  }
  
- table, th, td {
-     border: 1px solid black; /* Adds a border around the table, headers, and cells */
-     border-collapse: collapse; /* Ensures borders are shared between adjacent cells */
- }
+//  table, th, td {
+//      border: 1px solid black; /* Adds a border around the table, headers, and cells */
+//      border-collapse: collapse; /* Ensures borders are shared between adjacent cells */
+//  }
 
- table
- {
-     background-color: white;
- }
+//  table
+//  {
+//      background-color: white;
+//  }
  
- th, td {
-     padding: 10px; /* Optional: Adds padding inside the cells */
-     text-align: left; /* Optional: Aligns text to the left in the cells */
- }
+//  th, td {
+//      padding: 10px; /* Optional: Adds padding inside the cells */
+//      text-align: left; /* Optional: Aligns text to the left in the cells */
+//  }
  
  .member-info {
     border: 1px solid #ccc;
@@ -172,6 +240,126 @@
 
   .search-form
   {
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid black;
+    background-color: rgb(193, 154, 154);
   }
+
+  .select-member
+  {
+    width: 200px;
+  }  
+
+  .table-member
+  {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    border-collapse: separate;
+    border-spacing: 0;
+    // border-collapse: collapse;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .table-member th
+  {
+    background-color: rgb(193, 154, 154);
+    border-bottom: 1px solid black; /* Row borders */
+    border-right: 1px solid black;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+ 
+  .table-member td
+  {
+    overflow: hidden;
+    word-wrap: break-word;
+  } 
+
+  .table-member tr td{
+    border-bottom: 1px solid grey; /* Row borders */
+    border-right: 1px solid grey;
+  }
+  
+  .table-member tr:last-child td{
+    border-bottom: none;          /* Remove border from last row */
+  }    
+
+  .table-member tr td:last-child, th:last-child{
+    border-right: none; /* Row borders */
+  }  
+  
+  .table-member tr:nth-child(odd) td{
+    background-color: lightgrey;
+  }
+
+  .table-member tr:nth-child(even) td{
+    background-color: white;
+  }
+
+  .form-member {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}  
+
+.form-member-header {
+    background-color: rgb(193, 154, 154);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}  
+
+.form-member-footer {
+    padding: 20px; 
+    background-color: grey; 
+    border-top: 1px solid black;
+}  
+
+.form-member-col-container {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.form-member-col-content {
+    width: 60%;
+    padding: 10px;
+    line-height: 2;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.form-member-col-content li {
+    line-height: normal;
+}
+
+.form-member-col-image {
+    border-right: 1px grey solid;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.in-network {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 10px;
+}
+
+.form-member-col-content-main {
+    width: 100%;
+    padding: 10px;
+    line-height: 2;
+    overflow: hidden;
+    word-wrap: break-word;
+}

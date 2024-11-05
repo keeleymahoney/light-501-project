@@ -43,12 +43,24 @@
           </li>
 
           <% if member_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link' %>
+            <li class="nav-item-dropdown">
+              <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link-dropdown' %> 
+              <div class="nav-item-dropdown-links">
+                <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Network", member_contacts_path %></div>
+                <div style="border: none; border-bottom: 1px grey solid;"><span style="color: grey;">Constitution</span></div>
+                <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Account Info", member_dashboard_path %></div>
+                <div style="border: none;"><%= link_to "My Network Info", member_networks_path %></div>
+              </div>
             </li>
-            <li class="nav-item">
-              <%= link_to 'Admin Dashboard', events_path, class: 'nav-link' %>
-            </li>
+            <li class="nav-item-dropdown">
+              <%= link_to 'Admin Dashboard', events_path, class: 'nav-link-dropdown' %> 
+              <div class="nav-item-dropdown-links">
+                <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Events", events_path %></div>
+                <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Network", contacts_path %></div>
+                <div style="border: none; border-bottom: 1px grey solid;"><span style="color: grey;">Constitution</span></div>                
+                <div style="border: none;"><%= link_to "Requests", requests_path %></div>
+              </div>
+            </li>            
             <li class="nav-item">
               <%= link_to 'Sign Out', destroy_member_session_path, method: :delete, class: 'btn btn-danger' %>
             </li>
