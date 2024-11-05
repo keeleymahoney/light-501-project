@@ -1,103 +1,55 @@
 <%= render "events/header"%>
 
-<%= render "events/adminheader"%>
-
+<h2><%= @contact.first_name%> <%= @contact.last_name%></h2>
 <br/>
-<div>
-    <div class="text-center">
-        <h2><%= @contact.first_name%> <%= @contact.last_name%> </h2>
+
+<div class="form-member">
+    <div class="form-member-header">
+        <%= link_to "< Back To BOLD Network", contacts_path, class:"ml-3 btn btn-secondary" %>
     </div>
-    <div>
-       <%= link_to 'Back to Network', contacts_path, class:"btn btn-secondary"%>
-    </div>
-    <br/>
-    <div class="form">
-        <br/>
-        <div class="header row">
-            <div class="col">
-                <strong><p>First Name</p></strong>
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.first_name %>
-                </p>
-            </div>
 
-            <div class="col">
-                <strong><p>Last Name</p></strong>
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.last_name %>
-                </p>
-            </div>
-
-            <div class="col">
-                <strong><p>Organization</p></strong>
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.organization %>
-                </p>
-            </div>
+    <div class="form-member-col-container">
+        <div class="form-member-col-image">
+            <p>IMAGE HERE</p>
         </div>
 
-        <br/>
+        <div class="form-member-col-content">
+            <strong>First Name: </strong>
+            <span><%= @contact.first_name %></span><br/>
 
-        <div class="header row">
-            <div class="col">
-                <strong><p>Title</p></strong>
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.title %>
-                </p>
-            </div>
+            <strong>Last Name: </strong>
+            <span><%= @contact.last_name %></span><br/>
 
-            <div class="col">
-                <strong><p>Email</p></strong>
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.email %>
-                </p>
-            </div>
+            <strong>In Network: </strong>
+            <span><%= @contact.in_network ? "Yes" : "No" %></span><br/>
 
-            <div class="col">
-                <strong><p>Link</p></strong>
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.link %>
-                </p>
-            </div>
-        </div>
-        <br/>
-        <div class="header row">
-            <div class="col">
-                <p><strong>Bio:</strong></p>
-                <p class="border rounded border-1 border-dark p-1">
-                <%= @contact.bio %>
-                </p>
-            </div>
-        </div>
-        <br/>
-        <div class="header row">
-            <div class="col">
-                <p><strong>Industries</strong></p>
+            <strong>Bio: </strong><br/>
+            <p><%= @contact.bio %></p>
+
+            <strong>Organization: </strong>
+            <span><%= @contact.organization %></span><br/>
+            
+            <strong>Title: </strong>
+            <span><%= @contact.title %></span><br/>
+
+            <strong>Industries: </strong>
+            <div style="padding-left: 20px;">
                 <% @contact.industries.each do |industry| %>
                     <li><%= industry.industry_type %></li>
                 <% end %>
-            </div>
-        </div>
+            </div><br/>
 
-        <br/>
-        <div style="header row">
-            <div class="col">
-                <p><strong>In Network:</strong></p>    
-                <p class="border rounded border-1 border-dark p-1">
-                    <%= @contact.in_network ? "Yes" : "No" %>
-                </p>
-            </div>
-        </div>
-        <br/>
-        <p>IMAGES</p>
-        <div class="d-flex justify-content-end mr-2">
-            <%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-primary"  %>
-            <%= link_to("Delete", delete_contact_path(@contact), class:"btn btn-danger ml-2") %>
-        </div>
-        <br/>
+            <strong>Email: </strong>
+            <span><%= @contact.email %></span><br/>
+
+            <strong>Link: </strong>
+            <span><%= @contact.link %></span><br/>
+        </div>    
     </div>
-    
+
+    <div class="form-member-footer">
+        <span style="margin-left: 10px; float: right;"><%= link_to("Delete", delete_contact_path(@contact), class:"btn btn-danger ml-2") %></span>
+        <span style="float: right;"><%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-primary"  %></span>
+    </div>    
 </div>
-
-<br>
-
+<br/>

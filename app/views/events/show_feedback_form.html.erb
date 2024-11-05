@@ -1,45 +1,47 @@
 <%= render "header"%>
 
-<h1 class="title-page">Manage Feedback Form</h1>
-<div class="ml-2">
-  <%= link_to "Back to events", events_path %>
-  <br/>
-</div>
+<h2>Feedback Form for <%= @event.name %></h2>
+<br/>
 
-<% if @form_exists %>
-
-<div>
-  <div class="border rounded border-1 border-dark p-1" style="width: 80%; margin-left: auto; margin-right: auto;">
-    <div class="header row">
-      <div class="col">
-        <h2 style="text-align: center; word-wrap: break-word; overflow: hidden;">Feedback Form for <%= @event.name %></h2>
-        <p><strong>Responses: <%= @num_responses %></strong></p>
-        <p><%= link_to("Submission Form", @form_submission_link, target: :_blank, rel: 'noopener') %></p>
-        <p><%= link_to("Edit In Google Forms", @form_edit_link, target: :_blank, rel: 'noopener') %></p>
-        <p><%= link_to("View Responses In Google Forms", @form_responses_link, target: :_blank, rel: 'noopener') %></p>
-        <% if @sheet_exists %>
-          <p><%= link_to("View Responses In Google Sheets", @form_sheet_link, target: :_blank, rel: 'noopener') %></p>
-        <% else %>
-          <p style="color: red; font-style: italic;">No Responses Sheet linked. To link sheet, click "Link to Sheets" in the Google Form's "Responses" tab.<p>
-        <% end %>
-        <br/>        
-        <p><%= link_to("Delete Form", delete_feedback_form_event_path(@event)) %></p>    
-      </div>
+<div class="form-member">
+    <div class="form-member-header">
+      <%= link_to("< Back to Events", events_path, :class => 'ml-3 btn btn-secondary')%>
+      <span style="margin-top: auto; margin-bottom: auto; padding-right: 10px;">
+        <strong>Responses: </strong>
+        <strong><%= @form_exists ? @num_responses : "0" %></strong>
+      </span>
     </div>
-  </div>
-</div>
 
-<% else %>
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+          <% if @form_exists %>
 
-<div>
-  <div class="border rounded border-1 border-dark p-1" style="width: 60%; margin-left: auto; margin-right: auto;">
-    <div class="header row">
-      <div class="col">
-        <h2 style="text-align: center; color: red; word-wrap: break-word; overflow: hidden;">Form Does Not Exist</h2>
-        <p><%= link_to("Create Form", create_feedback_form_event_path(@event)) %></p>
-      </div>
+            <%= link_to("Submission Form", @form_submission_link, target: :_blank, rel: 'noopener') %><br/><br/>
+            <%= link_to("Edit In Google Forms", @form_edit_link, target: :_blank, rel: 'noopener') %><br/><br/>
+            <%= link_to("View Responses In Google Forms", @form_responses_link, target: :_blank, rel: 'noopener') %><br/>
+            <% if @sheet_exists %>
+              <%= link_to("View Responses In Google Sheets", @form_sheet_link, target: :_blank, rel: 'noopener') %><br/>
+            <% else %>
+              <span style="color: red;">No Google Sheet linked. To link sheet, click "Link to Sheets" in the Google Form's "Responses" tab.</span><br/>
+            <% end %><br/><br/>
+
+            <div class="form-member-footer" style="margin: -10px;">
+                <div class="d-flex justify-content-end mr-2">
+                    <%= link_to("Delete Form", delete_feedback_form_event_path(@event), :class => "btn btn-danger") %>
+                </div>
+            </div>
+
+          <% else %>
+            <h3 style="color: red;">Form Does Not Exist</h2><br/><br/>
+
+            <div class="form-member-footer" style="margin: -10px;">
+                <div class="d-flex justify-content-end mr-2">
+                    <%= link_to("Create Form", create_feedback_form_event_path(@event), :class => "btn btn-primary") %>
+                </div>
+            </div>
+
+          <% end %>
+        </div>
     </div>
-  </div>
 </div>
-
-<% end %>
+<br/>

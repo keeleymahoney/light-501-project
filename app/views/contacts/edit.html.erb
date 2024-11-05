@@ -1,6 +1,13 @@
 <%= render "events/header"%>
 
-<%= render "events/adminheader"%>
+<h2>Editing Contact</h2>
+<br/>
 
-<%= render "form", contact: @contact %>
+<div class="form-member">
+  <div class="form-member-header">
+      <%= link_to "< Back To BOLD Network", contacts_path, class:"ml-3 btn btn-secondary" %>
+  </div>
 
+  <%= render "form", contact: @contact %>
+</div>
+<br/>

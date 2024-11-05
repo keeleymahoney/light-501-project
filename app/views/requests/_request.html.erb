@@ -1,24 +1,24 @@
-<div id="<%= dom_id request %>">
-  
+<div class="form-member-col-container">
+    <div class="form-member-col-content-main" id="<%= dom_id request %>">
 
-  <p>
-    <strong>Request Made By:</strong>
-    <%= @member.full_name %>
-  </p>
-  
-  <p>
-    <strong>Status:</strong>
-    <%= request.status.humanize %>
-  </p>
+          <strong>Request Made By:</strong>
+          <span><%= @member.full_name %></span><br/>
 
-  <p>
-    <strong>Request Type:</strong>
-    <%= request.request_type.humanize %>
-  </p>
+        
 
-  <p>
-    <strong>Additional Comments:</strong>
-    <%= request.description %>
-  </p>
+          <strong>Status:</strong>
+          <span><%= request.status.humanize %></span><br/>
 
+
+
+          <strong>Request Type:</strong>
+          <span><%= request.request_type.humanize %></span><br/>
+
+
+
+          <strong>Additional Comments:</strong><br/>
+          <span><%= request.description %></span><br/>
+
+
+    </div>
 </div>
