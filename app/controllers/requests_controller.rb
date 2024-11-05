@@ -21,7 +21,9 @@ class RequestsController < ApplicationController
     @member = Member.find(@request.member_id)
     @contact = Contact.find(@member.contact_id)
     if @request.contacts_id != nil
+      @contact_id = @request.contacts_id
       @updated_contact = Contact.find(@request.contacts_id)
+      @organization = @updated_contact.organization
     end
   end
 
@@ -58,7 +60,7 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to request_url(@request), notice: 'Request was successfully created.' }
+        format.html { redirect_to member_dashboard_path, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -68,6 +70,7 @@ class RequestsController < ApplicationController
   end
 
 # POST /requests/create_network_addition
+=begin
 def create_network_addition
   @request = Request.new(request_params)
   @request.request_type = 'network_addition'
@@ -90,6 +93,32 @@ def create_network_addition
     render :new_network_addition
   end
 end
+=end
+
+=begin
+def create_network_addition
+  # Create a duplicate contact with the updated information
+  prev_contact = Contact.find_by(id: current_member.contact_id)
+  @contact = prev_contact.dup
+  @contact.assign_attributes(contact_params)
+  @contact.in_network = false
+
+  if @contact.save
+    # Associate the new contact with the request
+    @request = Request.new(request_params)
+    @request.member = current_member
+    @request.contacts_id = @contact.id
+
+    if @request.save
+      redirect_to @request, notice: 'Network addition request was successfully created.'
+    else
+      render :new_network_addition
+    end
+  else
+    render :new_network_addition
+  end
+end
+=end
 
   # PATCH/PUT /requests/1 or /requests/1.json
   def update
@@ -162,8 +191,18 @@ end
   end
 
   # Only allow a list of trusted parameters through.
+=begin
   def request_params
     params.require(:request).permit(:request_type, :description, :status, contact_attributes: [:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file, :in_network])
+  end
+=end
+
+  def request_params
+    params.require(:request).permit(:request_type, :description, :status)
+  end
+
+  def contact_params
+    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :email, :link, :bio)
   end
 
   #
