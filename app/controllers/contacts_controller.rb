@@ -2,7 +2,7 @@
 
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.where(in_network: true)
+    @contacts = Contact.all
   end
 
   def show
@@ -13,15 +13,18 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+
   def create
     @contact = Contact.new(contact_params)
-    # @contact.pfp = @contact.pfp.build(pfp: @contact.pfp)
-
+  
     if @contact.save
       associate_industries(@contact, params[:contact][:industries])
       redirect_to @contact, notice: 'Contact was successfully created.'
     else
-      render :new, status: unprocessable_entity
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -35,7 +38,10 @@ class ContactsController < ApplicationController
       associate_industries(@contact, params[:contact][:industries])
       redirect_to @contact, notice: 'Contact was successfully updated.'
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -81,7 +87,7 @@ end
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :pfp_file, :in_network)
+    params.require(:contact).permit(:first_name, :last_name, :organization, :title, :link, :bio, :email, :in_network, :pfp)
   end
 
   def associate_industries(contact, industries)

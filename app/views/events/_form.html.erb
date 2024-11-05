@@ -9,67 +9,57 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %>   
 
-<div class="form" >
-  <div class="header row">
-    <div class="col">
-      <strong><%= form.label :name, style: "display: block" %></strong>
-      <%= form.text_field :name, class: "full-width"%>
+  <div class="form-member-col-container">
+    <div class="form-member-col-image">
+        <p><strong>Event Images:</strong></p>
+        <% if event.images.any? %>
+          <div class="row">
+            <div class="image-gallery">
+              <% event.images.each do |image| %>
+                <div class="image-container">
+                  <%=  image_tag image.variant(resize_to_fit: [nil, 200]), alt: "Image", class: "event-image" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+        <strong><%= form.label :images %></strong>
+        <span><%= form.file_field :images, multiple: true, class: 'form-control' %></span><br/>
     </div>
 
-    <div class="col">
+    <div class="form-member-col-content">
+      <strong><%= form.label :name, style: "display: block" %></strong>
+      <span><%= form.text_field :name, class: "full-width"%></span><br/>
+
       <strong><%= form.label :date, style: "display: block" %></strong>
-      <div class="input-group">
-        <%= form.datetime_select(:date, 
+      <span><%= form.datetime_select(:date, 
           default: Time.current.in_time_zone('Central Time (US & Canada)'), 
           class: 'form-control', 
           minute_step: 5, 
           start_year: Date.current.year - 5, 
           end_year: Date.current.year + 10) %>
-      </div>
-    </div>
+      </span><br/>
 
-    <div class="col">
       <strong><%= form.label :location, style: "display: block" %></strong>
-      <%= form.text_field :location, class: "full-width"%>
-    </div>
-  </div>
+      <span><%= form.text_field :location, class: "full-width"%></span><br/>     
+      
+      <strong><%= form.label :virtual, style:"display: block"%></strong>
+      <span><%= form.check_box :virtual %></span><br/>
 
-  <br/>
-  <div class="header row">
-    <div class="col">
+      <strong><%= form.label :published, style:"display: block"%></strong>
+      <span><%= form.check_box :published %></span><br/>
+
       <strong><%= form.label :description, style: "display: block"%></strong>
-      <%= form.text_area :description, style:"width: 100%" %>
-    </div>
-  </div>
+      <span><%= form.text_area :description, style:"width: 100%" %></span><br/><br/><br/>   
+    </div>    
 
-  <div class="header row">
-      <div class="col">
-        <p><strong>Event Images:</strong></p>
-        <% images = EventImage.where(event_id: event.id) %>
-        <% if images.any? %>
-          <div class="row">
-            <% images.each do |image| %>
-              <div class="col-4">
-                <div class="border rounded border-1 border-dark p-1 mb-2">
-                  <img src="data:image/jpeg;base64,<%= Base64.encode64(image.picture) %>" alt="Event Image" class="img-fluid rounded" />
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+    <div class="form-member-footer" style=" width: 100%;">
+      <div class="d-flex justify-content-end mr-2">
+          <%= form.submit class: "btn btn-primary"%>
       </div>
-    </div>
-  <div class="header row">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true, class: 'form-control' %>
+    </div>   
   </div>
-
-  <br/>
-  <div class="d-flex justify-content-end mr-2">
-      <%= form.submit class: "btn btn-primary"%>
-  </div>
-  <br/>
 <% end %>
-</div>

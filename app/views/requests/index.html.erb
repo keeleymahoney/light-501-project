@@ -1,60 +1,54 @@
-
 <%= render "events/header"%>
 
-<%= render "events/adminheader"%>
+<h2>Requests</h2>
+<br/>
 
-<h2 class="text-center">Requests</h2>
+<div class="search-form">
+  <%= form_with url: requests_path, method: :get, local: true do %>
+    <br/>
+    <div class = "header row">
+      <div class ="col">
+        <strong><%= label_tag :request_type, 'Request Type' %></strong><br/>
+        <%= select_tag :request_type, options_for_select(Request.request_types.keys.map { |type| [type.humanize, type] }, params[:request_type]), include_blank: true, class: "select-member" %>
+      </div>
+      <div class="col">
+        <strong><%= label_tag :status, 'Status' %></strong><br/>
+        <%= select_tag :status, options_for_select(Request.statuses.keys.map { |status| [status.humanize, status] }, params[:status]), include_blank: true, class: "select-member" %>
+      </div>
+      <div class="col"></div><div class="col"></div>
+      <div class="d-flex justify-content-end mr-2">
+        <%= submit_tag "Filter", class:"btn btn-primary"%>
+      </div>
+    </div>
+    <br/>
+  <% end %>
+</div>
 
-<%= form_with url: requests_path, method: :get, local: true do %>
-  <div>
-    <%= label_tag :request_type, 'Request Type' %>
-    <%= select_tag :request_type, options_for_select(Request.request_types.keys.map { |type| [type.humanize, type] }, params[:request_type]), include_blank: true %>
-  </div>
+<br/>
+<div id="member-networks-table">
+  <table class="table-member">
 
-  <div>
-    <%= label_tag :status, 'Status' %>
-    <%= select_tag :status, options_for_select(Request.statuses.keys.map { |status| [status.humanize, status] }, params[:status]), include_blank: true %>
-  </div>
-
-  <div>
-    <%= submit_tag 'Filter' %>
-  </div>
-<% end %>
-
-  <table style="width: 90%; margin-left: auto; margin-right: auto;">
-    <thead class="thead-dark">
-      <tr>
-        <th>Name</th>
-        <th>Request Type</th>
-        <th>Status</th>
-        <th> 
-</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @requests.each do |request| %>
-
-        <tr>
-          <% member = @members.find(request.member_id) %>
-          <td>
-                <%= link_to member.full_name, request %>
-          </td>
-          
-          <td><%= request.request_type.humanize %></td>
-          <td><%= request.status.humanize %></td>
-
-
-          
-          <td><%= button_to "Delete", request, method: :delete %></td>
-          
-        </tr>
-        
+    <tr>
+        <th style="width: 25%;">Name</th>
+        <th style="width: 50%;">Request Type</th>
+        <th style="width: 15%;">Status</th>
+        <th style="width: 10%;">Delete</th>
+    </tr>
+    <% @requests.each do |request| %>
+    <% member = @members.find(request.member_id) %>
+    <tr>
+      <td><%= link_to member.full_name, request %></td>
+      <td><%= request.request_type.humanize %></td>
+      <% if request.status.humanize == "Accepted"  %>
+        <td style="background-color: lightgreen;"><%= request.status.humanize %></td>
+      <% elsif request.status.humanize == "Rejected" %>
+        <td style="background-color: #ffc6c4;"><%= request.status.humanize %></td>
+      <% elsif request.status.humanize == "Unsettled" %>
+        <td style="background-color: #f2f28d;"><%= request.status.humanize %></td>
       <% end %>
-    </tbody>
+      <td><%= button_to "Delete", request, method: :delete, class: "btn btn-danger" %></td>
+    </tr>
+    <% end %>
   </table>
-
-  <br>
-
-
-
+</div>
+<br/>

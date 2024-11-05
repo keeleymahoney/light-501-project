@@ -1,50 +1,47 @@
 <%= render "header"%>
 
-<%= render "adminheader"%>
+<h2>All Events</h2>
 
-<br/>
-
-
-<h2 class="text-center">All Events</h2>
-<p class="ml-2" style="color: green"><%= notice %></p>
-<br/>
-
-<div id="events-table">
-  <table style="width: 90%; margin-left: auto; margin-right: auto;">
-
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th>RSVP Link </th>
-      <th>Feedback Link </th>
-      <th>View</th>
-      <th>Edit</th>
-      <th>.CSV Data</th>
-      <th>Delete</th>
-    </tr>
-    <% @events.each do |event| %>
-    <tr>
-      <td><%= event.name %></td>
-      <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
-      <td><%= event.description %></td>
-      <td><%= event.location %></td>
-      <td><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></td>
-      <td><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></td>
-      <td><%= link_to("View", event_path(event)) %></td>
-      <td><%= link_to("Edit", edit_event_path(event)) %></td>
-      <td>CSV</td>
-      <td><%= link_to("Delete", delete_event_path(event)) %> </td>
-    </tr>
-    <% end %>
-  </table>
-</div>
-<br/>
-<br/>
-<div class="create">
-  <button><%= link_to "Create new event", new_event_path %></button>
+<div class="d-flex justify-content-end mr-2" style="padding-top: 15px; padding-bottom: 15px;">
+  <%= link_to 'New Event', new_event_path, class:" btn btn-primary" %>
 </div>
 
-
-
+<div id="member-networks-table">
+    <table class="table-member">
+      <tr>
+        <th style="width: 8%">Date</th>
+        <th style="width: 15%">Name</th>
+        <th style="width: 15%">Location</th>
+        <th style="width: 8%">Virtual</th>
+        <th style="width: 10%">Published</th>
+        <th style="width: 10%">RSVP</th>
+        <th style="width: 10%">Feedback</th>
+        <th style="width: 8%">View</th>
+        <th style="width: 8%">Edit</th>
+        <th style="width: 8%">Delete</th>
+      </tr>
+      <% @events.each do |event| %>
+      <tr>
+        <td><%= event.date.strftime("%m/%d/%y %I:%M %p") %></td>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.virtual ? "Yes" : "No" %></td>
+        <td><%= event.published ? "Yes" : "No" %></td>
+        <% if defined?(event.rsvp_id) && !event.rsvp_id.blank? %>
+          <td style="background-color: lightgreen;"><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></td>
+        <% else %>
+          <td style="background-color: #ffc6c4;"><%= link_to("RSVP Form", show_rsvp_form_event_path(event)) %></td>
+        <% end %>
+        <% if defined?(event.feedback_id) && !event.feedback_id.blank? %>
+          <td style="background-color: lightgreen;"><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></td>
+        <% else %>
+          <td style="background-color: #ffc6c4;"><%= link_to("Feedback Form", show_feedback_form_event_path(event)) %></td>
+        <% end %>
+        <td><%= link_to("View", event_path(event)) %></td>
+        <td><%= link_to("Edit", edit_event_path(event)) %></td>
+        <td><%= link_to("Delete", delete_event_path(event)) %> </td>
+      </tr>
+      <% end %>      
+    </table>
+</div>
+<br/>

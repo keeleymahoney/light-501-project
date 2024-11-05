@@ -2,18 +2,18 @@
 <section class="py-5">
   <div class="container text-center">
     <h2 class="display-4">Featured Content</h2>
-    <p class="lead">This page will showcase the featured content or highlights of the BOLD organization.</p>
-
+    <div class="area">
+      <p class="mt-4 text-center">
+          See some of our featured members!
+      </p>
+    </div>
+    <br/>
     <!-- Photo Gallery Section -->
     <div id="gallery" class="row">
-      <% 6.times do |i| %>
         <div class="col-lg-4 col-md-6 mb-4">
-          <img src="/path/to/placeholder.jpg" class="img-fluid" alt="Featured Image <%= i + 1 %>">
+          <%= image_tag "tareq.png", alt: "Featured Image", class:"img-fluid" %>  
         </div>
-      <% end %>
     </div>
-
-    <p class="mt-4 text-muted">No featured content available right now.</p>
   </div>
 </section>
 

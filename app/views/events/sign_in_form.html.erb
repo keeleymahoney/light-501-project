@@ -1,16 +1,25 @@
 <%= render "header"%>
-<div>
-    <h2 class="title-page">Sign In Again</h2>
-    <%= link_to("Back to Events", events_path, :class => 'back-link ml-2')%>
-	<div>
-        <br/>
-        <h3>Please sign in again to complete the request</h3>
-    
-        <div class="form-buttons ml-2">
-			<%= button_to member_google_oauth2_omniauth_authorize_path(prompt: 'consent'), class: "btn btn-danger", method: :post, data: { turbo: "false" } do %>
-				<i class="fab fa-google mobile-text"></i><span class="mobile-font">&nbsp;Google</span>
-			<% end %>
-        </div>    
-      </div>
-</div>
 
+<h2>Sign In Again</h2>
+<br/>
+
+<div class="form-member">
+    <div class="form-member-header">
+      <%= link_to("< Back to Events", events_path, :class => 'ml-3 btn btn-secondary')%>
+    </div>
+
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+          <h3>Please sign in here and retry the request</h3><br/>
+        </div>
+    </div>
+
+    <div class="form-member-footer">
+      <div class="form-buttons ml-2" style="float: right;">
+        <%= button_to member_google_oauth2_omniauth_authorize_path(prompt: 'consent'), class: "btn btn-danger", method: :post, data: { turbo: "false" } do %>
+          <i class="fab fa-google mobile-text"></i><span class="mobile-font">&nbsp;Google</span>
+        <% end %>
+      </div>          
+    </div>
+</div>
+<br/>
