@@ -3,8 +3,7 @@
       <div class="header row">
         <div class="col">
           <p><strong>Event Images:</strong></p>
-          <% images = EventImage.where(event_id: event.id) %>
-          <% if images.any? %>
+          <% if event.images.any? %>
             <div class="row">
               <div class="image-gallery">
                 <% event.images.each do |image| %>
