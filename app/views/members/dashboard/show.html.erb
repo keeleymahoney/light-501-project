@@ -1,27 +1,28 @@
 <%= render "member_contacts/header"%>
-<%= render "member_contacts/member_header"%>
 
-
+<h2>Your Account Information</h2>
 <br/>
 
-<p>Welcome to your dashboard, <%= current_member.full_name %>!</p>
+<div class="form-member">
+    <div class="form-member-header">
+      <h4 style="padding-left: 10px;">Welcome to your dashboard, <%= current_member.full_name %>!</h4>
+    </div>
 
-<div class="member-info">
-  <h3>Your Account Information</h3>
-</div>
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+          <strong>Network Expiration Date: </strong>
+          <span><%= current_member.network_exp.strftime("%B %d, %Y") %></span><br/>
 
-<div class="member-expirations">
-  <p><strong>Network Expiration Date:</strong> <%= current_member.network_exp.strftime("%B %d, %Y") %></p>
-  <p><strong>Constitution Expiration Date:</strong> <%= current_member.constitution_exp.strftime("%B %d, %Y") %></p>
-</div>
+          <strong>Constitution Expiration Date: </strong>
+          <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
+        </div>
+    </div>
 
-<h3>Request Access</h3>
-<div>
-  <%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %>
-</div>
-<br>
-<div>
-  <%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %>
+    <div class="form-member-footer">
+      <span style="margin-left: 10px; float: right;"><%= link_to 'Request Network Addition', new_network_addition_request_path, class: 'btn btn-primary' %></span>    
+      <span style="margin-left: 10px; float: right;"><%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %></span>
+      <span style="float: right;"><%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %></span>
+    </div>
 </div>
 <br>
 <div class="actions">

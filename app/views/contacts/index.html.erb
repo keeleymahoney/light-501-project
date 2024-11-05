@@ -1,32 +1,25 @@
 
 <%= render "events/header"%>
 
-<%= render "events/adminheader"%>
-<br/>
-<h2 class="text-center">The BOLD Network</h2>
-<div class="d-flex justify-content-end mr-2">
+<h2>The BOLD Network</h2>
+
+<div class="d-flex justify-content-end mr-2" style="padding-top: 15px; padding-bottom: 15px;">
   <%= link_to 'New Contact', new_contact_path, class:" btn btn-primary" %>
 </div>
 
-<br/>
-  <table style="width: 90%; margin-left: auto; margin-right: auto;">
-    <thead class="thead-dark">
+<div id="member-networks-table">
+    <table class="table-member">
       <tr>
-        <th>Photo</th>
-        <th>Name</th>
-        <th>Organization</th>
-        <th>Title</th>
-        <th>Industries</th>
-        <th>Email</th>
-        <th>In Network</th>
-        <th>View</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th style="width: 15%">Name</th>
+        <th style="width: 18%">Organization</th>
+        <th style="width: 15%">Title</th>
+        <th style="width: 20%">Email</th>
+        <th style="width: 10%">In Network</th>
+        <th style="width: 7%">View</th>
+        <th style="width: 7%">Edit</th>
+        <th style="width: 8%">Delete</th>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @contacts.each do |contact| %>
+        <% @contacts.each do |contact| %>
         <tr>
           <td>
               <% if contact.pfp.present? %>                
@@ -38,26 +31,13 @@
           </td>
           <td><%= contact.organization %></td>
           <td><%= contact.title %></td>
-          <td>
-            <ul>
-              <% contact.industries.each do |industry| %>
-                <li><%= industry.industry_type %></li>
-              <% end %>
-            </ul>
-          </td>
           <td><%= contact.email %></td>
           <td><%= contact.in_network ? "Yes" : "No" %>
           <td><%= link_to("View", contact_path(contact)) %></td>
           <td><%= link_to("Edit", edit_contact_path(contact)) %></td>
           <td><%= link_to("Delete", delete_contact_path(contact)) %></td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br/>
-  
-  <br/>
-  <br/>
-
-
-
+        <% end %>    
+    </table>
+</div>
+<br/>
