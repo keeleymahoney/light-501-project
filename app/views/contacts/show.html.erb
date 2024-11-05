@@ -10,7 +10,11 @@
 
     <div class="form-member-col-container">
         <div class="form-member-col-image">
-            <p>IMAGE HERE</p>
+            <% if @contact.pfp.present? %>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= image_tag @contact.pfp.variant(resize_to_fill: [150, 150]) %>
+                </p>
+            <% end %>
         </div>
 
         <div class="form-member-col-content">
@@ -47,9 +51,25 @@
         </div>    
     </div>
 
-    <div class="form-member-footer">
-        <span style="margin-left: 10px; float: right;"><%= link_to("Delete", delete_contact_path(@contact), class:"btn btn-danger ml-2") %></span>
-        <span style="float: right;"><%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-primary"  %></span>
-    </div>    
+        <br/>
+        <div style="header row">
+            <div class="col">
+                <p><strong>In Network:</strong></p>    
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= @contact.in_network ? "Yes" : "No" %>
+                </p>
+            </div>
+        </div>
+        <br/>
+        
+        <div class="d-flex justify-content-end mr-2">
+            <%= link_to 'Edit', edit_contact_path(@contact), class:"btn btn-primary"  %>
+            <%= link_to("Delete", delete_contact_path(@contact), class:"btn btn-danger ml-2") %>
+        </div>
+        <br/>
+    </div>
+    
 </div>
-<br/>
+
+<br>
+

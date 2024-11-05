@@ -6,3 +6,6 @@
 /config/master.key
 /config/google_credentials.json
 .env
+/config/secrets
+
+/storage/

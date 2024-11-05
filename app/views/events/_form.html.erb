@@ -14,16 +14,15 @@
   <div class="form-member-col-container">
     <div class="form-member-col-image">
         <p><strong>Event Images:</strong></p>
-        <% images = EventImage.where(event_id: event.id) %>
-        <% if images.any? %>
+        <% if event.images.any? %>
           <div class="row">
-            <% images.each do |image| %>
-              <div class="col-4">
-                <div class="border rounded border-1 border-dark p-1 mb-2">
-                  <img src="data:image/jpeg;base64,<%= Base64.encode64(image.picture) %>" alt="Event Image" class="img-fluid rounded" />
+            <div class="image-gallery">
+              <% event.images.each do |image| %>
+                <div class="image-container">
+                  <%=  image_tag image.variant(resize_to_fit: [nil, 200]), alt: "Image", class: "event-image" %>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         <% end %>
 

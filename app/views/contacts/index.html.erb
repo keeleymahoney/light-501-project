@@ -21,7 +21,14 @@
       </tr>
         <% @contacts.each do |contact| %>
         <tr>
-          <td><%= contact.first_name %>  <%=contact.last_name%></td>
+          <td>
+              <% if contact.pfp.present? %>                
+                <%= image_tag contact.pfp.variant(resize_to_fill: [100, 100]) %>
+              <% end %>
+          </td>
+          <td>
+                <%= contact.first_name %>  <%=contact.last_name%>
+          </td>
           <td><%= contact.organization %></td>
           <td><%= contact.title %></td>
           <td><%= contact.email %></td>
