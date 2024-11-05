@@ -33,6 +33,15 @@
   </tbody>
 </table>
 
+<% if current_member.constitution_exp && current_member.constitution_exp > Time.current %>
+  <div class="constitution-access">
+    <h3>Access to Constitution</h3>
+    <%= link_to "View Constitution", "/documents/Constitution.pdf", target: "_blank", class: "btn btn-primary" %>
+  </div>
+<% else %>
+  <p>Your access to the Constitution has expired. Please contact the administrator for renewal.</p>
+<% end %>
+
 <h3>Request Access</h3>
 <div>
   <%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %>
