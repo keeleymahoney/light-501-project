@@ -15,9 +15,6 @@
 
     <div class="row">
       <div class="col-md-8">
-
-        <!--<%= form.fields_for :contact do |contact_fields| %>-->
-
         <div class="field">
         <%= form.label :first_name %>
         <%= form.text_field :first_name, value: @contact.first_name %>
@@ -52,8 +49,6 @@
         <%= form.label :bio %>
         <%= form.text_area :bio, value: @contact.bio %>
         </div>
-
-        <!--<% end %>-->
         
     <!-- You can add any additional fields as needed -->
     

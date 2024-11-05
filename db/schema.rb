@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_27_213009) do
     t.string "title"
     t.string "link"
     t.text "bio"
-    t.binary "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.binary "pfp"

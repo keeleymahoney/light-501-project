@@ -9,11 +9,16 @@
 <div>
   <h1> Current Contact Card: </h1>
   <%= render @contact %>
-  <% if @updated_contact != nil %>
-  <h1> Updated Contact Card: </h1>
-  <%= render @updated_contact %>
+  
+  <% if @updated_contact.present? %>
+    <h1> Updated Contact Card: </h1>
+    <%= render partial: "contacts/contact", locals: { contact: @updated_contact } %>
   <% end %>
+
 </div>
+
+    <p>Current request contact id: <%= @contact_id %></p>
+    <p>Organization: <%= @organization %></p>
 
 <div>
 
