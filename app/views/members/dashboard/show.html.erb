@@ -3,6 +3,12 @@
 <h2>Your Account Information</h2>
 <br/>
 
+<% if flash[:alert] %>
+  <div class="alert alert-warning">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
 <div class="form-member">
     <div class="form-member-header">
       <h4 style="padding-left: 10px;">Welcome to your dashboard, <%= current_member.full_name %>!</h4>

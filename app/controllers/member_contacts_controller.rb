@@ -1,6 +1,7 @@
 
 class MemberContactsController < ApplicationController
   before_action :authenticate_member!
+  before_action :check_network_access
 
   def authenticate_member!
     unless member_signed_in?
@@ -31,6 +32,13 @@ class MemberContactsController < ApplicationController
 
     @organizations = Contact.select(:organization).distinct.pluck(:organization)
     @industries = Industry.select(:industry_type).distinct.pluck(:industry_type)
+  end
+
+  def check_network_access
+    if current_member.network_exp.nil? || current_member.network_exp < Date.today
+      flash[:alert] = "You do not have access to the network."
+      redirect_to member_dashboard_path
+    end
   end
 
   def show
