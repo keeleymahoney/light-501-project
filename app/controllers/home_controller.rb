@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   def index
   end
   def media
-    # Code for media page
+    @events = Event.all.where(published: true)
+    @images = @events.map(&:images).flatten
   end
   def featured
     # Code for featured page
