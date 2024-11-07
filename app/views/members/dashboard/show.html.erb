@@ -18,6 +18,8 @@
         <div class="form-member-col-content-main">
           <strong>Network Expiration Date: </strong>
           <span><%= current_member.network_exp.strftime("%B %d, %Y") %></span><br/>
+          <strong>Constitution Expiration Date: </strong>
+          <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
 
 <h3>Your Requests</h3>
 <table>
@@ -51,15 +53,10 @@
 <% end %>
 
 <h3>Request Access</h3>
-<div>
-  <%= link_to "Request Network Access", new_network_access_request_path, class: "btn btn-primary" %>
-</div>
 <br>
 <div>
-  <%= link_to "Request Constitution Access", new_constitution_access_request_path, class: "btn btn-primary" %>
 
-          <strong>Constitution Expiration Date: </strong>
-          <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
+
         </div>
     </div>
 
@@ -71,9 +68,6 @@
 
 </div>
 <br>
-<div class="actions">
-  <%= link_to 'Request Network Addition', new_network_addition_contact_path, class: 'btn btn-primary' %>
-</div>
 
 <ul>
   <li><%= link_to 'View Contacts', member_contacts_path %></li>

@@ -10,8 +10,16 @@ class MemberContactsController < ApplicationController
   end
 
   def index
+#    @contacts = Contact.where(in_network: true)
+    # Find the latest contact entry for each member based on unique email or ID
+=begin
+    @contacts = Contact.select("contacts.*, STRING_AGG(industries.industry_type, ', ') AS industries_list")
+                       .joins("LEFT JOIN contacts_industries ON contacts.id = contacts_industries.contact_id")
+                       .joins("LEFT JOIN industries ON industries.id = contacts_industries.industry_id")
+                       .where(in_network: true)
+                       .group("contacts.id")
+=end
     @contacts = Contact.where(in_network: true)
-
     if params[:first_name].present?
       @contacts = @contacts.where('first_name ILIKE ?', "%#{params[:first_name]}%")
     end
