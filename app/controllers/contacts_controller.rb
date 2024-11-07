@@ -78,7 +78,7 @@ def create_network_addition
   @request.member = current_member
 
   if @request.save
-    redirect_to @request, notice: 'Network addition request was successfully created.'
+    redirect_to member_dashboard_path, notice: 'Network addition request was successfully created.'
   else
     render :new_network_addition
   end

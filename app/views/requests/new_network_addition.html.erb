@@ -3,6 +3,47 @@
 <h2>Request Network Addition</h2>
 <br/>
 
+    <div class="row">
+      <div class="col-md-8">
+        <div class="field">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, value: @contact.first_name %>
+        </div>
+        
+        <div class="field">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, value: @contact.last_name %>
+        </div>
+        
+        <div class="field">
+        <%= form.label :organization %>
+        <%= form.text_field :organization, value: @contact.organization %>
+        </div>
+        
+        <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, value: @contact.title %>
+        </div>
+        
+        <div class="field">
+        <%= form.label :email %>
+        <%= form.email_field :email, value: @contact.email %>
+        </div>
+        
+        <div class="field">
+        <%= form.label :link %>
+        <%= form.text_field :link, value: @contact.link %>
+        </div>
+        
+        <div class="field">
+        <%= form.label :bio %>
+        <%= form.text_area :bio, value: @contact.bio %>
+        </div>
+        
+    <!-- You can add any additional fields as needed -->
+    
+    </div>
+
 <div class="form-member">
     <div class="form-member-header">
         <%= link_to "< Back To My Account Info", member_dashboard_path, class:"ml-3 btn btn-secondary" %>
