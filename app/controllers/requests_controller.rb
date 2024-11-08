@@ -152,6 +152,7 @@ end
     end
   end
 
+=begin
   def approve
     @request = Request.find(params[:id])
     request_type = @request.request_type
@@ -170,6 +171,39 @@ end
       member = Member.find(@request.member_id)
       contact = Contact.find(member.contact_id)
       contact.update(in_network: true)
+    end
+
+    @request.update(status: :accepted)
+    redirect_to @request, notice: 'Request was successfully approved.'
+  end
+=end
+
+  def approve
+    @request = Request.find(params[:id])
+    request_type = @request.request_type
+    datetime = DateTime.current.end_of_day
+
+    case request_type
+    when "network_access"
+      datetime += 3.months
+      member = Member.find(@request.member_id)
+      member.update(network_exp: datetime)
+    when "constitution_access"
+      datetime += 1.day
+      member = Member.find(@request.member_id)
+      member.update(constitution_exp: datetime)
+    when "network_addition"
+      member = Member.find(@request.member_id)
+
+      # Ensure only one active network contact for the member
+      Contact.where(email: member.email).update_all(in_network: false)
+      
+      # Update the contact from the request to be in network
+      new_contact = Contact.find(@request.contacts_id)
+      new_contact.update(in_network: true)
+
+      # Update the member's contact_id to point to the newly approved network contact
+      member.update(contact_id: new_contact.id)
     end
 
     @request.update(status: :accepted)

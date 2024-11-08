@@ -17,9 +17,22 @@
                         <p><strong>Virtual:</strong> <%= event.virtual ? "Yes" : "No" %></p>  
                     </div>
                 </div>
-                <div>
-                    <p>Images
-                </div>
+                <div class="col">
+                    <p><strong>Event Images:</strong></p>
+                    <% if event.images.any? %>
+                      <div class="row">
+                        <div class="image-gallery">
+                          <% event.images.each do |image| %>
+                            <div class="image-container">
+                              <%=  image_tag image.variant(resize_to_fit: [nil, 300]), alt: "Image", class: "event-image" %>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                    <% else %>
+                      <p>No images available for this event.</p>
+                    <% end %>
+                  </div>
                 <div class="row">
                     <div class="col">
                         <% if event.rsvp_link.present? %>
@@ -56,9 +69,22 @@
                         <p><strong>Virtual:</strong> <%= event.virtual ? "Yes" : "No" %></p>  
                     </div>
                 </div>
-                <div>
-                    <p>Images
-                </div>
+                <div class="col">
+                    <p><strong>Event Images:</strong></p>
+                    <% if event.images.any? %>
+                      <div class="row">
+                        <div class="image-gallery">
+                          <% event.images.each do |image| %>
+                            <div class="image-container">
+                              <%=  image_tag image.variant(resize_to_fit: [nil, 300]), alt: "Image", class: "event-image" %>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                    <% else %>
+                      <p>No images available for this event.</p>
+                    <% end %>
+                  </div>
                 <div class="row">
                     <div class="col">
                         <% if event.feedback_link.present? %>
