@@ -15,7 +15,13 @@
 
     <div class="form-member-col-container">
         <div class="form-member-col-image">
-            <p>IMAGE HERE</p>
+            <% if @contact.pfp.present? %>
+                <p class="border rounded border-1 border-dark p-1">
+                    <%= image_tag @contact.pfp.variant(resize_to_fill: [200, 200]) %>
+                </p>
+            <% else %>
+                <p> Profile Image Here </p>
+            <% end %>
         </div>
 
         <div class="form-member-col-content">
