@@ -57,6 +57,17 @@
         
     <!-- You can add any additional fields as needed -->
     
+    <div>
+      <strong><p>Profile Picture: </p></strong>
+      <% if @contact.pfp.present? %>
+      <div class="border rounded border-1 border-dark p-1 mb-2">
+          <%= image_tag @contact.pfp.variant(resize_to_fill: [150, 150]) %>
+      </div>
+      <% end %>
+      <strong><%= form.label :pfp %></strong>
+      <span><%= form.file_field :pfp, class: 'form-control' %><span><br/>
+    </div>
+    
     </div>
 
     <div class="actions">
