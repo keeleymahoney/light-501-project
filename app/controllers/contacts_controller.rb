@@ -63,26 +63,32 @@ class ContactsController < ApplicationController
   end  
 
   # POST /requests/create_network_addition
-def create_network_addition  
-  # Find the related contact for the member
-    # prev_contact = Contact.find_by(id: current_member.contact_id) 
-    # @contact = prev_contact.dup
-  @contact = Contact.new(contact_params)
-  @contact.in_network = false
+  def create_network_addition
+    # Find the existing contact of the current member
+    prev_contact = Contact.find_by(id: current_member.contact_id)
+    @contact = prev_contact.dup # Duplicate the contact information
+    @contact.assign_attributes(contact_params)
+    @contact.in_network = false # Mark as not in network until approved
 
-  unless @contact.save
-    render :new_network_addition
+    # Save the duplicated contact information
+    if @contact.save
+      # Create a new request for network addition
+      @request = Request.new(
+        request_type: 'network_addition',
+        member: current_member,
+        contacts_id: @contact.id,
+        description: 'Requesting update to network information'
+      )
+
+      if @request.save
+        redirect_to member_dashboard_path, notice: 'Network update request submitted successfully for admin approval.'
+      else
+        render :new_network_addition, alert: 'Failed to create network addition request.'
+      end
+    else
+      render :new_network_addition, alert: 'Failed to save contact information.'
+    end
   end
-
-  @request = Request.new(request_type: 'network_addition', contacts_id: @contact.id)
-  @request.member = current_member
-
-  if @request.save
-    redirect_to member_dashboard_path, notice: 'Network addition request was successfully created.'
-  else
-    render :new_network_addition
-  end
-end
 
   private
 

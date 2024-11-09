@@ -36,9 +36,16 @@ Rails.application.routes.draw do
 
   get 'requests/new_network_access', to: 'requests#new_network_access', as: :new_network_access_request
   get 'requests/new_constitution_access', to: 'requests#new_constitution_access', as: :new_constitution_access_request
-  get 'contacts/new_network_addition', to: 'contacts#new_network_addition', as: :new_network_addition_contact
-  post 'contacts/create_network_addition', to: 'contacts#create_network_addition', as: :create_network_addition_contact
 
+  resources :contacts do
+    member do
+      get :delete
+    end
+    collection do
+      get :new_network_addition, as: :new_network_addition
+      post :create_network_addition, as: :create_network_addition
+    end
+  end
 
   resources :events do
     resources :event_images, only: %i[create destroy]
@@ -64,11 +71,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  resources :contacts do
-    member do
-      get :delete
-    end
-  end
 
   resources :requests do
     member do
