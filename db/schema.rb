@@ -74,9 +74,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_04_115756) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "virtual"
-    t.boolean "published"
     t.text "rsvp_id"
     t.text "feedback_id"
+    t.boolean "published"
   end
 
   create_table "industries", force: :cascade do |t|

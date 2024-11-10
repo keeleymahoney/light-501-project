@@ -9,23 +9,37 @@
       <span class="ml-2" style="color: darkgreen; margin-top: auto; margin-bottom: auto; padding-right: 10px;"><%= notice %></span>
   </div>
 
-<%= render @request %>
+  <div class="form-member-col-container">
+          <div class="form-member-col-content-main">
+            <%= render @request %>
 
-<div>
-  <h1> Current Contact Card: </h1>
-  <%= render @contact %>
-  
-  <% if @updated_contact.present? %>
-    <h1> Updated Contact Card: </h1>
-    <%= render partial: "contacts/contact", locals: { contact: @updated_contact } %>
-  <% end %>
+            <div class="form-member">
+              <div class="form-member-header">
+                <h3 style="padding-left: 10px;">Current Contact Card:</h3>
+              </div>
 
-</div>
+              <div class="form-member-col-container">
+                <div class="form-member-col-content-main">
+                  <%= render @contact %>
+                </div>
+              </div>
+            </div><br/>
 
+              <% if @updated_contact.present? %>
+                <div class="form-member">
+                  <div class="form-member-header">
+                    <h3 style="padding-left: 10px;">Updated Contact Card:</h3>
+                  </div>
 
-<div>
-
-  <%= link_to "Back to requests", requests_path %>
+                  <div class="form-member-col-container">
+                    <div class="form-member-col-content-main">
+                      <%= render partial: "contacts/contact", locals: { contact: @updated_contact } %>
+                    </div>
+                  </div>
+                </div><br/>
+                <% end %>
+          </div>
+    </div><br/>
 
   <div class="form-member-footer">
     <span style="float: right; margin-left: 10px;"><%= button_to "Destroy this request", @request, method: :delete, class:"btn btn-danger" %></span>

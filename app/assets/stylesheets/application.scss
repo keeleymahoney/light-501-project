@@ -306,6 +306,21 @@
     background-color: white;
   }
 
+  #request-table {
+    width: auto;
+    margin: 0;
+  }
+
+  #request-table tr:nth-child(odd) td{
+    background-color: white;
+  }
+
+ #request-table tr:nth-child(even) td{
+
+    background-color: lightgrey;    
+  }
+
+
   .form-member {
     width: 100%;
     border: 1px solid black;
@@ -313,6 +328,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }  
 
 .form-member-header {

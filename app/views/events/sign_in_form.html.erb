@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="form-member-footer">
+    <div class="form-member-footer" style="padding-bottom: 7px;">
       <div class="form-buttons ml-2" style="float: right;">
         <%= button_to member_google_oauth2_omniauth_authorize_path(prompt: 'consent'), class: "btn btn-danger", method: :post, data: { turbo: "false" } do %>
           <i class="fab fa-google mobile-text"></i><span class="mobile-font">&nbsp;Google</span>
