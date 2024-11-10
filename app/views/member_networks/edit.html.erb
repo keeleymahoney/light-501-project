@@ -15,7 +15,7 @@
 
     <div class="form-member-col-container">
         <div class="form-member-col-content-main">
-            <%= form_for @contact do |form| %>
+            <%= form_for @contact, url: create_network_addition_contact_path, method: :post do |form| %>
                 <strong><%= form.label :first_name, style: "display: block" %></strong>
                 <span><%= form.text_field :first_name, class: "full-width"%></span><br/>
 
