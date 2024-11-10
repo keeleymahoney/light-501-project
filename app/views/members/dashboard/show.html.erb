@@ -21,44 +21,39 @@
           <strong>Constitution Expiration Date: </strong>
           <span><%= current_member.constitution_exp.strftime("%B %d, %Y") %></span><br/><br/>
 
-<h3>Your Requests</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Request Type</th>
-      <th>Status</th>
-      <th>Description</th>
-      <th>Date Created</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @requests.each do |request| %>
-      <tr>
-        <td><%= request.request_type %></td>
-        <td><%= request.status %></td>
-        <td><%= request.description %></td>
-        <td><%= request.created_at.strftime("%B %d, %Y") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <h3>Your Requests</h3>
+          <table class="table-member" id="request-table">
+            <thead>
+              <tr>
+                <th>Request Type</th>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Date Created</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @requests.each do |request| %>
+                <tr>
+                  <td><%= request.request_type %></td>
+                  <td><%= request.status %></td>
+                  <td><%= request.description %></td>
+                  <td><%= request.created_at.strftime("%B %d, %Y") %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <br/>
 
-<% if current_member.constitution_exp && current_member.constitution_exp > Time.current %>
-  <div class="constitution-access">
-    <h3>Access to Constitution</h3>
-    <%= link_to "View Constitution", "/documents/Constitution.pdf", target: "_blank", class: "btn btn-primary" %>
-  </div>
-<% else %>
-  <p>Your access to the Constitution has expired. Please contact the administrator for renewal.</p>
-<% end %>
-
-<h3>Request Access</h3>
-<br>
-<div>
-
-
+          <h3>Constitution</h3>
+          <% if current_member.constitution_exp && current_member.constitution_exp > Time.current %>
+            <div class="constitution-access">
+              <%= link_to "View Constitution", "/documents/Constitution.pdf", target: "_blank", class: "btn btn-primary" %>
+            </div>
+          <% else %>
+            <p>Your access to the Constitution has expired. Please contact the administrator for renewal.</p>
+          <% end %>
         </div>
-    </div>
+    </div><br/>
 
     <div class="form-member-footer">
       <span style="margin-left: 10px; float: right;"><%= link_to 'Request Network Addition', new_network_addition_contact_path, class: 'btn btn-primary' %></span>    
@@ -68,8 +63,3 @@
 
 </div>
 <br>
-
-<ul>
-  <li><%= link_to 'View Contacts', member_contacts_path %></li>
-  <li><%= link_to 'Logout', destroy_member_session_path, method: :delete %></li>
-</ul>
