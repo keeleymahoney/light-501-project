@@ -22,7 +22,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <div>
-          <%= image_tag "BOLD_Logo.jpg", alt: "Logo", class:"logo" %>  
+          <%= image_tag "BOLD_Logo.png", alt: "Logo", class:"logo" %>  
       </div>
       <nav>
         <ul class="nav">
@@ -47,7 +47,6 @@
               <%= link_to 'My Dashboard', member_dashboard_path, class: 'nav-link-dropdown' %> 
               <div class="nav-item-dropdown-links">
                 <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Network", member_contacts_path %></div>
-                <div style="border: none; border-bottom: 1px grey solid;"><span style="color: grey;">Constitution</span></div>
                 <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Account Info", member_dashboard_path %></div>
                 <div style="border: none;"><%= link_to "My Network Info", member_networks_path %></div>
               </div>
@@ -56,8 +55,7 @@
               <%= link_to 'Admin Dashboard', events_path, class: 'nav-link-dropdown' %> 
               <div class="nav-item-dropdown-links">
                 <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Events", events_path %></div>
-                <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Network", contacts_path %></div>
-                <div style="border: none; border-bottom: 1px grey solid;"><span style="color: grey;">Constitution</span></div>                
+                <div style="border: none; border-bottom: 1px grey solid;"><%= link_to "Network", contacts_path %></div>                
                 <div style="border: none;"><%= link_to "Requests", requests_path %></div>
               </div>
             </li>            
@@ -65,8 +63,8 @@
               <%= link_to 'Sign Out', destroy_member_session_path, method: :delete, class: 'btn btn-danger' %>
             </li>
           <% else %>
-            <li class="nav-item">
-              <%= button_to member_google_oauth2_omniauth_authorize_path, class: "nav-link", method: :post, data: { turbo: "false" } do %>
+            <li class="nav-item mb-0">
+              <%= button_to member_google_oauth2_omniauth_authorize_path, class: "nav-link mb-0", method: :post, data: { turbo: "false" } do %>
                 <i class="fab fa-google"></i><span>&nbsp;Login with Google</span>
               <% end %>
             </li>
@@ -104,10 +102,10 @@
       </div>
       <div class="row">
         <div class="col">
-          <a href="mailto:info.boldrso@gmail.com" class="btn btn-primary">Email: info.boldrso@gmail.com</a>
+          <a href="mailto:info.boldrso@gmail.com" style="color: white;">Email: info.boldrso@gmail.com</a>
         </div>
         <div class="col">
-          <a href="https://www.linkedin.com/company/boldrso" class="btn btn-primary">LinkedIn: BOLD on LinkedIn</a>
+          <a href="https://www.linkedin.com/company/boldrso" style="color: white;">LinkedIn: BOLD on LinkedIn</a>
         </div>
       </div>
       <div class="text-muted mt-4">2024 Texas A&M University</div>
