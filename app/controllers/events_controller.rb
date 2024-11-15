@@ -115,6 +115,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)                 
         else
           redirect_to events_path, notice: 'Something went wrong. Please try again later.'
         end
@@ -168,6 +170,12 @@ class EventsController < ApplicationController
         else
           render('show_rsvp_form')
         end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end           
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
@@ -213,6 +221,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)           
         else
           redirect_to events_path, notice: 'Could not destroy RSVP form. Please try again later.'
         end        
@@ -273,6 +283,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)
         else
           redirect_to events_path, notice: 'Something went wrong. Please try again later.'
         end
@@ -326,6 +338,12 @@ class EventsController < ApplicationController
         else
           render('show_feedback_form')
         end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end        
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
@@ -371,6 +389,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)        
         else
           redirect_to events_path, notice: 'Could not destroy feedback form. Please try again later.'
         end        
