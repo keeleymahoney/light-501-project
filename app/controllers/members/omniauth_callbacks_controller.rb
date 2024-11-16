@@ -2,10 +2,10 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     member = Member.from_google(email: auth.info.email, full_name: auth.info.name, admin: false)
     
-    # Update token if expired, create token if it doesn't exist
+    # Update token if expired, create token if it doesn't exist (should be exclusive to admin)
     if !member.token.nil?
       member.token.update(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
-    elsif member.token.nil?
+    else
       member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
     end
 
