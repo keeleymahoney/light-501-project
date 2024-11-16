@@ -7,6 +7,20 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+
+    if params[:name].present?
+      @events = @events.where('name ILIKE ?', "%#{params[:name]}%")
+    end
+
+    if params[:published].present?
+      published_value = ActiveModel::Type::Boolean.new.cast(params[:published])
+      @events = @events.where(published: published_value)
+    end
+
+    if params[:date].present?
+      selected_date = Time.zone.parse(params[:date]).beginning_of_day..Time.zone.parse(params[:date]).end_of_day
+      @events = @events.where(date: selected_date)
+    end
   end
 
   # GET /events/1 or /events/1.json
