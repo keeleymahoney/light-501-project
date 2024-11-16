@@ -1,67 +1,65 @@
-<div style='margin-left: 5%'>
-  <h1>Network Addition Request</h1>
+<%= render "member_contacts/header"%>
 
-  <%= form_with(model: @contact, local: true, url: create_network_addition_contact_path) do |form| %>
-    <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this request from being saved:</h2>
-        <ul>
-          <% @contact.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<h2>Request Network Addition</h2>
+<br/>
+
+<div class="form-member">
+    <div class="form-member-header">
+        <%= link_to "< Back To My Account Info", member_dashboard_path, class:"ml-3 btn btn-secondary" %>
+    </div>
+
+    <%= form_with(model: @contact, local: true, url: create_network_addition_contact_path) do |form| %>
+      <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this request from being saved:</h2>
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    <div class="form-member-col-container">
+        <div class="form-member-col-content-main">
+                <strong><%= form.label :first_name, style: "display: block" %></strong>
+                <span><%= form.text_field :first_name, value: @contact.first_name, class: "full-width"%></span><br/>
+
+                <strong><%= form.label :last_name, style: "display: block" %></strong>
+                <span><%= form.text_field :last_name, value: @contact.last_name, class: "full-width"%></span><br/>
+
+                <strong><%= form.label :title, style: "display: block" %></strong>
+                <span><%= form.text_field :title, value: @contact.title, class: "full-width"%></span><br/>
+
+                <strong><%= form.label :organization, style: "display: block" %></strong>
+                <span><%= form.text_field :organization, value: @contact.organization, class: "full-width"%></span><br/>
+
+                <strong><%= form.label :link, style: "display: block" %></strong>
+                <span><%= form.text_field :link, value: @contact.link, class: "full-width"%></span><br/>
+
+                <strong><%= form.label :email, style: "display: block" %></strong>
+                <span><%= form.email_field :email, value: @contact.email, class: "full-width"%></span><br/>
+
+                <strong><%= form.label :bio, style: "display: block"%></strong>
+                <span><%= form.text_area :bio, value: @contact.bio, style:"width: 100%" %></span><br/><br/>
+
+                <div>
+                    <strong><p>Profile Picture: </p></strong>
+                    <% if @contact.pfp.present? %>
+                    <div class="border rounded border-1 border-dark p-1 mb-2">
+                        <%= image_tag @contact.pfp.variant(resize_to_fill: [150, 150]) %>
+                    </div>
+                    <% end %>
+                    <span><%= form.file_field :pfp, class: 'form-control' %><span><br/>
+                </div><br/>
+          </div>
       </div>
+
+      <div class="form-member-footer" style="margin: -17px;">
+          <div class="d-flex justify-content-end mr-2">
+              <%= form.submit "Submit Network Addition Request", class: "btn btn-primary"%>
+          </div>
+      </div>      
     <% end %>
-
-    <div class="row">
-      <div class="col-md-8">
-
-        <!--<%= form.fields_for :contact do |contact_fields| %>-->
-
-        <div class="field">
-        <%= form.label :first_name %>
-        <%= form.text_field :first_name, value: @contact.first_name %>
-        </div>
-        
-        <div class="field">
-        <%= form.label :last_name %>
-        <%= form.text_field :last_name, value: @contact.last_name %>
-        </div>
-        
-        <div class="field">
-        <%= form.label :organization %>
-        <%= form.text_field :organization, value: @contact.organization %>
-        </div>
-        
-        <div class="field">
-        <%= form.label :title %>
-        <%= form.text_field :title, value: @contact.title %>
-        </div>
-        
-        <div class="field">
-        <%= form.label :email %>
-        <%= form.email_field :email, value: @contact.email %>
-        </div>
-        
-        <div class="field">
-        <%= form.label :link %>
-        <%= form.text_field :link, value: @contact.link %>
-        </div>
-        
-        <div class="field">
-        <%= form.label :bio %>
-        <%= form.text_area :bio, value: @contact.bio %>
-        </div>
-
-        <!--<% end %>-->
-        
-    <!-- You can add any additional fields as needed -->
-    
-    </div>
-
-    <div class="actions">
-      <%= form.submit 'Submit Network Addition Request' %>
-    </div>
-  <% end %>
-
 </div>
+<br/>

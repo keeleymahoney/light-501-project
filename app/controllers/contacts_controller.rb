@@ -59,6 +59,7 @@ class ContactsController < ApplicationController
   def new_network_addition
     prev_contact = Contact.find_by(id: current_member.contact_id) 
     @contact = prev_contact.dup
+    @contact.pfp.attach(prev_contact.pfp.blob)
     @contact.in_network = false
   end  
 
@@ -67,7 +68,9 @@ def create_network_addition
   # Find the related contact for the member
     # prev_contact = Contact.find_by(id: current_member.contact_id) 
     # @contact = prev_contact.dup
+  prev_contact = Contact.find_by(id: current_member.contact_id)
   @contact = Contact.new(contact_params)
+  @contact.pfp.attach(prev_contact.pfp.blob)
   @contact.in_network = false
 
   unless @contact.save

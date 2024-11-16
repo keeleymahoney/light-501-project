@@ -36,19 +36,20 @@
   <table class="table-member">
 
     <tr>
-      <th style="width: 8%">Photo</th>
-      <th style="width: 15%">Name</th>
-      <th style="width: 19%">Organization</th>
-      <th style="width: 15%">Title</th>
-      <th style="width: 19%">Industries</th>
-      <th style="width: 17%">Email</th>
+      <th style="width: 11%">Photo</th>
+      <th style="width: 19%">Name</th>
+      <th style="width: 22%">Organization</th>
+      <th style="width: 21%">Title</th>
+      <th style="width: 20%">Industries</th>
       <th style="width: 7%">View </th>
     </tr>
     <% @contacts.each do |contact| %>
     <tr>
       <td>
         <% if contact.pfp.present? %>
-          <%= image_tag contact.pfp.variant(resize_to_fill: [100, 100]) %>
+          <div class="border rounded border-1 border-dark p-1 mb-2" style="text-align: center; overflow: hidden;">
+              <%= image_tag contact.pfp.variant(resize_to_fill: [80, 80]) %>
+          </div>          
         <% end %>
       </td>
       <td><%=contact.first_name + ' ' + contact.last_name%></td>
@@ -61,7 +62,6 @@
           <% end %>
         </ul>
       </td>
-      <td><%= contact.email %></td>
       <td><%= link_to("View", member_contact_path(contact)) %></td>
 
     </tr>
