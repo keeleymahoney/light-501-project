@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
+  before_action :authenticate_admin!, only: %i[index new create edit update destroy]
   def index
     @contacts = Contact.all
   end
