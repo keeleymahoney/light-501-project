@@ -3,10 +3,25 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :check_if_signed_in
+  before_action :authenticate_admin!, only: %i[index new create edit update destroy]
 
   # GET /events or /events.json
   def index
     @events = Event.all
+
+    if params[:name].present?
+      @events = @events.where('name ILIKE ?', "%#{params[:name]}%")
+    end
+
+    if params[:published].present?
+      published_value = ActiveModel::Type::Boolean.new.cast(params[:published])
+      @events = @events.where(published: published_value)
+    end
+
+    if params[:date].present?
+      selected_date = Time.zone.parse(params[:date]).beginning_of_day..Time.zone.parse(params[:date]).end_of_day
+      @events = @events.where(date: selected_date)
+    end
   end
 
   # GET /events/1 or /events/1.json
@@ -115,6 +130,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)                 
         else
           redirect_to events_path, notice: 'Something went wrong. Please try again later.'
         end
@@ -168,6 +185,12 @@ class EventsController < ApplicationController
         else
           render('show_rsvp_form')
         end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end           
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
@@ -213,6 +236,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)           
         else
           redirect_to events_path, notice: 'Could not destroy RSVP form. Please try again later.'
         end        
@@ -273,6 +298,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)
         else
           redirect_to events_path, notice: 'Something went wrong. Please try again later.'
         end
@@ -326,6 +353,12 @@ class EventsController < ApplicationController
         else
           render('show_feedback_form')
         end
+      rescue Google::Apis::ClientError => e
+        if e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)
+        else
+          redirect_to events_path, notice: 'Something went wrong. Please try again later.'
+        end        
       rescue
         if current_member.token.nil? || current_member.token.token_exp.to_i <= Time.now.to_i
           redirect_to sign_in_form_event_path(@event)
@@ -371,6 +404,8 @@ class EventsController < ApplicationController
           else
             redirect_to events_path, notice: 'Your form was unable to be accessed. Please try again.'
           end          
+        elsif e.status_code == 403 # access token does not give permission for drive, ask for more scopes
+          redirect_to sign_in_form_event_path(@event)        
         else
           redirect_to events_path, notice: 'Could not destroy feedback form. Please try again later.'
         end        
