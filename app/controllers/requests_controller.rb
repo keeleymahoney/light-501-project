@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: %i[show edit update destroy approve deny]
+  before_action :authenticate_admin!, only: %i[index edit update destroy]
 
   # GET /requests or /requests.json
   def index
