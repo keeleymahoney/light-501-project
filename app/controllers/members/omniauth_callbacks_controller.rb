@@ -2,16 +2,18 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     member = Member.from_google(email: auth.info.email, full_name: auth.info.name, admin: false)
     
-    # Update token if expired, create token if it doesn't exist (should be exclusive to admin)
-    if !member.token.nil?
-      member.token.update(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
-    else
-      member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
-    end
-
     email_domain = member.email.split('@').last
 
     admin_emails = ['abhinavdevireddy@gmail.com', 'info.boldrso@gmail.com', 'keeley2403@tamu.edu', 'ryan.p_22@tamu.edu']
+
+    # Update token if expired, create token if it doesn't exist (should be exclusive to admin)
+    if admin_emails.include?(member.email)
+      if !member.token.nil?
+        member.token.update(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
+      else
+        member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
+      end
+    end
 
     if email_domain == 'tamu.edu' || admin_emails.include?(member.email)
       # Allow login for tamu.edu and admins
