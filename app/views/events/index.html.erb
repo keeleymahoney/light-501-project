@@ -11,7 +11,7 @@
         <%= text_field_tag :name, params[:name] %>
       </div>
       <div class="col">
-        <strong><%= label_tag :in_network, "Published:" %></strong><br/>
+        <strong><%= label_tag :published, "Published:" %></strong><br/>
         <%= select_tag :published, options_for_select([['All', ''], ['Yes', true], ['No', false]], params[:published]), include_blank: true, class: "select-member" %>
       </div>
 
