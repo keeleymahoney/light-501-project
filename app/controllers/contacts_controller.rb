@@ -1,8 +1,36 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
+  before_action :authenticate_admin!, only: %i[index new create edit update destroy]
   def index
+    @organizations = Contact.select(:organization).distinct.pluck(:organization)
+    @industries = Industry.select(:industry_type).distinct.pluck(:industry_type)
     @contacts = Contact.all
+
+    if params[:first_name].present?
+      @contacts = @contacts.where('first_name ILIKE ?', "%#{params[:first_name]}%")
+    end
+
+    if params[:last_name].present?
+      @contacts = @contacts.where('last_name ILIKE ?', "%#{params[:last_name]}%")
+    end
+
+    if params[:organization].present?
+      @contacts = @contacts.where(organization: params[:organization])
+    end
+
+    if params[:in_network].present?
+      in_network_value = ActiveModel::Type::Boolean.new.cast(params[:in_network])
+      @contacts = @contacts.where(in_network: in_network_value)
+    end
+
+    if params[:industry].present?
+      @contacts = @contacts.joins(:contacts_industries)
+                       .joins("INNER JOIN industries ON industries.id = contacts_industries.industry_id")
+                       .where(industries: { industry_type: params[:industry] })
+    end
+
+    
   end
 
   def show
@@ -59,6 +87,7 @@ class ContactsController < ApplicationController
   def new_network_addition
     prev_contact = Contact.find_by(id: current_member.contact_id) 
     @contact = prev_contact.dup
+    @contact.pfp.attach(prev_contact.pfp.blob)
     @contact.in_network = false
   end  
 
@@ -67,7 +96,9 @@ def create_network_addition
   # Find the related contact for the member
     # prev_contact = Contact.find_by(id: current_member.contact_id) 
     # @contact = prev_contact.dup
+  prev_contact = Contact.find_by(id: current_member.contact_id)
   @contact = Contact.new(contact_params)
+  @contact.pfp.attach(prev_contact.pfp.blob)
   @contact.in_network = false
 
   unless @contact.save

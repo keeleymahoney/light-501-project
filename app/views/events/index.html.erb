@@ -2,6 +2,34 @@
 
 <h2>All Events</h2>
 
+<div class="search-form">
+  <%= form_with url: events_path, method: :get, local: true do %>
+    <br/>
+    <div class = "header row">
+      <div class ="col">
+        <strong><%= label_tag :name, "Event Name:" %></strong><br/>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+      <div class="col">
+        <strong><%= label_tag :published, "Published:" %></strong><br/>
+        <%= select_tag :published, options_for_select([['All', ''], ['Yes', true], ['No', false]], params[:published]), include_blank: true, class: "select-member" %>
+      </div>
+
+      <div class="col">
+        <strong><%= label_tag :date, "Event Date:" %></strong><br/>
+        <%= date_field_tag :date, params[:date], class: "form-control" %>
+      </div>
+
+      <div class="d-flex justify-content-end mr-2">
+        <%= submit_tag "Search", class:"btn btn-primary"%>
+      </div>
+    </div>
+    <br/>
+  <% end %>
+</div>
+<br/>
+
+
 <div class="d-flex justify-content-end mr-2" style="padding-top: 15px; padding-bottom: 15px;">
   <%= link_to 'New Event', new_event_path, class:" btn btn-primary" %>
 </div>
