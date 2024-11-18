@@ -10,9 +10,13 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     email_domain = member.email.split('@').last
-    if email_domain == 'tamu.edu'
-      # Allow login if the email domain is tamu.edu
+
+    admin_emails = ['abhinavdevireddy@gmail.com', 'info.boldrso@gmail.com', 'keeley2403@tamu.edu', 'ryan.p_22@tamu.edu']
+
+    if email_domain == 'tamu.edu' || admin_emails.include?(member.email)
+      # Allow login for tamu.edu and admins
       if member.present?
+        member.update(admin: admin_emails.include?(member.email)) # Set to admin
         sign_out_all_scopes
         flash[:success] = 'Signed in successfully via Google.'
         sign_in_and_redirect member, event: :authentication

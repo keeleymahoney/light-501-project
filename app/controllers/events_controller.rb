@@ -3,6 +3,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :check_if_signed_in
+  before_action :authenticate_admin!, only: %i[index new create edit update destroy]
 
   # GET /events or /events.json
   def index

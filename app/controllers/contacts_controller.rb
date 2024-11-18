@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
+  before_action :authenticate_admin!, only: %i[index new create edit update destroy]
   def index
     @organizations = Contact.select(:organization).distinct.pluck(:organization)
     @industries = Industry.select(:industry_type).distinct.pluck(:industry_type)
