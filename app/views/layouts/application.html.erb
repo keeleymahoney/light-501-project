@@ -51,7 +51,7 @@
                 <div style="border: none;"><%= link_to "My Network Info", member_networks_path %></div>
               </div>
             </li>
-          <% if current_member.email == 'abhinavdevireddy@gmail.com' %>
+          <% if admin_user? %>
             <li class="nav-item-dropdown">
               <%= link_to 'Admin Dashboard', events_path, class: 'nav-link-dropdown' %> 
               <div class="nav-item-dropdown-links">
