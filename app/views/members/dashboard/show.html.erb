@@ -47,7 +47,7 @@
           <h3>Constitution</h3>
           <% if current_member.constitution_exp && current_member.constitution_exp > Time.current %>
             <div class="constitution-access">
-              <%= link_to "View Constitution", "/documents/Constitution.pdf", target: "_blank", class: "btn btn-primary" %>
+              <%= link_to "View Constitution", "/documents/BOLDConstitution.pdf", target: "_blank", class: "btn btn-primary" %>
             </div>
           <% else %>
             <p>Your access to the Constitution has expired. Please contact the administrator for renewal.</p>
