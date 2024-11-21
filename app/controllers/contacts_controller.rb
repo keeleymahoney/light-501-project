@@ -72,7 +72,7 @@ class ContactsController < ApplicationController
       end
     end
   end
-
+# Try catch error handling for contact deletion
   def destroy
     @contact = Contact.find(params[:id])
     begin
