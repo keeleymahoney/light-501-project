@@ -72,12 +72,17 @@ class ContactsController < ApplicationController
       end
     end
   end
-
+# Try catch error handling for contact deletion
   def destroy
     @contact = Contact.find(params[:id])
-    @contact.destroy
-    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
-  end
+    begin
+      @contact.destroy
+      redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    rescue ActiveRecord::InvalidForeignKey => e
+      flash[:alert] = "Cannot delete this contact because it is still being referenced as a member."
+      redirect_to contacts_url
+    end
+  end  
 
   def delete
     @contact = Contact.find(params[:id])
@@ -87,7 +92,7 @@ class ContactsController < ApplicationController
   def new_network_addition
     prev_contact = Contact.find_by(id: current_member.contact_id) 
     @contact = prev_contact.dup
-    @contact.pfp.attach(prev_contact.pfp.blob)
+    # @contact.pfp.attach(prev_contact.pfp.blob)
     @contact.in_network = false
   end  
 
@@ -98,7 +103,9 @@ def create_network_addition
     # @contact = prev_contact.dup
   prev_contact = Contact.find_by(id: current_member.contact_id)
   @contact = Contact.new(contact_params)
-  @contact.pfp.attach(prev_contact.pfp.blob)
+  unless @contact.pfp.attached?
+    @contact.pfp.attach(prev_contact.pfp.blob)
+  end
   @contact.in_network = false
 
   unless @contact.save
