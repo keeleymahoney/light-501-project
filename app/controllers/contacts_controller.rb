@@ -72,12 +72,17 @@ class ContactsController < ApplicationController
       end
     end
   end
-
+# Try catch error handling for contact deletion
   def destroy
     @contact = Contact.find(params[:id])
-    @contact.destroy
-    redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
-  end
+    begin
+      @contact.destroy
+      redirect_to contacts_url, notice: 'Contact was successfully destroyed.'
+    rescue ActiveRecord::InvalidForeignKey => e
+      flash[:alert] = "Cannot delete this contact because it is still being referenced as a member."
+      redirect_to contacts_url
+    end
+  end  
 
   def delete
     @contact = Contact.find(params[:id])
