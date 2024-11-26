@@ -22,7 +22,7 @@ local:
 #   bucket: light-501-test-bucket
 google_dev:
   service: GCS
-  project: ""
+  project: "bold-web"
   credentials: 
     type: "service_account"
     project_id: "genial-runway-442901-t6"
