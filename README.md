@@ -39,7 +39,7 @@
   <p align="center">
     A website hub for TAMU Business Outreach for Leadership and Diversity.
     <br />
-    <a href="https://docs.google.com/document/d/1dydC-EhVsld7Jy1-cPp65oN60rj1JVaswKlvAFBuMbo/edit?usp=sharing"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/file/d/1-L3QckR0Ztwgr5tNN1RiZ2xrhnrxO1b7/view?usp=sharing"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/keeleymahoney/light-501-project">View Demo</a>
@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
 This project aims to create a functional website for the TAMU organization BOLD (Business Outreach for Leadership and Diversity). The site will allow admins to manage events, members, and contacts in the network accessible to members. It will allow members and general users a place to find information about the organization and its events. And it will allow specific members access to the network of business contacts that BOLD has access to and to submit requests to join that network themselves. 
 
@@ -110,7 +110,7 @@ This project aims to create a functional website for the TAMU organization BOLD 
 
 ## Getting Started
 
-This project 
+ 
 
 ### Prerequisites
 
@@ -171,6 +171,7 @@ To run the app locally run the following command in the docker container, in the
 ## Deployment
 
 Deployment on Heroku
+<a href="https://docs.google.com/document/d/10mj4vt7qF9JorHfAFlPgs2PCkBPkrOGAbwj2yhP7XhU/edit?usp=sharing">Link to Deployment Documnetation</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,9 +182,9 @@ Deployment on Heroku
 - [x] Event Creation
     - [x] Forms Generation
 - [x] Network Creation
-- [ ] Member Sign-In
-- [ ] Landing Page
-- [ ] User Navigation, about page, and photo gallary
+- [x] Member Sign-In
+- [x] Landing Page
+- [x] User Navigation, about page, and photo gallary
 
 See the [open issues](https://github.com/keeleymahoney/light-501-project/issues) for a full list of proposed features (and known issues).
 
