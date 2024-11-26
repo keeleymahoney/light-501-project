@@ -408,3 +408,17 @@
   {
     margin-bottom: 0;
   }
+
+  #gallery {
+    margin: 0 auto; /* Center the gallery */
+  }
+  
+  .gallery-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+  
+  .col-md-6 {
+    padding: 15px; /* Add some spacing between the images */
+  }

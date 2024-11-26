@@ -7,6 +7,40 @@
   <%= link_to 'New Contact', new_contact_path, class:" btn btn-primary" %>
 </div>
 
+<div class="search-form">
+  <%= form_with url: contacts_path, method: :get, local: true do %>
+    <br/>
+    <div class = "header row">
+      <div class ="col">
+        <strong><%= label_tag :first_name, "First Name:" %></strong><br/>
+        <%= text_field_tag :first_name, params[:first_name] %>
+      </div>
+      <div class="col">
+        <strong><%= label_tag :last_name, "Last Name:" %></strong><br/>
+        <%= text_field_tag :last_name, params[:last_name] %>
+      </div>
+      <div class="col">
+        <strong><%= label_tag :organization, "Organization:" %></strong><br/>
+        <%= select_tag :organization, options_for_select(@organizations, params[:organization]), include_blank: true, class: "select-member" %>
+      </div>
+      <div class="col">
+        <strong><%= label_tag :industry, "Industry:" %></strong><br/>
+        <%= select_tag :industry, options_for_select(@industries, params[:industry]), include_blank: true, class: "select-member" %>
+      </div>
+      <div class="col">
+        <strong><%= label_tag :in_network, "In Network:" %></strong><br/>
+        <%= select_tag :in_network, options_for_select([['All', ''], ['Yes', true], ['No', false]], params[:in_network]), include_blank: true, class: "select-member" %>
+      </div>
+
+      <div class="d-flex justify-content-end mr-2">
+        <%= submit_tag "Search", class:"btn btn-primary"%>
+      </div>
+    </div>
+    <br/>
+  <% end %>
+</div>
+<br/>
+
 <div id="member-networks-table">
     <table class="table-member">
       <tr>

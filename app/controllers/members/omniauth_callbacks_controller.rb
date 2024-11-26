@@ -2,17 +2,23 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     member = Member.from_google(email: auth.info.email, full_name: auth.info.name, admin: false)
     
-    # Update token if expired, create token if it doesn't exist
-    if !member.token.nil? && member.token.token_exp.to_i <= Time.now.to_i
-      member.token.update(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
-    elsif member.token.nil?
-      member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
+    email_domain = member.email.split('@').last
+
+    admin_emails = ['abhinavdevireddy@gmail.com', 'info.boldrso@gmail.com', 'keeley2403@tamu.edu', 'ryan.p_22@tamu.edu']
+
+    # Update token if expired, create token if it doesn't exist (should be exclusive to admin)
+    if admin_emails.include?(member.email)
+      if !member.token.nil?
+        member.token.update(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
+      else
+        member.create_token(access_token: auth.credentials.token, token_exp: auth.credentials.expires_at)
+      end
     end
 
-    email_domain = member.email.split('@').last
-    if email_domain == 'tamu.edu'
-      # Allow login if the email domain is tamu.edu
+    if email_domain == 'tamu.edu' || admin_emails.include?(member.email)
+      # Allow login for tamu.edu and admins
       if member.present?
+        member.update(admin: admin_emails.include?(member.email)) # Set to admin
         sign_out_all_scopes
         flash[:success] = 'Signed in successfully via Google.'
         sign_in_and_redirect member, event: :authentication
